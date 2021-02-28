@@ -131,7 +131,20 @@ a:visited:hover {
 }
 
 .line-box {
-  margin-bottom: 16px;
+  margin-bottom: 32px;
+}
+
+.line-box__link-icon {
+  --icon-size: 32px;
+  display: inline-block;
+  vertical-align: middle;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin-right: 8px;
+}
+
+.line-box__link-text {
+  vertical-align: middle;
 }
 
 .absolute-button-container {
