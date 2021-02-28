@@ -1,0 +1,18 @@
+{
+  "name": "AWE.write",
+  "description": "A simple two-pane web based text editor in your browser.",
+  "display": "standalone",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "favicon-16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}
