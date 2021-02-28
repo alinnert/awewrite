@@ -1,0 +1,262 @@
+/* COLORS */
+
+#theme_color_blue {
+	background-color: hsl(200, 80%, 30%);
+	color: hsl(200, 80%, 90%);
+}
+#theme_color_green {
+	background-color: hsl(103, 56%, 26%);
+	color: #DEE9CE;
+}
+#theme_color_orange {
+	background-color: hsl(21, 84%, 34%);
+	color: #FAF1E1;
+}
+#theme_color_purple {
+	background-color: hsl(267, 75%, 31%);
+	color: #EEDDF8;
+}
+#theme_color_lime {
+	background-color: hsl(70, 80%, 20%);
+	color: hsl(70, 80%, 90%);
+}
+#theme_color_bluegreen {
+	background-color: hsl(170, 100%, 15%);
+	color: hsl(170, 100%, 90%);
+}
+#theme_color_pink {
+	background-color: hsl(320, 100%, 15%);
+	color: hsl(320, 100%, 90%);
+}
+#theme_color_black {
+	background-color: #151515;
+	color: #ccc;
+}
+#theme_color_dark {
+	background-color: hsl(0, 0%, 20%);
+	color: hsl(0, 0%, 80%);
+}
+#theme_color_silver {
+	background-color: hsl(0, 0%, 85%);
+	color: hsl(0, 0%, 20%);
+}
+#theme_color_white {
+	background-color: hsl(0, 0%, 100%);
+	color: hsl(0, 0%, 0%);
+}
+#theme_color_sepia {
+	background-color: #f8f0dc;
+	color: #88630f;
+}
+#theme_color_spring {
+	background-color: #ccffcc;
+	color: hsl(100, 80%, 15%);
+}
+#theme_color_sunny {
+	background-color: #ffffcc;
+	color: #663300;
+}
+#theme_color_cherry {
+	background-color: #FFE6FF;
+	color: #C100C1;
+}
+#theme_color_mint {
+	background-color: hsl(150, 80%, 80%);
+	color: hsl(150, 80%, 20%);
+}
+#theme_color_ice {
+	background-color: #D2F5FF;
+	color: #006496;
+}
+#theme_color_console {
+	background-color: #000;
+	color: #0F0;
+}
+#theme_color_sol_light {
+	background-color: #FDF6E3;
+	color: #657B83;
+}
+#theme_color_sol_dark {
+	background-color: #002B36;
+	color: #839496;
+}
+#theme_color_cave_light {
+	background-color: #EFECF4;
+	color: #655F6D;
+}
+#theme_color_cave_dark {
+	background-color: #19171C;
+	color: #7E7887;
+}
+#theme_color_estuary_light {
+	background-color: #F4F3EC;
+	color: #6C6B5A;
+}
+#theme_color_estuary_dark {
+	background-color: #22221B;
+	color: #878573;
+}
+
+/* IMAGES */
+
+#theme_image_mosaic_white {
+	background-image: url(../themes/mosaic_white_thumb.jpg);
+	color: black;
+}
+#theme_image_mosaic_black {
+	background-image: url(../themes/mosaic_black_thumb.jpg);
+	color: white;
+}
+
+#theme_image_ray_blue {
+	background-image: url(../themes/ray_blue_thumb.png);
+	color: white;
+}
+#theme_image_ray_green {
+	background-image: url(../themes/ray_green_thumb.png);
+	color: white;
+}
+#theme_image_ray_orange {
+	background-image: url(../themes/ray_orange_thumb.png);
+	color: white;
+}
+#theme_image_ray_pink {
+	background-image: url(../themes/ray_pink_thumb.png);
+	color: white;
+}
+
+#theme_image_shine_blue {
+	background-image: url(../themes/shine_blue_thumb.jpg);
+	color: white;
+}
+#theme_image_shine_chrome {
+	background-image: url(../themes/shine_chrome_thumb.jpg);
+	color: white;
+}
+#theme_image_shine_green {
+	background-image: url(../themes/shine_green_thumb.jpg);
+	color: white;
+}
+#theme_image_shine_orange {
+	background-image: url(../themes/shine_orange_thumb.jpg);
+	color: white;
+}
+#theme_image_shine_pink {
+	background-image: url(../themes/shine_pink_thumb.jpg);
+	color: white;
+}
+
+#theme_image_aqua_blue {
+	background-image: url(../themes/aqua_blue_thumb.png);
+	color: #CEE8F5;
+}
+#theme_image_aqua_bluegreen {
+	background-image: url(../themes/aqua_blue_green_thumb.png);
+	color: #CEF5EC;
+}
+#theme_image_aqua_lime {
+	background-image: url(../themes/aqua_lime_thumb.png);
+	color: #F8FDEC;
+}
+#theme_image_aqua_purple {
+	background-image: url(../themes/aqua_purple_thumb.png);
+	color: #E7D7F8;
+}
+#theme_image_aqua_red {
+	background-image: url(../themes/aqua_red_thumb.png);
+	color: #F6E2E2;
+}
+#theme_image_aqua_black {
+	background-image: url(../themes/aqua_black_thumb.png);
+	color: hsl(0, 0%, 90%);
+}
+#theme_image_aqua_white {
+	background-image: url(../themes/aqua_white_thumb.png);
+	color: hsl(0, 0%, 10%);
+}
+
+/* PHOTOS */
+
+#theme_photos_river_1 {
+	background-image: url(../themes/photo_river_1_thumb.jpg);
+	color: hsla(0, 0%, 100%, 0.9);
+}
+#theme_photos_trees_1 {
+	background-image: url(../themes/photos_trees_1_thumb.jpg);
+	color: hsla(0, 0%, 100%, 0.9);
+}
+#theme_photos_stars_1 {
+	background-image: url(../themes/photos_stars_1_thumb.jpg);
+	color: hsla(0, 0%, 100%, 0.9);
+}
+
+/* APPROXART */
+
+#theme_apprx_aqua {
+	background-image: url(../themes/approx_aqua_thumb.jpg);
+	color: #253745;
+}
+#theme_apprx_deep_sea {
+	background-image: url(../themes/approx_deep_sea_thumb.jpg);
+	color: white;
+}
+#theme_apprx_diamonds {
+	background-image: url(../themes/approx_diamonds_thumb.jpg);
+	color: #E2F9DF;
+}
+#theme_apprx_fiery {
+	background-image: url(../themes/approx_fiery_thumb.jpg);
+	color: white;
+}
+#theme_apprx_glacialis {
+	background-image: url(../themes/approx_glacialis_thumb.jpg);
+	color: #0D434F;
+}
+#theme_apprx_grass {
+	background-image: url(../themes/approx_grass_thumb.jpg);
+	color: white;
+}
+#theme_apprx_image_noise {
+	background-image: url(../themes/approx_image_noise_thumb.jpg);
+	color: white;
+}
+#theme_apprx_leather {
+	background-image: url(../themes/approx_leather_thumb.jpg);
+	color: white;
+}
+#theme_apprx_linearis {
+	background-image: url(../themes/approx_linearis_thumb.jpg);
+	color: #551A68;
+}
+#theme_apprx_rays {
+	background-image: url(../themes/approx_rays_thumb.jpg);
+	color: #030;
+}
+#theme_apprx_rust {
+	background-image: url(../themes/approx_rust_thumb.jpg);
+	color: white;
+}
+#theme_apprx_scrap_metal {
+	background-image: url(../themes/approx_scrap_metal_thumb.jpg);
+	color: white;
+}
+#theme_apprx_smouldering {
+	background-image: url(../themes/approx_smouldering_thumb.jpg);
+	color: #442E17;
+}
+#theme_apprx_splatter {
+	background-image: url(../themes/approx_splatter_thumb.jpg);
+	color: white;
+}
+#theme_apprx_surface {
+	background-image: url(../themes/approx_surface_thumb.jpg);
+	color: white;
+}
+#theme_apprx_timber {
+	background-image: url(../themes/approx_timber_thumb.jpg);
+	color: #251A10;
+}
+#theme_apprx_vintage {
+	background-image: url(../themes/approx_vintage_thumb.jpg);
+	color: #3F3727;
+}
