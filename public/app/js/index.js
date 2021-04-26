@@ -186,13 +186,17 @@ function changeTextWidth (width) {
 
 function fontfaceNumber (font) {
 	switch (font) {
-		case '"Segoe UI", sans-serif': return 0
-		case '"Segoe Print", fantasy': return 1
-		case 'Constantia, serif': return 2
-		case 'Consolas, monospace': return 3
-		case 'ubuntu, sans-serif': return 4
-		default: return -1
-	}
+    case '"IBM Plex Sans", sans-serif':
+      return 0;
+    case '"IBM Plex Serif", serif':
+      return 1;
+    case '"IBM Plex Mono", sans-serif':
+      return 2;
+    case '"Kalam", cursive':
+      return 3;
+    default:
+      return -1;
+  }
 }
 
 function textwidthNumber (textwidth) {
