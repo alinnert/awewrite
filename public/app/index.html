@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
 
     <title>AWE.write</title>
 
-    <meta name="author" content="Andreas Linnert">
-    <meta name="application-name" content="AWE.write">
-    <meta name="msapplication-TileColor" content="#181818">
-    <meta name="msapplication-TileImage" content="favicon-144.png">
-    <meta name="msapplication-navbutton-color" content="#555555">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    
-    <link rel="manifest" href="awewrite.webmanifest">
-    <link rel="icon" href="favicon-16.png" sizes="16x16">
-    <link rel="shortcut icon" href="favicon-32.png" sizes="32x32">
-    <link rel="stylesheet" type="text/css" href="css/smoothness/jquery-ui-1.8.6.custom.css">
-    <link rel="stylesheet" type="text/css" href="css/themes.css">
-    <link rel="stylesheet" type="text/css" href="css/awe.css">
+    <meta name="author" content="Andreas Linnert" />
+    <meta name="application-name" content="AWE.write" />
+    <meta name="theme-color" content="#181818" id="meta-theme-color" />
+    <meta name="msapplication-TileColor" content="#181818" />
+    <meta name="msapplication-TileImage" content="favicon-144.png" />
+    <meta name="msapplication-navbutton-color" content="#555555" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+
+    <link rel="manifest" href="./awewrite.webmanifest" />
+    <link rel="icon" href="favicon-16.png" sizes="16x16" />
+    <link rel="shortcut icon" href="favicon-32.png" sizes="32x32" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/smoothness/jquery-ui-1.8.6.custom.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/themes.css" />
+    <link rel="stylesheet" type="text/css" href="css/awe.css" />
   </head>
 
   <body onload="init()">
-
     <div id="boxArea">
-      <div id="leftBox"><textarea id="leftTextarea" onclick="shrinkToolbar()" oninput="onTextareaInput()"></textarea></div>
-      <div id="rightBox"><textarea id="rightTextarea" onclick="shrinkToolbar()" oninput="onTextareaInput()"></textarea></div>
+      <div id="leftBox">
+        <textarea
+          id="leftTextarea"
+          onclick="shrinkToolbar()"
+          oninput="onTextareaInput()"
+        ></textarea>
+      </div>
+      <div id="rightBox">
+        <textarea
+          id="rightTextarea"
+          onclick="shrinkToolbar()"
+          oninput="onTextareaInput()"
+        ></textarea>
+      </div>
     </div>
 
     <div id="toolbar">
@@ -51,15 +69,22 @@
         <div class="toolbar_line2">
           <div class="toolbar_line_all" id="toolbar_line_data">
             <span class="toolbar_line2_title">Data</span>
-            
+
             <h3>Actions</h3>
             <button onclick="switchTexts()">switch texts</button>
             <button onclick="clearTexts()">clear texts</button>
 
             <h3>Settings</h3>
             <span class="checkbox-item">
-              <input type="checkbox" id="spellcheck" onchange="setSpellcheck()">
-              <label for="spellcheck">Enable spellchecking (tip: reload app when disabling to remove red squiggles)</label>
+              <input
+                type="checkbox"
+                id="spellcheck"
+                onchange="setSpellcheck()"
+              />
+              <label for="spellcheck"
+                >Enable spellchecking (tip: reload app when disabling to remove
+                red squiggles)</label
+              >
             </span>
           </div>
 
@@ -67,21 +92,53 @@
             <span class="toolbar_line2_title">Font</span>
             <h3>Font face</h3>
             <span class="toolbar_buttonset">
-              <input type="radio" id="toolbar_fontface_ibm_plex_sans" name="fontface" onclick="changeFontface('IBM Plex Sans')" />
+              <input
+                type="radio"
+                id="toolbar_fontface_ibm_plex_sans"
+                name="fontface"
+                onclick="changeFontface('IBM Plex Sans')"
+              />
               <label for="toolbar_fontface_ibm_plex_sans">IBM Plex Sans</label>
-              <input type="radio" id="toolbar_fontface_ibm_plex_serif" name="fontface" onclick="changeFontface('IBM Plex Serif')" />
-              <label for="toolbar_fontface_ibm_plex_serif">IBM Plex Serif</label>
-              <input type="radio" id="toolbar_fontface_ibm_plex_mono" name="fontface" onclick="changeFontface('IBM Plex Mono')" />
+              <input
+                type="radio"
+                id="toolbar_fontface_ibm_plex_serif"
+                name="fontface"
+                onclick="changeFontface('IBM Plex Serif')"
+              />
+              <label for="toolbar_fontface_ibm_plex_serif"
+                >IBM Plex Serif</label
+              >
+              <input
+                type="radio"
+                id="toolbar_fontface_ibm_plex_mono"
+                name="fontface"
+                onclick="changeFontface('IBM Plex Mono')"
+              />
               <label for="toolbar_fontface_ibm_plex_mono">IBM Plex Mono</label>
-              <input type="radio" id="toolbar_fontface_kalam" name="fontface" onclick="changeFontface('Kalam')" />
+              <input
+                type="radio"
+                id="toolbar_fontface_kalam"
+                name="fontface"
+                onclick="changeFontface('Kalam')"
+              />
               <label for="toolbar_fontface_kalam">Kalam</label>
             </span>
 
             <h3>Font size</h3>
             <span id="toolbar_fontsize">12</span>
             <span class="toolbar_buttonset">
-              <button onclick="changeFontsize(parseInt(document.getElementById('toolbar_fontsize').innerHTML) - 1)" id="toolbar_fontsize_dec">-</button>
-              <button onclick="changeFontsize(parseInt(document.getElementById('toolbar_fontsize').innerHTML) + 1)" id="toolbar_fontsize_inc">+</button>
+              <button
+                onclick="changeFontsize(parseInt(document.getElementById('toolbar_fontsize').innerHTML) - 1)"
+                id="toolbar_fontsize_dec"
+              >
+                -
+              </button>
+              <button
+                onclick="changeFontsize(parseInt(document.getElementById('toolbar_fontsize').innerHTML) + 1)"
+                id="toolbar_fontsize_inc"
+              >
+                +
+              </button>
             </span>
           </div>
 
@@ -90,18 +147,43 @@
 
             <h3>Divider</h3>
             <span class="toolbar_buttonset">
-              <button onclick="moveSplitter(parseInt(localStorage.getItem('awe.splitter')) - 1)" id="toolbar_splitter_left">move left</button>
+              <button
+                onclick="moveSplitter(parseInt(localStorage.getItem('awe.splitter')) - 1)"
+                id="toolbar_splitter_left"
+              >
+                move left
+              </button>
               <button onclick="moveSplitter(0)">reset</button>
-              <button onclick="moveSplitter(parseInt(localStorage.getItem('awe.splitter')) + 1)" id="toolbar_splitter_right">move right</button>
+              <button
+                onclick="moveSplitter(parseInt(localStorage.getItem('awe.splitter')) + 1)"
+                id="toolbar_splitter_right"
+              >
+                move right
+              </button>
             </span>
 
             <h3>Text width</h3>
             <span class="toolbar_buttonset">
-              <input type="radio" name="textwidth" onclick="changeTextWidth('narrow')" id="toolbar_textwidth_narrow">
+              <input
+                type="radio"
+                name="textwidth"
+                onclick="changeTextWidth('narrow')"
+                id="toolbar_textwidth_narrow"
+              />
               <label for="toolbar_textwidth_narrow">Narrow</label>
-              <input type="radio" name="textwidth" onclick="changeTextWidth('wide')" id="toolbar_textwidth_wide">
+              <input
+                type="radio"
+                name="textwidth"
+                onclick="changeTextWidth('wide')"
+                id="toolbar_textwidth_wide"
+              />
               <label for="toolbar_textwidth_wide">Wide</label>
-              <input type="radio" name="textwidth" onclick="changeTextWidth('full')" id="toolbar_textwidth_full">
+              <input
+                type="radio"
+                name="textwidth"
+                onclick="changeTextWidth('full')"
+                id="toolbar_textwidth_full"
+              />
               <label for="toolbar_textwidth_full">Full</label>
             </span>
           </div>
@@ -122,7 +204,11 @@
             <span class="toolbar_line2_title">About</span>
 
             <h3>Links and Infos</h3>
-            <button onclick="window.open('https:/' + '/awewrite.de', '_blank');">visit awewrite.de</button>
+            <button
+              onclick="window.open('https:/' + '/awewrite.de', '_blank');"
+            >
+              visit awewrite.de
+            </button>
             <span class="infotext">Version 1.6.1</span>
             <span class="infotext">Press [F11] for fullscreen</span>
             <span class="infotext">Data will be saved automatically</span>
@@ -135,109 +221,504 @@
       <div class="sidebar_content" id="sidebar_themes_colors">
         <h1>Colors</h1>
         <h2>dark</h2>
-        <div class="sidebar_icon" id="theme_color_sol_dark" onclick="changeTheme(this.id, true)">Solarized Dark</div>
-        <div class="sidebar_icon" id="theme_color_cave_dark" onclick="changeTheme(this.id, true)">Cave Dark</div>
-        <div class="sidebar_icon" id="theme_color_estuary_dark" onclick="changeTheme(this.id, true)">Estuary Dark</div>
-        <div class="sidebar_icon" id="theme_color_orange" onclick="changeTheme(this.id, true)">Orange</div>
-        <div class="sidebar_icon" id="theme_color_lime" onclick="changeTheme(this.id, true)">Olive</div>
-        <div class="sidebar_icon" id="theme_color_green" onclick="changeTheme(this.id, true)">Green</div>
-        <div class="sidebar_icon" id="theme_color_bluegreen" onclick="changeTheme(this.id, true)">Teal</div>
-        <div class="sidebar_icon" id="theme_color_blue" onclick="changeTheme(this.id, true)">Blue</div>
-        <div class="sidebar_icon" id="theme_color_purple" onclick="changeTheme(this.id, true)">Purple</div>
-        <div class="sidebar_icon" id="theme_color_pink" onclick="changeTheme(this.id, true)">Pink</div>
-        <div class="sidebar_icon" id="theme_color_black" onclick="changeTheme(this.id, true)">Dark Gray</div>
-        <div class="sidebar_icon" id="theme_color_dark" onclick="changeTheme(this.id, true)">Gray</div>
-        <div class="sidebar_icon" id="theme_color_console" onclick="changeTheme(this.id, true)">Console</div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_sol_dark"
+          onclick="changeTheme(this.id, true)"
+        >
+          Solarized Dark
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_cave_dark"
+          onclick="changeTheme(this.id, true)"
+        >
+          Cave Dark
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_estuary_dark"
+          onclick="changeTheme(this.id, true)"
+        >
+          Estuary Dark
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_orange"
+          onclick="changeTheme(this.id, true)"
+        >
+          Orange
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_lime"
+          onclick="changeTheme(this.id, true)"
+        >
+          Olive
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_green"
+          onclick="changeTheme(this.id, true)"
+        >
+          Green
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_bluegreen"
+          onclick="changeTheme(this.id, true)"
+        >
+          Teal
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_blue"
+          onclick="changeTheme(this.id, true)"
+        >
+          Blue
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_purple"
+          onclick="changeTheme(this.id, true)"
+        >
+          Purple
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_pink"
+          onclick="changeTheme(this.id, true)"
+        >
+          Pink
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_black"
+          onclick="changeTheme(this.id, true)"
+        >
+          Dark Gray
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_dark"
+          onclick="changeTheme(this.id, true)"
+        >
+          Gray
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_console"
+          onclick="changeTheme(this.id, true)"
+        >
+          Console
+        </div>
 
         <h2>light</h2>
-        <div class="sidebar_icon" id="theme_color_sol_light" onclick="changeTheme(this.id, false)">Solarized Light</div>
-        <div class="sidebar_icon" id="theme_color_cave_light" onclick="changeTheme(this.id, false)">Cave Light</div>
-        <div class="sidebar_icon" id="theme_color_estuary_light" onclick="changeTheme(this.id, false)">Estuary Light</div>
-        <div class="sidebar_icon" id="theme_color_sepia" onclick="changeTheme(this.id, false)">Sepia</div>
-        <div class="sidebar_icon" id="theme_color_sunny" onclick="changeTheme(this.id, false)">Sunny</div>
-        <div class="sidebar_icon" id="theme_color_spring" onclick="changeTheme(this.id, false)">Spring</div>
-        <div class="sidebar_icon" id="theme_color_mint" onclick="changeTheme(this.id, false)">Mint</div>
-        <div class="sidebar_icon" id="theme_color_ice" onclick="changeTheme(this.id, false)">Ice</div>
-        <div class="sidebar_icon" id="theme_color_cherry" onclick="changeTheme(this.id, false)">Cherry Blossom</div>
-        <div class="sidebar_icon" id="theme_color_silver" onclick="changeTheme(this.id, false)">Silver</div>
-        <div class="sidebar_icon" id="theme_color_white" onclick="changeTheme(this.id, false)">White</div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_sol_light"
+          onclick="changeTheme(this.id, false)"
+        >
+          Solarized Light
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_cave_light"
+          onclick="changeTheme(this.id, false)"
+        >
+          Cave Light
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_estuary_light"
+          onclick="changeTheme(this.id, false)"
+        >
+          Estuary Light
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_sepia"
+          onclick="changeTheme(this.id, false)"
+        >
+          Sepia
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_sunny"
+          onclick="changeTheme(this.id, false)"
+        >
+          Sunny
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_spring"
+          onclick="changeTheme(this.id, false)"
+        >
+          Spring
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_mint"
+          onclick="changeTheme(this.id, false)"
+        >
+          Mint
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_ice"
+          onclick="changeTheme(this.id, false)"
+        >
+          Ice
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_cherry"
+          onclick="changeTheme(this.id, false)"
+        >
+          Cherry Blossom
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_silver"
+          onclick="changeTheme(this.id, false)"
+        >
+          Silver
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_color_white"
+          onclick="changeTheme(this.id, false)"
+        >
+          White
+        </div>
       </div>
 
       <div class="sidebar_content" id="sidebar_themes_images">
         <h1>Images</h1>
 
         <h2>aqua</h2>
-        <div class="sidebar_icon" id="theme_image_aqua_blue" onclick="changeTheme(this.id, true)">Blue</div>
-        <div class="sidebar_icon" id="theme_image_aqua_bluegreen" onclick="changeTheme(this.id, true)">Teal</div>
-        <div class="sidebar_icon" id="theme_image_aqua_lime" onclick="changeTheme(this.id, true)">Lime</div>
-        <div class="sidebar_icon" id="theme_image_aqua_purple" onclick="changeTheme(this.id, true)">Purple</div>
-        <div class="sidebar_icon" id="theme_image_aqua_red" onclick="changeTheme(this.id, true)">Red</div>
-        <div class="sidebar_icon" id="theme_image_aqua_black" onclick="changeTheme(this.id, true)">Black</div>
-        <div class="sidebar_icon" id="theme_image_aqua_white" onclick="changeTheme(this.id, false)">White</div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_aqua_blue"
+          onclick="changeTheme(this.id, true)"
+        >
+          Blue
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_aqua_bluegreen"
+          onclick="changeTheme(this.id, true)"
+        >
+          Teal
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_aqua_lime"
+          onclick="changeTheme(this.id, true)"
+        >
+          Lime
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_aqua_purple"
+          onclick="changeTheme(this.id, true)"
+        >
+          Purple
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_aqua_red"
+          onclick="changeTheme(this.id, true)"
+        >
+          Red
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_aqua_black"
+          onclick="changeTheme(this.id, true)"
+        >
+          Black
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_aqua_white"
+          onclick="changeTheme(this.id, false)"
+        >
+          White
+        </div>
 
         <h2>shine</h2>
-        <div class="sidebar_icon" id="theme_image_shine_blue" onclick="changeTheme(this.id, true)">Blue</div>
-        <div class="sidebar_icon" id="theme_image_shine_chrome" onclick="changeTheme(this.id, true)">Chrome</div>
-        <div class="sidebar_icon" id="theme_image_shine_green" onclick="changeTheme(this.id, true)">Green</div>
-        <div class="sidebar_icon" id="theme_image_shine_orange" onclick="changeTheme(this.id, true)">Orange</div>
-        <div class="sidebar_icon" id="theme_image_shine_pink" onclick="changeTheme(this.id, true)">Pink</div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_shine_blue"
+          onclick="changeTheme(this.id, true)"
+        >
+          Blue
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_shine_chrome"
+          onclick="changeTheme(this.id, true)"
+        >
+          Chrome
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_shine_green"
+          onclick="changeTheme(this.id, true)"
+        >
+          Green
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_shine_orange"
+          onclick="changeTheme(this.id, true)"
+        >
+          Orange
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_shine_pink"
+          onclick="changeTheme(this.id, true)"
+        >
+          Pink
+        </div>
 
         <h2>ray</h2>
-        <div class="sidebar_icon" id="theme_image_ray_blue" onclick="changeTheme(this.id, true)">Blue</div>
-        <div class="sidebar_icon" id="theme_image_ray_green" onclick="changeTheme(this.id, true)">Green</div>
-        <div class="sidebar_icon" id="theme_image_ray_orange" onclick="changeTheme(this.id, true)">Orange</div>
-        <div class="sidebar_icon" id="theme_image_ray_pink" onclick="changeTheme(this.id, true)">Pink</div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_ray_blue"
+          onclick="changeTheme(this.id, true)"
+        >
+          Blue
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_ray_green"
+          onclick="changeTheme(this.id, true)"
+        >
+          Green
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_ray_orange"
+          onclick="changeTheme(this.id, true)"
+        >
+          Orange
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_ray_pink"
+          onclick="changeTheme(this.id, true)"
+        >
+          Pink
+        </div>
 
         <h2>mosaic</h2>
-        <div class="sidebar_icon" id="theme_image_mosaic_white" onclick="changeTheme(this.id, false)">White</div>
-        <div class="sidebar_icon" id="theme_image_mosaic_black" onclick="changeTheme(this.id, true)">Black</div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_mosaic_white"
+          onclick="changeTheme(this.id, false)"
+        >
+          White
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_image_mosaic_black"
+          onclick="changeTheme(this.id, true)"
+        >
+          Black
+        </div>
       </div>
 
       <div class="sidebar_content" id="sidebar_themes_photos">
         <h1>Photos</h1>
-        <p class="copyinfo">Images are from <a href="https://pexels.com">Pexels</a></p>
+        <p class="copyinfo">
+          Images are from <a href="https://pexels.com">Pexels</a>
+        </p>
 
         <h2>Landscapes</h2>
-        <div class="sidebar_icon" id="theme_photos_river_1" onclick="changeTheme(this.id, true)">River</div>
-        <div class="sidebar_icon" id="theme_photos_trees_1" onclick="changeTheme(this.id, true)">Trees</div>
+        <div
+          class="sidebar_icon"
+          id="theme_photos_river_1"
+          onclick="changeTheme(this.id, true)"
+        >
+          River
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_photos_trees_1"
+          onclick="changeTheme(this.id, true)"
+        >
+          Trees
+        </div>
 
         <h2>Space</h2>
-        <div class="sidebar_icon" id="theme_photos_stars_1" onclick="changeTheme(this.id, true)">Stars</div>
+        <div
+          class="sidebar_icon"
+          id="theme_photos_stars_1"
+          onclick="changeTheme(this.id, true)"
+        >
+          Stars
+        </div>
       </div>
 
       <div class="sidebar_content" id="sidebar_themes_approx">
         <h1>ApproxArt</h1>
-        <p class="copyinfo">All images<br>&copy; by <a href="http://approxart.com/">approxart.com</a></p>
+        <p class="copyinfo">
+          All images<br />&copy; by
+          <a href="http://approxart.com/">approxart.com</a>
+        </p>
 
         <h2>dark</h2>
-        <div class="sidebar_icon" id="theme_apprx_deep_sea" onclick="changeTheme(this.id, true)">Deep Sea</div>
-        <div class="sidebar_icon" id="theme_apprx_diamonds" onclick="changeTheme(this.id, true)">Diamonds</div>
-        <div class="sidebar_icon" id="theme_apprx_fiery" onclick="changeTheme(this.id, true)">Fiery</div>
-        <div class="sidebar_icon" id="theme_apprx_grass" onclick="changeTheme(this.id, true)">Grass</div>
-        <div class="sidebar_icon" id="theme_apprx_image_noise" onclick="changeTheme(this.id, true)">Image Noise</div>
-        <div class="sidebar_icon" id="theme_apprx_leather" onclick="changeTheme(this.id, true)">Leather</div>
-        <div class="sidebar_icon" id="theme_apprx_rust" onclick="changeTheme(this.id, true)">Rust</div>
-        <div class="sidebar_icon" id="theme_apprx_scrap_metal" onclick="changeTheme(this.id, true)">Scrap Metal</div>
-        <div class="sidebar_icon" id="theme_apprx_splatter" onclick="changeTheme(this.id, true)">Splatter</div>
-        <div class="sidebar_icon" id="theme_apprx_surface" onclick="changeTheme(this.id, true)">Surface</div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_deep_sea"
+          onclick="changeTheme(this.id, true)"
+        >
+          Deep Sea
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_diamonds"
+          onclick="changeTheme(this.id, true)"
+        >
+          Diamonds
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_fiery"
+          onclick="changeTheme(this.id, true)"
+        >
+          Fiery
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_grass"
+          onclick="changeTheme(this.id, true)"
+        >
+          Grass
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_image_noise"
+          onclick="changeTheme(this.id, true)"
+        >
+          Image Noise
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_leather"
+          onclick="changeTheme(this.id, true)"
+        >
+          Leather
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_rust"
+          onclick="changeTheme(this.id, true)"
+        >
+          Rust
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_scrap_metal"
+          onclick="changeTheme(this.id, true)"
+        >
+          Scrap Metal
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_splatter"
+          onclick="changeTheme(this.id, true)"
+        >
+          Splatter
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_surface"
+          onclick="changeTheme(this.id, true)"
+        >
+          Surface
+        </div>
 
         <h2>light</h2>
-        <div class="sidebar_icon" id="theme_apprx_aqua" onclick="changeTheme(this.id, false)">Aqua</div>
-        <div class="sidebar_icon" id="theme_apprx_glacialis" onclick="changeTheme(this.id, false)">Glacialis</div>
-        <div class="sidebar_icon" id="theme_apprx_linearis" onclick="changeTheme(this.id, false)">Linearis</div>
-        <div class="sidebar_icon" id="theme_apprx_rays" onclick="changeTheme(this.id, false)">Rays</div>
-        <div class="sidebar_icon" id="theme_apprx_smouldering" onclick="changeTheme(this.id, false)">Smouldering</div>
-        <div class="sidebar_icon" id="theme_apprx_timber" onclick="changeTheme(this.id, false)">Timber</div>
-        <div class="sidebar_icon" id="theme_apprx_vintage" onclick="changeTheme(this.id, false)">Vintage</div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_aqua"
+          onclick="changeTheme(this.id, false)"
+        >
+          Aqua
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_glacialis"
+          onclick="changeTheme(this.id, false)"
+        >
+          Glacialis
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_linearis"
+          onclick="changeTheme(this.id, false)"
+        >
+          Linearis
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_rays"
+          onclick="changeTheme(this.id, false)"
+        >
+          Rays
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_smouldering"
+          onclick="changeTheme(this.id, false)"
+        >
+          Smouldering
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_timber"
+          onclick="changeTheme(this.id, false)"
+        >
+          Timber
+        </div>
+        <div
+          class="sidebar_icon"
+          id="theme_apprx_vintage"
+          onclick="changeTheme(this.id, false)"
+        >
+          Vintage
+        </div>
       </div>
     </div>
 
-
-    <script language="javascript" type="text/javascript" src="js/libs/jquery-1.10.0.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/libs/jquery-ui-1.8.9.custom.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/libs/numlib.js"></script>
-    <script language="javascript" type="text/javascript" src="js/awe-jquery.js"></script>
-    <script language="javascript" type="text/javascript" src="js/index.js"></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="js/libs/jquery-1.10.0.min.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="js/libs/jquery-ui-1.8.9.custom.min.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="js/libs/numlib.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="js/awe-jquery.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="js/index.js"
+    ></script>
   </body>
-
 </html>
