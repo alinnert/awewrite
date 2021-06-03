@@ -18,10 +18,12 @@
     "@types/react": "^17.0.9",
     "@types/react-dom": "^17.0.6",
     "autoprefixer": "^9.8.6",
+    "codejar": "^3.4.0",
     "postcss": "^7.0.35",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "recoil": "^0.3.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.4",
     "typescript": "^4.3.2",
     "web-vitals": "^1.1.2"
