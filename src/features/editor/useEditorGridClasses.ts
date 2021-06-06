@@ -7,10 +7,10 @@ export function useEditorGridClasses(layout: EditorGridLayout): {
   editorGridClasses: string
   editorPaneClasses: string
 } {
-  const baseClasses =
-    'mt-4 w-full h-full grid justify-items-center items-stretch'
+  const editorGridBaseClasses =
+    'w-full h-full grid justify-items-center items-stretch overflow-hidden'
 
-  const gridCols = useMemo<string>(() => {
+  const editorGridColsClasses = useMemo<string>(() => {
     switch (layout) {
       case 'default':
         return 'grid-cols-2'
@@ -26,7 +26,11 @@ export function useEditorGridClasses(layout: EditorGridLayout): {
   }, [layout])
 
   return {
-    editorGridClasses: `${baseClasses} ${gridCols}`,
-    editorPaneClasses: 'bg-white rounded-t shadow-xl min-w-[500px]'
+    editorGridClasses: `${editorGridBaseClasses} ${editorGridColsClasses}`,
+    editorPaneClasses: `
+      w-[500px] max-h-full overflow-auto
+      bg-gray-100 rounded-t border border-gray-400
+      font-mono text-gray-800
+    `,
   }
 }

@@ -9,6 +9,9 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@codemirror/basic-setup": "^0.18.2",
+    "@codemirror/commands": "^0.18.2",
+    "@codemirror/view": "^0.18.16",
     "@craco/craco": "^6.1.2",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
@@ -18,7 +21,6 @@
     "@types/react": "^17.0.9",
     "@types/react-dom": "^17.0.6",
     "autoprefixer": "^9.8.6",
-    "codejar": "^3.4.0",
     "postcss": "^7.0.35",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
