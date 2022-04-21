@@ -19,7 +19,11 @@ export function initDomEvents() {
 
   $('.clear-texts-button').on({ click: clearTexts })
 
-  $('#spellcheck').on({ change: setSpellcheck })
+  $('#spellcheck').on({
+    change() {
+      setSpellcheck()
+    },
+  })
 
   $('.change-fontface-button').on({
     click() {

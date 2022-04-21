@@ -33,6 +33,7 @@ export function setSpellcheck(value) {
     spellcheckInput.prop('checked', true)
   }
 
+  console.log(spellcheck)
   $('textarea').attr('spellcheck', spellcheck)
   localStorage.setItem('awe.spellcheck', spellcheck)
 }
