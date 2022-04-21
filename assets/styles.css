@@ -10,20 +10,20 @@ h2 {
 }
 
 a {
-  color: #2196f3;
+  color: hsl(200, 80%, 50%);
   text-decoration: none;
 }
 
 a:hover {
-  color: #64b5f6;
+  color: hsl(200, 80%, 40%);
 }
 
 a:visited {
-  color: #9C27B0;
+  color: hsl(220, 80%, 50%);
 }
 
 a:visited:hover {
-  color: #ba68c8;
+  color: hsl(220, 80%, 40%);
 }
 
 .page {
@@ -32,7 +32,7 @@ a:visited:hover {
   background-position: center top;
   background-repeat: no-repeat;
   min-height: 100%;
-  font-family: Lato, sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 20px;
   line-height: 1.7;
   margin: 0;
@@ -57,7 +57,7 @@ a:visited:hover {
 }
 
 .page-content__highlight {
-  background: #EEEEEE;
+  background: #eeeeee;
 }
 
 .page-content__wrapper {
@@ -80,26 +80,28 @@ a:visited:hover {
 }
 
 .page-content__image--shadow {
-  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.20);
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
+    0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
 }
 
 .page__title {
-  color: white;
+  color: #eee;
   font-size: 80px;
-  font-weight: 300;
   line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: 4px;
   margin: 60px 0;
 }
 
 @media (max-width: 768px) {
   .page__title {
-      font-size: 54px;
-      margin: 40px 0;
+    font-size: 54px;
+    margin: 40px 0;
   }
 }
 
 .page__intro {
-  color: white;
+  color: #ddd;
   font-size: 26px;
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -110,8 +112,8 @@ a:visited:hover {
 
 @media (max-width: 768px) {
   .page__intro {
-      font-size: 20px;
-      margin: 40px 0;
+    font-size: 20px;
+    margin: 40px 0;
   }
 }
 
@@ -119,15 +121,21 @@ a:visited:hover {
   margin-bottom: 60px;
 }
 
-.news__title {
-  font-weight: 700;
-}
-
 .news__date {
-  color: #888888;
+  color: #666666;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.6;
+}
+
+.news__title {
+  font-weight: 700;
+  color: #333333;
+  margin-top: 6px;
+}
+
+.changelog ul {
+  margin-top: 10px;
 }
 
 .line-box {
@@ -173,7 +181,8 @@ a:visited:hover {
   background: hsla(0, 0%, 100%, 0.9);
   color: hsl(0, 0%, 10%);
   font-size: 24px;
-  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.20);
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
+    0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
