@@ -17,4 +17,8 @@ export function initApplication() {
   updateWordCounter()
   $('html').on({ keydown: globalKeys })
   $('#leftTextarea, #rightTextarea').on({ keydown: supportTab })
+
+  if (location.protocol === 'http:') {
+    document.getElementById('http-info-dialog').showModal()
+  }
 }

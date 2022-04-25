@@ -60,6 +60,23 @@ a:visited:hover {
   background: #eeeeee;
 }
 
+.page-content__negative {
+  background: #393939;
+  color: #eeeeee;
+}
+
+.page-content__negative a:hover {
+  color: hsl(200, 80%, 65%);
+}
+
+.page-content__negative a:visited {
+  color: hsl(240, 80%, 70%);
+}
+
+.page-content__negative a:visited:hover {
+  color: hsl(240, 80%, 75%);
+}
+
 .page-content__wrapper {
   margin: 0 auto;
   width: 700px;
@@ -71,6 +88,7 @@ a:visited:hover {
   max-width: 95%;
   min-height: 400px;
   border-radius: 3px;
+  vertical-align: middle;
 }
 
 @media (max-width: 768px) {
