@@ -107,8 +107,9 @@ a:visited:hover {
   font-size: 80px;
   line-height: 1.1;
   font-weight: 400;
-  letter-spacing: 4px;
-  margin: 60px 0;
+  letter-spacing: 2px;
+  margin-top: 100px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {
@@ -119,11 +120,12 @@ a:visited:hover {
 }
 
 .page__intro {
-  color: #ddd;
-  font-size: 26px;
+  color: #bbb;
+  font-size: 24px;
   font-weight: 400;
   letter-spacing: 0.5px;
-  margin: 60px 0;
+  margin-top: 0;
+  margin-bottom: 100px;
   padding: 0 16px;
   box-sizing: border-box;
 }
