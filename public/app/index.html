@@ -77,21 +77,15 @@
         <div class="toolbar_line1">
           <div class="toolbar_line_left">
             <span id="toolbar_title">AWE.write</span>
-            <button class="expand-toolbar-button" data-toolbar="data">
-              Data
-            </button>
-            <button class="expand-toolbar-button" data-toolbar="font">
-              Font
-            </button>
-            <button class="expand-toolbar-button" data-toolbar="layout">
+            <div class="expand-toolbar-button" data-toolbar="data">Data</div>
+            <div class="expand-toolbar-button" data-toolbar="font">Font</div>
+            <div class="expand-toolbar-button" data-toolbar="layout">
               Layout
-            </button>
-            <button class="expand-toolbar-button" data-toolbar="background">
+            </div>
+            <div class="expand-toolbar-button" data-toolbar="background">
               Background
-            </button>
-            <button class="expand-toolbar-button" data-toolbar="about">
-              About
-            </button>
+            </div>
+            <div class="expand-toolbar-button" data-toolbar="about">About</div>
           </div>
 
           <div class="right">
@@ -111,11 +105,8 @@
             <button class="clear-texts-button">clear texts</button>
 
             <h3>Settings</h3>
-            <span class="checkbox-item">
-              <input type="checkbox" id="spellcheck" />
-            </span>
+            <input type="checkbox" id="spellcheck" />
             <label for="spellcheck">Enable spellchecking</label>
-            <span class="infotext">Data will be saved automatically</span>
           </div>
 
           <div class="toolbar_line_all" id="toolbar_line_font">
@@ -162,11 +153,9 @@
             </span>
 
             <h3>Font size</h3>
+            <button class="icon-button" id="toolbar_fontsize_dec">-</button>
             <span id="toolbar_fontsize">12</span>
-            <span class="toolbar_buttonset">
-              <button id="toolbar_fontsize_dec">-</button>
-              <button id="toolbar_fontsize_inc">+</button>
-            </span>
+            <button class="icon-button" id="toolbar_fontsize_inc">+</button>
           </div>
 
           <div class="toolbar_line_all" id="toolbar_line_layout">
@@ -174,9 +163,9 @@
 
             <h3>Divider</h3>
             <span class="toolbar_buttonset">
-              <button id="toolbar_splitter_left">move left</button>
+              <button class="icon-button" id="toolbar_splitter_left">&lsaquo;</button>
               <button id="toolbar_splitter_reset">reset</button>
-              <button id="toolbar_splitter_right">move right</button>
+              <button class="icon-button" id="toolbar_splitter_right">&rsaquo;</button>
             </span>
 
             <h3>Text width</h3>
@@ -244,7 +233,29 @@
     <div id="sidebar">
       <div class="sidebar_content" id="sidebar_themes_colors">
         <h1>Colors</h1>
+
+        <h2>light</h2>
+        <div class="sidebar_icon" id="theme_color_white">White</div>
+        <div class="sidebar_icon" id="theme_color_silver">Silver</div>
+        <div class="sidebar_icon" id="theme_color_sol_light">
+          Solarized Light
+        </div>
+        <div class="sidebar_icon" id="theme_color_cave_light">Cave Light</div>
+        <div class="sidebar_icon" id="theme_color_estuary_light">
+          Estuary Light
+        </div>
+        <div class="sidebar_icon" id="theme_color_sepia">Sepia</div>
+        <div class="sidebar_icon" id="theme_color_sunny">Sunny</div>
+        <div class="sidebar_icon" id="theme_color_spring">Spring</div>
+        <div class="sidebar_icon" id="theme_color_mint">Mint</div>
+        <div class="sidebar_icon" id="theme_color_ice">Ice</div>
+        <div class="sidebar_icon" id="theme_color_cherry">Cherry Blossom</div>
+
         <h2>dark</h2>
+        <div class="sidebar_icon" id="theme_color_dark" data-dark>Gray</div>
+        <div class="sidebar_icon" id="theme_color_black" data-dark>
+          Dark Gray
+        </div>
         <div class="sidebar_icon" id="theme_color_sol_dark" data-dark>
           Solarized Dark
         </div>
@@ -263,30 +274,9 @@
         <div class="sidebar_icon" id="theme_color_blue" data-dark>Blue</div>
         <div class="sidebar_icon" id="theme_color_purple" data-dark>Purple</div>
         <div class="sidebar_icon" id="theme_color_pink" data-dark>Pink</div>
-        <div class="sidebar_icon" id="theme_color_black" data-dark>
-          Dark Gray
-        </div>
-        <div class="sidebar_icon" id="theme_color_dark" data-dark>Gray</div>
         <div class="sidebar_icon" id="theme_color_console" data-dark>
           Console
         </div>
-
-        <h2>light</h2>
-        <div class="sidebar_icon" id="theme_color_sol_light">
-          Solarized Light
-        </div>
-        <div class="sidebar_icon" id="theme_color_cave_light">Cave Light</div>
-        <div class="sidebar_icon" id="theme_color_estuary_light">
-          Estuary Light
-        </div>
-        <div class="sidebar_icon" id="theme_color_sepia">Sepia</div>
-        <div class="sidebar_icon" id="theme_color_sunny">Sunny</div>
-        <div class="sidebar_icon" id="theme_color_spring">Spring</div>
-        <div class="sidebar_icon" id="theme_color_mint">Mint</div>
-        <div class="sidebar_icon" id="theme_color_ice">Ice</div>
-        <div class="sidebar_icon" id="theme_color_cherry">Cherry Blossom</div>
-        <div class="sidebar_icon" id="theme_color_silver">Silver</div>
-        <div class="sidebar_icon" id="theme_color_white">White</div>
       </div>
 
       <div class="sidebar_content" id="sidebar_themes_images">

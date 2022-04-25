@@ -4,12 +4,16 @@ import { changeTextWidth, moveSplitter } from '../actions/layout.js'
 import { fontfaceNumber } from './fontfaceNumber.js'
 import { textwidthNumber } from './textwidthNumber.js'
 import { changeTheme } from '../themes/changeTheme.js'
+import { textareaElements } from '../elements.js'
 
 export function loadSettings() {
   let buttonIndex
 
   // FONT FAMILY
-  $('textarea').css('font-family', localStorage.getItem('awe.fontface'))
+  for (const textarea of textareaElements) {
+    textarea.style.fontFamily = localStorage.getItem('awe.fontface')
+  }
+
   buttonIndex = fontfaceNumber(localStorage.getItem('awe.fontface'))
 
   if (buttonIndex == -1) {

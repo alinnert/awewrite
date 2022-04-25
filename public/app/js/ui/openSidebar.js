@@ -1,12 +1,17 @@
+import { elementIsHidden, hideElement, showElement, sidebarContentElements } from '../elements.js'
+
 export function openSidebar(sidebarName) {
   const sidebarId = `sidebar_${sidebarName}`
-  const $sidebar = $(`#${sidebarId}`)
+  const sidebarElement = document.getElementById(sidebarId)
 
-  if ($sidebar.is(':hidden')) {
+  if (elementIsHidden(sidebarElement)) {
     document.getElementById('sidebar').style.width = '300px'
     document.getElementById('sidebar').style.borderRightWidth = '1px'
 
-    $('.sidebar_content').hide()
-    $sidebar.show('fade', 300)
+    for (const element of sidebarContentElements) {
+      hideElement(element)
+    }
+
+    showElement(sidebarElement)
   }
 }

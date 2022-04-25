@@ -1,3 +1,11 @@
+import {
+  hideElement,
+  leftBoxElement,
+  rightBoxElement,
+  showElement,
+  textareaElements,
+} from '../elements.js'
+
 export function moveSplitter(position) {
   if (position >= -3 && position <= 3) {
     let left
@@ -28,37 +36,35 @@ export function moveSplitter(position) {
 
     const right = 100 - left
 
-    $(function () {
-      $('#leftBox').show('fade', 500)
-      $('#rightBox').show('fade', 500)
+    showElement(leftBoxElement)
+    showElement(rightBoxElement)
 
-      if (right == 99) {
-        $('#leftBox').hide('fade', 500)
-      } else if (left == 99) {
-        $('#rightBox').hide('fade', 500)
-      }
+    if (right == 99) {
+      hideElement(leftBoxElement)
+    } else if (left == 99) {
+      hideElement(rightBoxElement)
+    }
 
-      $('#leftBox').css('right', right + '%')
-      $('#rightBox').css('left', left + '%')
-    })
+    leftBoxElement.style.right = `${right}%`
+    rightBoxElement.style.left = `${left}%`
 
     localStorage.setItem('awe.splitter', position)
   }
 }
 
 export function changeTextWidth(width) {
-  let $textareas = $('textarea')
-
-  switch (width) {
-    case 'full':
-      $textareas.css('max-width', 'initial')
-      break
-    case 'narrow':
-      $textareas.css('max-width', '35em')
-      break
-    case 'wide':
-      $textareas.css('max-width', '45em')
-      break
+  for (const textarea of textareaElements) {
+    switch (width) {
+      case 'full':
+        textarea.style.maxWidth = 'initial'
+        break
+      case 'narrow':
+        textarea.style.maxWidth = '35em'
+        break
+      case 'wide':
+        textarea.style.maxWidth = '45em'
+        break
+    }
   }
 
   localStorage.setItem('awe.textwidth', width)

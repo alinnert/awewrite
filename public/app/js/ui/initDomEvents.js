@@ -3,15 +3,15 @@ import { changeFontface, changeFontsize } from '../actions/font.js'
 import { changeTextWidth, moveSplitter } from '../actions/layout.js'
 import { onTextareaInput } from '../textarea/onTextareaInput.js'
 import { changeTheme } from '../themes/changeTheme.js'
-import { expandToolbar } from './expandToolbar.js'
+import { openToolbar } from './openToolbar.js'
 import { openSidebar } from './openSidebar.js'
-import { shrinkToolbar } from './shrinkToolbar.js'
+import { closeToolbar } from './closeToolbar.js'
 
 export function initDomEvents() {
-  $('textarea').on({ click: shrinkToolbar, input: onTextareaInput })
+  $('textarea').on({ click: closeToolbar, input: onTextareaInput })
   $('.expand-toolbar-button').on({
     click() {
-      expandToolbar(this.dataset.toolbar)
+      openToolbar(this.dataset.toolbar)
     },
   })
 
