@@ -1,16 +1,25 @@
 import { setSpellcheck } from '../actions/data.js'
 import { changeFontsize } from '../actions/font.js'
 import { changeTextWidth, moveSplitter } from '../actions/layout.js'
+import {
+  isHTMLElement,
+  leftTextareaElement,
+  rightTextareaElement,
+  textareaElements,
+} from '../elements.js'
+import { changeTheme } from '../themes/changeTheme.js'
 import { fontfaceNumber } from './fontfaceNumber.js'
 import { textwidthNumber } from './textwidthNumber.js'
-import { changeTheme } from '../themes/changeTheme.js'
-import { textareaElements } from '../elements.js'
 
 export function loadSettings() {
+  if (!(leftTextareaElement instanceof HTMLTextAreaElement)) return
+  if (!(rightTextareaElement instanceof HTMLTextAreaElement)) return
+
   let buttonIndex
 
   // FONT FAMILY
   for (const textarea of textareaElements) {
+    if (!isHTMLElement(textarea)) continue
     textarea.style.fontFamily = localStorage.getItem('awe.fontface')
   }
 
@@ -39,8 +48,6 @@ export function loadSettings() {
   moveSplitter(parseInt(localStorage.getItem('awe.splitter')))
   changeTheme(localStorage.getItem('awe.themeid'), isDarkTheme)
   setSpellcheck(localStorage.getItem('awe.spellcheck'))
-  document.getElementById('leftTextarea').value =
-    localStorage.getItem('awe.text.left')
-  document.getElementById('rightTextarea').value =
-    localStorage.getItem('awe.text.right')
+  leftTextareaElement.value = localStorage.getItem('awe.text.left')
+  rightTextareaElement.value = localStorage.getItem('awe.text.right')
 }

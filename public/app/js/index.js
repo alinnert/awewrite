@@ -25,6 +25,11 @@ export function initApplication() {
     .addEventListener('keydown', supportTab)
 
   if (location.protocol === 'http:' && location.port === '80') {
-    document.getElementById('http-info-dialog').showModal()
+    const modalElement = document.getElementById('http-info-dialog')
+    // @ts-ignore
+    if (modalElement instanceof HTMLDialogElement) {
+      // @ts-ignore
+      modalElement.showModal()
+    }
   }
 }

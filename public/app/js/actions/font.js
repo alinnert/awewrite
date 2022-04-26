@@ -1,4 +1,4 @@
-import { textareaElements } from '../elements.js'
+import { isHTMLElement, textareaElements } from '../elements.js'
 
 export function changeFontface(font) {
   const fontFamilies = {
@@ -11,6 +11,7 @@ export function changeFontface(font) {
   const fontFamily = fontFamilies[font]()
 
   for (const textarea of textareaElements) {
+    if (!isHTMLElement(textarea)) continue
     textarea.style.fontFamily = fontFamily
   }
 
@@ -21,6 +22,7 @@ export function changeFontsize(size) {
   if (size >= 10 && size <= 24) {
     document.getElementById('toolbar_fontsize').innerHTML = size
     for (const textarea of textareaElements) {
+      if (!isHTMLElement(textarea)) continue
       textarea.style.fontSize = `${size}px`
     }
   }

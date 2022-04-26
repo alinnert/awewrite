@@ -1,19 +1,30 @@
-import { metaThemeColorElement, textareaElements } from '../elements.js'
+import {
+  isHTMLElement,
+  metaThemeColorElement,
+  textareaElements,
+} from '../elements.js'
 
 export function changeTheme(selectionId, isDarkTheme) {
   const selectedElement = document.getElementById(selectionId)
-  const theme_type = selectionId.substr(6, 5)
+  const selectedElementStyles = getComputedStyle(selectedElement)
+  const selectedBackgroundColor =
+    selectedElementStyles.getPropertyValue('background-color')
+  const selectedBackgroundImage =
+    selectedElementStyles.getPropertyValue('background-image')
+  const selectedColor = selectedElementStyles.getPropertyValue('color')
+  const themeType = selectionId.substr(6, 5)
 
   document.body.style.backgroundImage = 'none'
   document.body.style.backgroundColor = 'transparent'
 
-  switch (theme_type) {
+  switch (themeType) {
     case 'color': {
-      const background = selectedElement.style.backgroundColor
+      const background = selectedBackgroundColor
       document.body.style.backgroundColor = background
 
-      const color = selectedElement.style.color
+      const color = selectedColor
       for (const textarea of textareaElements) {
+        if (!isHTMLElement(textarea)) continue
         textarea.style.color = color
       }
 
@@ -24,12 +35,12 @@ export function changeTheme(selectionId, isDarkTheme) {
     case 'image':
     case 'photo':
     case 'apprx': {
-      const background = selectedElement.style.backgroundImage
+      const background = selectedBackgroundImage
       document.body.style.backgroundImage = background.replace(/_thumb/, '')
 
-      const color = selectedElement.style.color
-
+      const color = selectedColor
       for (const textarea of textareaElements) {
+        if (!isHTMLElement(textarea)) continue
         textarea.style.color = color
       }
 

@@ -1,12 +1,16 @@
 import {
   hideElement,
+  isHTMLElement,
   leftBoxElement,
   rightBoxElement,
   showElement,
-  textareaElements,
+  textareaElements
 } from '../elements.js'
 
 export function moveSplitter(position) {
+  if (!isHTMLElement(leftBoxElement)) return
+  if (!isHTMLElement(rightBoxElement)) return
+  
   if (position >= -3 && position <= 3) {
     let left
 
@@ -54,6 +58,8 @@ export function moveSplitter(position) {
 
 export function changeTextWidth(width) {
   for (const textarea of textareaElements) {
+    if (!isHTMLElement(textarea)) continue
+    
     switch (width) {
       case 'full':
         textarea.style.maxWidth = 'initial'

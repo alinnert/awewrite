@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "checkJs": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "downlevelIteration": true
+    "lib": ["ES2021", "DOM", "DOM.Iterable"],
+    "downlevelIteration": true,
+    "typeRoots": ["./public/app/@types"]
   },
   "include": ["./public/app/js/**/*.js"]
 }
