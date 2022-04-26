@@ -1,10 +1,9 @@
+import { leftTextareaElement, rightTextareaElement } from '../elements.js'
+
 export function saveTexts() {
-  localStorage.setItem(
-    'awe.text.left',
-    document.getElementById('leftTextarea').value,
-  )
-  localStorage.setItem(
-    'awe.text.right',
-    document.getElementById('rightTextarea').value,
-  )
+  if (!(leftTextareaElement instanceof HTMLTextAreaElement)) return
+  if (!(rightTextareaElement instanceof HTMLTextAreaElement)) return
+
+  localStorage.setItem('awe.text.left', leftTextareaElement.value)
+  localStorage.setItem('awe.text.right', rightTextareaElement.value)
 }

@@ -1,39 +1,46 @@
 import { saveTexts } from '../textarea/saveTexts.js'
 import { updateWordCounter } from '../word-counter/updateWordCounter.js'
 
+const leftTextarea = /** @type HTMLTextAreaElement */ (
+  document.getElementById('leftTextarea')
+)
+const rightTextarea = /** @type HTMLTextAreaElement */ (
+  document.getElementById('rightTextarea')
+)
+
 export function clearTexts() {
-  document.getElementById('leftTextarea').value = ''
-  document.getElementById('rightTextarea').value = ''
+  leftTextarea.value = ''
+  rightTextarea.value = ''
 
   saveTexts()
   updateWordCounter()
 }
 
 export function switchTexts() {
-  const leftText = document.getElementById('leftTextarea').value
-
-  document.getElementById('leftTextarea').value =
-    document.getElementById('rightTextarea').value
-  document.getElementById('rightTextarea').value = leftText
+  const leftText = leftTextarea.value
+  leftTextarea.value = rightTextarea.value
+  rightTextarea.value = leftText
 
   saveTexts()
   updateWordCounter()
 }
 
 export function setSpellcheck(value) {
-  const spellcheckInput = $('#spellcheck')
+  const spellcheckInput = /** @type HTMLInputElement */ (
+    document.getElementById('spellcheck')
+  )
   const spellcheck =
-    value !== undefined
-      ? value
-      : spellcheckInput.prop('checked')
-      ? 'true'
-      : 'false'
+    value !== undefined ? value : spellcheckInput.checked ? 'true' : 'false'
 
-  if (spellcheck === 'true' && !spellcheckInput.prop('checked')) {
-    spellcheckInput.prop('checked', true)
+  if (spellcheck === 'true' && !spellcheckInput.checked) {
+    spellcheckInput.checked = true
   }
 
-  console.log(spellcheck)
-  $('textarea').attr('spellcheck', spellcheck)
+  const textareas = document.getElementsByTagName('textarea')
+
+  for (const textarea of textareas) {
+    textarea.setAttribute('spellcheck', spellcheck)
+  }
+
   localStorage.setItem('awe.spellcheck', spellcheck)
 }

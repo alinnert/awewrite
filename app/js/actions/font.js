@@ -1,3 +1,5 @@
+import { isHTMLElement, textareaElements } from '../elements.js'
+
 export function changeFontface(font) {
   const fontFamilies = {
     'IBM Plex Sans': () => '"IBM Plex Sans", sans-serif',
@@ -8,14 +10,21 @@ export function changeFontface(font) {
 
   const fontFamily = fontFamilies[font]()
 
-  $('textarea').css('font-family', fontFamily)
+  for (const textarea of textareaElements) {
+    if (!isHTMLElement(textarea)) continue
+    textarea.style.fontFamily = fontFamily
+  }
+
   localStorage.setItem('awe.fontface', fontFamily)
 }
 
 export function changeFontsize(size) {
   if (size >= 10 && size <= 24) {
     document.getElementById('toolbar_fontsize').innerHTML = size
-    $('textarea').css('font-size', size + 'px')
+    for (const textarea of textareaElements) {
+      if (!isHTMLElement(textarea)) continue
+      textarea.style.fontSize = `${size}px`
+    }
   }
 
   localStorage.setItem('awe.fontsize', size)

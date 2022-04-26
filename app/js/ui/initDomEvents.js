@@ -1,85 +1,68 @@
 import { clearTexts, setSpellcheck, switchTexts } from '../actions/data.js'
 import { changeFontface, changeFontsize } from '../actions/font.js'
 import { changeTextWidth, moveSplitter } from '../actions/layout.js'
+import {
+  $class,
+  $id,
+  addEvent,
+  expandToolbarButtonElements,
+  isHTMLElement,
+  textareaElements,
+} from '../elements.js'
 import { onTextareaInput } from '../textarea/onTextareaInput.js'
+import { supportTab } from '../textarea/supportTab.js'
 import { changeTheme } from '../themes/changeTheme.js'
-import { expandToolbar } from './expandToolbar.js'
+import { closeToolbar } from './closeToolbar.js'
 import { openSidebar } from './openSidebar.js'
-import { shrinkToolbar } from './shrinkToolbar.js'
+import { openToolbar } from './openToolbar.js'
 
 export function initDomEvents() {
-  $('textarea').on({ click: shrinkToolbar, input: onTextareaInput })
-  $('.expand-toolbar-button').on({
-    click() {
-      expandToolbar(this.dataset.toolbar)
-    },
+  addEvent(textareaElements, 'click', closeToolbar)
+  addEvent(textareaElements, 'input', onTextareaInput)
+  addEvent(textareaElements, 'keydown', supportTab)
+  addEvent(expandToolbarButtonElements, 'click', (event) => {
+    const target = event.currentTarget
+    if (!isHTMLElement(target)) return
+    openToolbar(target.dataset.toolbar)
   })
-
-  $('.switch-texts-button').on({ click: switchTexts })
-
-  $('.clear-texts-button').on({ click: clearTexts })
-
-  $('#spellcheck').on({
-    change() {
-      setSpellcheck()
-    },
+  addEvent($class('switch-texts-button'), 'click', switchTexts)
+  addEvent($class('clear-texts-button'), 'click', clearTexts)
+  addEvent($id('spellcheck'), 'change', setSpellcheck)
+  addEvent($class('change-fontface-button'), 'click', (event) => {
+    const target = event.currentTarget
+    if (!isHTMLElement(target)) return
+    changeFontface(target.dataset.fontface)
   })
-
-  $('.change-fontface-button').on({
-    click() {
-      changeFontface(this.dataset.fontface)
-    },
+  addEvent($id('toolbar_fontsize_dec'), 'click', () => {
+    const currentFontsize = parseInt($id('toolbar_fontsize').innerHTML)
+    changeFontsize(currentFontsize - 1)
   })
-
-  $('#toolbar_fontsize_dec').on({
-    click() {
-      const currentFontsize = parseInt(
-        document.getElementById('toolbar_fontsize').innerHTML,
-      )
-      changeFontsize(currentFontsize - 1)
-    },
+  addEvent($id('toolbar_fontsize_inc'), 'click', () => {
+    const currentFontsize = parseInt($id('toolbar_fontsize').innerHTML)
+    changeFontsize(currentFontsize + 1)
   })
-  $('#toolbar_fontsize_inc').on({
-    click() {
-      const currentFontsize = parseInt(
-        document.getElementById('toolbar_fontsize').innerHTML,
-      )
-      changeFontsize(currentFontsize + 1)
-    },
+  addEvent($id('toolbar_splitter_left'), 'click', () => {
+    moveSplitter(parseInt(localStorage.getItem('awe.splitter')) - 1)
   })
-
-  $('#toolbar_splitter_left').on({
-    click() {
-      moveSplitter(parseInt(localStorage.getItem('awe.splitter')) - 1)
-    },
+  addEvent($id('toolbar_splitter_right'), 'click', () => {
+    moveSplitter(parseInt(localStorage.getItem('awe.splitter')) + 1)
   })
-  $('#toolbar_splitter_right').on({
-    click() {
-      moveSplitter(parseInt(localStorage.getItem('awe.splitter')) + 1)
-    },
+  addEvent($id('toolbar_splitter_reset'), 'click', () => {
+    moveSplitter(0)
   })
-  $('#toolbar_splitter_reset').on({
-    click() {
-      moveSplitter(0)
-    },
+  addEvent($class('change-text-width-button'), 'click', (event) => {
+    const target = event.currentTarget
+    if (!isHTMLElement(target)) return
+    changeTextWidth(target.dataset.textWidth)
   })
-
-  $('.change-text-width-button').on({
-    click() {
-      changeTextWidth(this.dataset.textWidth)
-    },
+  addEvent($class('open-sidebar-button'), 'click', (event) => {
+    const target = event.currentTarget
+    if (!isHTMLElement(target)) return
+    openSidebar(target.dataset.sidebar)
   })
-
-  $('.open-sidebar-button').on({
-    click() {
-      openSidebar(this.dataset.sidebar)
-    },
-  })
-
-  $('.sidebar_icon').on({
-    click() {
-      console.log('click')
-      changeTheme(this.getAttribute('id'), this.hasAttribute('data-dark'))
-    },
+  addEvent($class('sidebar_icon'), 'click', (event) => {
+    const target = event.currentTarget
+    if (!isHTMLElement(target)) return
+    changeTheme(target.getAttribute('id'), target.hasAttribute('data-dark'))
   })
 }

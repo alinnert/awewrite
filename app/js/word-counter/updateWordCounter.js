@@ -1,14 +1,18 @@
 import { getWordCount } from './getWordCount.js'
 
 export function updateWordCounter() {
-  const counterElement = $('#word-counter')
-  const leftCounter = getWordCount($('#leftTextarea').val())
-  const rightCounter = getWordCount($('#rightTextarea').val())
+  const counterElement = document.getElementById('word-counter')
 
-  counterElement.text(
-    'Words: ' +
-      leftCounter.toLocaleString() +
-      ' / ' +
-      rightCounter.toLocaleString(),
+  const leftTextarea = /** @type HTMLTextAreaElement */ (
+    document.getElementById('leftTextarea')
   )
+
+  const rightTextarea = /** @type HTMLTextAreaElement */ (
+    document.getElementById('rightTextarea')
+  )
+
+  const leftCounter = getWordCount(leftTextarea.value)
+  const rightCounter = getWordCount(rightTextarea.value)
+
+  counterElement.textContent = `Words [ ${leftCounter} ] [ ${rightCounter} ]`
 }

@@ -4,21 +4,32 @@ import { loadSettings } from './settings/loadSettings.js'
 import { supportTab } from './textarea/supportTab.js'
 import { globalKeys } from './ui/globalKeys.js'
 import { initDomEvents } from './ui/initDomEvents.js'
-import { initJQueryUi } from './ui/initJQueryUi.js'
 import { updateWordCounter } from './word-counter/updateWordCounter.js'
 
 export function initApplication() {
-  initJQueryUi()
   initDomEvents()
   initializeLocalStorage()
   loadSettings()
   refreshClock()
   setInterval(refreshClock, 5000)
   updateWordCounter()
-  $('html').on({ keydown: globalKeys })
-  $('#leftTextarea, #rightTextarea').on({ keydown: supportTab })
 
-  if (location.protocol === 'http:') {
-    document.getElementById('http-info-dialog').showModal()
+  document.getRootNode().addEventListener('keydown', globalKeys)
+
+  document
+    .getElementById('leftTextarea')
+    .addEventListener('keydown', supportTab)
+
+  document
+    .getElementById('rightTextarea')
+    .addEventListener('keydown', supportTab)
+
+  if (location.protocol === 'http:' && location.port === '80') {
+    const modalElement = document.getElementById('http-info-dialog')
+    // @ts-ignore
+    if (modalElement instanceof HTMLDialogElement) {
+      // @ts-ignore
+      modalElement.showModal()
+    }
   }
 }
