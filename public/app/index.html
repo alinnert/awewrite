@@ -162,9 +162,13 @@
 
             <h3>Divider</h3>
             <span class="toolbar_buttonset">
-              <button class="icon-button" id="toolbar_splitter_left">&lsaquo;</button>
+              <button class="icon-button" id="toolbar_splitter_left">
+                &lsaquo;
+              </button>
               <button id="toolbar_splitter_reset">reset</button>
-              <button class="icon-button" id="toolbar_splitter_right">&rsaquo;</button>
+              <button class="icon-button" id="toolbar_splitter_right">
+                &rsaquo;
+              </button>
             </span>
 
             <h3>Text width</h3>
@@ -199,13 +203,26 @@
           <div class="toolbar_line_all" id="toolbar_line_background">
             <span class="toolbar_line2_title">Background</span>
 
-            <h3>Category</h3>
+            <h3>Colors</h3>
             <span class="toolbar_buttonset">
-              <button class="open-sidebar-button" data-sidebar="themes_colors">
-                Colors
+              <button
+                class="open-sidebar-button"
+                data-sidebar="themes_dark_colors"
+              >
+                Dark
               </button>
+              <button
+                class="open-sidebar-button"
+                data-sidebar="themes_light_colors"
+              >
+                Light
+              </button>
+            </span>
+
+            <h3>Images</h3>
+            <span class="toolbar_buttonset">
               <button class="open-sidebar-button" data-sidebar="themes_images">
-                Images
+                Abstract
               </button>
               <button class="open-sidebar-button" data-sidebar="themes_photos">
                 Photos
@@ -218,7 +235,7 @@
 
           <div class="toolbar_line_all" id="toolbar_line_about">
             <span class="toolbar_line2_title">About</span>
-            <span class="infotext">AWE.write 1.8.0</span>
+            <span class="infotext">AWE.write 1.8.1</span>
             <span class="infotext">
               <a href="https://awewrite.de" target="_blank">
                 Visit awewrite.de
@@ -230,39 +247,16 @@
     </div>
 
     <div id="sidebar">
-      <div class="sidebar_content" id="sidebar_themes_colors">
-        <h1>Colors</h1>
+      <div class="sidebar_content" id="sidebar_themes_dark_colors">
+        <h1>Dark Colors</h1>
 
-        <h2>light</h2>
-        <div class="sidebar_icon" id="theme_color_white">White</div>
-        <div class="sidebar_icon" id="theme_color_silver">Silver</div>
-        <div class="sidebar_icon" id="theme_color_sol_light">
-          Solarized Light
-        </div>
-        <div class="sidebar_icon" id="theme_color_cave_light">Cave Light</div>
-        <div class="sidebar_icon" id="theme_color_estuary_light">
-          Estuary Light
-        </div>
-        <div class="sidebar_icon" id="theme_color_sepia">Sepia</div>
-        <div class="sidebar_icon" id="theme_color_sunny">Sunny</div>
-        <div class="sidebar_icon" id="theme_color_spring">Spring</div>
-        <div class="sidebar_icon" id="theme_color_mint">Mint</div>
-        <div class="sidebar_icon" id="theme_color_ice">Ice</div>
-        <div class="sidebar_icon" id="theme_color_cherry">Cherry Blossom</div>
-
-        <h2>dark</h2>
+        <h2>Own Themes</h2>
         <div class="sidebar_icon" id="theme_color_dark" data-dark>Gray</div>
         <div class="sidebar_icon" id="theme_color_black" data-dark>
           Dark Gray
         </div>
-        <div class="sidebar_icon" id="theme_color_sol_dark" data-dark>
-          Solarized Dark
-        </div>
-        <div class="sidebar_icon" id="theme_color_cave_dark" data-dark>
-          Cave Dark
-        </div>
-        <div class="sidebar_icon" id="theme_color_estuary_dark" data-dark>
-          Estuary Dark
+        <div class="sidebar_icon" id="theme_color_console" data-dark>
+          Console
         </div>
         <div class="sidebar_icon" id="theme_color_orange" data-dark>Orange</div>
         <div class="sidebar_icon" id="theme_color_lime" data-dark>Olive</div>
@@ -273,13 +267,78 @@
         <div class="sidebar_icon" id="theme_color_blue" data-dark>Blue</div>
         <div class="sidebar_icon" id="theme_color_purple" data-dark>Purple</div>
         <div class="sidebar_icon" id="theme_color_pink" data-dark>Pink</div>
-        <div class="sidebar_icon" id="theme_color_console" data-dark>
-          Console
+
+        <h2>Solarized</h2>
+        <p class="copyinfo">
+          <a href="https://ethanschoonover.com/solarized/">Website</a>
+        </p>
+        <div class="sidebar_icon" id="theme_color_sol_dark" data-dark>
+          Solarized Dark
+        </div>
+
+        <h2>Atelier Schemes</h2>
+        <p class="copyinfo">
+          <a
+            href="https://atelierbram.github.io/syntax-highlighting/atelier-schemes/"
+            >Website</a
+          >
+        </p>
+        <div class="sidebar_icon" id="theme_color_cave_dark" data-dark>
+          Cave Dark
+        </div>
+        <div class="sidebar_icon" id="theme_color_estuary_dark" data-dark>
+          Estuary Dark
+        </div>
+        <div class="sidebar_icon" id="theme_color_seaside_dark" data-dark>
+          Seaside Dark
+        </div>
+        <div class="sidebar_icon" id="theme_color_lakeside_dark" data-dark>
+          Lakeside Dark
+        </div>
+      </div>
+
+      <div class="sidebar_content" id="sidebar_themes_light_colors">
+        <h1>Light Colors</h1>
+
+        <h2>Own Themes</h2>
+        <div class="sidebar_icon" id="theme_color_white">White</div>
+        <div class="sidebar_icon" id="theme_color_silver">Silver</div>
+        <div class="sidebar_icon" id="theme_color_sepia">Sepia</div>
+        <div class="sidebar_icon" id="theme_color_sunny">Sunny</div>
+        <div class="sidebar_icon" id="theme_color_spring">Spring</div>
+        <div class="sidebar_icon" id="theme_color_mint">Mint</div>
+        <div class="sidebar_icon" id="theme_color_ice">Ice</div>
+        <div class="sidebar_icon" id="theme_color_cherry">Cherry Blossom</div>
+
+        <h2>Solarized</h2>
+        <p class="copyinfo">
+          <a href="https://ethanschoonover.com/solarized/">Website</a>
+        </p>
+        <div class="sidebar_icon" id="theme_color_sol_light">
+          Solarized Light
+        </div>
+
+        <h2>Atelier Schemes</h2>
+        <p class="copyinfo">
+          <a
+            href="https://atelierbram.github.io/syntax-highlighting/atelier-schemes/"
+            >Website</a
+          >
+        </p>
+        <div class="sidebar_icon" id="theme_color_cave_light">Cave Light</div>
+        <div class="sidebar_icon" id="theme_color_estuary_light">
+          Estuary Light
+        </div>
+        <div class="sidebar_icon" id="theme_color_seaside_light">
+          Seaside Light
+        </div>
+        <div class="sidebar_icon" id="theme_color_lakeside_light">
+          Lakeside Light
         </div>
       </div>
 
       <div class="sidebar_content" id="sidebar_themes_images">
-        <h1>Images</h1>
+        <h1>Abstract</h1>
 
         <h2>aqua</h2>
         <div class="sidebar_icon" id="theme_image_aqua_blue" data-dark>

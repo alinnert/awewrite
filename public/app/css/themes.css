@@ -1,32 +1,32 @@
 /* COLORS */
 
 #theme_color_blue {
-	background-color: hsl(200, 80%, 30%);
-	color: hsl(200, 80%, 90%);
+	background-color: hsl(200, 75%, 30%);
+	color: hsl(200, 75%, 90%);
 }
 #theme_color_green {
-	background-color: hsl(103, 56%, 26%);
-	color: #DEE9CE;
+	background-color: hsl(110, 50%, 30%);
+	color: hsl(110, 50%, 80%);
 }
 #theme_color_orange {
-	background-color: hsl(21, 84%, 34%);
-	color: #FAF1E1;
+	background-color: hsl(20, 75%, 30%);
+	color: hsl(40, 75%, 90%);
 }
 #theme_color_purple {
-	background-color: hsl(267, 75%, 31%);
-	color: #EEDDF8;
+	background-color: hsl(280, 50%, 30%);
+	color: hsl(280, 50%, 90%);
 }
 #theme_color_lime {
-	background-color: hsl(70, 80%, 20%);
-	color: hsl(70, 80%, 90%);
+	background-color: hsl(60, 75%, 20%);
+	color: hsl(60, 75%, 90%);
 }
 #theme_color_bluegreen {
-	background-color: hsl(170, 100%, 15%);
-	color: hsl(170, 100%, 90%);
+	background-color: hsl(170, 80%, 20%);
+	color: hsl(170, 80%, 90%);
 }
 #theme_color_pink {
-	background-color: hsl(320, 100%, 15%);
-	color: hsl(320, 100%, 90%);
+	background-color: hsl(330, 75%, 20%);
+	color: hsl(330, 75%, 90%);
 }
 #theme_color_black {
 	background-color: #151515;
@@ -37,64 +37,80 @@
 	color: hsl(0, 0%, 80%);
 }
 #theme_color_silver {
-	background-color: hsl(0, 0%, 85%);
-	color: hsl(0, 0%, 20%);
+	background-color: hsl(190, 20%, 90%);
+	color: hsl(190, 10%, 30%);
 }
 #theme_color_white {
 	background-color: hsl(0, 0%, 100%);
-	color: hsl(0, 0%, 0%);
+	color: hsl(0, 0%, 30%);
 }
 #theme_color_sepia {
 	background-color: #f8f0dc;
 	color: #88630f;
 }
 #theme_color_spring {
-	background-color: #ccffcc;
-	color: hsl(100, 80%, 15%);
+	background-color: hsl(120, 75%, 90%);
+	color: hsl(90, 80%, 15%);
 }
 #theme_color_sunny {
-	background-color: #ffffcc;
-	color: #663300;
+	background-color: hsl(60, 75%, 90%);
+	color: hsl(40, 75%, 20%);
 }
 #theme_color_cherry {
-	background-color: #FFE6FF;
-	color: #C100C1;
+	background-color: hsl(320, 75%, 95%);
+	color: hsl(320, 90%, 20%);
 }
 #theme_color_mint {
-	background-color: hsl(150, 80%, 80%);
-	color: hsl(150, 80%, 20%);
+	background-color: hsl(160, 75%, 90%);
+	color: hsl(160, 75%, 20%);
 }
 #theme_color_ice {
-	background-color: #D2F5FF;
-	color: #006496;
+	background-color: hsl(190, 75%, 90%);
+	color: hsl(210, 75%, 20%);
 }
 #theme_color_console {
-	background-color: #000;
-	color: #0F0;
+	background-color: hsl(0, 0%, 8%);
+	color: hsl(120, 80%, 45%);
 }
 #theme_color_sol_light {
-	background-color: #FDF6E3;
-	color: #657B83;
+	background-color: hsl(44, 87%, 94%);
+	color: hsl(196, 13%, 45%);
 }
 #theme_color_sol_dark {
-	background-color: #002B36;
-	color: #839496;
+	background-color: hsl(192, 81%, 14%);
+	color: hsl(180, 7%, 60%);
 }
 #theme_color_cave_light {
-	background-color: #EFECF4;
-	color: #655F6D;
+	background-color: hsl(262, 27%, 94%);
+	color: hsl(266, 7%, 40%);
 }
 #theme_color_cave_dark {
-	background-color: #19171C;
-	color: #7E7887;
+	background-color: hsl(265, 9%, 15%);
+	color: hsl(265, 15%, 89%);
 }
 #theme_color_estuary_light {
-	background-color: #F4F3EC;
-	color: #6C6B5A;
+	background-color: hsl(52, 27%, 94%);
+	color: hsl(57, 9%, 39%);
 }
 #theme_color_estuary_dark {
-	background-color: #22221B;
-	color: #878573;
+	background-color: hsl(55, 11%, 17%);
+	color: hsl(55, 15%, 89%);
+}
+#theme_color_seaside_light {
+	background-color: hsl(120, 50%, 97%);
+	color: hsl(120, 8%, 40%);
+}
+#theme_color_seaside_dark {
+	background-color: hsl(120, 6%, 15%);
+	color: hsl(120, 35%, 86%);
+}
+#theme_color_lakeside_light {
+	background-color: hsl(200, 100%, 96%);
+	color: hsl(200, 21%, 40%);
+}
+#theme_color_lakeside_dark {
+	background-color: hsl(200, 20%, 15%);
+	color: hsl(200, 75%, 86%);
 }
 
 /* IMAGES */

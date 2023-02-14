@@ -44,7 +44,10 @@ export function changeTheme(selectionId, isDarkTheme) {
         textarea.style.color = color
       }
 
-      metaThemeColorElement.setAttribute('content', '#181818')
+      metaThemeColorElement.setAttribute(
+        'content',
+        isDarkTheme ? '#222222' : '#dddddd',
+      )
       break
     }
   }
