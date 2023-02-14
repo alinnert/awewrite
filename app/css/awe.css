@@ -143,16 +143,16 @@ body.light-theme #toolbar .expand-toolbar-button:active {
 #toolbar .toolbar_line2 {
   display: flex;
   align-items: center;
-  background: hsla(0, 0%, 0%, 0.3);
   padding: 0 20px;
   width: 100%;
   height: 40px;
   white-space: nowrap;
   transition: background 0.3s ease-out;
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.1);
 }
 
 body.light-theme #toolbar .toolbar_line2 {
-  background: hsla(0, 0%, 0%, 0.1);
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .toolbar_line_all {
@@ -352,9 +352,9 @@ body.light-theme #toolbar .right #word-counter {
   vertical-align: top;
   font-size: 16px;
   line-height: 40px;
-  letter-spacing: 1px;
   color: hsla(0, 0%, 100%, 0.8);
   transition: color 0.3s ease-out;
+  font-weight: bold;
 }
 
 body.light-theme #toolbar .right #clock {
@@ -376,8 +376,8 @@ body.light-theme #toolbar_title {
 }
 
 #toolbar .toolbar_line2_title {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
   font-weight: bold;
   transition: color 0.3s ease-out;
 }
@@ -425,11 +425,11 @@ body.light-theme #sidebar {
 }
 
 #sidebar h1 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: normal;
   padding: 20px 20px 14px;
   margin: 0 0 10px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   transition: color 0.3s ease-out;
 }
 
@@ -438,13 +438,19 @@ body.light-theme #sidebar h1 {
 }
 
 #sidebar h2 {
-  font-size: 24px;
+  font-size: 18px;
   letter-spacing: 1px;
-  padding: 40px 20px 5px;
-  margin-bottom: 20px;
-  color: hsla(0, 0%, 100%, 0.4);
-  font-weight: normal;
+  padding: 5px 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-weight: bold;
   transition: color 0.3s ease-out;
+  text-transform: uppercase;
+}
+
+#sidebar h1 + h2 {
+  margin-top: 10px;
 }
 
 body.light-theme #sidebar h2 {
@@ -455,17 +461,20 @@ body.light-theme #sidebar h2 {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 300px;
+  width: 260px;
   overflow: auto;
 }
 
 .sidebar_icon {
   font-size: 18px;
-  padding: 10px 20px;
-  height: 50px;
+  padding: 10px;
+  height: 60px;
   position: relative;
   background-size: cover;
   transition: all 0.2s ease;
+  border-radius: 6px;
+  margin: 0 10px 10px;
+  overflow: hidden;
 }
 
 .sidebar_icon:hover {
@@ -573,18 +582,23 @@ body.light-theme textarea:focus {
 
 ::-webkit-scrollbar {
   background: none;
-  width: 13px;
+  width: 14px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(50, 50, 50, 0);
+  background: hsla(0, 0%, 0%, 0);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(50, 50, 50, 0.8);
-  border-radius: 2px;
-  border: 4px solid rgba(255, 255, 255, 0);
-  box-shadow: 0 0 0 1px rgba(200, 200, 200, 0.8) inset;
+  background: hsla(0, 0%, 100%, 0.5);
+  border: 4px solid hsla(0, 0%, 100%, 0);
+  border-radius: 7px;
+  background-clip: content-box;
+}
+
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: hsla(0, 0%, 0%, 0.5);
+  border: 4px solid hsla(0, 0%, 100%, 0);
   background-clip: content-box;
 }
 
