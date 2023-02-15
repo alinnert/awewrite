@@ -25,13 +25,14 @@ export function switchTexts() {
   updateWordCounter()
 }
 
+
 export function setSpellcheck(value) {
   const spellcheckInput = /** @type HTMLInputElement */ (
     document.getElementById('spellcheck')
   )
   const spellcheck =
     value !== undefined ? value : spellcheckInput.checked ? 'true' : 'false'
-
+  
   if (spellcheck === 'true' && !spellcheckInput.checked) {
     spellcheckInput.checked = true
   }

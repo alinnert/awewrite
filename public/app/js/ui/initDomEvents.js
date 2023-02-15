@@ -27,7 +27,7 @@ export function initDomEvents() {
   })
   addEvent($class('switch-texts-button'), 'click', switchTexts)
   addEvent($class('clear-texts-button'), 'click', clearTexts)
-  addEvent($id('spellcheck'), 'change', setSpellcheck)
+  addEvent($id('spellcheck'), 'change', () => setSpellcheck())
   addEvent($class('change-fontface-button'), 'click', (event) => {
     const target = event.currentTarget
     if (!isHTMLElement(target)) return
