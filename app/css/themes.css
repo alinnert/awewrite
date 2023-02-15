@@ -117,12 +117,12 @@
 #theme_image_mosaic_white {
 	background-image: url(../themes/mosaic_white_thumb.jpg);
 	background-color: hsl(0, 0%, 95%);
-	color: black;
+	color: hsl(0, 0%, 10%);
 }
 #theme_image_mosaic_black {
 	background-image: url(../themes/mosaic_black_thumb.jpg);
 	background-color: hsl(0, 0%, 0%);
-	color: white;
+	color: hsl(0, 0%, 90%);
 }
 
 #theme_image_ray_blue {
@@ -235,7 +235,7 @@
 }
 #theme_apprx_deep_sea {
 	background-image: url(../themes/approx_deep_sea_thumb.jpg);
-	background-color: hsl(255, 85%, 13%);
+	background-color: hsl(208, 92%, 10%);
 	color: white;
 }
 #theme_apprx_diamonds {
@@ -265,33 +265,33 @@
 }
 #theme_apprx_leather {
 	background-image: url(../themes/approx_leather_thumb.jpg);
-	background-color: hsl(23, 8%, 20%);
+	background-color: hsl(0, 0%, 4%);
 	color: white;
 }
 #theme_apprx_linearis {
 	background-image: url(../themes/approx_linearis_thumb.jpg);
 	background-color: hsl(264, 38%, 78%);
-	color: #551A68;
+	color: hsl(285, 60%, 20%);
 }
 #theme_apprx_rays {
 	background-image: url(../themes/approx_rays_thumb.jpg);
-	background-color: hsl(66, 36%, 67%);
+	background-color: hsl(69, 27%, 57%);
 	color: #030;
 }
 #theme_apprx_rust {
 	background-image: url(../themes/approx_rust_thumb.jpg);
-	background-color: hsl(9, 83%, 11%);
+	background-color: hsl(9, 76%, 3%);
 	color: white;
 }
 #theme_apprx_scrap_metal {
 	background-image: url(../themes/approx_scrap_metal_thumb.jpg);
-	background-color: hsl(0, 0%, 17%);
+	background-color: hsl(0, 0%, 13%);
 	color: white;
 }
 #theme_apprx_smouldering {
 	background-image: url(../themes/approx_smouldering_thumb.jpg);
-	background-color: hsl(42, 45%, 91%);
-	color: #442E17;
+	background-color: hsl(36, 26%, 76%);
+	color: hsl(31, 49%, 10%);
 }
 #theme_apprx_splatter {
 	background-image: url(../themes/approx_splatter_thumb.jpg);
@@ -306,11 +306,11 @@
 #theme_apprx_timber {
 	background-image: url(../themes/approx_timber_thumb.jpg);
 	background-color: hsl(31, 11%, 63%);
-	color: #251A10;
+	color: hsl(29, 40%, 10%);
 }
 #theme_apprx_vintage {
 	background-image: url(../themes/approx_vintage_thumb.jpg);
 	background-color: hsl(37, 10%, 74%);
-	color: #3F3727;
+	color: hsl(40, 24%, 10%);
 }
 /* #endregion apprx */
