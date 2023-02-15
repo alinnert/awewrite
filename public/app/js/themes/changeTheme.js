@@ -18,38 +18,31 @@ export function changeTheme(selectionId, isDarkTheme) {
   document.body.style.backgroundColor = 'transparent'
 
   switch (themeType) {
-    case 'color': {
-      const background = selectedBackgroundColor
-      document.body.style.backgroundColor = background
+    case 'color':
+      document.body.style.backgroundColor = selectedBackgroundColor
 
-      const color = selectedColor
       for (const textarea of textareaElements) {
         if (!isHTMLElement(textarea)) continue
-        textarea.style.color = color
+        textarea.style.color = selectedColor
       }
 
-      metaThemeColorElement.setAttribute('content', background)
+      metaThemeColorElement.setAttribute('content', selectedBackgroundColor)
       break
-    }
-
     case 'image':
     case 'photo':
-    case 'apprx': {
-      const background = selectedBackgroundImage
-      document.body.style.backgroundImage = background.replace(/_thumb/, '')
+    case 'apprx':
+      document.body.style.backgroundImage = selectedBackgroundImage.replace(
+        /_thumb/,
+        '',
+      )
 
-      const color = selectedColor
       for (const textarea of textareaElements) {
         if (!isHTMLElement(textarea)) continue
-        textarea.style.color = color
+        textarea.style.color = selectedColor
       }
 
-      metaThemeColorElement.setAttribute(
-        'content',
-        isDarkTheme ? '#222222' : '#dddddd',
-      )
+      metaThemeColorElement.setAttribute('content', selectedBackgroundColor)
       break
-    }
   }
 
   document.body.classList.toggle('light-theme', !isDarkTheme)
