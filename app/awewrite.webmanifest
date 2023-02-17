@@ -1,8 +1,9 @@
 {
   "name": "AWE.write",
   "description": "A simple two-pane web based text editor in your browser.",
-  "display": "standalone",
   "lang": "en-US",
+  "display_override": ["window-controls-overlay"],
+  "display": "standalone",
   "icons": [
     {
       "src": "favicon-16.png",

@@ -74,9 +74,11 @@ a {
   height: 40px;
   overflow: hidden;
   color: white;
-  background: hsla(0, 0%, 0%, 0.5);
-  backdrop-filter: blur(8px);
+  /* background: hsla(0, 0%, 0%, 0.5); */
+  /* -webkit-backdrop-filter: blur(8px); */
+  /* backdrop-filter: blur(8px); */
   transition: all 0.15s ease-out;
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -95,18 +97,24 @@ body.light-theme #toolbar {
   top: 0;
 }
 
-#toolbar .toolbar_line_right {
-  position: absolute;
-  right: 10px;
-  top: 6px;
+@media (display-mode: window-controls-overlay) {
+  #toolbar .toolbar_line_left {
+    left: calc(env(titlebar-area-x, 0) + 20px);
+  }
 }
 
 #toolbar .toolbar_line1 {
-  padding: 0 10px;
   width: 100%;
   height: 40px;
   white-space: nowrap;
   overflow: hidden;
+  -webkit-app-region: drag;
+  app-region: drag;
+}
+
+#toolbar .toolbar_line1 .right {
+  -webkit-app-region: no-drag;
+  app-region: no-drag;
 }
 
 #toolbar .expand-toolbar-button {
@@ -117,7 +125,9 @@ body.light-theme #toolbar {
   line-height: 40px;
   padding-left: 14px;
   padding-right: 14px;
-  color: hsla(0, 0%, 100%, 0.6);
+  color: hsla(0, 0%, 100%, 0.8);
+  -webkit-app-region: no-drag;
+  app-region: no-drag;
 }
 
 #toolbar .expand-toolbar-button:hover {
@@ -129,15 +139,15 @@ body.light-theme #toolbar {
 }
 
 body.light-theme #toolbar .expand-toolbar-button {
-  color: hsla(0, 0%, 0%, 0.8);
+  color: hsla(0, 0%, 0%, 0.7);
 }
 
 body.light-theme #toolbar .expand-toolbar-button:hover {
-  background: hsla(0, 0%, 100%, 0.6);
+  background: hsla(0, 0%, 0%, 0.1);
 }
 
 body.light-theme #toolbar .expand-toolbar-button:active {
-  background: hsla(0, 0%, 100%, 0.8);
+  background: hsla(0, 0%, 0%, 0.2);
 }
 
 #toolbar .toolbar_line2 {
@@ -148,11 +158,13 @@ body.light-theme #toolbar .expand-toolbar-button:active {
   height: 40px;
   white-space: nowrap;
   transition: background 0.3s ease-out;
-  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.1);
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.1),
+    inset 0 -1px 0 hsla(0, 0%, 100%, 0.1);
 }
 
 body.light-theme #toolbar .toolbar_line2 {
-  box-shadow: inset 0 1px 0 hsla(0, 0%, 0%, 0.2);
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 0%, 0.2),
+    inset 0 -1px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .toolbar_line_all {
@@ -163,13 +175,13 @@ body.light-theme #toolbar .toolbar_line2 {
 /* Toolbar-Elemente */
 
 #toolbar .toolbar_line2 button {
-  padding: 4px 8px;
+  padding: 4px 10px;
   border: none;
   border-radius: 2px;
   line-height: 20px;
   font-size: 14px;
   color: white;
-  background: #333;
+  background: hsla(0, 0%, 100%, 0.2);
   transition: color;
 }
 
@@ -178,24 +190,24 @@ body.light-theme #toolbar .toolbar_line2 {
 }
 
 #toolbar .toolbar_line2 button:hover {
-  background: #444;
+  background: hsla(0, 0%, 100%, 0.35);
 }
 
 #toolbar .toolbar_line2 button:active {
-  background: #555;
+  background: hsla(0, 0%, 100%, 0.15);
 }
 
 body.light-theme #toolbar .toolbar_line2 button {
-  background: white;
+  background: hsla(0, 0%, 0%, 0.1);
   color: black;
 }
 
 body.light-theme #toolbar .toolbar_line2 button:hover {
-  background: #eee;
+  background: hsla(0, 0%, 0%, 0.2);
 }
 
 body.light-theme #toolbar .toolbar_line2 button:active {
-  background: #ddd;
+  background: hsla(0, 0%, 0%, 0.05);
 }
 
 #toolbar .icon-button {
@@ -219,29 +231,29 @@ body.light-theme #toolbar .toolbar_line2 button:active {
   border-radius: 3px;
   font-size: 14px;
   line-height: 20px;
-  background: #333;
+  background: hsla(0, 0%, 100%, 0.2);
   color: white;
 }
 
 #toolbar input[type='radio'] + label:hover {
-  background: #444;
+  background: hsla(0, 0%, 100%, 0.35);
 }
 
 #toolbar input[type='radio'] + label:active {
-  background: #555;
+  background: hsla(0, 0%, 100%, 0.15);
 }
 
 body.light-theme #toolbar input[type='radio'] + label {
-  background: white;
+  background: hsla(0, 0%, 0%, 0.1);
   color: #333;
 }
 
 body.light-theme #toolbar input[type='radio'] + label:hover {
-  background: #eee;
+  background: hsla(0, 0%, 0%, 0.2);
 }
 
 body.light-theme #toolbar input[type='radio'] + label:active {
-  background: #ddd;
+  background: hsla(0, 0%, 0%, 0.05);
 }
 
 #toolbar .toolbar_buttonset {
@@ -292,7 +304,7 @@ body.light-theme #toolbar input[type='radio'] + label:active {
 
 .toolbar_line2 h3 {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   padding-left: 30px;
   padding-right: 12px;
 }
@@ -326,11 +338,16 @@ body.light-theme #toolbar input[type='radio'] + label:active {
 
 #toolbar .right {
   color: rgba(255, 255, 255, 0.3);
-  padding-right: 5px;
   position: absolute;
   top: 0;
-  right: 5px;
+  right: 20px;
   line-height: 40px;
+}
+
+@media (display-mode: window-controls-overlay) {
+  #toolbar .right {
+    right: calc(100% - env(titlebar-area-x) - env(titlebar-area-width) + 20px);
+  }
 }
 
 #toolbar .right #word-counter {
@@ -414,14 +431,15 @@ body.light-theme #toolbar #toolbar_fontsize {
   left: 0;
   bottom: 0;
   width: 0;
-  background: hsla(0, 0%, 0%, 0.6);
+  background: hsla(0, 0%, 0%, 1);
+  box-shadow: inset -1px 0 0 hsla(0, 0%, 100%, 0.1);
   overflow: hidden;
-  backdrop-filter: blur(8px);
   transition: width 0.15s ease-out, background-color 0.3s ease-out;
 }
 
 body.light-theme #sidebar {
-  background: hsla(0, 0%, 0%, 0.1);
+  background: hsla(0, 0%, 0%, 1);
+  box-shadow: inset -1px 0 0 hsla(0, 0%, 0%, 0.2);
 }
 
 #sidebar h1 {
@@ -475,6 +493,11 @@ body.light-theme #sidebar h2 {
   border-radius: 6px;
   margin: 0 10px 10px;
   overflow: hidden;
+  border: 1px solid hsla(0, 0%, 100%, 0.2);
+}
+
+body.light-theme .sidebar_icon {
+  border: 1px solid hsla(0, 0%, 0%, 0.2);
 }
 
 .sidebar_icon:hover {
@@ -552,11 +575,14 @@ textarea {
   padding: 10px 20px;
   margin: 0;
   overflow: auto;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.2);
   border-width: 0 1px;
   border-style: solid;
   border-color: hsla(0, 0%, 100%, 0.2);
-  transition: background 0.2s ease-out, color 0.2s ease-out;
+  transition: background 0.2s ease-out, color 0.2s ease-out,
+    border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  backdrop-filter: blur(50px);
   cursor: text;
 }
 #leftBox textarea {
@@ -566,8 +592,8 @@ textarea {
   margin-right: -4px;
 }
 textarea:focus {
-  background: hsla(0, 0%, 0%, 0.1);
-  border-color: hsla(0, 0%, 100%, 0.2);
+  border-color: hsla(0, 0%, 100%, 0.6);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 }
 
 body.light-theme textarea {
@@ -576,8 +602,7 @@ body.light-theme textarea {
 }
 
 body.light-theme textarea:focus {
-  background: hsla(0, 0%, 0%, 0.05);
-  border-color: hsla(0, 0%, 0%, 0.4);
+  border-color: hsla(0, 0%, 0%, 0.6);
 }
 
 ::-webkit-scrollbar {
@@ -624,6 +649,7 @@ dialog * {
 
 dialog::backdrop {
   background-color: #00000055;
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
 
