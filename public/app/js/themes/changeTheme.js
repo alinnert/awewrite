@@ -2,19 +2,17 @@ import {
   $id,
   isHTMLElement,
   metaThemeColorElement,
+  sidebarElement,
   textareaElements,
+  toolbarElement,
 } from '../elements.js'
 
 export function changeTheme(selectionId, isDarkTheme) {
-  const toolbarElement = /** @type { HTMLDivElement } */ ($id('toolbar'))
-  const sidebarElement = /** @type { HTMLDivElement } */ ($id('sidebar'))
-  const selectedElement = $id(selectionId)
-  const selectedElementStyles = getComputedStyle(selectedElement)
-  const selectedBackgroundColor =
-    selectedElementStyles.getPropertyValue('background-color')
-  const selectedBackgroundImage =
-    selectedElementStyles.getPropertyValue('background-image')
-  const selectedColor = selectedElementStyles.getPropertyValue('color')
+  const selectedElement = /** @type { HTMLDivElement } */ ($id(selectionId))
+  const styles = getComputedStyle(selectedElement)
+  const backgroundColor = styles.getPropertyValue('background-color')
+  const backgroundImage = styles.getPropertyValue('background-image')
+  const color = styles.getPropertyValue('color')
   const themeType = selectionId.substr(6, 5)
 
   document.body.style.backgroundImage = 'none'
@@ -22,33 +20,21 @@ export function changeTheme(selectionId, isDarkTheme) {
 
   switch (themeType) {
     case 'color':
-      document.body.style.backgroundColor = selectedBackgroundColor
+      document.body.style.backgroundColor = backgroundColor
 
-      for (const textarea of textareaElements) {
-        if (!isHTMLElement(textarea)) continue
-        textarea.style.color = selectedColor
-      }
-
-      metaThemeColorElement.setAttribute('content', selectedBackgroundColor)
-      toolbarElement.style.backgroundColor = selectedBackgroundColor
-      sidebarElement.style.backgroundColor = selectedBackgroundColor
+      updateTextareas(color)
+      updateTitleAndToolbar(backgroundColor)
       break
     case 'image':
     case 'photo':
     case 'apprx':
-      document.body.style.backgroundImage = selectedBackgroundImage.replace(
+      document.body.style.backgroundImage = backgroundImage.replace(
         /_thumb/,
         '',
       )
 
-      for (const textarea of textareaElements) {
-        if (!isHTMLElement(textarea)) continue
-        textarea.style.color = selectedColor
-      }
-
-      metaThemeColorElement.setAttribute('content', selectedBackgroundColor)
-      toolbarElement.style.backgroundColor = selectedBackgroundColor
-      sidebarElement.style.backgroundColor = selectedBackgroundColor
+      updateTextareas(color)
+      updateTitleAndToolbar(backgroundColor)
       break
   }
 
@@ -56,4 +42,19 @@ export function changeTheme(selectionId, isDarkTheme) {
 
   localStorage.setItem('awe.themeid', selectionId)
   localStorage.setItem('awe.darkTheme', isDarkTheme ? 'true' : 'false')
+}
+
+/** @param { string } backgroundColor */
+function updateTitleAndToolbar(backgroundColor) {
+  metaThemeColorElement.setAttribute('content', backgroundColor)
+  toolbarElement.style.backgroundColor = backgroundColor
+  sidebarElement.style.backgroundColor = backgroundColor
+}
+
+/** @param { string } color */
+function updateTextareas(color) {
+  for (const textarea of textareaElements) {
+    if (!isHTMLElement(textarea)) continue
+    textarea.style.color = color
+  }
 }

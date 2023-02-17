@@ -1,25 +1,38 @@
-// selector functions
+// #region selector functions
 /** @param { string } className @returns { HTMLCollectionOf<Element> } */
 export const $class = (className) => document.getElementsByClassName(className)
 /** @param { string } id @returns { Element | null } */
 export const $id = (id) => document.getElementById(id)
 /** @param { string } tagName @returns { HTMLCollectionOf<Element> } */
 export const $tag = (tagName) => document.getElementsByTagName(tagName)
+// #endregion selector functions
 
-// by tag
+// #region by tag
 export const textareaElements = $tag('textarea')
+// #endregion by tag
 
-// by class
+// #region by class
 export const sidebarContentElements = $class('sidebar_content')
 export const expandToolbarButtonElements = $class('expand-toolbar-button')
+// #endregion by class
 
-// by id
-export const leftBoxElement = $id('leftBox')
-export const rightBoxElement = $id('rightBox')
-export const leftTextareaElement = $id('leftTextarea')
-export const rightTextareaElement = $id('rightTextarea')
-export const metaThemeColorElement = $id('meta-theme-color')
+// #region by id
+export const toolbarElement = /** @type { HTMLDivElement } */ ($id('toolbar'))
+export const sidebarElement = /** @type { HTMLDivElement } */ ($id('sidebar'))
+export const leftBoxElement = /** @type { HTMLDivElement } */ ($id('leftBox'))
+export const rightBoxElement = /** @type { HTMLDivElement } */ ($id('rightBox'))
+export const leftTextareaElement = /** @type { HTMLDivElement } */ (
+  $id('leftTextarea')
+)
+export const rightTextareaElement = /** @type { HTMLDivElement } */ (
+  $id('rightTextarea')
+)
+export const metaThemeColorElement = /** @type { HTMLDivElement } */ (
+  $id('meta-theme-color')
+)
+// #endregion by id
 
+// #region helper functions
 /** @param { EventTarget } element @returns { element is HTMLElement } */
 export function isHTMLElement(element) {
   return element instanceof HTMLElement
@@ -53,3 +66,4 @@ export function addEvent(elements, eventName, handler) {
     element.addEventListener(eventName, handler)
   }
 }
+// #endregion helper functions
