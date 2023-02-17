@@ -1,11 +1,14 @@
 import {
+  $id,
   isHTMLElement,
   metaThemeColorElement,
   textareaElements,
 } from '../elements.js'
 
 export function changeTheme(selectionId, isDarkTheme) {
-  const selectedElement = document.getElementById(selectionId)
+  const toolbarElement = /** @type { HTMLDivElement } */ ($id('toolbar'))
+  const sidebarElement = /** @type { HTMLDivElement } */ ($id('sidebar'))
+  const selectedElement = $id(selectionId)
   const selectedElementStyles = getComputedStyle(selectedElement)
   const selectedBackgroundColor =
     selectedElementStyles.getPropertyValue('background-color')
@@ -27,6 +30,8 @@ export function changeTheme(selectionId, isDarkTheme) {
       }
 
       metaThemeColorElement.setAttribute('content', selectedBackgroundColor)
+      toolbarElement.style.backgroundColor = selectedBackgroundColor
+      sidebarElement.style.backgroundColor = selectedBackgroundColor
       break
     case 'image':
     case 'photo':
@@ -42,6 +47,8 @@ export function changeTheme(selectionId, isDarkTheme) {
       }
 
       metaThemeColorElement.setAttribute('content', selectedBackgroundColor)
+      toolbarElement.style.backgroundColor = selectedBackgroundColor
+      sidebarElement.style.backgroundColor = selectedBackgroundColor
       break
   }
 
