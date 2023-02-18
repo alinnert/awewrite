@@ -1,4 +1,5 @@
 import { refreshClock } from './clock/refreshClock.js'
+import { createValue } from './lib/dataStore.js'
 import { initializeLocalStorage } from './localStorage/initializeLocalStorage.js'
 import { loadSettings } from './settings/loadSettings.js'
 import { supportTab } from './textarea/supportTab.js'
@@ -23,13 +24,12 @@ export function initApplication() {
   document
     .getElementById('rightTextarea')
     .addEventListener('keydown', supportTab)
-
-  if (location.protocol === 'http:' && location.port === '80') {
-    const modalElement = document.getElementById('http-info-dialog')
-    // @ts-ignore
-    if (modalElement instanceof HTMLDialogElement) {
-      // @ts-ignore
-      modalElement.showModal()
-    }
-  }
 }
+
+const counter$ = createValue(0)
+
+counter$.onChange((value) => {
+  console.log(value)
+})
+
+counter$.set(10)

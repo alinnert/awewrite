@@ -3,7 +3,8 @@
     "checkJs": true,
     "lib": ["ES2021", "DOM", "DOM.Iterable"],
     "downlevelIteration": true,
-    "typeRoots": ["./public/app/@types"]
+    "typeRoots": ["./public/app/@types"],
+    "target": "ES2021"
   },
   "include": ["./public/app/js/**/*.js"]
 }

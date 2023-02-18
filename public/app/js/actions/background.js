@@ -1,7 +1,7 @@
+import { $id, metaThemeColorElement, textareaElements } from '../elements.js'
+
 function changeTheme(selectionId, isDarkTheme) {
-  const textareas = document.getElementsByTagName('textarea')
-  const selectedElement = document.getElementById(selectionId)
-  const metaThemeColor = document.getElementById('meta-theme-color')
+  const selectedElement = $id(selectionId)
   const theme_type = selectionId.substr(6, 5)
 
   document.body.style.backgroundImage = 'none'
@@ -14,11 +14,11 @@ function changeTheme(selectionId, isDarkTheme) {
 
       document.body.style.backgroundColor = background
 
-      for (const textarea of textareas) {
+      for (const textarea of textareaElements) {
         textarea.style.color = color
       }
 
-      metaThemeColor.setAttribute('content', background)
+      metaThemeColorElement.setAttribute('content', background)
       break
     }
 
@@ -30,11 +30,11 @@ function changeTheme(selectionId, isDarkTheme) {
 
       document.body.style.backgroundImage = background.replace(/_thumb/, '')
 
-      for (const textarea of textareas) {
+      for (const textarea of textareaElements) {
         textarea.style.color = color
       }
 
-      metaThemeColor.setAttribute('content', '#181818')
+      metaThemeColorElement.setAttribute('content', '#181818')
       break
     }
   }

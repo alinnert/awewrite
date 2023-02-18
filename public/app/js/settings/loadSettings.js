@@ -2,10 +2,12 @@ import { setSpellcheck } from '../actions/data.js'
 import { changeFontsize } from '../actions/font.js'
 import { changeTextWidth, moveSplitter } from '../actions/layout.js'
 import {
+  fontFaceElement,
   isHTMLElement,
   leftTextareaElement,
   rightTextareaElement,
   textareaElements,
+  textWidthElement,
 } from '../elements.js'
 import { changeTheme } from '../themes/changeTheme.js'
 import { fontfaceNumber } from './fontfaceNumber.js'
@@ -29,7 +31,7 @@ export function loadSettings() {
     buttonIndex = 0
   }
 
-  document.getElementsByName('fontface')[buttonIndex].click()
+  fontFaceElement[buttonIndex].click()
 
   // TEXT WIDTH
   changeTextWidth(localStorage.getItem('awe.textwidth'))
@@ -39,7 +41,7 @@ export function loadSettings() {
     buttonIndex = 0
   }
 
-  document.getElementsByName('textwidth')[buttonIndex].click()
+  textWidthElement[buttonIndex].click()
 
   const darkThemeValue = localStorage.getItem('awe.darkTheme')
   const isDarkTheme = darkThemeValue !== 'false'

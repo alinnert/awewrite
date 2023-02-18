@@ -259,7 +259,6 @@ body.light-theme #toolbar input[type='radio'] + label:active {
 #toolbar .toolbar_buttonset {
   display: inline-flex;
   align-items: center;
-  vertical-align: middle;
 }
 
 #toolbar .toolbar_buttonset button,
