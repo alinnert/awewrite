@@ -31,7 +31,7 @@ export const textWidthElement = $name('textwidth')
 export const clockElement = /** @type { HTMLSpanElement } */ ($id('clock'))
 export const wordCounterElement =
   /** @type { HTMLSpanElement } */
-  ($id('wordcounter'))
+  ($id('word-counter'))
 export const toolbarElement = /** @type { HTMLDivElement } */ ($id('toolbar'))
 export const sidebarElement = /** @type { HTMLDivElement } */ ($id('sidebar'))
 export const leftBoxElement = /** @type { HTMLDivElement } */ ($id('leftBox'))

@@ -25,11 +25,3 @@ export function initApplication() {
     .getElementById('rightTextarea')
     .addEventListener('keydown', supportTab)
 }
-
-const counter$ = createValue(0)
-
-counter$.onChange((value) => {
-  console.log(value)
-})
-
-counter$.set(10)
