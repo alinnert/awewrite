@@ -1,5 +1,4 @@
 import { refreshClock } from './clock/refreshClock.js'
-import { createValue } from './lib/dataStore.js'
 import { initializeLocalStorage } from './localStorage/initializeLocalStorage.js'
 import { loadSettings } from './settings/loadSettings.js'
 import { supportTab } from './textarea/supportTab.js'
