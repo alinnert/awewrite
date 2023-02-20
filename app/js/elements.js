@@ -1,25 +1,62 @@
-// selector functions
-/** @param { string } className @returns { HTMLCollectionOf<Element> } */
+// #region selector functions
+/**
+ * @param { string } className
+ * @returns { HTMLCollectionOf<Element> }
+ */
 export const $class = (className) => document.getElementsByClassName(className)
-/** @param { string } id @returns { Element | null } */
+
+/**
+ * @param { string } id
+ * @returns { HTMLElement | null }
+ */
 export const $id = (id) => document.getElementById(id)
-/** @param { string } tagName @returns { HTMLCollectionOf<Element> } */
-export const $tag = (tagName) => document.getElementsByTagName(tagName)
 
-// by tag
-export const textareaElements = $tag('textarea')
+/**
+ * @param { string } name
+ * @returns { NodeListOf<HTMLElement> }
+ */
+export const $name = (name) => document.getElementsByName(name)
+// #endregion selector functions
 
-// by class
+// #region selected elements
+export const textareaElements = document.getElementsByTagName('textarea')
+
 export const sidebarContentElements = $class('sidebar_content')
 export const expandToolbarButtonElements = $class('expand-toolbar-button')
+export const toolbarLineAllElements = $class('toolbar_line_all')
 
-// by id
-export const leftBoxElement = $id('leftBox')
-export const rightBoxElement = $id('rightBox')
-export const leftTextareaElement = $id('leftTextarea')
-export const rightTextareaElement = $id('rightTextarea')
-export const metaThemeColorElement = $id('meta-theme-color')
+export const fontFaceElement = $name('fontface')
+export const textWidthElement = $name('textwidth')
 
+export const clockElement = /** @type { HTMLSpanElement } */ ($id('clock'))
+export const wordCounterElement =
+  /** @type { HTMLSpanElement } */
+  ($id('word-counter'))
+export const toolbarElement = /** @type { HTMLDivElement } */ ($id('toolbar'))
+export const sidebarElement = /** @type { HTMLDivElement } */ ($id('sidebar'))
+export const leftBoxElement = /** @type { HTMLDivElement } */ ($id('leftBox'))
+export const rightBoxElement = /** @type { HTMLDivElement } */ ($id('rightBox'))
+export const leftTextareaElement =
+  /** @type { HTMLTextAreaElement } */
+  ($id('leftTextarea'))
+export const rightTextareaElement =
+  /** @type { HTMLTextAreaElement } */
+  ($id('rightTextarea'))
+export const metaThemeColorElement =
+  /** @type { HTMLMetaElement } */
+  ($id('meta-theme-color'))
+export const spellcheckElement =
+  /** @type { HTMLInputElement } */
+  ($id('spellcheck'))
+export const fontSizeElement =
+  /** @type { HTMLSpanElement } */
+  ($id('toolbar_fontsize'))
+export const lineHeightElement =
+  /** @type { HTMLSpanElement } */
+  ($id('toolbar_lineheight'))
+// #endregion selected elements
+
+// #region helper functions
 /** @param { EventTarget } element @returns { element is HTMLElement } */
 export function isHTMLElement(element) {
   return element instanceof HTMLElement
@@ -49,7 +86,9 @@ export function elementIsHidden(element) {
  * @param { (event: HTMLElementEventMap[T]) => void } handler
  */
 export function addEvent(elements, eventName, handler) {
-  for (const element of elements instanceof Element ? [elements] : elements) {
+  const elementList = elements instanceof Element ? [elements] : elements
+  for (const element of elementList) {
     element.addEventListener(eventName, handler)
   }
 }
+// #endregion helper functions

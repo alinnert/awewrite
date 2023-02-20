@@ -21,47 +21,6 @@
   </head>
 
   <body>
-    <dialog id="http-info-dialog">
-      <h2>HTTP version of AWE.write will shutdown soon</h2>
-      <p>There are two version of AWE.write:</p>
-      <ul>
-        <li>
-          <span style="color: firebrick; font-weight: bold">http</span
-          >://awewrite.de
-        </li>
-        <li>
-          <span style="color: dodgerblue; font-weight: bold">https</span
-          >://awewrite.de
-        </li>
-      </ul>
-      <p>
-        <strong>After May 31st</strong> the
-        <span style="color: firebrick; font-weight: bold">http</span> version
-        will no longer be available.
-      </p>
-      <p style="font-weight: bold">
-        You need to save your data before that happens. Otherwise you won't be
-        able to access your texts from the http version any longer.
-      </p>
-      <p>To do that:</p>
-      <ul>
-        <li>
-          Go to
-          <a href="https://awewrite.de/app">https://awewrite.de/app</a> and copy
-          'n' paste your texts from the http version to the https one.
-        </li>
-        <li>Update your bookmarks, if any.</li>
-      </ul>
-      <p>Then you're safe.</p>
-      <p>
-        As soon as the http version is taken offline it will automatically
-        <strong>redirect</strong> to the https version.
-      </p>
-      <form method="dialog">
-        <button style="all: revert">Got it!</button>
-      </form>
-    </dialog>
-
     <div id="boxArea">
       <div id="leftBox">
         <textarea id="leftTextarea"></textarea>
@@ -110,6 +69,7 @@
 
           <div class="toolbar_line_all" id="toolbar_line_font">
             <span class="toolbar_line2_title">Font</span>
+
             <h3>Font face</h3>
             <span class="toolbar_buttonset">
               <input
@@ -143,18 +103,54 @@
 
               <input
                 type="radio"
+                id="toolbar_fontface_duo"
+                name="fontface"
+                class="change-fontface-button"
+                data-fontface="Duo"
+              />
+              <label for="toolbar_fontface_duo">iA Writer Duo</label>
+
+              <input
+                type="radio"
+                id="toolbar_fontface_quattro"
+                name="fontface"
+                class="change-fontface-button"
+                data-fontface="Quattro"
+              />
+              <label for="toolbar_fontface_quattro">iA Writer Quattro</label>
+
+              <input
+                type="radio"
                 id="toolbar_fontface_kalam"
                 name="fontface"
                 class="change-fontface-button"
                 data-fontface="Kalam"
               />
               <label for="toolbar_fontface_kalam">Kalam</label>
+
+              <input
+                type="radio"
+                id="toolbar_fontface_opendyslexic"
+                name="fontface"
+                class="change-fontface-button"
+                data-fontface="OpenDyslexic"
+              />
+              <label for="toolbar_fontface_opendyslexic">OpenDyslexic</label>
             </span>
 
             <h3>Font size</h3>
-            <button class="icon-button" id="toolbar_fontsize_dec">-</button>
             <span id="toolbar_fontsize">12</span>
-            <button class="icon-button" id="toolbar_fontsize_inc">+</button>
+            <span class="toolbar_buttonset">
+              <button class="icon-button" id="toolbar_fontsize_dec">-</button>
+              <button class="icon-button" id="toolbar_fontsize_inc">+</button>
+            </span>
+
+            <h3>Line height</h3>
+            <span id="toolbar_lineheight">1.2</span>
+            <span class="toolbar_buttonset">
+              <button class="icon-button" id="toolbar_lineheight_dec">-</button>
+              <button class="icon-button" id="toolbar_lineheight_inc">+</button>
+            </span>
           </div>
 
           <div class="toolbar_line_all" id="toolbar_line_layout">
@@ -165,7 +161,7 @@
               <button class="icon-button" id="toolbar_splitter_left">
                 &lsaquo;
               </button>
-              <button id="toolbar_splitter_reset">reset</button>
+              <button id="toolbar_splitter_reset">center</button>
               <button class="icon-button" id="toolbar_splitter_right">
                 &rsaquo;
               </button>
@@ -235,7 +231,7 @@
 
           <div class="toolbar_line_all" id="toolbar_line_about">
             <span class="toolbar_line2_title">About</span>
-            <span class="infotext">AWE.write 1.9.0</span>
+            <span class="infotext">AWE.write 1.10.0</span>
             <span class="infotext">
               <a href="https://awewrite.de" target="_blank">
                 Visit awewrite.de
@@ -399,16 +395,21 @@
           Images are from <a href="https://pexels.com">Pexels</a>
         </p>
 
+        <h2>Textures</h2>
+        <div class="sidebar_icon" id="theme_photo_wood_1" data-dark>
+          Wood
+        </div>
+
         <h2>Landscapes</h2>
-        <div class="sidebar_icon" id="theme_photos_river_1" data-dark>
+        <div class="sidebar_icon" id="theme_photo_river_1" data-dark>
           River
         </div>
-        <div class="sidebar_icon" id="theme_photos_trees_1" data-dark>
+        <div class="sidebar_icon" id="theme_photo_trees_1" data-dark>
           Trees
         </div>
 
         <h2>Space</h2>
-        <div class="sidebar_icon" id="theme_photos_stars_1" data-dark>
+        <div class="sidebar_icon" id="theme_photo_stars_1" data-dark>
           Stars
         </div>
       </div>

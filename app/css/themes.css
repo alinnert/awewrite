@@ -210,19 +210,24 @@
 /* #endregion image */
 
 /* #region photo */
-#theme_photos_river_1 {
+#theme_photo_river_1 {
 	background-image: url(../themes/photo_river_1_thumb.jpg);
 	background-color: hsl(192, 60%, 10%);
 	color: hsla(0, 0%, 100%, 0.9);
 }
-#theme_photos_trees_1 {
-	background-image: url(../themes/photos_trees_1_thumb.jpg);
+#theme_photo_trees_1 {
+	background-image: url(../themes/photo_trees_1_thumb.jpg);
 	background-color: hsl(14, 100%, 7%);
 	color: hsla(0, 0%, 100%, 0.9);
 }
-#theme_photos_stars_1 {
-	background-image: url(../themes/photos_stars_1_thumb.jpg);
+#theme_photo_stars_1 {
+	background-image: url(../themes/photo_stars_1_thumb.jpg);
 	background-color: hsl(244, 82%, 2%);
+	color: hsla(0, 0%, 100%, 0.9);
+}
+#theme_photo_wood_1 {
+	background-image: url(../themes/photo_wood_1_thumb.jpg);
+	background-color: #744b42;
 	color: hsla(0, 0%, 100%, 0.9);
 }
 /* #endregion photo */
