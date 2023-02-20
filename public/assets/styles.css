@@ -10,20 +10,16 @@ h2 {
 }
 
 a {
-  color: hsl(200, 80%, 50%);
+  color: #0284c7;
   text-decoration: none;
 }
 
 a:hover {
-  color: hsl(200, 80%, 40%);
+  text-decoration: underline;
 }
 
 a:visited {
-  color: hsl(220, 80%, 50%);
-}
-
-a:visited:hover {
-  color: hsl(220, 80%, 40%);
+  color: #7c3aed;
 }
 
 .page {
@@ -57,24 +53,20 @@ a:visited:hover {
 }
 
 .page-content__highlight {
-  background: #eeeeee;
+  background: #e2e8f0;
 }
 
 .page-content__negative {
-  background: #393939;
+  background: #334155;
   color: #eeeeee;
 }
 
-.page-content__negative a:hover {
-  color: hsl(200, 80%, 65%);
+.page-content__negative a {
+  color: #38bdf8;
 }
 
 .page-content__negative a:visited {
-  color: hsl(240, 80%, 70%);
-}
-
-.page-content__negative a:visited:hover {
-  color: hsl(240, 80%, 75%);
+  color: #a78bfa;
 }
 
 .page-content__wrapper {
@@ -85,6 +77,7 @@ a:visited:hover {
 }
 
 .page-content__image {
+  width: 900px;
   max-width: 95%;
   min-height: 400px;
   border-radius: 3px;
@@ -103,7 +96,7 @@ a:visited:hover {
 }
 
 .page__title {
-  color: #eee;
+  color: #f1f5f9;
   font-size: 80px;
   line-height: 1.1;
   font-weight: 400;
@@ -120,7 +113,7 @@ a:visited:hover {
 }
 
 .page__intro {
-  color: #bbb;
+  color: #94a3b8;
   font-size: 24px;
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -142,7 +135,7 @@ a:visited:hover {
 }
 
 .news__date {
-  color: #666666;
+  color: #475569;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.6;
@@ -214,6 +207,7 @@ a:visited:hover {
 .button--launch:hover {
   background: hsla(0, 0%, 100%, 0.75);
   color: hsl(0, 0%, 10%);
+  text-decoration: none;
 }
 
 .button--launch:active {

@@ -6,6 +6,7 @@ export function initializeLocalStorage() {
     localStorage.setItem('awe.save', 'true')
     localStorage.setItem('awe.fontface', '"IBM Plex Sans", sans-serif')
     localStorage.setItem('awe.fontsize', '16')
+    localStorage.setItem('awe.lineheight', '4')
     localStorage.setItem('awe.splitter', '0')
     localStorage.setItem('awe.textwidth', 'narrow')
     localStorage.setItem('awe.themeid', 'theme_color_blue')

@@ -1,5 +1,5 @@
 import { setSpellcheck } from '../actions/data.js'
-import { changeFontsize } from '../actions/font.js'
+import { changeFontsize, changeLineheight } from '../actions/font.js'
 import { changeTextWidth, moveSplitter } from '../actions/layout.js'
 import {
   fontFaceElement,
@@ -47,6 +47,7 @@ export function loadSettings() {
   const isDarkTheme = darkThemeValue !== 'false'
 
   changeFontsize(localStorage.getItem('awe.fontsize'))
+  changeLineheight(localStorage.getItem('awe.lineheight'))
   moveSplitter(parseInt(localStorage.getItem('awe.splitter')))
   changeTheme(localStorage.getItem('awe.themeid'), isDarkTheme)
   setSpellcheck(localStorage.getItem('awe.spellcheck'))

@@ -51,6 +51,9 @@ export const spellcheckElement =
 export const fontSizeElement =
   /** @type { HTMLSpanElement } */
   ($id('toolbar_fontsize'))
+export const lineHeightElement =
+  /** @type { HTMLSpanElement } */
+  ($id('toolbar_lineheight'))
 // #endregion selected elements
 
 // #region helper functions
