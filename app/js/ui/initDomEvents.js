@@ -13,22 +13,23 @@ import {
   expandToolbarButtonElements,
   fontSizeElement,
   isHTMLElement,
-  leftBoxElement,
   lineHeightElement,
-  rightBoxElement,
+  textareaBoxElements,
   textareaElements,
 } from '../elements.js'
 import { onTextareaInput } from '../textarea/onTextareaInput.js'
 import { supportTab } from '../textarea/supportTab.js'
 import { changeTheme } from '../themes/changeTheme.js'
 import { closeToolbar } from './closeToolbar.js'
+import { globalKeys } from './globalKeys.js'
 import { openSidebar } from './openSidebar.js'
 import { openToolbar } from './openToolbar.js'
 
 export function initDomEvents() {
+  addEvent(document.getRootNode(), 'keydown', globalKeys)
+
   // Textareas
-  addEvent(leftBoxElement, 'click', closeToolbar)
-  addEvent(rightBoxElement, 'click', closeToolbar)
+  addEvent(textareaBoxElements, 'click', closeToolbar)
   addEvent(textareaElements, 'input', onTextareaInput)
   addEvent(textareaElements, 'keydown', supportTab)
 
@@ -53,11 +54,11 @@ export function initDomEvents() {
 
   // Font size
   addEvent($id('toolbar_fontsize_dec'), 'click', () => {
-    const currentFontsize = parseInt(fontSizeElement.textContent)
+    const currentFontsize = Number.parseInt(fontSizeElement.textContent)
     changeFontsize(currentFontsize - 1)
   })
   addEvent($id('toolbar_fontsize_inc'), 'click', () => {
-    const currentFontsize = parseInt(fontSizeElement.textContent)
+    const currentFontsize = Number.parseInt(fontSizeElement.textContent)
     changeFontsize(currentFontsize + 1)
   })
 
@@ -73,10 +74,10 @@ export function initDomEvents() {
 
   // Splitter
   addEvent($id('toolbar_splitter_left'), 'click', () => {
-    moveSplitter(parseInt(localStorage.getItem('awe.splitter')) - 1)
+    moveSplitter(Number.parseInt(localStorage.getItem('awe.splitter')) - 1)
   })
   addEvent($id('toolbar_splitter_right'), 'click', () => {
-    moveSplitter(parseInt(localStorage.getItem('awe.splitter')) + 1)
+    moveSplitter(Number.parseInt(localStorage.getItem('awe.splitter')) + 1)
   })
   addEvent($id('toolbar_splitter_reset'), 'click', () => {
     moveSplitter(0)

@@ -48,7 +48,7 @@ export function loadSettings() {
 
   changeFontsize(localStorage.getItem('awe.fontsize'))
   changeLineheight(localStorage.getItem('awe.lineheight'))
-  moveSplitter(parseInt(localStorage.getItem('awe.splitter')))
+  moveSplitter(Number.parseInt(localStorage.getItem('awe.splitter')))
   changeTheme(localStorage.getItem('awe.themeid'), isDarkTheme)
   setSpellcheck(localStorage.getItem('awe.spellcheck'))
   leftTextareaElement.value = localStorage.getItem('awe.text.left')

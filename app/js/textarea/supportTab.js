@@ -1,15 +1,18 @@
+import { onTextareaInput } from './onTextareaInput.js'
+
 /** @param { KeyboardEvent } event */
 export function supportTab(event) {
   const target = event.currentTarget
   if (!(target instanceof HTMLTextAreaElement)) return
 
-  if (event.keyCode === 9) {
+  if (event.key === 'Tab') {
     const start = target.value.substring(0, target.selectionStart)
     const end = target.value.substring(target.selectionEnd)
 
-    this.value = `${start}\t${end}`
-    this.selectionStart = this.selectionEnd = start + 1
+    target.value = `${start}\t${end}`
+    target.selectionStart = target.selectionEnd = start.length + 1
 
-    return false
+    onTextareaInput()
+    event.preventDefault()
   }
 }
