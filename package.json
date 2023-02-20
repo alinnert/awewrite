@@ -1,0 +1,24 @@
+{
+  "name": "awewrite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A simple two-pane web based text editor in your browser.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "http-server public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alinnert/awewrite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alinnert/awewrite/issues"
+  },
+  "homepage": "https://github.com/alinnert/awewrite#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
