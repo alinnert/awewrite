@@ -24,6 +24,7 @@ export const textareaElements = document.getElementsByTagName('textarea')
 export const sidebarContentElements = $class('sidebar_content')
 export const expandToolbarButtonElements = $class('expand-toolbar-button')
 export const toolbarLineAllElements = $class('toolbar_line_all')
+export const textareaBoxElements = $class('textarea-box')
 
 export const fontFaceElement = $name('fontface')
 export const textWidthElement = $name('textwidth')
@@ -81,12 +82,12 @@ export function elementIsHidden(element) {
 
 /**
  * @template { keyof HTMLElementEventMap } [T = keyof HTMLElementEventMap]
- * @param { Element | Element[] | HTMLCollectionOf<Element> } elements
+ * @param { Node | Node[] | HTMLCollectionOf<Element> } elements
  * @param { T } eventName
  * @param { (event: HTMLElementEventMap[T]) => void } handler
  */
 export function addEvent(elements, eventName, handler) {
-  const elementList = elements instanceof Element ? [elements] : elements
+  const elementList = elements instanceof Node ? [elements] : elements
   for (const element of elementList) {
     element.addEventListener(eventName, handler)
   }

@@ -54,7 +54,7 @@ function getRealLineheight(height) {
 }
 
 export function parseLineheight(lineHeight) {
-  const lineHeightValue = parseFloat(lineHeight)
+  const lineHeightValue = Number.parseFloat(lineHeight)
   return lineHeightValue * 10 - 10
 }
 
