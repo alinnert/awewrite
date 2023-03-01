@@ -17,10 +17,12 @@ import {
   textareaBoxElements,
   textareaElements,
 } from '../elements.js'
+import { onTextareaBoxElementsClick } from '../textarea/onTextareaBoxElementsClick.js'
+import { onTextareaClick } from '../textarea/onTextareaClick.js'
+import { onTextareaFocus } from '../textarea/onTextareaFocus.js'
 import { onTextareaInput } from '../textarea/onTextareaInput.js'
 import { supportTab } from '../textarea/supportTab.js'
 import { changeTheme } from '../themes/changeTheme.js'
-import { closeToolbar } from './closeToolbar.js'
 import { globalKeys } from './globalKeys.js'
 import { openSidebar } from './openSidebar.js'
 import { openToolbar } from './openToolbar.js'
@@ -29,9 +31,11 @@ export function initDomEvents() {
   addEvent(document.getRootNode(), 'keydown', globalKeys)
 
   // Textareas
-  addEvent(textareaBoxElements, 'click', closeToolbar)
+  addEvent(textareaBoxElements, 'click', onTextareaBoxElementsClick)
+  addEvent(textareaElements, 'click', onTextareaClick)
   addEvent(textareaElements, 'input', onTextareaInput)
   addEvent(textareaElements, 'keydown', supportTab)
+  addEvent(textareaElements, 'focus', onTextareaFocus)
 
   // Toolbar
   addEvent(expandToolbarButtonElements, 'click', (event) => {
