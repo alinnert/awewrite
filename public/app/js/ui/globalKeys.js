@@ -1,7 +1,8 @@
 import { closeToolbar } from './closeToolbar.js'
 
+/** @param { KeyboardEvent } e */
 export function globalKeys(e) {
-  if (e.keyCode === 27) {
+  if (e.key === 'Escape') {
     closeToolbar()
   }
 }

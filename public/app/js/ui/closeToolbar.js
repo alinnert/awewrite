@@ -1,8 +1,9 @@
 import {
   sidebarElement,
   toolbarElement,
-  toolbarLineAllElements,
+  toolbarLineAllElements
 } from '../elements.js'
+import { restoreTextareaFocus } from '../textarea/onTextareaFocus.js'
 import { closeSidebar } from './closeSidebar.js'
 
 export function closeToolbar() {
@@ -19,4 +20,5 @@ export function closeToolbar() {
   }
 
   closeSidebar()
+  restoreTextareaFocus()
 }
