@@ -151,6 +151,11 @@ a:visited {
   margin-top: 10px;
 }
 
+.changelog ul ul {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
 .line-box {
   margin-bottom: 32px;
 }

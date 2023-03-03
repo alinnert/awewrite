@@ -8,8 +8,7 @@ import {
 } from '../elements.js'
 
 export function openSidebar(sidebarName) {
-  const sidebarId = `sidebar_${sidebarName}`
-  const sidebarByIdElement = $id(sidebarId)
+  const sidebarByIdElement = $id(`sidebar_${sidebarName}`)
 
   if (elementIsHidden(sidebarByIdElement)) {
     sidebarElement.style.width = '260px'

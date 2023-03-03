@@ -19,6 +19,5 @@ export function restoreTextareaFocus() {
 /** @param { string | null } id */
 export function setFocusedTextareaId(id = null) {
   if (focusedTextareaId === id) return
-  console.log('set focus to', id)
   focusedTextareaId = id
 }
