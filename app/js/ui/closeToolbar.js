@@ -1,4 +1,5 @@
 import {
+  $class,
   sidebarElement,
   toolbarElement,
   toolbarLineAllElements
@@ -7,6 +8,12 @@ import { restoreTextareaFocus } from '../textarea/onTextareaFocus.js'
 import { closeSidebar } from './closeSidebar.js'
 
 export function closeToolbar() {
+  const allToolbarButtons = $class('expand-toolbar-button')
+
+  for (const element of allToolbarButtons) {
+    element.classList.remove('is-current')
+  }
+  
   for (const element of toolbarLineAllElements) {
     element.removeAttribute('data-open')
   }

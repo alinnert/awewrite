@@ -56,187 +56,244 @@
       <div class="toolbar_line">
         <div class="toolbar_line2">
           <div class="toolbar_line_all" id="toolbar_line_data">
-            <span class="toolbar_line2_title">Data</span>
+            <div class="toolbar_subline">
+              <h3>Actions</h3>
+              <button class="switch-texts-button" type="button">
+                switch texts
+              </button>
+              <button class="clear-texts-button" type="button">
+                clear texts
+              </button>
 
-            <h3>Actions</h3>
-            <button class="switch-texts-button">switch texts</button>
-            <button class="clear-texts-button">clear texts</button>
-
-            <h3>Settings</h3>
-            <input type="checkbox" id="spellcheck" />
-            <label for="spellcheck">Enable spellchecking</label>
+              <h3>Settings</h3>
+              <input type="checkbox" id="spellcheck" />
+              <label for="spellcheck">Enable spellchecking</label>
+            </div>
           </div>
 
           <div class="toolbar_line_all" id="toolbar_line_font">
-            <span class="toolbar_line2_title">Font</span>
+            <div class="toolbar_subline">
+              <h3>Font face</h3>
+              <span class="toolbar_buttonset">
+                <input
+                  type="radio"
+                  id="toolbar_fontface_ibm_plex_sans"
+                  class="change-fontface-button"
+                  data-fontface="IBM Plex Sans"
+                  name="fontface"
+                />
+                <label for="toolbar_fontface_ibm_plex_sans"
+                  >IBM Plex Sans</label
+                >
 
-            <h3>Font face</h3>
-            <span class="toolbar_buttonset">
-              <input
-                type="radio"
-                id="toolbar_fontface_ibm_plex_sans"
-                class="change-fontface-button"
-                data-fontface="IBM Plex Sans"
-                name="fontface"
-              />
-              <label for="toolbar_fontface_ibm_plex_sans">IBM Plex Sans</label>
+                <input
+                  type="radio"
+                  id="toolbar_fontface_ibm_plex_serif"
+                  name="fontface"
+                  class="change-fontface-button"
+                  data-fontface="IBM Plex Serif"
+                />
+                <label for="toolbar_fontface_ibm_plex_serif">
+                  IBM Plex Serif
+                </label>
 
-              <input
-                type="radio"
-                id="toolbar_fontface_ibm_plex_serif"
-                name="fontface"
-                class="change-fontface-button"
-                data-fontface="IBM Plex Serif"
-              />
-              <label for="toolbar_fontface_ibm_plex_serif">
-                IBM Plex Serif
-              </label>
+                <input
+                  type="radio"
+                  id="toolbar_fontface_ibm_plex_mono"
+                  name="fontface"
+                  class="change-fontface-button"
+                  data-fontface="IBM Plex Mono"
+                />
+                <label for="toolbar_fontface_ibm_plex_mono"
+                  >IBM Plex Mono</label
+                >
 
-              <input
-                type="radio"
-                id="toolbar_fontface_ibm_plex_mono"
-                name="fontface"
-                class="change-fontface-button"
-                data-fontface="IBM Plex Mono"
-              />
-              <label for="toolbar_fontface_ibm_plex_mono">IBM Plex Mono</label>
+                <input
+                  type="radio"
+                  id="toolbar_fontface_duo"
+                  name="fontface"
+                  class="change-fontface-button"
+                  data-fontface="Duo"
+                />
+                <label for="toolbar_fontface_duo">iA Writer Duo</label>
 
-              <input
-                type="radio"
-                id="toolbar_fontface_duo"
-                name="fontface"
-                class="change-fontface-button"
-                data-fontface="Duo"
-              />
-              <label for="toolbar_fontface_duo">iA Writer Duo</label>
+                <input
+                  type="radio"
+                  id="toolbar_fontface_quattro"
+                  name="fontface"
+                  class="change-fontface-button"
+                  data-fontface="Quattro"
+                />
+                <label for="toolbar_fontface_quattro">iA Writer Quattro</label>
 
-              <input
-                type="radio"
-                id="toolbar_fontface_quattro"
-                name="fontface"
-                class="change-fontface-button"
-                data-fontface="Quattro"
-              />
-              <label for="toolbar_fontface_quattro">iA Writer Quattro</label>
+                <input
+                  type="radio"
+                  id="toolbar_fontface_kalam"
+                  name="fontface"
+                  class="change-fontface-button"
+                  data-fontface="Kalam"
+                />
+                <label for="toolbar_fontface_kalam">Kalam</label>
 
-              <input
-                type="radio"
-                id="toolbar_fontface_kalam"
-                name="fontface"
-                class="change-fontface-button"
-                data-fontface="Kalam"
-              />
-              <label for="toolbar_fontface_kalam">Kalam</label>
+                <input
+                  type="radio"
+                  id="toolbar_fontface_opendyslexic"
+                  name="fontface"
+                  class="change-fontface-button"
+                  data-fontface="OpenDyslexic"
+                />
+                <label for="toolbar_fontface_opendyslexic">OpenDyslexic</label>
+              </span>
+            </div>
 
-              <input
-                type="radio"
-                id="toolbar_fontface_opendyslexic"
-                name="fontface"
-                class="change-fontface-button"
-                data-fontface="OpenDyslexic"
-              />
-              <label for="toolbar_fontface_opendyslexic">OpenDyslexic</label>
-            </span>
+            <div class="toolbar_subline">
+              <h3>Font size</h3>
+              <span id="toolbar_fontsize">12</span>
+              <span class="toolbar_buttonset">
+                <button
+                  class="icon-button"
+                  id="toolbar_fontsize_dec"
+                  type="button"
+                >
+                  -
+                </button>
+                <button
+                  class="icon-button"
+                  id="toolbar_fontsize_inc"
+                  type="button"
+                >
+                  +
+                </button>
+              </span>
 
-            <h3>Font size</h3>
-            <span id="toolbar_fontsize">12</span>
-            <span class="toolbar_buttonset">
-              <button class="icon-button" id="toolbar_fontsize_dec">-</button>
-              <button class="icon-button" id="toolbar_fontsize_inc">+</button>
-            </span>
-
-            <h3>Line height</h3>
-            <span id="toolbar_lineheight">1.2</span>
-            <span class="toolbar_buttonset">
-              <button class="icon-button" id="toolbar_lineheight_dec">-</button>
-              <button class="icon-button" id="toolbar_lineheight_inc">+</button>
-            </span>
+              <h3>Line height</h3>
+              <span id="toolbar_lineheight">1.2</span>
+              <span class="toolbar_buttonset">
+                <button
+                  class="icon-button"
+                  id="toolbar_lineheight_dec"
+                  type="button"
+                >
+                  -
+                </button>
+                <button
+                  class="icon-button"
+                  id="toolbar_lineheight_inc"
+                  type="button"
+                >
+                  +
+                </button>
+              </span>
+            </div>
           </div>
 
           <div class="toolbar_line_all" id="toolbar_line_layout">
-            <span class="toolbar_line2_title">Layout</span>
+            <div class="toolbar_subline">
+              <h3>Divider</h3>
+              <span class="toolbar_buttonset">
+                <button
+                  class="icon-button"
+                  id="toolbar_splitter_left"
+                  type="button"
+                >
+                  &lsaquo;
+                </button>
+                <button id="toolbar_splitter_reset" type="button">
+                  center
+                </button>
+                <button
+                  class="icon-button"
+                  id="toolbar_splitter_right"
+                  type="button"
+                >
+                  &rsaquo;
+                </button>
+              </span>
 
-            <h3>Divider</h3>
-            <span class="toolbar_buttonset">
-              <button class="icon-button" id="toolbar_splitter_left">
-                &lsaquo;
-              </button>
-              <button id="toolbar_splitter_reset">center</button>
-              <button class="icon-button" id="toolbar_splitter_right">
-                &rsaquo;
-              </button>
-            </span>
-
-            <h3>Text width</h3>
-            <span class="toolbar_buttonset">
-              <input
-                type="radio"
-                name="textwidth"
-                class="change-text-width-button"
-                data-text-width="narrow"
-                id="toolbar_textwidth_narrow"
-              />
-              <label for="toolbar_textwidth_narrow">Narrow</label>
-              <input
-                type="radio"
-                name="textwidth"
-                class="change-text-width-button"
-                data-text-width="wide"
-                id="toolbar_textwidth_wide"
-              />
-              <label for="toolbar_textwidth_wide">Wide</label>
-              <input
-                type="radio"
-                name="textwidth"
-                class="change-text-width-button"
-                data-text-width="full"
-                id="toolbar_textwidth_full"
-              />
-              <label for="toolbar_textwidth_full">Full</label>
-            </span>
+              <h3>Text width</h3>
+              <span class="toolbar_buttonset">
+                <input
+                  type="radio"
+                  name="textwidth"
+                  class="change-text-width-button"
+                  data-text-width="narrow"
+                  id="toolbar_textwidth_narrow"
+                />
+                <label for="toolbar_textwidth_narrow">Narrow</label>
+                <input
+                  type="radio"
+                  name="textwidth"
+                  class="change-text-width-button"
+                  data-text-width="wide"
+                  id="toolbar_textwidth_wide"
+                />
+                <label for="toolbar_textwidth_wide">Wide</label>
+                <input
+                  type="radio"
+                  name="textwidth"
+                  class="change-text-width-button"
+                  data-text-width="full"
+                  id="toolbar_textwidth_full"
+                />
+                <label for="toolbar_textwidth_full">Full</label>
+              </span>
+            </div>
           </div>
 
           <div class="toolbar_line_all" id="toolbar_line_background">
-            <span class="toolbar_line2_title">Background</span>
+            <div class="toolbar_subline">
+              <h3>Colors</h3>
+              <span class="toolbar_buttonset">
+                <button
+                  class="open-sidebar-button"
+                  data-sidebar="themes_dark_colors"
+                  type="button"
+                >
+                  Dark
+                </button>
+                <button
+                  class="open-sidebar-button"
+                  data-sidebar="themes_light_colors"
+                  type="button"
+                >
+                  Light
+                </button>
+              </span>
 
-            <h3>Colors</h3>
-            <span class="toolbar_buttonset">
-              <button
-                class="open-sidebar-button"
-                data-sidebar="themes_dark_colors"
-              >
-                Dark
-              </button>
-              <button
-                class="open-sidebar-button"
-                data-sidebar="themes_light_colors"
-              >
-                Light
-              </button>
-            </span>
-
-            <h3>Images</h3>
-            <span class="toolbar_buttonset">
-              <button class="open-sidebar-button" data-sidebar="themes_images">
-                Abstract
-              </button>
-              <button class="open-sidebar-button" data-sidebar="themes_photos">
-                Photos
-              </button>
-              <button class="open-sidebar-button" data-sidebar="themes_approx">
-                ApproxArt
-              </button>
-            </span>
+              <h3>Images</h3>
+              <span class="toolbar_buttonset">
+                <button
+                  class="open-sidebar-button"
+                  data-sidebar="themes_images"
+                  type="button"
+                >
+                  Abstract
+                </button>
+                <button
+                  class="open-sidebar-button"
+                  data-sidebar="themes_photos"
+                  type="button"
+                >
+                  Photos
+                </button>
+                <button
+                  class="open-sidebar-button"
+                  data-sidebar="themes_approx"
+                  type="button"
+                >
+                  ApproxArt
+                </button>
+              </span>
+            </div>
           </div>
 
           <div class="toolbar_line_all" id="toolbar_line_about">
-            <span class="toolbar_line2_title">About</span>
-            <span class="infotext">AWE.write 1.11</span>
-            <span class="infotext">
-              <a href="/" target="_blank">
-                Visit awewrite.de
-              </a>
-            </span>
+            <div class="toolbar_subline">
+              <span class="infotext">AWE.write 1.12</span>
+              <span class="infotext">
+                <a href="/" target="_blank">Visit awewrite.de</a>
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -396,22 +453,14 @@
         </p>
 
         <h2>Textures</h2>
-        <div class="sidebar_icon" id="theme_photo_wood_1" data-dark>
-          Wood
-        </div>
+        <div class="sidebar_icon" id="theme_photo_wood_1" data-dark>Wood</div>
 
         <h2>Landscapes</h2>
-        <div class="sidebar_icon" id="theme_photo_river_1" data-dark>
-          River
-        </div>
-        <div class="sidebar_icon" id="theme_photo_trees_1" data-dark>
-          Trees
-        </div>
+        <div class="sidebar_icon" id="theme_photo_river_1" data-dark>River</div>
+        <div class="sidebar_icon" id="theme_photo_trees_1" data-dark>Trees</div>
 
         <h2>Space</h2>
-        <div class="sidebar_icon" id="theme_photo_stars_1" data-dark>
-          Stars
-        </div>
+        <div class="sidebar_icon" id="theme_photo_stars_1" data-dark>Stars</div>
       </div>
 
       <div class="sidebar_content" id="sidebar_themes_approx">

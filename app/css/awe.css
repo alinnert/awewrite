@@ -145,6 +145,10 @@ body.light-theme #toolbar {
   app-region: no-drag;
 }
 
+#toolbar .expand-toolbar-button.is-current {
+  box-shadow: 0 -2px 0 hsla(0, 0%, 100%, 0.8) inset;
+}
+
 #toolbar .expand-toolbar-button:hover {
   background: hsla(0, 0%, 100%, 0.2);
 }
@@ -155,6 +159,10 @@ body.light-theme #toolbar {
 
 body.light-theme #toolbar .expand-toolbar-button {
   color: hsla(0, 0%, 0%, 0.7);
+}
+
+body.light-theme #toolbar .expand-toolbar-button.is-current {
+  box-shadow: 0 -2px 0 hsla(0, 0%, 0%, 0.8) inset;
 }
 
 body.light-theme #toolbar .expand-toolbar-button:hover {
@@ -170,7 +178,6 @@ body.light-theme #toolbar .expand-toolbar-button:active {
   align-items: center;
   padding: 0 20px;
   width: 100%;
-  height: 40px;
   white-space: nowrap;
   transition: background 0.3s ease-out;
   box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.1),
@@ -182,9 +189,12 @@ body.light-theme #toolbar .toolbar_line2 {
     inset 0 -1px 0 hsla(0, 0%, 0%, 0.2);
 }
 
-.toolbar_line_all {
+.toolbar_line_all {}
+
+.toolbar_subline {
   display: flex;
   align-items: center;
+  height: 40px;
 }
 
 /* Toolbar-Elemente */
@@ -323,6 +333,10 @@ body.light-theme #toolbar input[type='radio'] + label:active {
   padding-right: 12px;
 }
 
+.toolbar_line2 h3:first-child {
+  padding-left: 0;
+}
+
 .toolbar_line2 span.infotext {
   padding-left: 15px;
 }
@@ -406,23 +420,12 @@ body.light-theme #toolbar_title {
   color: hsla(0, 0%, 0%, 0.5);
 }
 
-#toolbar .toolbar_line2_title {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 16px;
-  font-weight: bold;
-  transition: color 0.3s ease-out;
-}
-
 #toolbar .checkbox-item input {
   vertical-align: middle;
 }
 
 #toolbar .checkbox-item label {
   vertical-align: middle;
-}
-
-body.light-theme #toolbar .toolbar_line2_title {
-  color: hsla(0, 0%, 0%, 0.5);
 }
 
 #toolbar_fontsize,
