@@ -89,9 +89,6 @@ a {
   height: 40px;
   overflow: hidden;
   color: white;
-  /* background: hsla(0, 0%, 0%, 0.5); */
-  /* -webkit-backdrop-filter: blur(8px); */
-  /* backdrop-filter: blur(8px); */
   transition: all 0.15s ease-out;
   -webkit-user-select: none;
   user-select: none;
@@ -599,12 +596,17 @@ textarea {
   transition: background 0.2s ease-out, color 0.2s ease-out,
     border-color 0.2s ease-out, box-shadow 0.2s ease-out;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  backdrop-filter: blur(50px);
   cursor: text;
 }
+
 textarea:focus {
   border-color: hsla(0, 0%, 100%, 0.6);
   box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+body.has-background-image textarea {
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
 }
 
 body.light-theme textarea {

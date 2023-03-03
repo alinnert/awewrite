@@ -4,7 +4,7 @@ import {
   hideElement,
   showElement,
   sidebarContentElements,
-  sidebarElement,
+  sidebarElement
 } from '../elements.js'
 
 export function openSidebar(sidebarName) {
