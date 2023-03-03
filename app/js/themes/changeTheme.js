@@ -21,6 +21,7 @@ export function changeTheme(selectionId, isDarkTheme) {
   switch (themeType) {
     case 'color':
       document.body.style.backgroundColor = backgroundColor
+      document.body.classList.remove('has-background-image')
 
       updateTextareas(color)
       updateTitleAndToolbar(backgroundColor)
@@ -32,6 +33,7 @@ export function changeTheme(selectionId, isDarkTheme) {
         /_thumb/,
         '',
       )
+      document.body.classList.add('has-background-image')
 
       updateTextareas(color)
       updateTitleAndToolbar(backgroundColor)
