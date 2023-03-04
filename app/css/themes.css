@@ -1,208 +1,208 @@
 /* #region color */
-#theme_color_blue {
+#theme-color-blue {
 	background-color: hsl(200, 75%, 30%);
 	color: hsl(200, 75%, 90%);
 }
-#theme_color_green {
+#theme-color-green {
 	background-color: hsl(110, 50%, 30%);
 	color: hsl(110, 50%, 80%);
 }
-#theme_color_orange {
+#theme-color-orange {
 	background-color: hsl(20, 75%, 30%);
 	color: hsl(40, 75%, 90%);
 }
-#theme_color_purple {
+#theme-color-purple {
 	background-color: hsl(280, 50%, 30%);
 	color: hsl(280, 50%, 90%);
 }
-#theme_color_lime {
+#theme-color-lime {
 	background-color: hsl(60, 75%, 20%);
 	color: hsl(60, 75%, 90%);
 }
-#theme_color_bluegreen {
+#theme-color-bluegreen {
 	background-color: hsl(170, 80%, 20%);
 	color: hsl(170, 80%, 90%);
 }
-#theme_color_pink {
+#theme-color-pink {
 	background-color: hsl(330, 75%, 20%);
 	color: hsl(330, 75%, 90%);
 }
-#theme_color_black {
+#theme-color-black {
 	background-color: #151515;
 	color: #ccc;
 }
-#theme_color_dark {
+#theme-color-dark {
 	background-color: hsl(0, 0%, 20%);
 	color: hsl(0, 0%, 80%);
 }
-#theme_color_silver {
+#theme-color-silver {
 	background-color: hsl(190, 20%, 90%);
 	color: hsl(190, 10%, 30%);
 }
-#theme_color_white {
+#theme-color-white {
 	background-color: hsl(0, 0%, 100%);
 	color: hsl(0, 0%, 30%);
 }
-#theme_color_sepia {
+#theme-color-sepia {
 	background-color: #f8f0dc;
 	color: #88630f;
 }
-#theme_color_spring {
+#theme-color-spring {
 	background-color: hsl(120, 75%, 90%);
 	color: hsl(90, 80%, 15%);
 }
-#theme_color_sunny {
+#theme-color-sunny {
 	background-color: hsl(60, 75%, 90%);
 	color: hsl(40, 75%, 20%);
 }
-#theme_color_cherry {
+#theme-color-cherry {
 	background-color: hsl(320, 75%, 95%);
 	color: hsl(320, 90%, 20%);
 }
-#theme_color_mint {
+#theme-color-mint {
 	background-color: hsl(160, 75%, 90%);
 	color: hsl(160, 75%, 20%);
 }
-#theme_color_ice {
+#theme-color-ice {
 	background-color: hsl(190, 75%, 90%);
 	color: hsl(210, 75%, 20%);
 }
-#theme_color_console {
+#theme-color-console {
 	background-color: hsl(0, 0%, 8%);
 	color: hsl(120, 80%, 45%);
 }
-#theme_color_sol_light {
+#theme-color-sol-light {
 	background-color: hsl(44, 87%, 94%);
 	color: hsl(196, 13%, 45%);
 }
-#theme_color_sol_dark {
+#theme-color-sol-dark {
 	background-color: hsl(192, 81%, 14%);
 	color: hsl(180, 7%, 60%);
 }
-#theme_color_cave_light {
+#theme-color-cave-light {
 	background-color: hsl(262, 27%, 94%);
 	color: hsl(266, 7%, 40%);
 }
-#theme_color_cave_dark {
+#theme-color-cave-dark {
 	background-color: hsl(265, 9%, 15%);
 	color: hsl(265, 15%, 89%);
 }
-#theme_color_estuary_light {
+#theme-color-estuary-light {
 	background-color: hsl(52, 27%, 94%);
 	color: hsl(57, 9%, 39%);
 }
-#theme_color_estuary_dark {
+#theme-color-estuary-dark {
 	background-color: hsl(55, 11%, 17%);
 	color: hsl(55, 15%, 89%);
 }
-#theme_color_seaside_light {
+#theme-color-seaside-light {
 	background-color: hsl(120, 50%, 97%);
 	color: hsl(120, 8%, 40%);
 }
-#theme_color_seaside_dark {
+#theme-color-seaside-dark {
 	background-color: hsl(120, 6%, 15%);
 	color: hsl(120, 35%, 86%);
 }
-#theme_color_lakeside_light {
+#theme-color-lakeside-light {
 	background-color: hsl(200, 100%, 96%);
 	color: hsl(200, 21%, 40%);
 }
-#theme_color_lakeside_dark {
+#theme-color-lakeside-dark {
 	background-color: hsl(200, 20%, 15%);
 	color: hsl(200, 75%, 86%);
 }
 /* #endregion color */
 
 /* #region image */
-#theme_image_mosaic_white {
+#theme-image-mosaic-white {
 	background-image: url(../themes/mosaic_white_thumb.jpg);
 	background-color: hsl(0, 0%, 95%);
 	color: hsl(0, 0%, 10%);
 }
-#theme_image_mosaic_black {
+#theme-image-mosaic-black {
 	background-image: url(../themes/mosaic_black_thumb.jpg);
 	background-color: hsl(0, 0%, 0%);
 	color: hsl(0, 0%, 90%);
 }
 
-#theme_image_ray_blue {
+#theme-image-ray-blue {
 	background-image: url(../themes/ray_blue_thumb.png);
 	background-color: hsl(234, 17%, 58%);
 	color: white;
 }
-#theme_image_ray_green {
+#theme-image-ray-green {
 	background-image: url(../themes/ray_green_thumb.png);
 	background-color: hsl(66, 96%, 30%);
 	color: white;
 }
-#theme_image_ray_orange {
+#theme-image-ray-orange {
 	background-image: url(../themes/ray_orange_thumb.png);
 	background-color: hsl(50, 96%, 33%);
 	color: white;
 }
-#theme_image_ray_pink {
+#theme-image-ray-pink {
 	background-image: url(../themes/ray_pink_thumb.png);
 	background-color: hsl(348, 43%, 57%);
 	color: white;
 }
 
-#theme_image_shine_blue {
+#theme-image-shine-blue {
 	background-image: url(../themes/shine_blue_thumb.jpg);
 	background-color: hsl(210, 59%, 50%);
 	color: white;
 }
-#theme_image_shine_chrome {
+#theme-image-shine-chrome {
 	background-image: url(../themes/shine_chrome_thumb.jpg);
 	background-color: hsl(127, 17%, 9%);
 	color: white;
 }
-#theme_image_shine_green {
+#theme-image-shine-green {
 	background-image: url(../themes/shine_green_thumb.jpg);
 	background-color: hsl(120, 96%, 11%);
 	color: white;
 }
-#theme_image_shine_orange {
+#theme-image-shine-orange {
 	background-image: url(../themes/shine_orange_thumb.jpg);
 	background-color: hsl(19, 88%, 13%);
 	color: white;
 }
-#theme_image_shine_pink {
+#theme-image-shine-pink {
 	background-image: url(../themes/shine_pink_thumb.jpg);
 	background-color: hsl(336, 100%, 35%);
 	color: white;
 }
 
-#theme_image_aqua_blue {
+#theme-image-aqua-blue {
 	background-image: url(../themes/aqua_blue_thumb.png);
 	background-color: hsl(201, 67%, 40%);
 	color: #CEE8F5;
 }
-#theme_image_aqua_bluegreen {
+#theme-image-aqua-bluegreen {
 	background-image: url(../themes/aqua_blue_green_thumb.png);
 	background-color: hsl(162, 69%, 39%);
 	color: #CEF5EC;
 }
-#theme_image_aqua_lime {
+#theme-image-aqua-lime {
 	background-image: url(../themes/aqua_lime_thumb.png);
 	background-color: hsl(74, 58%, 31%);
 	color: #F8FDEC;
 }
-#theme_image_aqua_purple {
+#theme-image-aqua-purple {
 	background-image: url(../themes/aqua_purple_thumb.png);
 	background-color: hsl(244, 57%, 32%);
 	color: #E7D7F8;
 }
-#theme_image_aqua_red {
+#theme-image-aqua-red {
 	background-image: url(../themes/aqua_red_thumb.png);
 	background-color: hsl(358, 65%, 23%);
 	color: #F6E2E2;
 }
-#theme_image_aqua_black {
+#theme-image-aqua-black {
 	background-image: url(../themes/aqua_black_thumb.png);
 	background-color: hsl(0, 0%, 14%);
 	color: hsl(0, 0%, 90%);
 }
-#theme_image_aqua_white {
+#theme-image-aqua-white {
 	background-image: url(../themes/aqua_white_thumb.png);
 	background-color: hsl(0, 0%, 83%);
 	color: hsl(0, 0%, 10%);
@@ -210,22 +210,22 @@
 /* #endregion image */
 
 /* #region photo */
-#theme_photo_river_1 {
+#theme-photo-river-1 {
 	background-image: url(../themes/photo_river_1_thumb.jpg);
 	background-color: hsl(192, 60%, 10%);
 	color: hsla(0, 0%, 100%, 0.9);
 }
-#theme_photo_trees_1 {
+#theme-photo-trees-1 {
 	background-image: url(../themes/photo_trees_1_thumb.jpg);
 	background-color: hsl(14, 100%, 7%);
 	color: hsla(0, 0%, 100%, 0.9);
 }
-#theme_photo_stars_1 {
+#theme-photo-stars-1 {
 	background-image: url(../themes/photo_stars_1_thumb.jpg);
 	background-color: hsl(244, 82%, 2%);
 	color: hsla(0, 0%, 100%, 0.9);
 }
-#theme_photo_wood_1 {
+#theme-photo-wood-1 {
 	background-image: url(../themes/photo_wood_1_thumb.jpg);
 	background-color: #744b42;
 	color: hsla(0, 0%, 100%, 0.9);
@@ -233,87 +233,87 @@
 /* #endregion photo */
 
 /* #region apprx */
-#theme_apprx_aqua {
+#theme-apprx-aqua {
 	background-image: url(../themes/approx_aqua_thumb.jpg);
 	background-color: hsl(208, 66%, 75%);
 	color: #253745;
 }
-#theme_apprx_deep_sea {
+#theme-apprx-deep-sea {
 	background-image: url(../themes/approx_deep_sea_thumb.jpg);
 	background-color: hsl(208, 92%, 10%);
 	color: white;
 }
-#theme_apprx_diamonds {
+#theme-apprx-diamonds {
 	background-image: url(../themes/approx_diamonds_thumb.jpg);
 	background-color: hsl(91, 92%, 5%);
 	color: #E2F9DF;
 }
-#theme_apprx_fiery {
+#theme-apprx-fiery {
 	background-image: url(../themes/approx_fiery_thumb.jpg);
 	background-color: hsl(29, 84%, 22%);
 	color: white;
 }
-#theme_apprx_glacialis {
+#theme-apprx-glacialis {
 	background-image: url(../themes/approx_glacialis_thumb.jpg);
 	background-color: hsl(185, 80%, 86%);
 	color: #0D434F;
 }
-#theme_apprx_grass {
+#theme-apprx-grass {
 	background-image: url(../themes/approx_grass_thumb.jpg);
 	background-color: hsl(93, 77%, 17%);
 	color: white;
 }
-#theme_apprx_image_noise {
+#theme-apprx-image-noise {
 	background-image: url(../themes/approx_image_noise_thumb.jpg);
 	background-color: hsl(0, 0%, 15%);
 	color: white;
 }
-#theme_apprx_leather {
+#theme-apprx-leather {
 	background-image: url(../themes/approx_leather_thumb.jpg);
 	background-color: hsl(0, 0%, 4%);
 	color: white;
 }
-#theme_apprx_linearis {
+#theme-apprx-linearis {
 	background-image: url(../themes/approx_linearis_thumb.jpg);
 	background-color: hsl(264, 38%, 78%);
 	color: hsl(285, 60%, 20%);
 }
-#theme_apprx_rays {
+#theme-apprx-rays {
 	background-image: url(../themes/approx_rays_thumb.jpg);
 	background-color: hsl(69, 27%, 57%);
 	color: #030;
 }
-#theme_apprx_rust {
+#theme-apprx-rust {
 	background-image: url(../themes/approx_rust_thumb.jpg);
 	background-color: hsl(9, 76%, 3%);
 	color: white;
 }
-#theme_apprx_scrap_metal {
+#theme-apprx-scrap-metal {
 	background-image: url(../themes/approx_scrap_metal_thumb.jpg);
 	background-color: hsl(0, 0%, 13%);
 	color: white;
 }
-#theme_apprx_smouldering {
+#theme-apprx-smouldering {
 	background-image: url(../themes/approx_smouldering_thumb.jpg);
 	background-color: hsl(36, 26%, 76%);
 	color: hsl(31, 49%, 10%);
 }
-#theme_apprx_splatter {
+#theme-apprx-splatter {
 	background-image: url(../themes/approx_splatter_thumb.jpg);
 	background-color: hsl(6, 90%, 16%);
 	color: white;
 }
-#theme_apprx_surface {
+#theme-apprx-surface {
 	background-image: url(../themes/approx_surface_thumb.jpg);
 	background-color: hsl(222, 100%, 13%);
 	color: white;
 }
-#theme_apprx_timber {
+#theme-apprx-timber {
 	background-image: url(../themes/approx_timber_thumb.jpg);
 	background-color: hsl(31, 11%, 63%);
 	color: hsl(29, 40%, 10%);
 }
-#theme_apprx_vintage {
+#theme-apprx-vintage {
 	background-image: url(../themes/approx_vintage_thumb.jpg);
 	background-color: hsl(37, 10%, 74%);
 	color: hsl(40, 24%, 10%);

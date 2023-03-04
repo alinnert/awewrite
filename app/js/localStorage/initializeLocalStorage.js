@@ -9,7 +9,7 @@ export function initializeLocalStorage() {
     localStorage.setItem('awe.lineheight', '4')
     localStorage.setItem('awe.splitter', '0')
     localStorage.setItem('awe.textwidth', 'narrow')
-    localStorage.setItem('awe.themeid', 'theme_color_blue')
+    localStorage.setItem('awe.themeid', 'theme-color-blue')
     localStorage.setItem('awe.darkTheme', 'true')
     localStorage.setItem('awe.spellcheck', 'true')
     localStorage.setItem(

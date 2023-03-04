@@ -21,9 +21,9 @@ export const $name = (name) => document.getElementsByName(name)
 // #region selected elements
 export const textareaElements = document.getElementsByTagName('textarea')
 
-export const sidebarContentElements = $class('sidebar_content')
+export const sidebarContentElements = $class('sidebar-content')
 export const expandToolbarButtonElements = $class('expand-toolbar-button')
-export const toolbarLineAllElements = $class('toolbar_line_all')
+export const toolbarLineAllElements = $class('toolbar-line-all')
 export const textareaBoxElements = $class('textarea-box')
 
 export const fontFaceElement = $name('fontface')
@@ -35,14 +35,14 @@ export const wordCounterElement =
   ($id('word-counter'))
 export const toolbarElement = /** @type { HTMLDivElement } */ ($id('toolbar'))
 export const sidebarElement = /** @type { HTMLDivElement } */ ($id('sidebar'))
-export const leftBoxElement = /** @type { HTMLDivElement } */ ($id('leftBox'))
-export const rightBoxElement = /** @type { HTMLDivElement } */ ($id('rightBox'))
+export const leftBoxElement = /** @type { HTMLDivElement } */ ($id('left-box'))
+export const rightBoxElement = /** @type { HTMLDivElement } */ ($id('right-box'))
 export const leftTextareaElement =
   /** @type { HTMLTextAreaElement } */
-  ($id('leftTextarea'))
+  ($id('left-textarea'))
 export const rightTextareaElement =
   /** @type { HTMLTextAreaElement } */
-  ($id('rightTextarea'))
+  ($id('right-textarea'))
 export const metaThemeColorElement =
   /** @type { HTMLMetaElement } */
   ($id('meta-theme-color'))
@@ -51,10 +51,10 @@ export const spellcheckElement =
   ($id('spellcheck'))
 export const fontSizeElement =
   /** @type { HTMLSpanElement } */
-  ($id('toolbar_fontsize'))
+  ($id('toolbar-fontsize'))
 export const lineHeightElement =
   /** @type { HTMLSpanElement } */
-  ($id('toolbar_lineheight'))
+  ($id('toolbar-lineheight'))
 // #endregion selected elements
 
 // #region helper functions

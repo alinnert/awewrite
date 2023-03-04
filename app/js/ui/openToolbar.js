@@ -9,10 +9,14 @@ import { closeToolbar } from './closeToolbar.js'
 import { openSidebar } from './openSidebar.js'
 
 /**
- * @param { 'data' | 'font' | 'layout' | 'background' | 'about' } toolbarSection
+ * @typedef { 'data' | 'font' | 'layout' | 'background' | 'about' } ToolbarName
+ */
+
+/**
+ * @param { ToolbarName } toolbarSection
  */
 export function openToolbar(toolbarSection) {
-  const sectionId = `toolbar_line_${toolbarSection}`
+  const sectionId = `toolbar-line-${toolbarSection}`
   const section = $id(sectionId)
 
   for (const element of toolbarLineAllElements) {
@@ -47,9 +51,9 @@ export function openToolbar(toolbarSection) {
     if (toolbarSection === 'background') {
       const themeId = localStorage.getItem('awe.themeid')
       if (themeId !== null) {
-        const sidebarContentElement = $id(themeId).closest('.sidebar_content')
+        const sidebarContentElement = $id(themeId).closest('.sidebar-content')
         const sidebarContentId = sidebarContentElement.getAttribute('id')
-        const sidebarName = sidebarContentId.replace(/^sidebar_/, '')
+        const sidebarName = sidebarContentId.replace(/^sidebar-/, '')
         openSidebar(sidebarName)
       }
     } else {
