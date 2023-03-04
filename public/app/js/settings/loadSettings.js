@@ -1,6 +1,7 @@
-import { setSpellcheck } from '../actions/data.js'
+import { changeTextWidth } from '../actions/changeTextWidth.js'
 import { changeFontsize, changeLineheight } from '../actions/font.js'
-import { changeTextWidth, moveSplitter } from '../actions/layout.js'
+import { moveSplitter } from '../actions/moveSplitter.js'
+import { setSpellcheck } from '../actions/setSpellcheck.js'
 import {
   fontFaceElement,
   isHTMLElement,
@@ -9,7 +10,7 @@ import {
   textareaElements,
   textWidthElement,
 } from '../elements.js'
-import { changeTheme } from '../themes/changeTheme.js'
+import { changeTheme } from '../actions/changeTheme.js'
 import { fontfaceNumber } from './fontfaceNumber.js'
 import { textwidthNumber } from './textwidthNumber.js'
 
@@ -49,7 +50,9 @@ export function loadSettings() {
   changeFontsize(localStorage.getItem('awe.fontsize'))
   changeLineheight(localStorage.getItem('awe.lineheight'))
   moveSplitter(Number.parseInt(localStorage.getItem('awe.splitter')))
-  changeTheme(localStorage.getItem('awe.themeid'), isDarkTheme)
+  const themeId =
+    localStorage.getItem('awe.themeid')?.replace(/_/g, '-') ?? null
+  changeTheme(themeId, isDarkTheme)
   setSpellcheck(localStorage.getItem('awe.spellcheck'))
   leftTextareaElement.value = localStorage.getItem('awe.text.left')
   rightTextareaElement.value = localStorage.getItem('awe.text.right')

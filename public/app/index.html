@@ -16,25 +16,30 @@
     <link rel="manifest" href="./awewrite.webmanifest" />
     <link rel="icon" href="./favicon-16.png" sizes="16x16" />
     <link rel="shortcut icon" href="./favicon-32.png" sizes="32x32" />
+    <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="./css/general.css" />
     <link rel="stylesheet" type="text/css" href="./css/themes.css" />
-    <link rel="stylesheet" type="text/css" href="./css/awe.css" />
+    <link rel="stylesheet" type="text/css" href="./css/editors.css" />
+    <link rel="stylesheet" type="text/css" href="./css/toolbar.css" />
+    <link rel="stylesheet" type="text/css" href="./css/toolbar-elements.css" />
+    <link rel="stylesheet" type="text/css" href="./css/sidebar.css" />
   </head>
 
   <body>
-    <div id="boxArea">
-      <div id="leftBox" class="textarea-box">
-        <textarea id="leftTextarea"></textarea>
+    <div id="box-area">
+      <div id="left-box" class="textarea-box">
+        <textarea id="left-textarea"></textarea>
       </div>
-      <div id="rightBox" class="textarea-box">
-        <textarea id="rightTextarea"></textarea>
+      <div id="right-box" class="textarea-box">
+        <textarea id="right-textarea"></textarea>
       </div>
     </div>
 
     <div id="toolbar">
-      <div class="toolbar_line">
-        <div class="toolbar_line1">
-          <div class="toolbar_line_left">
-            <span id="toolbar_title">AWE.write</span>
+      <div class="toolbar-line">
+        <div class="toolbar-line-1">
+          <div class="toolbar-line-left">
+            <span id="toolbar-title">AWE.write</span>
             <div class="expand-toolbar-button" data-toolbar="data">Data</div>
             <div class="expand-toolbar-button" data-toolbar="font">Font</div>
             <div class="expand-toolbar-button" data-toolbar="layout">
@@ -53,10 +58,10 @@
         </div>
       </div>
 
-      <div class="toolbar_line">
-        <div class="toolbar_line2">
-          <div class="toolbar_line_all" id="toolbar_line_data">
-            <div class="toolbar_subline">
+      <div class="toolbar-line">
+        <div class="toolbar-line-2">
+          <div class="toolbar-line-all" id="toolbar-line-data">
+            <div class="toolbar-subline">
               <h3>Actions</h3>
               <button class="switch-texts-button" type="button">
                 switch texts
@@ -71,95 +76,95 @@
             </div>
           </div>
 
-          <div class="toolbar_line_all" id="toolbar_line_font">
-            <div class="toolbar_subline">
+          <div class="toolbar-line-all" id="toolbar-line-font">
+            <div class="toolbar-subline">
               <h3>Font face</h3>
-              <span class="toolbar_buttonset">
+              <span class="toolbar-buttonset">
                 <input
                   type="radio"
-                  id="toolbar_fontface_ibm_plex_sans"
+                  id="toolbar-fontface-ibm-plex-sans"
                   class="change-fontface-button"
                   data-fontface="IBM Plex Sans"
                   name="fontface"
                 />
-                <label for="toolbar_fontface_ibm_plex_sans"
+                <label for="toolbar-fontface-ibm-plex-sans"
                   >IBM Plex Sans</label
                 >
 
                 <input
                   type="radio"
-                  id="toolbar_fontface_ibm_plex_serif"
+                  id="toolbar-fontface-ibm-plex-serif"
                   name="fontface"
                   class="change-fontface-button"
                   data-fontface="IBM Plex Serif"
                 />
-                <label for="toolbar_fontface_ibm_plex_serif">
+                <label for="toolbar-fontface-ibm-plex-serif">
                   IBM Plex Serif
                 </label>
 
                 <input
                   type="radio"
-                  id="toolbar_fontface_ibm_plex_mono"
+                  id="toolbar-fontface-ibm-plex-mono"
                   name="fontface"
                   class="change-fontface-button"
                   data-fontface="IBM Plex Mono"
                 />
-                <label for="toolbar_fontface_ibm_plex_mono"
+                <label for="toolbar-fontface-ibm-plex-mono"
                   >IBM Plex Mono</label
                 >
 
                 <input
                   type="radio"
-                  id="toolbar_fontface_duo"
+                  id="toolbar-fontface-duo"
                   name="fontface"
                   class="change-fontface-button"
                   data-fontface="Duo"
                 />
-                <label for="toolbar_fontface_duo">iA Writer Duo</label>
+                <label for="toolbar-fontface-duo">iA Writer Duo</label>
 
                 <input
                   type="radio"
-                  id="toolbar_fontface_quattro"
+                  id="toolbar-fontface-quattro"
                   name="fontface"
                   class="change-fontface-button"
                   data-fontface="Quattro"
                 />
-                <label for="toolbar_fontface_quattro">iA Writer Quattro</label>
+                <label for="toolbar-fontface-quattro">iA Writer Quattro</label>
 
                 <input
                   type="radio"
-                  id="toolbar_fontface_kalam"
+                  id="toolbar-fontface-kalam"
                   name="fontface"
                   class="change-fontface-button"
                   data-fontface="Kalam"
                 />
-                <label for="toolbar_fontface_kalam">Kalam</label>
+                <label for="toolbar-fontface-kalam">Kalam</label>
 
                 <input
                   type="radio"
-                  id="toolbar_fontface_opendyslexic"
+                  id="toolbar-fontface-opendyslexic"
                   name="fontface"
                   class="change-fontface-button"
                   data-fontface="OpenDyslexic"
                 />
-                <label for="toolbar_fontface_opendyslexic">OpenDyslexic</label>
+                <label for="toolbar-fontface-opendyslexic">OpenDyslexic</label>
               </span>
             </div>
 
-            <div class="toolbar_subline">
+            <div class="toolbar-subline">
               <h3>Font size</h3>
-              <span id="toolbar_fontsize">12</span>
-              <span class="toolbar_buttonset">
+              <span id="toolbar-fontsize">12</span>
+              <span class="toolbar-buttonset">
                 <button
                   class="icon-button"
-                  id="toolbar_fontsize_dec"
+                  id="toolbar-fontsize-dec"
                   type="button"
                 >
                   -
                 </button>
                 <button
                   class="icon-button"
-                  id="toolbar_fontsize_inc"
+                  id="toolbar-fontsize-inc"
                   type="button"
                 >
                   +
@@ -167,18 +172,18 @@
               </span>
 
               <h3>Line height</h3>
-              <span id="toolbar_lineheight">1.2</span>
-              <span class="toolbar_buttonset">
+              <span id="toolbar-lineheight">1.2</span>
+              <span class="toolbar-buttonset">
                 <button
                   class="icon-button"
-                  id="toolbar_lineheight_dec"
+                  id="toolbar-lineheight-dec"
                   type="button"
                 >
                   -
                 </button>
                 <button
                   class="icon-button"
-                  id="toolbar_lineheight_inc"
+                  id="toolbar-lineheight-inc"
                   type="button"
                 >
                   +
@@ -187,23 +192,23 @@
             </div>
           </div>
 
-          <div class="toolbar_line_all" id="toolbar_line_layout">
-            <div class="toolbar_subline">
+          <div class="toolbar-line-all" id="toolbar-line-layout">
+            <div class="toolbar-subline">
               <h3>Divider</h3>
-              <span class="toolbar_buttonset">
+              <span class="toolbar-buttonset">
                 <button
                   class="icon-button"
-                  id="toolbar_splitter_left"
+                  id="toolbar-splitter-left"
                   type="button"
                 >
                   &lsaquo;
                 </button>
-                <button id="toolbar_splitter_reset" type="button">
+                <button id="toolbar-splitter-reset" type="button">
                   center
                 </button>
                 <button
                   class="icon-button"
-                  id="toolbar_splitter_right"
+                  id="toolbar-splitter-right"
                   type="button"
                 >
                   &rsaquo;
@@ -211,49 +216,49 @@
               </span>
 
               <h3>Text width</h3>
-              <span class="toolbar_buttonset">
+              <span class="toolbar-buttonset">
                 <input
                   type="radio"
                   name="textwidth"
                   class="change-text-width-button"
                   data-text-width="narrow"
-                  id="toolbar_textwidth_narrow"
+                  id="toolbar-textwidth-narrow"
                 />
-                <label for="toolbar_textwidth_narrow">Narrow</label>
+                <label for="toolbar-textwidth-narrow">Narrow</label>
                 <input
                   type="radio"
                   name="textwidth"
                   class="change-text-width-button"
                   data-text-width="wide"
-                  id="toolbar_textwidth_wide"
+                  id="toolbar-textwidth-wide"
                 />
-                <label for="toolbar_textwidth_wide">Wide</label>
+                <label for="toolbar-textwidth-wide">Wide</label>
                 <input
                   type="radio"
                   name="textwidth"
                   class="change-text-width-button"
                   data-text-width="full"
-                  id="toolbar_textwidth_full"
+                  id="toolbar-textwidth-full"
                 />
-                <label for="toolbar_textwidth_full">Full</label>
+                <label for="toolbar-textwidth-full">Full</label>
               </span>
             </div>
           </div>
 
-          <div class="toolbar_line_all" id="toolbar_line_background">
-            <div class="toolbar_subline">
+          <div class="toolbar-line-all" id="toolbar-line-background">
+            <div class="toolbar-subline">
               <h3>Colors</h3>
-              <span class="toolbar_buttonset">
+              <span class="toolbar-buttonset">
                 <button
                   class="open-sidebar-button"
-                  data-sidebar="themes_dark_colors"
+                  data-sidebar="themes-dark-colors"
                   type="button"
                 >
                   Dark
                 </button>
                 <button
                   class="open-sidebar-button"
-                  data-sidebar="themes_light_colors"
+                  data-sidebar="themes-light-colors"
                   type="button"
                 >
                   Light
@@ -261,24 +266,24 @@
               </span>
 
               <h3>Images</h3>
-              <span class="toolbar_buttonset">
+              <span class="toolbar-buttonset">
                 <button
                   class="open-sidebar-button"
-                  data-sidebar="themes_images"
+                  data-sidebar="themes-images"
                   type="button"
                 >
                   Abstract
                 </button>
                 <button
                   class="open-sidebar-button"
-                  data-sidebar="themes_photos"
+                  data-sidebar="themes-photos"
                   type="button"
                 >
                   Photos
                 </button>
                 <button
                   class="open-sidebar-button"
-                  data-sidebar="themes_approx"
+                  data-sidebar="themes-approx"
                   type="button"
                 >
                   ApproxArt
@@ -287,11 +292,14 @@
             </div>
           </div>
 
-          <div class="toolbar_line_all" id="toolbar_line_about">
-            <div class="toolbar_subline">
-              <span class="infotext">AWE.write 1.12.1</span>
+          <div class="toolbar-line-all" id="toolbar-line-about">
+            <div class="toolbar-subline">
+              <span class="infotext">AWE.write 1.12.2</span>
               <span class="infotext">
-                <a href="/" target="_blank">Visit awewrite.de</a>
+                <a href="/" target="_blank">Website and changelog</a>
+              </span>
+              <span class="infotext">
+                <a href="https://github.com/alinnert/awewrite" target="_blank">Source code</a>
               </span>
             </div>
           </div>
@@ -300,32 +308,32 @@
     </div>
 
     <div id="sidebar">
-      <div class="sidebar_content" id="sidebar_themes_dark_colors">
+      <div class="sidebar-content" id="sidebar-themes-dark-colors">
         <h1>Dark Colors</h1>
 
         <h2>Own Themes</h2>
-        <div class="sidebar_icon" id="theme_color_dark" data-dark>Gray</div>
-        <div class="sidebar_icon" id="theme_color_black" data-dark>
+        <div class="sidebar-icon" id="theme-color-dark" data-dark>Gray</div>
+        <div class="sidebar-icon" id="theme-color-black" data-dark>
           Dark Gray
         </div>
-        <div class="sidebar_icon" id="theme_color_console" data-dark>
+        <div class="sidebar-icon" id="theme-color-console" data-dark>
           Console
         </div>
-        <div class="sidebar_icon" id="theme_color_orange" data-dark>Orange</div>
-        <div class="sidebar_icon" id="theme_color_lime" data-dark>Olive</div>
-        <div class="sidebar_icon" id="theme_color_green" data-dark>Green</div>
-        <div class="sidebar_icon" id="theme_color_bluegreen" data-dark>
+        <div class="sidebar-icon" id="theme-color-orange" data-dark>Orange</div>
+        <div class="sidebar-icon" id="theme-color-lime" data-dark>Olive</div>
+        <div class="sidebar-icon" id="theme-color-green" data-dark>Green</div>
+        <div class="sidebar-icon" id="theme-color-bluegreen" data-dark>
           Teal
         </div>
-        <div class="sidebar_icon" id="theme_color_blue" data-dark>Blue</div>
-        <div class="sidebar_icon" id="theme_color_purple" data-dark>Purple</div>
-        <div class="sidebar_icon" id="theme_color_pink" data-dark>Pink</div>
+        <div class="sidebar-icon" id="theme-color-blue" data-dark>Blue</div>
+        <div class="sidebar-icon" id="theme-color-purple" data-dark>Purple</div>
+        <div class="sidebar-icon" id="theme-color-pink" data-dark>Pink</div>
 
         <h2>Solarized</h2>
         <p class="copyinfo">
           <a href="https://ethanschoonover.com/solarized/">Website</a>
         </p>
-        <div class="sidebar_icon" id="theme_color_sol_dark" data-dark>
+        <div class="sidebar-icon" id="theme-color-sol-dark" data-dark>
           Solarized Dark
         </div>
 
@@ -336,38 +344,38 @@
             >Website</a
           >
         </p>
-        <div class="sidebar_icon" id="theme_color_cave_dark" data-dark>
+        <div class="sidebar-icon" id="theme-color-cave-dark" data-dark>
           Cave Dark
         </div>
-        <div class="sidebar_icon" id="theme_color_estuary_dark" data-dark>
+        <div class="sidebar-icon" id="theme-color-estuary-dark" data-dark>
           Estuary Dark
         </div>
-        <div class="sidebar_icon" id="theme_color_seaside_dark" data-dark>
+        <div class="sidebar-icon" id="theme-color-seaside-dark" data-dark>
           Seaside Dark
         </div>
-        <div class="sidebar_icon" id="theme_color_lakeside_dark" data-dark>
+        <div class="sidebar-icon" id="theme-color-lakeside-dark" data-dark>
           Lakeside Dark
         </div>
       </div>
 
-      <div class="sidebar_content" id="sidebar_themes_light_colors">
+      <div class="sidebar-content" id="sidebar-themes-light-colors">
         <h1>Light Colors</h1>
 
         <h2>Own Themes</h2>
-        <div class="sidebar_icon" id="theme_color_white">White</div>
-        <div class="sidebar_icon" id="theme_color_silver">Silver</div>
-        <div class="sidebar_icon" id="theme_color_sepia">Sepia</div>
-        <div class="sidebar_icon" id="theme_color_sunny">Sunny</div>
-        <div class="sidebar_icon" id="theme_color_spring">Spring</div>
-        <div class="sidebar_icon" id="theme_color_mint">Mint</div>
-        <div class="sidebar_icon" id="theme_color_ice">Ice</div>
-        <div class="sidebar_icon" id="theme_color_cherry">Cherry Blossom</div>
+        <div class="sidebar-icon" id="theme-color-white">White</div>
+        <div class="sidebar-icon" id="theme-color-silver">Silver</div>
+        <div class="sidebar-icon" id="theme-color-sepia">Sepia</div>
+        <div class="sidebar-icon" id="theme-color-sunny">Sunny</div>
+        <div class="sidebar-icon" id="theme-color-spring">Spring</div>
+        <div class="sidebar-icon" id="theme-color-mint">Mint</div>
+        <div class="sidebar-icon" id="theme-color-ice">Ice</div>
+        <div class="sidebar-icon" id="theme-color-cherry">Cherry Blossom</div>
 
         <h2>Solarized</h2>
         <p class="copyinfo">
           <a href="https://ethanschoonover.com/solarized/">Website</a>
         </p>
-        <div class="sidebar_icon" id="theme_color_sol_light">
+        <div class="sidebar-icon" id="theme-color-sol-light">
           Solarized Light
         </div>
 
@@ -378,92 +386,92 @@
             >Website</a
           >
         </p>
-        <div class="sidebar_icon" id="theme_color_cave_light">Cave Light</div>
-        <div class="sidebar_icon" id="theme_color_estuary_light">
+        <div class="sidebar-icon" id="theme-color-cave-light">Cave Light</div>
+        <div class="sidebar-icon" id="theme-color-estuary-light">
           Estuary Light
         </div>
-        <div class="sidebar_icon" id="theme_color_seaside_light">
+        <div class="sidebar-icon" id="theme-color-seaside-light">
           Seaside Light
         </div>
-        <div class="sidebar_icon" id="theme_color_lakeside_light">
+        <div class="sidebar-icon" id="theme-color-lakeside-light">
           Lakeside Light
         </div>
       </div>
 
-      <div class="sidebar_content" id="sidebar_themes_images">
+      <div class="sidebar-content" id="sidebar-themes-images">
         <h1>Abstract</h1>
 
         <h2>aqua</h2>
-        <div class="sidebar_icon" id="theme_image_aqua_blue" data-dark>
+        <div class="sidebar-icon" id="theme-image-aqua-blue" data-dark>
           Blue
         </div>
-        <div class="sidebar_icon" id="theme_image_aqua_bluegreen" data-dark>
+        <div class="sidebar-icon" id="theme-image-aqua-bluegreen" data-dark>
           Teal
         </div>
-        <div class="sidebar_icon" id="theme_image_aqua_lime" data-dark>
+        <div class="sidebar-icon" id="theme-image-aqua-lime" data-dark>
           Lime
         </div>
-        <div class="sidebar_icon" id="theme_image_aqua_purple" data-dark>
+        <div class="sidebar-icon" id="theme-image-aqua-purple" data-dark>
           Purple
         </div>
-        <div class="sidebar_icon" id="theme_image_aqua_red" data-dark>Red</div>
-        <div class="sidebar_icon" id="theme_image_aqua_black" data-dark>
+        <div class="sidebar-icon" id="theme-image-aqua-red" data-dark>Red</div>
+        <div class="sidebar-icon" id="theme-image-aqua-black" data-dark>
           Black
         </div>
-        <div class="sidebar_icon" id="theme_image_aqua_white">White</div>
+        <div class="sidebar-icon" id="theme-image-aqua-white">White</div>
 
         <h2>shine</h2>
-        <div class="sidebar_icon" id="theme_image_shine_blue" data-dark>
+        <div class="sidebar-icon" id="theme-image-shine-blue" data-dark>
           Blue
         </div>
-        <div class="sidebar_icon" id="theme_image_shine_chrome" data-dark>
+        <div class="sidebar-icon" id="theme-image-shine-chrome" data-dark>
           Chrome
         </div>
-        <div class="sidebar_icon" id="theme_image_shine_green" data-dark>
+        <div class="sidebar-icon" id="theme-image-shine-green" data-dark>
           Green
         </div>
-        <div class="sidebar_icon" id="theme_image_shine_orange" data-dark>
+        <div class="sidebar-icon" id="theme-image-shine-orange" data-dark>
           Orange
         </div>
-        <div class="sidebar_icon" id="theme_image_shine_pink" data-dark>
+        <div class="sidebar-icon" id="theme-image-shine-pink" data-dark>
           Pink
         </div>
 
         <h2>ray</h2>
-        <div class="sidebar_icon" id="theme_image_ray_blue" data-dark>Blue</div>
-        <div class="sidebar_icon" id="theme_image_ray_green" data-dark>
+        <div class="sidebar-icon" id="theme-image-ray-blue" data-dark>Blue</div>
+        <div class="sidebar-icon" id="theme-image-ray-green" data-dark>
           Green
         </div>
-        <div class="sidebar_icon" id="theme_image_ray_orange" data-dark>
+        <div class="sidebar-icon" id="theme-image-ray-orange" data-dark>
           Orange
         </div>
-        <div class="sidebar_icon" id="theme_image_ray_pink" data-dark>Pink</div>
+        <div class="sidebar-icon" id="theme-image-ray-pink" data-dark>Pink</div>
 
         <h2>mosaic</h2>
-        <div class="sidebar_icon" id="theme_image_mosaic_white">White</div>
-        <div class="sidebar_icon" id="theme_image_mosaic_black" data-dark>
+        <div class="sidebar-icon" id="theme-image-mosaic-white">White</div>
+        <div class="sidebar-icon" id="theme-image-mosaic-black" data-dark>
           Black
         </div>
       </div>
 
-      <div class="sidebar_content" id="sidebar_themes_photos">
+      <div class="sidebar-content" id="sidebar-themes-photos">
         <h1>Photos</h1>
         <p class="copyinfo">
           Images are from <a href="https://pexels.com">Pexels</a>
         </p>
 
         <h2>Textures</h2>
-        <div class="sidebar_icon" id="theme_photo_wood_1" data-dark>Wood</div>
+        <div class="sidebar-icon" id="theme-photo-wood-1" data-dark>Wood</div>
 
         <h2>Landscapes</h2>
-        <div class="sidebar_icon" id="theme_photo_river_1" data-dark>River</div>
-        <div class="sidebar_icon" id="theme_photo_trees_1" data-dark>Trees</div>
+        <div class="sidebar-icon" id="theme-photo-river-1" data-dark>River</div>
+        <div class="sidebar-icon" id="theme-photo-trees-1" data-dark>Trees</div>
 
         <h2>Space</h2>
-        <div class="sidebar_icon" id="theme_photo_stars_1" data-dark>Stars</div>
+        <div class="sidebar-icon" id="theme-photo-stars-1" data-dark>Stars</div>
       </div>
 
-      <div class="sidebar_content" id="sidebar_themes_approx">
+      <div class="sidebar-content" id="sidebar-themes-approx">
         <h1>ApproxArt</h1>
         <p class="copyinfo">
           All images<br />&copy; by
@@ -471,39 +479,39 @@
         </p>
 
         <h2>dark</h2>
-        <div class="sidebar_icon" id="theme_apprx_deep_sea" data-dark>
+        <div class="sidebar-icon" id="theme-apprx-deep-sea" data-dark>
           Deep Sea
         </div>
-        <div class="sidebar_icon" id="theme_apprx_diamonds" data-dark>
+        <div class="sidebar-icon" id="theme-apprx-diamonds" data-dark>
           Diamonds
         </div>
-        <div class="sidebar_icon" id="theme_apprx_fiery" data-dark>Fiery</div>
-        <div class="sidebar_icon" id="theme_apprx_grass" data-dark>Grass</div>
-        <div class="sidebar_icon" id="theme_apprx_image_noise" data-dark>
+        <div class="sidebar-icon" id="theme-apprx-fiery" data-dark>Fiery</div>
+        <div class="sidebar-icon" id="theme-apprx-grass" data-dark>Grass</div>
+        <div class="sidebar-icon" id="theme-apprx-image-noise" data-dark>
           Image Noise
         </div>
-        <div class="sidebar_icon" id="theme_apprx_leather" data-dark>
+        <div class="sidebar-icon" id="theme-apprx-leather" data-dark>
           Leather
         </div>
-        <div class="sidebar_icon" id="theme_apprx_rust" data-dark>Rust</div>
-        <div class="sidebar_icon" id="theme_apprx_scrap_metal" data-dark>
+        <div class="sidebar-icon" id="theme-apprx-rust" data-dark>Rust</div>
+        <div class="sidebar-icon" id="theme-apprx-scrap-metal" data-dark>
           Scrap Metal
         </div>
-        <div class="sidebar_icon" id="theme_apprx_splatter" data-dark>
+        <div class="sidebar-icon" id="theme-apprx-splatter" data-dark>
           Splatter
         </div>
-        <div class="sidebar_icon" id="theme_apprx_surface" data-dark>
+        <div class="sidebar-icon" id="theme-apprx-surface" data-dark>
           Surface
         </div>
 
         <h2>light</h2>
-        <div class="sidebar_icon" id="theme_apprx_aqua">Aqua</div>
-        <div class="sidebar_icon" id="theme_apprx_glacialis">Glacialis</div>
-        <div class="sidebar_icon" id="theme_apprx_linearis">Linearis</div>
-        <div class="sidebar_icon" id="theme_apprx_rays">Rays</div>
-        <div class="sidebar_icon" id="theme_apprx_smouldering">Smouldering</div>
-        <div class="sidebar_icon" id="theme_apprx_timber">Timber</div>
-        <div class="sidebar_icon" id="theme_apprx_vintage">Vintage</div>
+        <div class="sidebar-icon" id="theme-apprx-aqua">Aqua</div>
+        <div class="sidebar-icon" id="theme-apprx-glacialis">Glacialis</div>
+        <div class="sidebar-icon" id="theme-apprx-linearis">Linearis</div>
+        <div class="sidebar-icon" id="theme-apprx-rays">Rays</div>
+        <div class="sidebar-icon" id="theme-apprx-smouldering">Smouldering</div>
+        <div class="sidebar-icon" id="theme-apprx-timber">Timber</div>
+        <div class="sidebar-icon" id="theme-apprx-vintage">Vintage</div>
       </div>
     </div>
 

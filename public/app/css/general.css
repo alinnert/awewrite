@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  resize: none;
+  outline: none;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 12px;
+  line-height: 17px;
+  cursor: default;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.3s ease-in-out;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+}
