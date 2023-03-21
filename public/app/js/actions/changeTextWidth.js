@@ -11,8 +11,11 @@ export function changeTextWidth(width) {
       case 'narrow':
         textarea.style.maxWidth = '35em'
         break
-      case 'wide':
+      case 'medium':
         textarea.style.maxWidth = '45em'
+        break
+      case 'wide':
+        textarea.style.maxWidth = '55em'
         break
     }
   }
