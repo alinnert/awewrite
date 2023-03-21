@@ -1,11 +1,10 @@
+import { changeFontface } from '../actions/changeFontface.js'
+import { changeFontsize } from '../actions/changeFontsize.js'
+import { changeLineheight } from '../actions/changeLineheight.js'
 import { changeTextWidth } from '../actions/changeTextWidth.js'
+import { changeTheme } from '../actions/changeTheme.js'
 import { clearTexts } from '../actions/clearTexts.js'
-import {
-  changeFontface,
-  changeFontsize,
-  changeLineheight,
-  parseLineheight,
-} from '../actions/font.js'
+import { parseLineheight } from '../actions/font.js'
 import { moveSplitter } from '../actions/moveSplitter.js'
 import { setSpellcheck } from '../actions/setSpellcheck.js'
 import { switchTexts } from '../actions/switchTexts.js'
@@ -25,7 +24,6 @@ import { onTextareaClick } from '../textarea/onTextareaClick.js'
 import { onTextareaFocus } from '../textarea/onTextareaFocus.js'
 import { onTextareaInput } from '../textarea/onTextareaInput.js'
 import { supportTab } from '../textarea/supportTab.js'
-import { changeTheme } from '../actions/changeTheme.js'
 import { globalKeys } from './globalKeys.js'
 import { openSidebar } from './openSidebar.js'
 import { openToolbar } from './openToolbar.js'

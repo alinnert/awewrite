@@ -1,5 +1,7 @@
+import { changeFontsize } from '../actions/changeFontsize.js'
+import { changeLineheight } from '../actions/changeLineheight.js'
 import { changeTextWidth } from '../actions/changeTextWidth.js'
-import { changeFontsize, changeLineheight } from '../actions/font.js'
+import { changeTheme } from '../actions/changeTheme.js'
 import { moveSplitter } from '../actions/moveSplitter.js'
 import { setSpellcheck } from '../actions/setSpellcheck.js'
 import {
@@ -10,7 +12,6 @@ import {
   textareaElements,
   textWidthElement,
 } from '../elements.js'
-import { changeTheme } from '../actions/changeTheme.js'
 import { fontfaceNumber } from './fontfaceNumber.js'
 import { textwidthNumber } from './textwidthNumber.js'
 
