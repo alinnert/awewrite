@@ -41,11 +41,6 @@ body.light-theme #toolbar {
   app-region: drag;
 }
 
-#toolbar .toolbar-line-1 .right {
-  -webkit-app-region: no-drag;
-  app-region: no-drag;
-}
-
 #toolbar .expand-toolbar-button {
   display: inline-block;
   vertical-align: middle;
