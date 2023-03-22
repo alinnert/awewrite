@@ -1,12 +1,13 @@
 export function textwidthNumber(textwidth) {
   switch (textwidth) {
+    default:
     case 'narrow':
       return 0
-    case 'wide':
+    case 'medium':
       return 1
-    case 'full':
+    case 'wide':
       return 2
-    default:
-      return -1
+    case 'full':
+      return 3
   }
 }

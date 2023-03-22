@@ -19,32 +19,25 @@ export function loadSettings() {
   if (!(leftTextareaElement instanceof HTMLTextAreaElement)) return
   if (!(rightTextareaElement instanceof HTMLTextAreaElement)) return
 
-  let buttonIndex
-
-  // FONT FAMILY
+  // Font family
   for (const textarea of textareaElements) {
     if (!isHTMLElement(textarea)) continue
     textarea.style.fontFamily = localStorage.getItem('awe.fontface')
   }
 
-  buttonIndex = fontfaceNumber(localStorage.getItem('awe.fontface'))
+  const fontFaceButtonIndex = fontfaceNumber(
+    localStorage.getItem('awe.fontface'),
+  )
+  fontFaceElement[fontFaceButtonIndex].click()
 
-  if (buttonIndex == -1) {
-    buttonIndex = 0
-  }
-
-  fontFaceElement[buttonIndex].click()
-
-  // TEXT WIDTH
+  // Text width
   changeTextWidth(localStorage.getItem('awe.textwidth'))
-  buttonIndex = textwidthNumber(localStorage.getItem('awe.textwidth'))
+  const textWidthButtonIndex = textwidthNumber(
+    localStorage.getItem('awe.textwidth'),
+  )
+  textWidthElement[textWidthButtonIndex].click()
 
-  if (buttonIndex == -1) {
-    buttonIndex = 0
-  }
-
-  textWidthElement[buttonIndex].click()
-
+  // Remaining settings
   const darkThemeValue = localStorage.getItem('awe.darkTheme')
   const isDarkTheme = darkThemeValue !== 'false'
 

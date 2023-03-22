@@ -2,6 +2,7 @@ import { fontFamilyValue } from '../actions/font.js'
 
 export function fontfaceNumber(font) {
   switch (font) {
+    default:
     case fontFamilyValue.ibmPlexSans:
       return 0
     case fontFamilyValue.ibmPlexSerif:
@@ -16,7 +17,5 @@ export function fontfaceNumber(font) {
       return 5
     case fontFamilyValue.openDyslexic:
       return 6
-    default:
-      return -1
   }
 }
