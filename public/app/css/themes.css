@@ -227,7 +227,32 @@
 }
 #theme-photo-wood-1 {
 	background-image: url(../themes/photo_wood_1_thumb.jpg);
-	background-color: #744b42;
+	background-color: hsl(11, 27%, 36%);
+	color: hsla(0, 0%, 100%, 0.9);
+}
+#theme-photo-beach-1 {
+	background-image: url(../themes/photo_beach_1_thumb.jpg);
+	background-color: hsl(72, 5%, 81%);
+	color: hsla(0, 0%, 0%, 0.9);
+}
+#theme-photo-stones-1 {
+	background-image: url(../themes/photo_stones_1_thumb.jpg);
+	background-color: hsl(101, 21%, 34%);
+	color: hsla(0, 0%, 100%, 0.9);
+}
+#theme-photo-glitter-1 {
+	background-image: url(../themes/photo_glitter_1_thumb.jpg);
+	background-color: hsl(353, 82%, 35%);
+	color: hsla(0, 0%, 100%, 0.9);
+}
+#theme-photo-blossoms-1 {
+	background-image: url(../themes/photo_blossoms_1_thumb.jpg);
+	background-color: hsl(204, 29%, 94%);
+	color: hsla(0, 0%, 0%, 0.9);
+}
+#theme-photo-wood-2 {
+	background-image: url(../themes/photo_wood_2_thumb.jpg);
+	background-color: hsl(14, 47%, 12%);
 	color: hsla(0, 0%, 100%, 0.9);
 }
 /* #endregion photo */
