@@ -178,8 +178,9 @@ body.light-theme #toolbar input[type='radio'] + label:active {
 #toolbar .right #word-counter {
   display: inline-block;
   vertical-align: top;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 40px;
+  font-feature-settings: "tnum";
   color: hsla(0, 0%, 100%, 0.6);
   padding-right: 30px;
   transition: color 0.3s ease-out;
@@ -192,8 +193,9 @@ body.light-theme #toolbar .right #word-counter {
 #toolbar .right #clock {
   display: inline-block;
   vertical-align: top;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 40px;
+  font-feature-settings: "tnum";
   color: hsla(0, 0%, 100%, 0.8);
   transition: color 0.3s ease-out;
   font-weight: bold;
@@ -205,9 +207,8 @@ body.light-theme #toolbar .right #clock {
 
 #toolbar-title {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 20px;
+  font-size: 16px;
   line-height: 40px;
-  font-weight: bold;
   transition: color 0.3s ease-out;
   vertical-align: middle;
   margin-right: 20px;
@@ -225,14 +226,13 @@ body.light-theme #toolbar-title {
   vertical-align: middle;
 }
 
-#toolbar-fontsize,
-#toolbar-lineheight {
+.toolbar-num-value {
   color: white;
   font-size: 16px;
   padding-right: 8px;
+  font-feature-settings: "tnum";
 }
 
-body.light-theme #toolbar-fontsize,
-body.light-theme #toolbar-lineheight {
+body.light-theme .toolbar-num-value {
   color: hsl(0, 0%, 0%);
 }
