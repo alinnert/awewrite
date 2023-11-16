@@ -3,10 +3,14 @@
 }
 
 h2 {
-  font-size: 40px;
-  font-weight: 400;
+  font-size: 26px;
+  font-weight: 700;
   line-height: 1.1;
   margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
 }
 
 a {
@@ -97,10 +101,9 @@ a:visited {
 
 .page__title {
   color: #f1f5f9;
-  font-size: 80px;
+  font-size: 50px;
   line-height: 1.1;
   font-weight: 400;
-  letter-spacing: 2px;
   margin-top: 100px;
   margin-bottom: 10px;
 }
@@ -112,13 +115,13 @@ a:visited {
   }
 }
 
-.page__intro {
+p.page__intro {
   color: #94a3b8;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   letter-spacing: 0.5px;
   margin-top: 0;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
   padding: 0 16px;
   box-sizing: border-box;
 }
