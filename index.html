@@ -27,10 +27,18 @@
         <div class="page-content__line page-content__line--center page-content__line--collapse">
           <div class="z-stack">
             <img
-              src="assets/app-screenshot.png"
+              src=""
               alt="Screenshot"
               class="page-content__image page-content__image--full"
+              id="app-screenshot"
             />
+            <script>
+              const element = document.getElementById('app-screenshot')
+              const randomNumber = Math.ceil(Math.random() * 8)
+              const clampedNumber = randomNumber === 0 ? 1 : randomNumber
+              const filename = `assets/screenshots/screenshot-${clampedNumber}.png`
+              element.setAttribute('src', filename)
+            </script>
             <a href="app" class="button button--launch">Launch AWE.write</a>
           </div>
         </div>
@@ -75,13 +83,14 @@
         <article class="page-content__line page-content__wrapper">
           <h2>News and release notes</h2>
           <div class="news-list">
-            <section class="news-list__item news news--is-release" id="#1_14">
+            <section class="news-list__item news news--is-release" id="#1_15">
               <div class="news__date">2023-11-25</div>
-              <div class="news__title">1.14 released</div>
+              <div class="news__title">1.15 released</div>
               <div class="changelog">
                 <ul>
                   <li>Added the new logo in the app header.</li>
                   <li>Currently selected settings are now highlighted.</li>
+                  <li>Add app icon for Apple devices.</li>
                 </ul>
               </div>
             </section>
