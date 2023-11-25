@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+import os
+import shutil
+import subprocess
+import re
+from xml.dom.minidom import parse
+
+website_dir = './public'
+app_dir = './public/app'
+
+appicon_files = [file for file in os.listdir(website_dir) if file.startswith('appicon')]
+
+# Create favicon.ico
+favicon_files = [file for file in os.listdir(website_dir) if file.startswith('favicon')]
+source_favicon_paths = [os.path.join(website_dir, file) for file in favicon_files]
+output_favicon_path = os.path.join(website_dir, 'favicon.ico')
+
+magick_command = ['magick', 'convert', *source_favicon_paths, output_favicon_path]
+subprocess.run(magick_command)
+print("created:", output_favicon_path)
+
+# Copy favicon.ico
+source_favicon_path = os.path.join(website_dir, 'favicon.ico')
+shutil.copy(source_favicon_path, app_dir)
+print("copied favicon.ico to:", app_dir)
+
+# Copy appicons
+for file in appicon_files:
+    source_filepath = os.path.join(website_dir, file)
+    shutil.copy(source_filepath, app_dir)
+    print("copied", file, "to:", app_dir)
+    
+# Copy apple touch icon
+source_apple_icon_filepath = os.path.join(website_dir, "apple-touch-icon.png")
+shutil.copy(source_apple_icon_filepath, app_dir)
+print("copied apple-touch-icon.png to:", app_dir)
+
+# Inline logo
+source_logo_filepath = os.path.join(website_dir, 'awewrite-logo.svg')
+document = parse(source_logo_filepath)
+svg_string = document.documentElement.toxml()
+target_index_html = os.path.join(app_dir, 'index.html')
+
+replace_string_start = '<!-- start:svg-logo -->'
+replace_string_end = '<!-- end:svg-logo -->'
+svg_string_with_markers = replace_string_start + svg_string + replace_string_end
+
+with open(target_index_html, 'r+') as file:
+    content = file.read()
+    pattern = re.compile(re.escape(replace_string_start) + '.*?' + re.escape(replace_string_end), re.DOTALL)
+    replaced_content = re.sub(pattern, svg_string_with_markers.replace('\n', ''), content)
+    file.seek(0)
+    file.write(replaced_content)
+    file.truncate()
+
+print("Inlined", source_logo_filepath, "into", target_index_html)
