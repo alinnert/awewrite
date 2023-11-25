@@ -128,7 +128,9 @@
     color var(--fade-duration) var(--fade-easing);
 }
 
-#toolbar .toolbar-line-2 .open-sidebar-button.current {
+#toolbar .toolbar-line-2 .open-sidebar-button.current,
+#toolbar .toolbar-buttonset button.current,
+#toolbar .toolbar-buttonset input[type='radio'].current + label {
   box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.6) inset;
 
   .light-theme & {
@@ -220,10 +222,28 @@
   }
 }
 
+.toolbar-app-logo {
+  display: inline-block;
+  width: 40px;
+  height: 18px;
+  vertical-align: middle;
+
+  & svg {
+    max-width: 100%;
+    max-height: 100%;
+    fill: hsl(0 0% 100% / 0.7);
+  }
+
+  .light-theme & svg {
+    fill: hsl(0 0% 0% / 0.5);
+  }
+}
+
 #toolbar-title {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 16px;
+  font-size: 14px;
   line-height: 40px;
+  font-weight: bold;
   transition: color var(--fade-duration) var(--fade-easing);
   vertical-align: middle;
   margin-right: 20px;

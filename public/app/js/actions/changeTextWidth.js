@@ -21,4 +21,11 @@ export function changeTextWidth(width) {
   }
 
   localStorage.setItem('awe.textwidth', width)
+
+  const textWidthButtons = document.getElementsByClassName('change-text-width-button')
+
+  for (const button of textWidthButtons) {
+    const buttonValue = button.dataset.textWidth
+    button.classList.toggle('current', buttonValue === width)
+  }
 }

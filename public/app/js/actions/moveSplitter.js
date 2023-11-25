@@ -22,6 +22,13 @@ export function moveSplitter(position) {
   }
 
   localStorage.setItem('awe.splitter', clampedPosition)
+
+  const textboxLayoutButtons = document.getElementsByClassName('change-textbox-layout-button')
+
+  for (const button of textboxLayoutButtons) {
+    const buttonValue = button.dataset.value
+    button.classList.toggle('current', buttonValue === position.toString())
+  }
 }
 
 function getBoxWidth(position) {
