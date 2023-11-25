@@ -6,32 +6,34 @@
   font-size: 14px;
   color: white;
   background: hsla(0, 0%, 100%, 0.2);
-  transition: color;
-}
+  transition:
+    color var(--fade-duration) var(--fade-easing),
+    background var(--fade-duration) var(--fade-easing);
 
-#toolbar .toolbar-line-2 button + button {
-  margin-left: 8px;
-}
+  & + button {
+    margin-left: 8px;
+  }
 
-#toolbar .toolbar-line-2 button:hover {
-  background: hsla(0, 0%, 100%, 0.35);
-}
+  &:hover {
+    background: hsla(0, 0%, 100%, 0.35);
+  }
 
-#toolbar .toolbar-line-2 button:active {
-  background: hsla(0, 0%, 100%, 0.15);
-}
+  &:active {
+    background: hsla(0, 0%, 100%, 0.15);
+  }
 
-body.light-theme #toolbar .toolbar-line-2 button {
-  background: hsla(0, 0%, 0%, 0.1);
-  color: black;
-}
+  .light-theme & {
+    background: hsla(0, 0%, 0%, 0.1);
+    color: black;
+  }
 
-body.light-theme #toolbar .toolbar-line-2 button:hover {
-  background: hsla(0, 0%, 0%, 0.2);
-}
+  .light-theme &:hover {
+    background: hsla(0, 0%, 0%, 0.2);
+  }
 
-body.light-theme #toolbar .toolbar-line-2 button:active {
-  background: hsla(0, 0%, 0%, 0.05);
+  .light-theme &:active {
+    background: hsla(0, 0%, 0%, 0.05);
+  }
 }
 
 #toolbar .icon-button {
@@ -57,27 +59,27 @@ body.light-theme #toolbar .toolbar-line-2 button:active {
   line-height: 20px;
   background: hsla(0, 0%, 100%, 0.2);
   color: white;
+
+  .light-theme & {
+    background: hsla(0, 0%, 0%, 0.1);
+    color: #333;
+  }
 }
 
 #toolbar input[type='radio'] + label:hover {
   background: hsla(0, 0%, 100%, 0.35);
+
+  .light-theme & {
+    background: hsla(0, 0%, 0%, 0.2);
+  }
 }
 
 #toolbar input[type='radio'] + label:active {
   background: hsla(0, 0%, 100%, 0.15);
-}
 
-body.light-theme #toolbar input[type='radio'] + label {
-  background: hsla(0, 0%, 0%, 0.1);
-  color: #333;
-}
-
-body.light-theme #toolbar input[type='radio'] + label:hover {
-  background: hsla(0, 0%, 0%, 0.2);
-}
-
-body.light-theme #toolbar input[type='radio'] + label:active {
-  background: hsla(0, 0%, 0%, 0.05);
+  .light-theme & {
+    background: hsla(0, 0%, 0%, 0.05);
+  }
 }
 
 #toolbar .toolbar-buttonset {
@@ -97,14 +99,19 @@ body.light-theme #toolbar input[type='radio'] + label:active {
 
 #toolbar .toolbar-buttonset button:first-child,
 #toolbar .toolbar-buttonset input[type='radio']:first-child + label {
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
 
 #toolbar .toolbar-buttonset button:last-child,
 #toolbar .toolbar-buttonset input[type='radio'] + label:last-child {
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+#toolbar .toolbar-line-2 button.change-textbox-layout-button {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .toolbar-line-1 button {
@@ -116,7 +123,17 @@ body.light-theme #toolbar input[type='radio'] + label:active {
   vertical-align: top;
 
   border-radius: 0;
-  transition: background 0.3s ease, color 0.3s ease-out;
+  transition:
+    background var(--fade-duration) var(--fade-easing),
+    color var(--fade-duration) var(--fade-easing);
+}
+
+#toolbar .toolbar-line-2 .open-sidebar-button.current {
+  box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.6) inset;
+
+  .light-theme & {
+    box-shadow: 0 0 0 1px hsl(0 0% 0% / 0.6) inset;
+  }
 }
 
 .toolbar-line-2 h3 {
@@ -124,18 +141,18 @@ body.light-theme #toolbar input[type='radio'] + label:active {
   font-size: 14px;
   padding-left: 30px;
   padding-right: 12px;
-}
 
-.toolbar-line-2 h3:first-child {
-  padding-left: 0;
+  &:first-child {
+    padding-left: 0;
+  }
 }
 
 .toolbar-line-2 .infotext {
   padding-left: 15px;
-}
 
-.toolbar-line-2 .infotext:first-child {
-  padding-left: 0;
+  &:first-child {
+    padding-left: 0;
+  }
 }
 
 .toolbar-line-2 .ui-button {
@@ -167,10 +184,8 @@ body.light-theme #toolbar input[type='radio'] + label:active {
   top: 0;
   right: 20px;
   line-height: 40px;
-}
 
-@media (display-mode: window-controls-overlay) {
-  #toolbar .right {
+  @media (display-mode: window-controls-overlay) {
     right: calc(100% - env(titlebar-area-x) - env(titlebar-area-width) + 20px);
   }
 }
@@ -180,14 +195,14 @@ body.light-theme #toolbar input[type='radio'] + label:active {
   vertical-align: top;
   font-size: 14px;
   line-height: 40px;
-  font-feature-settings: "tnum";
+  font-feature-settings: 'tnum';
   color: hsla(0, 0%, 100%, 0.6);
   padding-right: 30px;
-  transition: color 0.3s ease-out;
-}
+  transition: color var(--fade-duration) var(--fade-easing);
 
-body.light-theme #toolbar .right #word-counter {
-  color: hsla(0, 0%, 0%, 0.8);
+  .light-theme & {
+    color: hsla(0, 0%, 0%, 0.8);
+  }
 }
 
 #toolbar .right #clock {
@@ -195,27 +210,27 @@ body.light-theme #toolbar .right #word-counter {
   vertical-align: top;
   font-size: 14px;
   line-height: 40px;
-  font-feature-settings: "tnum";
+  font-feature-settings: 'tnum';
   color: hsla(0, 0%, 100%, 0.8);
-  transition: color 0.3s ease-out;
+  transition: color var(--fade-duration) var(--fade-easing);
   font-weight: bold;
-}
 
-body.light-theme #toolbar .right #clock {
-  color: hsla(0, 0%, 0%, 0.9);
+  .light-theme & {
+    color: hsla(0, 0%, 0%, 0.9);
+  }
 }
 
 #toolbar-title {
   color: rgba(255, 255, 255, 0.5);
   font-size: 16px;
   line-height: 40px;
-  transition: color 0.3s ease-out;
+  transition: color var(--fade-duration) var(--fade-easing);
   vertical-align: middle;
   margin-right: 20px;
-}
 
-body.light-theme #toolbar-title {
-  color: hsla(0, 0%, 0%, 0.5);
+  .light-theme & {
+    color: hsla(0, 0%, 0%, 0.5);
+  }
 }
 
 #toolbar .checkbox-item input {
@@ -230,9 +245,9 @@ body.light-theme #toolbar-title {
   color: white;
   font-size: 16px;
   padding-right: 8px;
-  font-feature-settings: "tnum";
-}
+  font-feature-settings: 'tnum';
 
-body.light-theme .toolbar-num-value {
-  color: hsl(0, 0%, 0%);
+  .light-theme & {
+    color: hsl(0, 0%, 0%);
+  }
 }

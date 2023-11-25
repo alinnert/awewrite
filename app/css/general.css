@@ -12,6 +12,14 @@
 }
 
 html {
+  --move-easing: cubic-bezier(0, 0.5, 0.2, 1);
+  --move-easing-with-bounce: cubic-bezier(0, 0.5, 0.2, 1.1);
+  --move-easing-with-big-bounce: cubic-bezier(0, 0.5, 0.2, 1.25);
+  --move-duration: 300ms;
+
+  --fade-easing: var(--move-easing);
+  --fade-duration: 500ms;
+
   height: 100%;
 }
 
@@ -26,7 +34,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  transition: all 0.3s ease-in-out;
+  transition: background var(--fade-duration) var(--fade-easing);
 }
 
 a {

@@ -6,44 +6,45 @@ import {
   textareaElements,
   toolbarElement,
 } from '../elements.js'
+import { getThemeImagePath } from '../lib/themes/getThemeImagePath.js'
 
-export function changeTheme(selectionId, isDarkTheme) {
-  const selectedElement = /** @type { HTMLDivElement } */ ($id(selectionId))
-  const styles = getComputedStyle(selectedElement)
-  const backgroundColor = styles.getPropertyValue('background-color')
-  const backgroundImage = styles.getPropertyValue('background-image')
-  const color = styles.getPropertyValue('color')
-  const themeType = selectionId.substr(6, 5)
+export const themeEvents = new EventTarget()
 
-  document.body.style.backgroundImage = 'none'
-  document.body.style.backgroundColor = 'transparent'
+/** @type {ThemeData} */
+const fallbackThemeData = {
+  displayName: 'Fallback Theme',
+  id: 'fallback',
+  isDarkTheme: true,
+  textColor: 'white',
+  backgroundColor: 'oklch(30% 0 none)',
+}
 
-  switch (themeType) {
-    case 'color':
-      document.body.style.backgroundColor = backgroundColor
-      document.body.classList.remove('has-background-image')
+export function changeThemeById(selectionId) {
+  const selectedElement = $id(selectionId)
 
-      updateTextareas(color)
-      updateTitleAndToolbar(backgroundColor)
-      break
-    case 'image':
-    case 'photo':
-    case 'apprx':
-      document.body.style.backgroundImage = backgroundImage.replace(
-        /_thumb/,
-        '',
-      )
-      document.body.classList.add('has-background-image')
+  const themeData =
+    selectedElement !== null
+      ? selectedElement.themeData
+      : document.querySelector('[default-theme]')?.themeData ?? fallbackThemeData
 
-      updateTextareas(color)
-      updateTitleAndToolbar(backgroundColor)
-      break
-  }
+  changeTheme(themeData)
+}
 
-  document.body.classList.toggle('light-theme', !isDarkTheme)
+/** @param {ThemeData} themeData */
+export function changeTheme(themeData) {
+  document.body.classList.toggle('has-background-image', themeData.backgroundImage !== undefined)
+  document.body.classList.toggle('light-theme', !themeData.isDarkTheme)
 
-  localStorage.setItem('awe.themeid', selectionId)
-  localStorage.setItem('awe.darkTheme', isDarkTheme ? 'true' : 'false')
+  document.body.style.backgroundImage = getThemeImagePath(themeData.backgroundImage) ?? 'none'
+  document.body.style.backgroundColor = themeData.backgroundColor ?? 'transparent'
+
+  updateTextareas(themeData.textColor)
+  updateTitleAndToolbar(themeData.backgroundColor)
+
+  localStorage.setItem('awe.themeid', themeData.id)
+  localStorage.setItem('awe.darkTheme', themeData.isDarkTheme ? 'true' : 'false')
+
+  themeEvents.dispatchEvent(new CustomEvent('changetheme', { detail: themeData }))
 }
 
 /** @param { string } backgroundColor */

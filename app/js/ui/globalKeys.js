@@ -1,4 +1,4 @@
-import { closeToolbar } from './closeToolbar.js'
+import { closeToolbar } from './toolbar.js'
 
 /** @param { KeyboardEvent } e */
 export function globalKeys(e) {

@@ -6,14 +6,17 @@
   height: 40px;
   overflow: hidden;
   color: white;
-  transition: all 0.15s ease-out;
+  transition:
+    height var(--move-duration) var(--move-easing-with-big-bounce),
+    color var(--fade-duration) var(--fade-easing),
+    background var(--fade-duration) var(--fade-easing);
   -webkit-user-select: none;
   user-select: none;
-}
 
-body.light-theme #toolbar {
-  background: hsla(0, 0%, 0%, 0.15);
-  color: black;
+  .light-theme & {
+    background: hsla(0, 0%, 0%, 0.15);
+    color: black;
+  }
 }
 
 #toolbar .toolbar-line {
@@ -24,10 +27,8 @@ body.light-theme #toolbar {
   position: absolute;
   left: 20px;
   top: 0;
-}
 
-@media (display-mode: window-controls-overlay) {
-  #toolbar .toolbar-line-left {
+  @media (display-mode: window-controls-overlay) {
     left: calc(env(titlebar-area-x, 0) + 20px);
   }
 }
@@ -53,45 +54,48 @@ body.light-theme #toolbar {
   border-radius: 3px;
   -webkit-app-region: no-drag;
   app-region: no-drag;
-}
+  transition:
+    color var(--fade-duration) var(--fade-easing),
+    background var(--fade-duration) var(--fade-easing);
 
-#toolbar .expand-toolbar-button:hover {
-  background: hsla(0, 0%, 100%, 0.2);
+  &:hover {
+    background: hsla(0, 0%, 100%, 0.2);
+  }
+
+  &:active {
+    background: hsla(0, 0%, 100%, 0.3);
+  }
+
+  .light-theme & {
+    color: hsla(0, 0%, 0%, 0.7);
+  }
+
+  .light-theme &:hover {
+    background: hsla(0, 0%, 0%, 0.1);
+  }
+
+  .light-theme &:active {
+    background: hsla(0, 0%, 0%, 0.2);
+  }
 }
 
 #toolbar .expand-toolbar-button.is-current {
   background: hsla(0, 0%, 100%, 0.3);
   color: white;
-}
 
-#toolbar .expand-toolbar-button.is-current:hover {
-  background: hsla(0, 0%, 100%, 0.4);
-  color: white;
-}
+  &:hover {
+    background: hsla(0, 0%, 100%, 0.4);
+    color: white;
+  }
 
-#toolbar .expand-toolbar-button:active {
-  background: hsla(0, 0%, 100%, 0.3);
-}
+  .light-theme & {
+    background: hsla(0, 0%, 0%, 0.2);
+    color: black;
+  }
 
-body.light-theme #toolbar .expand-toolbar-button {
-  color: hsla(0, 0%, 0%, 0.7);
-}
-
-body.light-theme #toolbar .expand-toolbar-button:hover {
-  background: hsla(0, 0%, 0%, 0.1);
-}
-
-body.light-theme #toolbar .expand-toolbar-button.is-current {
-  background: hsla(0, 0%, 0%, 0.2);
-  color: black;
-}
-
-body.light-theme #toolbar .expand-toolbar-button.is-current:hover {
-  background: hsla(0, 0%, 0%, 0.3);
-}
-
-body.light-theme #toolbar .expand-toolbar-button:active {
-  background: hsla(0, 0%, 0%, 0.2);
+  .light-theme &:hover {
+    background: hsla(0, 0%, 0%, 0.3);
+  }
 }
 
 #toolbar .toolbar-line-2 {
@@ -100,14 +104,15 @@ body.light-theme #toolbar .expand-toolbar-button:active {
   padding: 0 20px;
   width: 100%;
   white-space: nowrap;
-  transition: background 0.3s ease-out;
-  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.1),
+  box-shadow:
+    inset 0 1px 0 hsla(0, 0%, 100%, 0.1),
     inset 0 -1px 0 hsla(0, 0%, 100%, 0.1);
-}
 
-body.light-theme #toolbar .toolbar-line-2 {
-  box-shadow: inset 0 1px 0 hsla(0, 0%, 0%, 0.2),
-    inset 0 -1px 0 hsla(0, 0%, 0%, 0.2);
+  .light-theme & {
+    box-shadow:
+      inset 0 1px 0 hsla(0, 0%, 0%, 0.2),
+      inset 0 -1px 0 hsla(0, 0%, 0%, 0.2);
+  }
 }
 
 .toolbar-subline {
