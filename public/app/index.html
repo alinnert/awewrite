@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,21 +8,21 @@
     <meta name="author" content="Andreas Linnert" />
     <meta name="application-name" content="AWE.write" />
     <meta name="theme-color" content="#181818" id="meta-theme-color" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
     <link rel="manifest" href="./awewrite.webmanifest" />
     <link rel="icon" href="./favicon-16.png" sizes="16x16" />
     <link rel="shortcut icon" href="./favicon-32.png" sizes="32x32" />
+    <link rel="shortcut icon" href="./favicon-512.png" sizes="512x512" />
+    <link rel="shortcut icon" href="./favicon-1024.png" sizes="1024x1024" />
+
     <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="./css/general.css" />
-    <link rel="stylesheet" type="text/css" href="./css/themes.css" />
     <link rel="stylesheet" type="text/css" href="./css/editors.css" />
     <link rel="stylesheet" type="text/css" href="./css/toolbar.css" />
     <link rel="stylesheet" type="text/css" href="./css/toolbar-elements.css" />
     <link rel="stylesheet" type="text/css" href="./css/sidebar.css" />
+    <link rel="stylesheet" type="text/css" href="./css/components/theme-item.css" />
   </head>
 
   <body>
@@ -42,12 +42,8 @@
             <span id="toolbar-title">AWE.write</span>
             <div class="expand-toolbar-button" data-toolbar="data">Data</div>
             <div class="expand-toolbar-button" data-toolbar="font">Font</div>
-            <div class="expand-toolbar-button" data-toolbar="layout">
-              Layout
-            </div>
-            <div class="expand-toolbar-button" data-toolbar="background">
-              Background
-            </div>
+            <div class="expand-toolbar-button" data-toolbar="layout">Layout</div>
+            <div class="expand-toolbar-button" data-toolbar="background">Theme</div>
             <div class="expand-toolbar-button" data-toolbar="about">About</div>
           </div>
 
@@ -63,12 +59,8 @@
           <div class="toolbar-line-all" id="toolbar-line-data">
             <div class="toolbar-subline">
               <h3>Actions</h3>
-              <button class="switch-texts-button" type="button">
-                switch texts
-              </button>
-              <button class="clear-texts-button" type="button">
-                clear texts
-              </button>
+              <button class="switch-texts-button" type="button">switch texts</button>
+              <button class="clear-texts-button" type="button">clear texts</button>
 
               <h3>Settings</h3>
               <input type="checkbox" id="spellcheck" />
@@ -87,9 +79,7 @@
                   data-fontface="IBM Plex Sans"
                   name="fontface"
                 />
-                <label for="toolbar-fontface-ibm-plex-sans"
-                  >IBM Plex Sans</label
-                >
+                <label for="toolbar-fontface-ibm-plex-sans">IBM Plex Sans</label>
 
                 <input
                   type="radio"
@@ -98,9 +88,7 @@
                   class="change-fontface-button"
                   data-fontface="IBM Plex Serif"
                 />
-                <label for="toolbar-fontface-ibm-plex-serif">
-                  IBM Plex Serif
-                </label>
+                <label for="toolbar-fontface-ibm-plex-serif"> IBM Plex Serif </label>
 
                 <input
                   type="radio"
@@ -109,9 +97,7 @@
                   class="change-fontface-button"
                   data-fontface="IBM Plex Mono"
                 />
-                <label for="toolbar-fontface-ibm-plex-mono"
-                  >IBM Plex Mono</label
-                >
+                <label for="toolbar-fontface-ibm-plex-mono">IBM Plex Mono</label>
 
                 <input
                   type="radio"
@@ -155,64 +141,28 @@
               <h3>Font size</h3>
               <span id="toolbar-fontsize" class="toolbar-num-value">12</span>
               <span class="toolbar-buttonset">
-                <button
-                  class="icon-button"
-                  id="toolbar-fontsize-dec"
-                  type="button"
-                >
-                  -
-                </button>
-                <button
-                  class="icon-button"
-                  id="toolbar-fontsize-inc"
-                  type="button"
-                >
-                  +
-                </button>
+                <button class="icon-button" id="toolbar-fontsize-dec" type="button">-</button>
+                <button class="icon-button" id="toolbar-fontsize-inc" type="button">+</button>
               </span>
 
               <h3>Line height</h3>
               <span id="toolbar-lineheight" class="toolbar-num-value">1.2</span>
               <span class="toolbar-buttonset">
-                <button
-                  class="icon-button"
-                  id="toolbar-lineheight-dec"
-                  type="button"
-                >
-                  -
-                </button>
-                <button
-                  class="icon-button"
-                  id="toolbar-lineheight-inc"
-                  type="button"
-                >
-                  +
-                </button>
+                <button class="icon-button" id="toolbar-lineheight-dec" type="button">-</button>
+                <button class="icon-button" id="toolbar-lineheight-inc" type="button">+</button>
               </span>
             </div>
           </div>
 
           <div class="toolbar-line-all" id="toolbar-line-layout">
             <div class="toolbar-subline">
-              <h3>Divider</h3>
+              <h3>Textbox layout</h3>
               <span class="toolbar-buttonset">
-                <button
-                  class="icon-button"
-                  id="toolbar-splitter-left"
-                  type="button"
-                >
-                  &lsaquo;
-                </button>
-                <button id="toolbar-splitter-reset" type="button">
-                  center
-                </button>
-                <button
-                  class="icon-button"
-                  id="toolbar-splitter-right"
-                  type="button"
-                >
-                  &rsaquo;
-                </button>
+                <button class="change-textbox-layout-button" data-value="-2">«</button>
+                <button class="change-textbox-layout-button" data-value="-1">‹</button>
+                <button class="change-textbox-layout-button" data-value="0">‹›</button>
+                <button class="change-textbox-layout-button" data-value="1">›</button>
+                <button class="change-textbox-layout-button" data-value="2">»</button>
               </span>
 
               <h3>Text width</h3>
@@ -257,11 +207,7 @@
             <div class="toolbar-subline">
               <h3>Colors</h3>
               <span class="toolbar-buttonset">
-                <button
-                  class="open-sidebar-button"
-                  data-sidebar="themes-dark-colors"
-                  type="button"
-                >
+                <button class="open-sidebar-button" data-sidebar="themes-dark-colors" type="button">
                   Dark
                 </button>
                 <button
@@ -275,25 +221,13 @@
 
               <h3>Images</h3>
               <span class="toolbar-buttonset">
-                <button
-                  class="open-sidebar-button"
-                  data-sidebar="themes-images"
-                  type="button"
-                >
-                  Abstract
-                </button>
-                <button
-                  class="open-sidebar-button"
-                  data-sidebar="themes-photos"
-                  type="button"
-                >
+                <button class="open-sidebar-button" data-sidebar="themes-photos" type="button">
                   Photos
                 </button>
-                <button
-                  class="open-sidebar-button"
-                  data-sidebar="themes-approx"
-                  type="button"
-                >
+                <button class="open-sidebar-button" data-sidebar="themes-images" type="button">
+                  Abstract
+                </button>
+                <button class="open-sidebar-button" data-sidebar="themes-approx" type="button">
                   approx.art
                 </button>
               </span>
@@ -302,14 +236,12 @@
 
           <div class="toolbar-line-all" id="toolbar-line-about">
             <div class="toolbar-subline">
-              <span class="infotext">AWE.write 1.13.4</span>
+              <span class="infotext">AWE.write 1.14</span>
               <span class="infotext">
                 <a href="/" target="_blank">Website and changelog</a>
               </span>
               <span class="infotext">
-                <a href="https://github.com/alinnert/awewrite" target="_blank"
-                  >Source code</a
-                >
+                <a href="https://github.com/alinnert/awewrite" target="_blank">Source code</a>
               </span>
             </div>
           </div>
@@ -321,90 +253,245 @@
       <div class="sidebar-content" id="sidebar-themes-dark-colors">
         <h1>Dark Colors</h1>
 
-        <h2>Own Themes</h2>
-        <div class="sidebar-icon" id="theme-color-dark" data-dark>Gray</div>
-        <div class="sidebar-icon" id="theme-color-black" data-dark>
-          Dark Gray
+        <div class="theme-list">
+          <theme-item
+            theme-name="Gray"
+            id="dark-color:gray"
+            default-theme
+            dark-theme
+            text-color="hsl(0, 0%, 80%)"
+            background-color="hsl(0, 0%, 20%)"
+          ></theme-item>
+          <theme-item
+            theme-name="Dark Gray"
+            id="dark-color:dark-gray"
+            dark-theme
+            text-color="#CCCCCC"
+            background-color="#151515"
+          ></theme-item>
+          <theme-item
+            theme-name="Passion"
+            id="dark-color:red"
+            dark-theme
+            text-color="oklch(100% 0.1 0)"
+            background-color="oklch(45% 0.1 0)"
+          ></theme-item>
+          <theme-item
+            theme-name="Energy"
+            id="dark-color:orange"
+            dark-theme
+            text-color="oklch(100% 0.1 50)"
+            background-color="oklch(45% 0.1 50)"
+          ></theme-item>
+          <theme-item
+            theme-name="Hope"
+            id="dark-color:yellow"
+            dark-theme
+            text-color="oklch(100% 0.1 110)"
+            background-color="oklch(45% 0.1 110)"
+          ></theme-item>
+          <theme-item
+            theme-name="Calm"
+            id="dark-color:green"
+            dark-theme
+            text-color="oklch(100% 0.1 150)"
+            background-color="oklch(45% 0.1 150)"
+          ></theme-item>
+          <theme-item
+            theme-name="Trust"
+            id="dark-color:teal"
+            dark-theme
+            text-color="oklch(100% 0.1 180)"
+            background-color="oklch(45% 0.1 180)"
+          ></theme-item>
+          <theme-item
+            theme-name="Confidence"
+            id="dark-color:blue"
+            dark-theme
+            text-color="oklch(100% 0.1 230)"
+            background-color="oklch(45% 0.1 230)"
+          ></theme-item>
+          <theme-item
+            theme-name="Imagination"
+            id="dark-color:purple"
+            dark-theme
+            text-color="oklch(100% 0.1 290)"
+            background-color="oklch(45% 0.1 290)"
+          ></theme-item>
+          <theme-item
+            theme-name="Creativity"
+            id="dark-color:pink"
+            dark-theme
+            text-color="oklch(100% 0.1 330)"
+            background-color="oklch(45% 0.1 330)"
+          ></theme-item>
+          <theme-item
+            theme-name="Terminal"
+            id="dark-color:terminal"
+            dark-theme
+            text-color="hsl(120, 60%, 65%)"
+            background-color="#111111"
+          ></theme-item>
         </div>
-        <div class="sidebar-icon" id="theme-color-console" data-dark>
-          Console
-        </div>
-        <div class="sidebar-icon" id="theme-color-orange" data-dark>Orange</div>
-        <div class="sidebar-icon" id="theme-color-lime" data-dark>Olive</div>
-        <div class="sidebar-icon" id="theme-color-green" data-dark>Green</div>
-        <div class="sidebar-icon" id="theme-color-bluegreen" data-dark>
-          Teal
-        </div>
-        <div class="sidebar-icon" id="theme-color-blue" data-dark>Blue</div>
-        <div class="sidebar-icon" id="theme-color-purple" data-dark>Purple</div>
-        <div class="sidebar-icon" id="theme-color-pink" data-dark>Pink</div>
 
         <h2>Solarized</h2>
         <p class="copyinfo">
           <a href="https://ethanschoonover.com/solarized/">Website</a>
         </p>
-        <div class="sidebar-icon" id="theme-color-sol-dark" data-dark>
-          Solarized Dark
+        <div class="theme-list">
+          <theme-item
+            theme-name="Solarized Dark"
+            id="dark-color:solarized-dark"
+            dark-theme
+            text-color="hsl(180, 7%, 60%)"
+            background-color="hsl(192, 81%, 14%)"
+          ></theme-item>
         </div>
 
         <h2>Atelier Schemes</h2>
         <p class="copyinfo">
-          <a
-            href="https://atelierbram.github.io/syntax-highlighting/atelier-schemes/"
-            >Website</a
-          >
+          <a href="https://atelierbram.github.io/syntax-highlighting/atelier-schemes/">Website</a>
         </p>
-        <div class="sidebar-icon" id="theme-color-cave-dark" data-dark>
-          Cave Dark
-        </div>
-        <div class="sidebar-icon" id="theme-color-estuary-dark" data-dark>
-          Estuary Dark
-        </div>
-        <div class="sidebar-icon" id="theme-color-seaside-dark" data-dark>
-          Seaside Dark
-        </div>
-        <div class="sidebar-icon" id="theme-color-lakeside-dark" data-dark>
-          Lakeside Dark
+        <div class="theme-list">
+          <theme-item
+            theme-name="Cave Dark"
+            id="dark-color:cave-dark"
+            dark-theme
+            text-color="hsl(265, 15%, 89%)"
+            background-color="hsl(265, 9%, 15%)"
+          ></theme-item>
+          <theme-item
+            theme-name="Estuary Dark"
+            id="dark-color:estuary-dark"
+            dark-theme
+            text-color="hsl(55, 15%, 89%)"
+            background-color="hsl(55, 11%, 17%)"
+          ></theme-item>
+          <theme-item
+            theme-name="Seaside Dark"
+            id="dark-color:seaside-dark"
+            dark-theme
+            text-color="hsl(120, 35%, 86%)"
+            background-color="hsl(120, 6%, 15%)"
+          ></theme-item>
+          <theme-item
+            theme-name="Lakeside Dark"
+            id="dark-color:lakeside-dark"
+            dark-theme
+            text-color="hsl(200, 75%, 86%)"
+            background-color="hsl(200, 20%, 15%)"
+          ></theme-item>
         </div>
       </div>
 
       <div class="sidebar-content" id="sidebar-themes-light-colors">
         <h1>Light Colors</h1>
 
-        <h2>Own Themes</h2>
-        <div class="sidebar-icon" id="theme-color-white">White</div>
-        <div class="sidebar-icon" id="theme-color-silver">Silver</div>
-        <div class="sidebar-icon" id="theme-color-sepia">Sepia</div>
-        <div class="sidebar-icon" id="theme-color-sunny">Sunny</div>
-        <div class="sidebar-icon" id="theme-color-spring">Spring</div>
-        <div class="sidebar-icon" id="theme-color-mint">Mint</div>
-        <div class="sidebar-icon" id="theme-color-ice">Ice</div>
-        <div class="sidebar-icon" id="theme-color-cherry">Cherry Blossom</div>
+        <div class="theme-list">
+          <theme-item
+            theme-name="White"
+            id="light-color:white"
+            text-color="oklch(30% 0 none)"
+            background-color="oklch(100% 0 none)"
+          ></theme-item>
+          <theme-item
+            theme-name="Silver"
+            id="light-color:silver"
+            text-color="oklch(40% 0.01 200)"
+            background-color="oklch(90% 0.01 200)"
+          ></theme-item>
+          <theme-item
+            theme-name="Strawberry"
+            id="light-color:strawberry"
+            text-color="oklch(40% 0.1 20)"
+            background-color="oklch(95% 0.05 20)"
+          ></theme-item>
+          <theme-item
+            theme-name="Almond"
+            id="light-color:almond"
+            text-color="oklch(40% 0.1 70)"
+            background-color="oklch(95% 0.05 70)"
+          ></theme-item>
+          <theme-item
+            theme-name="Lemon"
+            id="light-color:lemon"
+            text-color="oklch(40% 0.1 100)"
+            background-color="oklch(95% 0.05 100)"
+          ></theme-item>
+          <theme-item
+            theme-name="Pear"
+            id="light-color:Pear"
+            text-color="oklch(40% 0.1 130)"
+            background-color="oklch(95% 0.05 150)"
+          ></theme-item>
+          <theme-item
+            theme-name="Mint"
+            id="light-color:mint"
+            text-color="oklch(40% 0.1 180)"
+            background-color="oklch(95% 0.05 180)"
+          ></theme-item>
+          <theme-item
+            theme-name="Blueberry"
+            id="light-color:blueberry"
+            text-color="oklch(40% 0.1 220)"
+            background-color="oklch(95% 0.05 220)"
+          ></theme-item>
+          <theme-item
+            theme-name="Lavender"
+            id="light-color:lavender"
+            text-color="oklch(40% 0.1 280)"
+            background-color="oklch(95% 0.05 280)"
+          ></theme-item>
+          <theme-item
+            theme-name="Cherry"
+            id="light-color:cherry"
+            text-color="oklch(40% 0.1 330)"
+            background-color="oklch(95% 0.05 330)"
+          ></theme-item>
+        </div>
 
         <h2>Solarized</h2>
         <p class="copyinfo">
           <a href="https://ethanschoonover.com/solarized/">Website</a>
         </p>
-        <div class="sidebar-icon" id="theme-color-sol-light">
-          Solarized Light
+        <div class="theme-list">
+          <theme-item
+            theme-name="Solarized Light"
+            id="light-color:solarized-light"
+            text-color="hsl(196, 13%, 45%)"
+            background-color="hsl(44, 87%, 94%)"
+          ></theme-item>
         </div>
 
         <h2>Atelier Schemes</h2>
         <p class="copyinfo">
-          <a
-            href="https://atelierbram.github.io/syntax-highlighting/atelier-schemes/"
-            >Website</a
-          >
+          <a href="https://atelierbram.github.io/syntax-highlighting/atelier-schemes/">Website</a>
         </p>
-        <div class="sidebar-icon" id="theme-color-cave-light">Cave Light</div>
-        <div class="sidebar-icon" id="theme-color-estuary-light">
-          Estuary Light
-        </div>
-        <div class="sidebar-icon" id="theme-color-seaside-light">
-          Seaside Light
-        </div>
-        <div class="sidebar-icon" id="theme-color-lakeside-light">
-          Lakeside Light
+        <div class="theme-list">
+          <theme-item
+            theme-name="Cave Light"
+            id="light-color:cave-light"
+            text-color="hsl(266, 7%, 40%)"
+            background-color="hsl(262, 27%, 94%)"
+          ></theme-item>
+          <theme-item
+            theme-name="Estuary Light"
+            id="light-color:estuary-light"
+            text-color="hsl(57, 9%, 39%)"
+            background-color="hsl(52, 27%, 94%)"
+          ></theme-item>
+          <theme-item
+            theme-name="seaside Light"
+            id="light-color:seaside-light"
+            text-color="hsl(120, 8%, 40%)"
+            background-color="hsl(120, 50%, 97%)"
+          ></theme-item>
+          <theme-item
+            theme-name="Lakeside Light"
+            id="light-color:lakeside-light"
+            text-color="hsl(200, 21%, 40%)"
+            background-color="hsl(200, 100%, 96%)"
+          ></theme-item>
         </div>
       </div>
 
@@ -412,125 +499,493 @@
         <h1>Abstract</h1>
 
         <h2>aqua</h2>
-        <div class="sidebar-icon" id="theme-image-aqua-blue" data-dark>
-          Blue
+        <div class="theme-list">
+          <theme-item
+            theme-name="Black"
+            id="image:aqua-black"
+            dark-theme
+            text-color="hsl(0, 0%, 90%)"
+            background-color="hsl(0, 0%, 14%)"
+            background-image="aqua_black.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="White"
+            id="image:aqua-white"
+            text-color="hsl(0, 0%, 10%)"
+            background-color="hsl(0, 0%, 83%)"
+            background-image="aqua_white.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Red"
+            id="image:aqua-red"
+            dark-theme
+            text-color="#f6e2e2"
+            background-color="hsl(358, 65%, 23%)"
+            background-image="aqua_red.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Lime"
+            id="image:aqua-lime"
+            dark-theme
+            text-color="#f8fdec"
+            background-color="hsl(74, 58%, 31%)"
+            background-image="aqua_lime.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Teal"
+            id="image:aqua-bluegreen"
+            dark-theme
+            text-color="#cef5ec"
+            background-color="hsl(162, 69%, 39%)"
+            background-image="aqua_blue_green.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Blue"
+            id="image:aqua-blue"
+            dark-theme
+            text-color="#cee8f5"
+            background-color="hsl(201, 67%, 40%)"
+            background-image="aqua_blue.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Purple"
+            id="image:aqua-purple"
+            dark-theme
+            text-color="#e7d7f8"
+            background-color="hsl(244, 57%, 32%)"
+            background-image="aqua_purple.jpg"
+          ></theme-item>
         </div>
-        <div class="sidebar-icon" id="theme-image-aqua-bluegreen" data-dark>
-          Teal
-        </div>
-        <div class="sidebar-icon" id="theme-image-aqua-lime" data-dark>
-          Lime
-        </div>
-        <div class="sidebar-icon" id="theme-image-aqua-purple" data-dark>
-          Purple
-        </div>
-        <div class="sidebar-icon" id="theme-image-aqua-red" data-dark>Red</div>
-        <div class="sidebar-icon" id="theme-image-aqua-black" data-dark>
-          Black
-        </div>
-        <div class="sidebar-icon" id="theme-image-aqua-white">White</div>
 
         <h2>shine</h2>
-        <div class="sidebar-icon" id="theme-image-shine-blue" data-dark>
-          Blue
-        </div>
-        <div class="sidebar-icon" id="theme-image-shine-chrome" data-dark>
-          Chrome
-        </div>
-        <div class="sidebar-icon" id="theme-image-shine-green" data-dark>
-          Green
-        </div>
-        <div class="sidebar-icon" id="theme-image-shine-orange" data-dark>
-          Orange
-        </div>
-        <div class="sidebar-icon" id="theme-image-shine-pink" data-dark>
-          Pink
+        <div class="theme-list">
+          <theme-item
+            theme-name="Chrome"
+            id="image:shine-chrome"
+            dark-theme
+            text-color="white"
+            background-color="hsl(127, 17%, 9%)"
+            background-image="shine_chrome.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Orange"
+            id="image:shine-orange"
+            dark-theme
+            text-color="white"
+            background-color="hsl(19, 88%, 13%)"
+            background-image="shine_orange.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Green"
+            id="image:shine-green"
+            dark-theme
+            text-color="white"
+            background-color="hsl(120, 96%, 11%)"
+            background-image="shine_green.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Blue"
+            id="image:shine-blue"
+            dark-theme
+            text-color="white"
+            background-color="hsl(210, 59%, 50%)"
+            background-image="shine_blue.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Pink"
+            id="image:shine-pink"
+            dark-theme
+            text-color="white"
+            background-color="hsl(336, 100%, 35%)"
+            background-image="shine_pink.jpg"
+          ></theme-item>
         </div>
 
         <h2>ray</h2>
-        <div class="sidebar-icon" id="theme-image-ray-blue" data-dark>Blue</div>
-        <div class="sidebar-icon" id="theme-image-ray-green" data-dark>
-          Green
+        <div class="theme-list">
+          <theme-item
+            theme-name="Orange"
+            id="image:ray-orange"
+            dark-theme
+            text-color="white"
+            background-color="hsl(50, 96%, 33%)"
+            background-image="ray_orange.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Green"
+            id="image:ray-green"
+            dark-theme
+            text-color="white"
+            background-color="hsl(66, 96%, 30%)"
+            background-image="ray_green.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Blue"
+            id="image:ray-blue"
+            dark-theme
+            text-color="white"
+            background-color="hsl(234, 17%, 58%)"
+            background-image="ray_blue.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Pink"
+            id="image:ray-pink"
+            dark-theme
+            text-color="white"
+            background-color="hsl(348, 43%, 57%)"
+            background-image="ray_pink.jpg"
+          ></theme-item>
         </div>
-        <div class="sidebar-icon" id="theme-image-ray-orange" data-dark>
-          Orange
-        </div>
-        <div class="sidebar-icon" id="theme-image-ray-pink" data-dark>Pink</div>
 
         <h2>mosaic</h2>
-        <div class="sidebar-icon" id="theme-image-mosaic-white">White</div>
-        <div class="sidebar-icon" id="theme-image-mosaic-black" data-dark>
-          Black
+        <div class="theme-list">
+          <theme-item
+            theme-name="Black"
+            id="image:mosaic-black"
+            dark-theme
+            text-color="hsl(0, 0%, 90%)"
+            background-color="hsl(0, 0%, 0%)"
+            background-image="mosaic_black.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="White"
+            id="image:mosaic-white"
+            text-color="hsl(0, 0%, 10%)"
+            background-color="hsl(0, 0%, 95%)"
+            background-image="mosaic_white.jpg"
+          ></theme-item>
         </div>
       </div>
 
       <div class="sidebar-content" id="sidebar-themes-photos">
         <h1>Photos</h1>
-        <p class="copyinfo">
-          Images are from <a href="https://pexels.com">Pexels</a>
-        </p>
 
         <h2>Textures</h2>
-        <div class="sidebar-icon" id="theme-photo-wood-1" data-dark>Wood</div>
-        <div class="sidebar-icon" id="theme-photo-wood-2" data-dark>Dark Wood</div>
-        <div class="sidebar-icon" id="theme-photo-glitter-1" data-dark>
-          Rainbow Glitter
+        <div class="theme-list">
+          <theme-item
+            theme-name="Rainbow Glitter"
+            id="photo:rainbow-glitter"
+            dark-theme
+            text-color="hsla(0, 0%, 100%, 0.9)"
+            background-color="hsl(353, 82%, 35%)"
+            background-image="pexels-alexander-grey-1191710.jpg"
+            credits-name="Alexander Grey"
+            credits-url="https://www.pexels.com/de-de/foto/pailletten-in-verschiedenen-farben-1191710/"
+          ></theme-item>
+          <theme-item
+            theme-name="Rainbow"
+            id="photo:rainbow"
+            text-color="hsla(0, 0%, 0%, 0.9)"
+            background-color="#EDF3EC"
+            background-image="pexels-francesco-ungaro-673648.jpg"
+            credits-name="Francesco Ungaro"
+            credits-url="https://www.pexels.com/de-de/foto/blaue-grune-orange-und-rote-regenbogen-design-dekoration-673648/"
+          ></theme-item>
+          <theme-item
+            theme-name="Wood"
+            id="photo:wood"
+            dark-theme
+            text-color="hsla(0, 0%, 100%, 0.9)"
+            background-color="hsl(11, 27%, 36%)"
+            background-image="pexels-fwstudio-172289.jpg"
+            credits-name="FWStudio"
+            credits-url="https://www.pexels.com/de-de/foto/braune-holzoberflache-172289/"
+          ></theme-item>
+          <theme-item
+            theme-name="Planks"
+            id="photo:planks"
+            dark-theme
+            text-color="hsla(0, 0%, 100%, 0.9)"
+            background-color="#402218"
+            background-image="pexels-pixabay-326311.jpg"
+            credits-name="Pixabay"
+            credits-url="https://www.pexels.com/de-de/foto/holz-muster-textur-bauholz-326311/"
+          ></theme-item>
+          <theme-item
+            theme-name="Brown Leaves"
+            id="photo:brown-leaves"
+            dark-theme
+            text-color="hsla(0, 0%, 100%, 0.9)"
+            background-color="#412D29"
+            background-image="pexels-daniel-frank-688830.jpg"
+            credits-name="Daniel Frank"
+            credits-url="https://www.pexels.com/de-de/foto/verwelkte-blatter-foto-688830/"
+          ></theme-item>
+          <theme-item
+            theme-name="Dark Stone"
+            id="photo:dark-stone"
+            dark-theme
+            text-color="hsla(0, 0%, 100%, 0.9)"
+            background-color="#1a1a1a"
+            background-image="pexels-dexter-fernandes-2646237.jpg"
+            credits-name="Dexter Fernandes"
+            credits-url="https://www.pexels.com/de-de/foto/felsformation-nahaufnahme-fotografie-2646237/"
+          ></theme-item>
+          <theme-item
+            theme-name="Green Leaves"
+            id="photo:green-leaves"
+            dark-theme
+            text-color="hsla(0, 0%, 100%, 0.9)"
+            background-color="#0E2317"
+            background-image="pexels-sohail-nachiti-807598.jpg"
+            credits-name="Sohail Nachiti"
+            credits-url="https://www.pexels.com/de-de/foto/nahaufnahme-fotografie-von-blattern-mit-tropfchen-807598/"
+          ></theme-item>
+          <theme-item
+            theme-name="Green and Pink Leaves"
+            id="photo:green-pink-leaves"
+            text-color="hsla(0, 0%, 0%, 0.9)"
+            background-color="#CCE0DF"
+            background-image="pexels-madison-inouye-1382393.jpg"
+            credits-name="Madison Inouye"
+            credits-url="https://www.pexels.com/de-de/foto/foto-von-blattern-1382393/"
+          ></theme-item>
+          <theme-item
+            theme-name="Water"
+            id="photo:water"
+            dark-theme
+            text-color="hsla(0, 0%, 100%, 0.9)"
+            background-color="#477E89"
+            background-image="pexels-lisa-fotios-734973.jpg"
+            credits-name="Lisa Fotios"
+            credits-url="https://www.pexels.com/de-de/foto/gewasser-fotografie-734973/"
+          ></theme-item>
+          <theme-item
+            theme-name="Reflective Water"
+            id="photo:reflective-water"
+            dark-theme
+            text-color="hsla(0, 0%, 100%, 0.9)"
+            background-color="#419DB7"
+            background-image="pexels-pixabay-261403.jpg"
+            credits-name="Pixabay"
+            credits-url="https://www.pexels.com/de-de/foto/gewasser-261403/"
+          ></theme-item>
+          <theme-item
+            theme-name="White Structure"
+            id="photo:white-structure"
+            text-color="hsla(0, 0%, 0%, 0.9)"
+            background-color="#FDFDFD"
+            background-image="pexels-gdtography-911738.jpg"
+            credits-name="gdtography"
+            credits-url="https://www.pexels.com/de-de/foto/weisses-textil-911738/"
+          ></theme-item>
+          <theme-item
+            theme-name="Small Plant"
+            id="photo:small-plant"
+            text-color="hsla(0, 0%, 0%, 0.9)"
+            background-color="#E9EAE4"
+            background-image="pexels-scott-webb-305821.jpg"
+            credits-name="Scott Webb"
+            credits-url="https://www.pexels.com/de-de/foto/sukkulente-pflanze-auf-grauem-blumentopf-nahaufnahmefoto-305821/"
+          ></theme-item>
         </div>
 
         <h2>Landscapes</h2>
-        <div class="sidebar-icon" id="theme-photo-river-1" data-dark>River</div>
-        <div class="sidebar-icon" id="theme-photo-trees-1" data-dark>Trees</div>
-        <div class="sidebar-icon" id="theme-photo-stones-1" data-dark>
-          Stones
+        <div class="theme-list">
+          <theme-item
+            theme-name="River"
+            id="photo:river"
+            dark-theme
+            text-color="hsla(0, 0%, 100%, 0.9)"
+            background-color="#2E4323"
+            background-image="pexels-ian-turnell-709552.jpg"
+            credits-name="Ian Turnell"
+            credits-url="https://www.pexels.com/de-de/foto/gewasser-zwischen-grunen-laubbaumen-709552/"
+          ></theme-item>
+          <theme-item
+            theme-name="Stones"
+            id="photo:stones"
+            dark-theme
+            text-color="hsla(0, 0%, 100%, 0.9)"
+            background-color="#75825F"
+            background-image="pexels-nicollazzi-xiong-668353.jpg"
+            credits-name="Nicollazzi Xiong"
+            credits-url="https://www.pexels.com/de-de/foto/vier-felsformationen-668353/"
+          ></theme-item>
+          <theme-item
+            theme-name="Trees"
+            id="photo:trees"
+            dark-theme
+            text-color="hsla(0, 0%, 100%, 0.9)"
+            background-color="#573B29"
+            background-image="pexels-oleksandr-p-345522.jpg"
+            credits-name="Oleksandr P"
+            credits-url="https://www.pexels.com/de-de/foto/wald-345522/"
+          ></theme-item>
+          <theme-item
+            theme-name="Beach"
+            id="photo:beach"
+            text-color="hsla(0, 0%, 0%, 0.9)"
+            background-color="#CECFC9"
+            background-image="pexels-lina-kivaka-1879301.jpg"
+            credits-name="Lina Kivaka"
+            credits-url="https://www.pexels.com/de-de/foto/nahaufnahmefoto-von-shore-1879301/"
+          ></theme-item>
+          <theme-item
+            theme-name="Blossoms"
+            id="photo:blossoms"
+            text-color="hsla(0, 0%, 0%, 0.9)"
+            background-color="#EDF2F6"
+            background-image="pexels-sl-wong-1023953.jpg"
+            credits-name="Sl Wong"
+            credits-url="https://www.pexels.com/de-de/foto/selektive-fokusfotografie-von-kirschbluten-1023953/"
+          ></theme-item>
         </div>
-        <div class="sidebar-icon" id="theme-photo-beach-1">Beach</div>
-        <div class="sidebar-icon" id="theme-photo-blossoms-1">Blossoms</div>
 
         <h2>Space</h2>
-        <div class="sidebar-icon" id="theme-photo-stars-1" data-dark>Stars</div>
+        <div class="theme-list">
+          <theme-item
+            theme-name="Stars"
+            id="photo:stars"
+            dark-theme
+            text-color="hsla(0, 0%, 100%, 0.9)"
+            background-color="#111A30"
+            background-image="pexels-felix-mittermeier-1146134.jpg"
+            credits-name="Felix Mittermeier"
+            credits-url="https://www.pexels.com/de-de/foto/galaxis-1146134/"
+          ></theme-item>
+        </div>
       </div>
 
       <div class="sidebar-content" id="sidebar-themes-approx">
         <h1>approx.art</h1>
-        <p class="copyinfo">
-          All images<br />&copy; by
-          approx.art
-        </p>
+        <p class="copyinfo">All images &copy; by approx.art</p>
 
-        <h2>dark</h2>
-        <div class="sidebar-icon" id="theme-apprx-deep-sea" data-dark>
-          Deep Sea
+        <div class="theme-list">
+          <theme-item
+            theme-name="Image Noise"
+            id="approx:image-noise"
+            dark-theme
+            text-color="white"
+            background-color="hsl(0, 0%, 15%)"
+            background-image="approx_image_noise.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Leather"
+            id="approx:leather"
+            dark-theme
+            text-color="white"
+            background-color="hsl(0, 0%, 4%)"
+            background-image="approx_leather.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Scrap Metal"
+            id="approx:scrap-metal"
+            dark-theme
+            text-color="white"
+            background-color="hsl(0, 0%, 13%)"
+            background-image="approx_scrap_metal.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Fiery"
+            id="approx:fiery"
+            dark-theme
+            text-color="white"
+            background-color="hsl(29, 84%, 22%)"
+            background-image="approx_fiery.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Splatter"
+            id="approx:splatter"
+            dark-theme
+            text-color="white"
+            background-color="hsl(6, 90%, 16%)"
+            background-image="approx_splatter.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Smouldering"
+            id="approx:smouldering"
+            dark-theme
+            text-color="hsl(31, 49%, 90%)"
+            background-color="hsl(36, 76%, 46%)"
+            background-image="approx_smouldering.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Rust"
+            id="approx:rust"
+            dark-theme
+            text-color="white"
+            background-color="hsl(9, 76%, 3%)"
+            background-image="approx_rust.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Timber"
+            id="approx:timber"
+            dark-theme
+            text-color="hsl(29, 40%, 90%)"
+            background-color="hsl(31, 11%, 33%)"
+            background-image="approx_timber.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Vintage"
+            id="approx:vintage"
+            dark-theme
+            text-color="hsl(40, 24%, 90%)"
+            background-color="hsl(37, 10%, 14%)"
+            background-image="approx_vintage.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Diamonds"
+            id="approx:diamonds"
+            dark-theme
+            text-color="#e2f9df"
+            background-color="hsl(91, 62%, 20%)"
+            background-image="approx_diamonds.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Grass"
+            id="approx:grass"
+            dark-theme
+            text-color="white"
+            background-color="hsl(93, 77%, 17%)"
+            background-image="approx_grass.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Rays"
+            id="approx:rays"
+            text-color="#030"
+            background-color="hsl(69, 77%, 37%)"
+            background-image="approx_rays.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Glacialis"
+            id="approx:glacialis"
+            text-color="#0d434f"
+            background-color="hsl(185, 80%, 86%)"
+            background-image="approx_glacialis.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Aqua"
+            id="approx:aqua"
+            text-color="#253745"
+            background-color="hsl(208, 66%, 75%)"
+            background-image="approx_aqua.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Surface"
+            id="approx:surface"
+            dark-theme
+            text-color="white"
+            background-color="hsl(222, 100%, 13%)"
+            background-image="approx_surface.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Deep Sea"
+            id="approx:deep-sea"
+            dark-theme
+            text-color="white"
+            background-color="hsl(208, 62%, 30%)"
+            background-image="approx_deep_sea.jpg"
+          ></theme-item>
+          <theme-item
+            theme-name="Linearis"
+            id="approx:linearis"
+            dark-theme
+            text-color="hsl(285, 60%, 90%)"
+            background-color="hsl(264, 38%, 48%)"
+            background-image="approx_linearis.jpg"
+          ></theme-item>
         </div>
-        <div class="sidebar-icon" id="theme-apprx-diamonds" data-dark>
-          Diamonds
-        </div>
-        <div class="sidebar-icon" id="theme-apprx-fiery" data-dark>Fiery</div>
-        <div class="sidebar-icon" id="theme-apprx-grass" data-dark>Grass</div>
-        <div class="sidebar-icon" id="theme-apprx-image-noise" data-dark>
-          Image Noise
-        </div>
-        <div class="sidebar-icon" id="theme-apprx-leather" data-dark>
-          Leather
-        </div>
-        <div class="sidebar-icon" id="theme-apprx-rust" data-dark>Rust</div>
-        <div class="sidebar-icon" id="theme-apprx-scrap-metal" data-dark>
-          Scrap Metal
-        </div>
-        <div class="sidebar-icon" id="theme-apprx-splatter" data-dark>
-          Splatter
-        </div>
-        <div class="sidebar-icon" id="theme-apprx-surface" data-dark>
-          Surface
-        </div>
-
-        <h2>light</h2>
-        <div class="sidebar-icon" id="theme-apprx-aqua">Aqua</div>
-        <div class="sidebar-icon" id="theme-apprx-glacialis">Glacialis</div>
-        <div class="sidebar-icon" id="theme-apprx-linearis">Linearis</div>
-        <div class="sidebar-icon" id="theme-apprx-rays">Rays</div>
-        <div class="sidebar-icon" id="theme-apprx-smouldering">Smouldering</div>
-        <div class="sidebar-icon" id="theme-apprx-timber">Timber</div>
-        <div class="sidebar-icon" id="theme-apprx-vintage">Vintage</div>
       </div>
     </div>
 

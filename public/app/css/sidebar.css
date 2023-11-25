@@ -7,12 +7,14 @@
   background: hsla(0, 0%, 0%, 1);
   box-shadow: inset -1px 0 0 hsla(0, 0%, 100%, 0.1);
   overflow: hidden;
-  transition: width 0.15s ease-out, background-color 0.3s ease-out;
-}
+  transition:
+    width var(--move-duration) var(--move-easing),
+    background-color var(--fade-duration) var(--fade-easing);
 
-body.light-theme #sidebar {
-  background: hsla(0, 0%, 0%, 1);
-  box-shadow: inset -1px 0 0 hsla(0, 0%, 0%, 0.2);
+  .light-theme & {
+    background: hsla(0, 0%, 0%, 1);
+    box-shadow: inset -1px 0 0 hsla(0, 0%, 0%, 0.2);
+  }
 }
 
 #sidebar h1 {
@@ -21,11 +23,11 @@ body.light-theme #sidebar {
   padding: 20px 20px 14px;
   margin: 0 0 10px;
   color: rgba(255, 255, 255, 0.7);
-  transition: color 0.3s ease-out;
-}
+  transition: color var(--fade-duration) var(--fade-easing);
 
-body.light-theme #sidebar h1 {
-  color: hsla(0, 0%, 0%, 0.8);
+  .light-theme & {
+    color: hsla(0, 0%, 0%, 0.8);
+  }
 }
 
 #sidebar h2 {
@@ -35,61 +37,23 @@ body.light-theme #sidebar h1 {
   margin-bottom: 6px;
   color: hsla(0, 0%, 100%, 0.5);
   font-weight: bold;
-  transition: color 0.3s ease-out;
+  transition: color var(--fade-duration) var(--fade-easing);
   text-transform: uppercase;
+  .light-theme & {
+    color: hsla(0, 0%, 0%, 0.5);
+  }
 }
 
 #sidebar h1 + h2 {
   margin-top: 10px;
 }
 
-body.light-theme #sidebar h2 {
-  color: hsla(0, 0%, 0%, 0.5);
-}
-
 .sidebar-content {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 260px;
+  width: 400px;
   overflow: auto;
-}
-
-.sidebar-icon {
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px;
-  height: 60px;
-  position: relative;
-  background-size: cover;
-  transition: all 0.2s ease;
-  border-radius: 6px;
-  margin: 0 10px 10px;
-  overflow: hidden;
-  border: 1px solid hsla(0, 0%, 100%, 0.2);
-  text-shadow: 0 1px 2px white;
-}
-
-.sidebar-icon[data-dark] {
-  text-shadow: 0 1px 2px black;
-}
-
-body.light-theme .sidebar-icon {
-  border: 1px solid hsla(0, 0%, 0%, 0.2);
-}
-
-.sidebar-icon:hover {
-  padding-left: 25px;
-}
-.sidebar-icon::before {
-  content: '\00BB';
-  position: absolute;
-  left: -10px;
-  font-family: 'Segoe UI', sans-serif;
-  transition: left 0.2s ease-out;
-}
-.sidebar-icon:hover::before {
-  left: 10px;
 }
 
 .sidebar-content .copyinfo {
@@ -97,7 +61,11 @@ body.light-theme .sidebar-icon {
   margin: 0 0 20px;
   padding: 0 20px;
   color: white;
-  transition: color 0.3s ease-out;
+  transition: color var(--fade-duration) var(--fade-easing);
+
+  .light-theme & {
+    color: black;
+  }
 }
 
 .sidebar-content .copyinfo a {
@@ -107,6 +75,9 @@ body.light-theme .sidebar-icon {
   cursor: pointer;
 }
 
-body.light-theme .sidebar-content .copyinfo {
-  color: black;
+.theme-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
 }

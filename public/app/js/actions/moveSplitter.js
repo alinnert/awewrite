@@ -1,56 +1,44 @@
-import {
-  hideElement,
-  isHTMLElement,
-  leftBoxElement,
-  rightBoxElement,
-  showElement,
-} from '../elements.js'
+import { isHTMLElement, leftBoxElement, rightBoxElement } from '../elements.js'
+import { clamp } from '../lib/math/clamp.js'
 
 export function moveSplitter(position) {
   if (!isHTMLElement(leftBoxElement)) return
   if (!isHTMLElement(rightBoxElement)) return
 
-  if (position >= -3 && position <= 3) {
-    let left
+  const minValue = -2
+  const maxValue = 2
+  const clampedPosition = clamp(position, minValue, maxValue)
 
-    switch (position) {
-      case -3:
-        left = 1
-        break
-      case -2:
-        left = 20
-        break
-      case -1:
-        left = 35
-        break
-      case 0:
-        left = 50
-        break
-      case 1:
-        left = 65
-        break
-      case 2:
-        left = 80
-        break
-      case 3:
-        left = 99
-        break
-    }
+  leftBoxElement.classList.toggle('textarea-box--is-minimized', clampedPosition === minValue)
+  rightBoxElement.classList.toggle('textarea-box--is-minimized', clampedPosition === maxValue)
 
-    const right = 100 - left
+  const [left, right] = getBoxWidth(clampedPosition)
 
-    showElement(leftBoxElement)
-    showElement(rightBoxElement)
+  if (left !== null) {
+    leftBoxElement.style.right = left
+  }
+  if (right !== null) {
+    rightBoxElement.style.left = right
+  }
 
-    if (right == 99) {
-      hideElement(leftBoxElement)
-    } else if (left == 99) {
-      hideElement(rightBoxElement)
-    }
+  localStorage.setItem('awe.splitter', clampedPosition)
+}
 
-    leftBoxElement.style.right = `${right}%`
-    rightBoxElement.style.left = `${left}%`
+function getBoxWidth(position) {
+  const dockedWidth = '400px'
+  const fullWidthMinusDockedWidth = `calc(100% - ${dockedWidth})`
 
-    localStorage.setItem('awe.splitter', position)
+  if (position === 0) {
+    return ['50%', '50%']
+  }
+
+  if (Math.abs(position) === 1) {
+    return position < 0
+      ? [fullWidthMinusDockedWidth, dockedWidth]
+      : [dockedWidth, fullWidthMinusDockedWidth]
+  }
+
+  if (Math.abs(position) === 2) {
+    return position < 0 ? [null, '0'] : ['0', null]
   }
 }

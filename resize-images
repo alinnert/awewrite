@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+
+# files=$(find public/app/themes/originals -type f \( -name "*.jpg" -o -name "*.png" \))
+# filescount=$(echo "$files" | wc -l | xargs)
+# declare -i index=0
+
+# for file in "$files"; do
+#  index=index+1
+#  echo "[$index/$filescount] $file"
+#  filename=$(basename -- "$file")
+#  magick convert "$file" -resize 200 -quality 40 "./public/app/themes/${filename%.jpg}_thumb.jpg"
+#  magick convert "$file" -resize 2000 -quality 40 "./public/app/themes/$filename"
+# done
+
+import os
+import subprocess
+
+input_folder = "./public/app/themes/originals"
+output_folder = "./public/app/themes"
+
+with os.scandir(input_folder) as it:
+    for entry in it:
+        filename, fileext = os.path.splitext(entry.name)
+
+        input_filepath = os.path.join(input_folder, entry.name)
+        thumbnail_output_filepath = os.path.join(output_folder, filename + "_thumb.jpg")
+        fullsize_output_filepath = os.path.join(output_folder, filename + ".jpg")
+        
+        print("process " + input_filepath)
+        
+        useHighQuality = filename.startswith("ray") or filename.startswith("shine") or filename.startswith("aqua")
+        
+        quality = "85" if useHighQuality else "40"
+
+        subprocess.run(
+            ["magick", "convert", input_filepath, "-resize", "200", "-quality", quality, thumbnail_output_filepath]
+        )
+
+        subprocess.run(
+            ["magick", "convert", input_filepath, "-resize", "2000", "-quality", quality, fullsize_output_filepath]
+        )
