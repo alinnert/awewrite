@@ -1,20 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#181818" id="meta-theme-color" />
 
     <title>AWE.write</title>
 
-    <meta name="author" content="Andreas Linnert" />
-    <meta name="application-name" content="AWE.write" />
-    <meta name="theme-color" content="#181818" id="meta-theme-color" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-
     <link rel="manifest" href="./awewrite.webmanifest" />
-    <link rel="icon" href="./favicon-16.png" sizes="16x16" />
-    <link rel="shortcut icon" href="./favicon-32.png" sizes="32x32" />
-    <link rel="shortcut icon" href="./favicon-512.png" sizes="512x512" />
-    <link rel="shortcut icon" href="./favicon-1024.png" sizes="1024x1024" />
+
+    <link rel="icon" href="./favicon.ico" sizes="16x16 32x32" />
+    <link rel="shortcut icon" href="./appicon-192.png" sizes="192x192" />
+    <link rel="shortcut icon" href="./appicon-512.png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
     <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="./css/general.css" />
@@ -27,18 +25,45 @@
 
   <body>
     <div id="box-area">
-      <div id="left-box" class="textarea-box">
-        <textarea id="left-textarea"></textarea>
-      </div>
-      <div id="right-box" class="textarea-box">
-        <textarea id="right-textarea"></textarea>
-      </div>
+      <div id="left-box" class="textarea-box"><textarea id="left-textarea"></textarea></div>
+      <div id="right-box" class="textarea-box"><textarea id="right-textarea"></textarea></div>
     </div>
-
     <div id="toolbar">
       <div class="toolbar-line">
         <div class="toolbar-line-1">
           <div class="toolbar-line-left">
+            <span class="toolbar-app-logo">
+              <!-- start:svg-logo --><svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:serif="http://www.serif.com/"
+                width="100%"
+                height="100%"
+                viewBox="0 0 724 439"
+                version="1.1"
+                xml:space="preserve"
+                style="
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                  stroke-linejoin: round;
+                  stroke-miterlimit: 2;
+                "
+              >
+                <g id="Logo">
+                  <path
+                    d="M155.329,438.607C141.038,438.607 127.833,430.983 120.688,418.607C113.543,406.231 113.543,390.983 120.688,378.607C173.705,286.778 274.389,112.39 327.406,20.561C334.551,8.185 347.756,0.561 362.047,0.561C376.338,0.561 389.543,8.185 396.688,20.561C449.705,112.39 550.389,286.778 603.406,378.607C610.551,390.983 610.551,406.231 603.406,418.607C596.261,430.983 583.056,438.607 568.765,438.607C536.423,438.607 500.086,438.607 477.141,438.607C462.85,438.607 449.645,430.983 442.5,418.607C431.027,398.736 412.859,367.267 396.688,339.258C389.543,326.882 376.338,319.258 362.047,319.258C347.756,319.258 334.551,326.882 327.406,339.258C311.235,367.267 293.067,398.736 281.594,418.607C274.449,430.983 261.244,438.607 246.953,438.607L155.329,438.607Z"
+                  />
+                  <path
+                    d="M166.585,219.375C159.444,231.757 146.238,239.387 131.944,239.391C117.65,239.394 104.441,231.769 97.294,219.39C70.192,172.448 32.692,107.496 5.594,60.561C-1.551,48.185 -1.551,32.937 5.594,20.561C12.739,8.185 25.944,0.561 40.235,0.561C72.577,0.561 108.914,0.561 131.859,0.561C146.15,0.561 159.355,8.185 166.5,20.561C179.241,42.63 199.626,77.937 212.365,100.001C219.507,112.372 219.51,127.612 212.374,139.986C200.91,159.863 182.75,191.349 166.585,219.375Z"
+                    style="fill-opacity: 0.6"
+                  />
+                  <path
+                    d="M557.406,219.258C564.551,231.634 577.756,239.258 592.047,239.258C606.338,239.258 619.543,231.634 626.688,219.258C653.792,172.314 691.302,107.343 718.406,60.398C725.551,48.022 725.551,32.774 718.406,20.398C711.261,8.022 698.056,0.398 683.765,0.398C651.423,0.398 615.086,0.398 592.141,0.398C577.85,0.398 564.645,8.022 557.5,20.398C544.75,42.482 524.344,77.826 511.594,99.91C504.449,112.286 504.449,127.534 511.594,139.91C523.067,159.781 541.235,191.25 557.406,219.258Z"
+                    style="fill-opacity: 0.6"
+                  />
+                </g></svg
+              ><!-- end:svg-logo -->
+            </span>
             <span id="toolbar-title">AWE.write</span>
             <div class="expand-toolbar-button" data-toolbar="data">Data</div>
             <div class="expand-toolbar-button" data-toolbar="font">Font</div>
@@ -46,14 +71,9 @@
             <div class="expand-toolbar-button" data-toolbar="background">Theme</div>
             <div class="expand-toolbar-button" data-toolbar="about">About</div>
           </div>
-
-          <div class="right">
-            <span id="word-counter"></span>
-            <span id="clock"></span>
-          </div>
+          <div class="right"><span id="word-counter"></span> <span id="clock"></span></div>
         </div>
       </div>
-
       <div class="toolbar-line">
         <div class="toolbar-line-2">
           <div class="toolbar-line-all" id="toolbar-line-data">
@@ -61,13 +81,11 @@
               <h3>Actions</h3>
               <button class="switch-texts-button" type="button">switch texts</button>
               <button class="clear-texts-button" type="button">clear texts</button>
-
               <h3>Settings</h3>
               <input type="checkbox" id="spellcheck" />
               <label for="spellcheck">Enable spellchecking</label>
             </div>
           </div>
-
           <div class="toolbar-line-all" id="toolbar-line-font">
             <div class="toolbar-subline">
               <h3>Font face</h3>
@@ -80,7 +98,6 @@
                   name="fontface"
                 />
                 <label for="toolbar-fontface-ibm-plex-sans">IBM Plex Sans</label>
-
                 <input
                   type="radio"
                   id="toolbar-fontface-ibm-plex-serif"
@@ -89,7 +106,6 @@
                   data-fontface="IBM Plex Serif"
                 />
                 <label for="toolbar-fontface-ibm-plex-serif"> IBM Plex Serif </label>
-
                 <input
                   type="radio"
                   id="toolbar-fontface-ibm-plex-mono"
@@ -98,7 +114,6 @@
                   data-fontface="IBM Plex Mono"
                 />
                 <label for="toolbar-fontface-ibm-plex-mono">IBM Plex Mono</label>
-
                 <input
                   type="radio"
                   id="toolbar-fontface-duo"
@@ -107,7 +122,6 @@
                   data-fontface="Duo"
                 />
                 <label for="toolbar-fontface-duo">iA Writer Duo</label>
-
                 <input
                   type="radio"
                   id="toolbar-fontface-quattro"
@@ -116,7 +130,6 @@
                   data-fontface="Quattro"
                 />
                 <label for="toolbar-fontface-quattro">iA Writer Quattro</label>
-
                 <input
                   type="radio"
                   id="toolbar-fontface-kalam"
@@ -125,7 +138,6 @@
                   data-fontface="Kalam"
                 />
                 <label for="toolbar-fontface-kalam">Kalam</label>
-
                 <input
                   type="radio"
                   id="toolbar-fontface-opendyslexic"
@@ -136,7 +148,6 @@
                 <label for="toolbar-fontface-opendyslexic">OpenDyslexic</label>
               </span>
             </div>
-
             <div class="toolbar-subline">
               <h3>Font size</h3>
               <span id="toolbar-fontsize" class="toolbar-num-value">12</span>
@@ -144,7 +155,6 @@
                 <button class="icon-button" id="toolbar-fontsize-dec" type="button">-</button>
                 <button class="icon-button" id="toolbar-fontsize-inc" type="button">+</button>
               </span>
-
               <h3>Line height</h3>
               <span id="toolbar-lineheight" class="toolbar-num-value">1.2</span>
               <span class="toolbar-buttonset">
@@ -153,7 +163,6 @@
               </span>
             </div>
           </div>
-
           <div class="toolbar-line-all" id="toolbar-line-layout">
             <div class="toolbar-subline">
               <h3>Textbox layout</h3>
@@ -164,7 +173,6 @@
                 <button class="change-textbox-layout-button" data-value="1">›</button>
                 <button class="change-textbox-layout-button" data-value="2">»</button>
               </span>
-
               <h3>Text width</h3>
               <span class="toolbar-buttonset">
                 <input
@@ -202,7 +210,6 @@
               </span>
             </div>
           </div>
-
           <div class="toolbar-line-all" id="toolbar-line-background">
             <div class="toolbar-subline">
               <h3>Colors</h3>
@@ -218,7 +225,6 @@
                   Light
                 </button>
               </span>
-
               <h3>Images</h3>
               <span class="toolbar-buttonset">
                 <button class="open-sidebar-button" data-sidebar="themes-photos" type="button">
@@ -233,13 +239,10 @@
               </span>
             </div>
           </div>
-
           <div class="toolbar-line-all" id="toolbar-line-about">
             <div class="toolbar-subline">
-              <span class="infotext">AWE.write 1.14</span>
-              <span class="infotext">
-                <a href="/" target="_blank">Website and changelog</a>
-              </span>
+              <span class="infotext">Version 1.15</span>
+              <span class="infotext"> <a href="/" target="_blank">Website and changelog</a> </span>
               <span class="infotext">
                 <a href="https://github.com/alinnert/awewrite" target="_blank">Source code</a>
               </span>
@@ -248,11 +251,9 @@
         </div>
       </div>
     </div>
-
     <div id="sidebar">
       <div class="sidebar-content" id="sidebar-themes-dark-colors">
         <h1>Dark Colors</h1>
-
         <div class="theme-list">
           <theme-item
             theme-name="Gray"
@@ -333,11 +334,8 @@
             background-color="#111111"
           ></theme-item>
         </div>
-
         <h2>Solarized</h2>
-        <p class="copyinfo">
-          <a href="https://ethanschoonover.com/solarized/">Website</a>
-        </p>
+        <p class="copyinfo"><a href="https://ethanschoonover.com/solarized/">Website</a></p>
         <div class="theme-list">
           <theme-item
             theme-name="Solarized Dark"
@@ -347,7 +345,6 @@
             background-color="hsl(192, 81%, 14%)"
           ></theme-item>
         </div>
-
         <h2>Atelier Schemes</h2>
         <p class="copyinfo">
           <a href="https://atelierbram.github.io/syntax-highlighting/atelier-schemes/">Website</a>
@@ -383,10 +380,8 @@
           ></theme-item>
         </div>
       </div>
-
       <div class="sidebar-content" id="sidebar-themes-light-colors">
         <h1>Light Colors</h1>
-
         <div class="theme-list">
           <theme-item
             theme-name="White"
@@ -449,11 +444,8 @@
             background-color="oklch(95% 0.05 330)"
           ></theme-item>
         </div>
-
         <h2>Solarized</h2>
-        <p class="copyinfo">
-          <a href="https://ethanschoonover.com/solarized/">Website</a>
-        </p>
+        <p class="copyinfo"><a href="https://ethanschoonover.com/solarized/">Website</a></p>
         <div class="theme-list">
           <theme-item
             theme-name="Solarized Light"
@@ -462,7 +454,6 @@
             background-color="hsl(44, 87%, 94%)"
           ></theme-item>
         </div>
-
         <h2>Atelier Schemes</h2>
         <p class="copyinfo">
           <a href="https://atelierbram.github.io/syntax-highlighting/atelier-schemes/">Website</a>
@@ -494,10 +485,8 @@
           ></theme-item>
         </div>
       </div>
-
       <div class="sidebar-content" id="sidebar-themes-images">
         <h1>Abstract</h1>
-
         <h2>aqua</h2>
         <div class="theme-list">
           <theme-item
@@ -556,7 +545,6 @@
             background-image="aqua_purple.jpg"
           ></theme-item>
         </div>
-
         <h2>shine</h2>
         <div class="theme-list">
           <theme-item
@@ -600,7 +588,6 @@
             background-image="shine_pink.jpg"
           ></theme-item>
         </div>
-
         <h2>ray</h2>
         <div class="theme-list">
           <theme-item
@@ -636,7 +623,6 @@
             background-image="ray_pink.jpg"
           ></theme-item>
         </div>
-
         <h2>mosaic</h2>
         <div class="theme-list">
           <theme-item
@@ -656,10 +642,8 @@
           ></theme-item>
         </div>
       </div>
-
       <div class="sidebar-content" id="sidebar-themes-photos">
         <h1>Photos</h1>
-
         <h2>Textures</h2>
         <div class="theme-list">
           <theme-item
@@ -779,7 +763,6 @@
             credits-url="https://www.pexels.com/de-de/foto/sukkulente-pflanze-auf-grauem-blumentopf-nahaufnahmefoto-305821/"
           ></theme-item>
         </div>
-
         <h2>Landscapes</h2>
         <div class="theme-list">
           <theme-item
@@ -831,7 +814,6 @@
             credits-url="https://www.pexels.com/de-de/foto/selektive-fokusfotografie-von-kirschbluten-1023953/"
           ></theme-item>
         </div>
-
         <h2>Space</h2>
         <div class="theme-list">
           <theme-item
@@ -846,11 +828,9 @@
           ></theme-item>
         </div>
       </div>
-
       <div class="sidebar-content" id="sidebar-themes-approx">
         <h1>approx.art</h1>
         <p class="copyinfo">All images &copy; by approx.art</p>
-
         <div class="theme-list">
           <theme-item
             theme-name="Image Noise"
@@ -988,7 +968,6 @@
         </div>
       </div>
     </div>
-
     <script src="./index.js" type="module"></script>
   </body>
 </html>
