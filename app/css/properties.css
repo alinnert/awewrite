@@ -1,0 +1,23 @@
+@property --editor-font-family {
+  syntax: '*';
+  inherits: true;
+  initial-value: sans-serif;
+}
+
+@property --editor-font-size {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 18px;
+}
+
+@property --editor-line-height {
+  syntax: '<length> | <number>';
+  inherits: true;
+  initial-value: 1.6;
+}
+
+@property --editor-text-color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: black;
+}

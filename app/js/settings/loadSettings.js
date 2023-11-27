@@ -4,29 +4,19 @@ import { changeTextWidth } from '../actions/changeTextWidth.js'
 import { changeThemeById } from '../actions/changeTheme.js'
 import { moveSplitter } from '../actions/moveSplitter.js'
 import { setSpellcheck } from '../actions/setSpellcheck.js'
-import {
-  fontFaceElement,
-  isHTMLElement,
-  leftTextareaElement,
-  rightTextareaElement,
-  textareaElements,
-  textWidthElement,
-} from '../elements.js'
-import { fontfaceNumber } from './fontfaceNumber.js'
+import { leftTextareaElement, rightTextareaElement, textWidthElement } from '../elements.js'
 import { textwidthNumber } from './textwidthNumber.js'
+import { changeFontface } from '../actions/changeFontface.js'
 
 export function loadSettings() {
   if (!(leftTextareaElement instanceof HTMLTextAreaElement)) return
   if (!(rightTextareaElement instanceof HTMLTextAreaElement)) return
 
   // Font family
-  for (const textarea of textareaElements) {
-    if (!isHTMLElement(textarea)) continue
-    textarea.style.fontFamily = localStorage.getItem('awe.fontface')
-  }
+  changeFontface(localStorage.getItem('awe.fontface'))
 
-  const fontFaceButtonIndex = fontfaceNumber(localStorage.getItem('awe.fontface'))
-  fontFaceElement[fontFaceButtonIndex].click()
+  // const fontFaceButtonIndex = fontfaceNumber(localStorage.getItem('awe.fontface'))
+  // fontFaceElement[fontFaceButtonIndex].click()
 
   // Text width
   changeTextWidth(localStorage.getItem('awe.textwidth'))

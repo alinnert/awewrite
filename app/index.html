@@ -14,6 +14,7 @@
     <link rel="shortcut icon" href="./appicon-512.png" sizes="512x512" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
+    <link rel="stylesheet" type="text/css" href="./css/properties.css" />
     <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="./css/general.css" />
     <link rel="stylesheet" type="text/css" href="./css/editors.css" />
@@ -25,30 +26,19 @@
 
   <body>
     <div id="box-area">
-      <div id="left-box" class="textarea-box"><textarea id="left-textarea"></textarea></div>
-      <div id="right-box" class="textarea-box"><textarea id="right-textarea"></textarea></div>
+      <div id="left-box" class="textarea-box">
+        <textarea class="textarea" id="left-textarea"></textarea>
+      </div>
+      <div id="right-box" class="textarea-box">
+        <textarea class="textarea" id="right-textarea"></textarea>
+      </div>
     </div>
     <div id="toolbar">
       <div class="toolbar-line">
         <div class="toolbar-line-1">
           <div class="toolbar-line-left">
             <span class="toolbar-app-logo">
-              <!-- start:svg-logo --><svg
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:serif="http://www.serif.com/"
-                width="100%"
-                height="100%"
-                viewBox="0 0 724 439"
-                version="1.1"
-                xml:space="preserve"
-                style="
-                  fill-rule: evenodd;
-                  clip-rule: evenodd;
-                  stroke-linejoin: round;
-                  stroke-miterlimit: 2;
-                "
-              >
+              <!-- start:svg-logo --><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 724 439">
                 <g id="Logo">
                   <path
                     d="M155.329,438.607C141.038,438.607 127.833,430.983 120.688,418.607C113.543,406.231 113.543,390.983 120.688,378.607C173.705,286.778 274.389,112.39 327.406,20.561C334.551,8.185 347.756,0.561 362.047,0.561C376.338,0.561 389.543,8.185 396.688,20.561C449.705,112.39 550.389,286.778 603.406,378.607C610.551,390.983 610.551,406.231 603.406,418.607C596.261,430.983 583.056,438.607 568.765,438.607C536.423,438.607 500.086,438.607 477.141,438.607C462.85,438.607 449.645,430.983 442.5,418.607C431.027,398.736 412.859,367.267 396.688,339.258C389.543,326.882 376.338,319.258 362.047,319.258C347.756,319.258 334.551,326.882 327.406,339.258C311.235,367.267 293.067,398.736 281.594,418.607C274.449,430.983 261.244,438.607 246.953,438.607L155.329,438.607Z"
@@ -241,7 +231,7 @@
           </div>
           <div class="toolbar-line-all" id="toolbar-line-about">
             <div class="toolbar-subline">
-              <span class="infotext">Version 1.15.2</span>
+              <span class="infotext">Version 1.15.3</span>
               <span class="infotext"> <a href="/" target="_blank">Website and changelog</a> </span>
               <span class="infotext">
                 <a href="https://github.com/alinnert/awewrite" target="_blank">Source code</a>
