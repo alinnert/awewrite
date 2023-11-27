@@ -1,4 +1,3 @@
-
 export const fontFamilyValue = {
   ibmPlexSans: '"IBM Plex Sans", sans-serif',
   ibmPlexSerif: '"IBM Plex Serif", serif',

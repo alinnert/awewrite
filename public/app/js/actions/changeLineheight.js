@@ -1,8 +1,4 @@
-import {
-  isHTMLElement,
-  lineHeightElement,
-  textareaElements,
-} from '../elements.js'
+import { lineHeightElement } from '../elements.js'
 import { getRealLineheight } from './font.js'
 
 export function changeLineheight(height) {
@@ -10,11 +6,6 @@ export function changeLineheight(height) {
 
   const lineHeight = getRealLineheight(height)
   lineHeightElement.textContent = lineHeight
-
-  for (const textarea of textareaElements) {
-    if (!isHTMLElement(textarea)) continue
-    textarea.style.lineHeight = lineHeight
-  }
-
+  document.body.style.setProperty('--editor-line-height', lineHeight)
   localStorage.setItem('awe.lineheight', height)
 }

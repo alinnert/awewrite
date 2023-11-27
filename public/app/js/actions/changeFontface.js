@@ -1,29 +1,30 @@
-import { isHTMLElement, textareaElements } from '../elements.js'
 import { fontFamilyValue } from './font.js'
 
+const fontFamilies = {
+  'IBM Plex Sans': fontFamilyValue.ibmPlexSans,
+  'IBM Plex Serif': fontFamilyValue.ibmPlexSerif,
+  'IBM Plex Mono': fontFamilyValue.ibmPlexMono,
+  Duo: fontFamilyValue.duo,
+  Quattro: fontFamilyValue.quattro,
+  Kalam: fontFamilyValue.kalam,
+  OpenDyslexic: fontFamilyValue.openDyslexic,
+}
+
 export function changeFontface(font) {
-  const fontFamilies = {
-    'IBM Plex Sans': () => fontFamilyValue.ibmPlexSans,
-    'IBM Plex Serif': () => fontFamilyValue.ibmPlexSerif,
-    'IBM Plex Mono': () => fontFamilyValue.ibmPlexMono,
-    Duo: () => fontFamilyValue.duo,
-    Quattro: () => fontFamilyValue.quattro,
-    Kalam: () => fontFamilyValue.kalam,
-    OpenDyslexic: () => fontFamilyValue.openDyslexic,
+  const fontFamily = fontFamilies[font]
+
+  // This is for compatibility reasons. The value instead of the id used to be stored in local storage.
+  if (fontFamily === undefined) {
+    const entry = Object.entries(fontFamilies).find(([_fontId, value]) => value === font)
+    if (entry === undefined) return
+    changeFontface(entry[0])
+    return
   }
 
-  const fontFamily = fontFamilies[font]()
+  document.body.style.setProperty('--editor-font-family', fontFamily)
+  localStorage.setItem('awe.fontface', font)
 
-  for (const textarea of textareaElements) {
-    if (!isHTMLElement(textarea)) continue
-    textarea.style.fontFamily = fontFamily
-  }
-
-  localStorage.setItem('awe.fontface', fontFamily)
-
-  const fontButtons = document.getElementsByClassName('change-fontface-button')
-
-  for (const button of fontButtons) {
+  for (const button of document.getElementsByClassName('change-fontface-button')) {
     const buttonValue = button.dataset.fontface
     button.classList.toggle('current', buttonValue === font)
   }
