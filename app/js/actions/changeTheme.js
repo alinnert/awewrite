@@ -1,5 +1,6 @@
 import {
   $id,
+  boxAreaElement,
   isHTMLElement,
   metaThemeColorElement,
   sidebarElement,
@@ -10,7 +11,7 @@ import { getThemeImagePath } from '../lib/themes/getThemeImagePath.js'
 
 export const themeEvents = new EventTarget()
 
-/** @type {ThemeData} */
+/** @type {import('../components/theme-item.js').ThemeData} */
 const fallbackThemeData = {
   displayName: 'Fallback Theme',
   id: 'fallback',
@@ -30,13 +31,15 @@ export function changeThemeById(selectionId) {
   changeTheme(themeData)
 }
 
-/** @param {ThemeData} themeData */
+/** @param {import('../components/theme-item.js').ThemeData} themeData */
 export function changeTheme(themeData) {
   document.body.classList.toggle('has-background-image', themeData.backgroundImage !== undefined)
   document.body.classList.toggle('light-theme', !themeData.isDarkTheme)
 
   document.body.style.backgroundImage = getThemeImagePath(themeData.backgroundImage) ?? 'none'
   document.body.style.backgroundColor = themeData.backgroundColor ?? 'transparent'
+
+  boxAreaElement.style.backgroundImage = `linear-gradient(to bottom, ${themeData.backgroundColor}, transparent 100px)`
 
   updateTextareas(themeData.textColor)
   updateTitleAndToolbar(themeData.backgroundColor)

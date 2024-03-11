@@ -22,15 +22,22 @@
     <link rel="stylesheet" type="text/css" href="./css/toolbar-elements.css" />
     <link rel="stylesheet" type="text/css" href="./css/sidebar.css" />
     <link rel="stylesheet" type="text/css" href="./css/components/theme-item.css" />
+    <link rel="stylesheet" type="text/css" href="./css/components/word-counter.css" />
   </head>
 
   <body>
     <div id="box-area">
       <div id="left-box" class="textarea-box">
-        <textarea class="textarea" id="left-textarea"></textarea>
+        <textarea class="textarea" id="left-textarea" data-area="left"></textarea>
+        <div class="textarea-toolbar">
+          <word-counter area="left"></word-counter>
+        </div>
       </div>
       <div id="right-box" class="textarea-box">
-        <textarea class="textarea" id="right-textarea"></textarea>
+        <textarea class="textarea" id="right-textarea" data-area="right"></textarea>
+        <div class="textarea-toolbar">
+          <word-counter area="right"></word-counter>
+        </div>
       </div>
     </div>
     <div id="toolbar">
@@ -61,7 +68,7 @@
             <div class="expand-toolbar-button" data-toolbar="background">Theme</div>
             <div class="expand-toolbar-button" data-toolbar="about">About</div>
           </div>
-          <div class="right"><span id="word-counter"></span> <span id="clock"></span></div>
+          <div class="right"><span id="clock"></span></div>
         </div>
       </div>
       <div class="toolbar-line">
@@ -231,7 +238,7 @@
           </div>
           <div class="toolbar-line-all" id="toolbar-line-about">
             <div class="toolbar-subline">
-              <span class="infotext">Version 1.15.3</span>
+              <span class="infotext">Version 1.16</span>
               <span class="infotext"> <a href="/" target="_blank">Website and changelog</a> </span>
               <span class="infotext">
                 <a href="https://github.com/alinnert/awewrite" target="_blank">Source code</a>

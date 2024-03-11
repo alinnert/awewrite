@@ -25,7 +25,7 @@ export function changeFontface(font) {
   localStorage.setItem('awe.fontface', font)
 
   for (const button of document.getElementsByClassName('change-fontface-button')) {
-    const buttonValue = button.dataset.fontface
+    const buttonValue = /** @type {HTMLElement} */ (button).dataset.fontface
     button.classList.toggle('current', buttonValue === font)
   }
 }

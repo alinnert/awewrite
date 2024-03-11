@@ -35,6 +35,7 @@ export const wordCounterElement =
   ($id('word-counter'))
 export const toolbarElement = /** @type { HTMLDivElement } */ ($id('toolbar'))
 export const sidebarElement = /** @type { HTMLDivElement } */ ($id('sidebar'))
+export const boxAreaElement = /** @type { HTMLDivElement } */ ($id('box-area'))
 export const leftBoxElement = /** @type { HTMLDivElement } */ ($id('left-box'))
 export const rightBoxElement = /** @type { HTMLDivElement } */ ($id('right-box'))
 export const leftTextareaElement =
