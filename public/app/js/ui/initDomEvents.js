@@ -34,7 +34,13 @@ export function initDomEvents() {
   // Textareas
   addEvent(textareaBoxElements, 'click', onTextareaBoxElementsClick)
   addEvent(textareaElements, 'click', onTextareaClick)
-  addEvent(textareaElements, 'input', onTextareaInput)
+  addEvent(textareaElements, 'input', (event) => {
+    const target = event.target
+    if (!(target instanceof HTMLTextAreaElement)) return
+    const area = target.dataset.area
+    if (area !== 'left' && area !== 'right') return
+    onTextareaInput(area)
+  })
   addEvent(textareaElements, 'keydown', supportTab)
   addEvent(textareaElements, 'focus', onTextareaFocus)
 
@@ -103,6 +109,6 @@ export function initDomEvents() {
   addEvent($class('sidebar-icon'), 'click', (event) => {
     const target = event.currentTarget
     if (!isHTMLElement(target)) return
-    changeThemeById(target.getAttribute('id'), target.hasAttribute('data-dark'))
+    changeThemeById(target.getAttribute('id'))
   })
 }

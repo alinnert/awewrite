@@ -7,7 +7,7 @@
   overflow: hidden;
   color: white;
   transition:
-    height var(--move-duration) var(--move-easing-with-big-bounce),
+    height var(--move-duration) var(--move-easing),
     color var(--fade-duration) var(--fade-easing),
     background var(--fade-duration) var(--fade-easing);
   -webkit-user-select: none;

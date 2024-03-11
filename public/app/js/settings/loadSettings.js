@@ -7,6 +7,7 @@ import { setSpellcheck } from '../actions/setSpellcheck.js'
 import { leftTextareaElement, rightTextareaElement, textWidthElement } from '../elements.js'
 import { textwidthNumber } from './textwidthNumber.js'
 import { changeFontface } from '../actions/changeFontface.js'
+import { onTextareaInput } from '../textarea/onTextareaInput.js'
 
 export function loadSettings() {
   if (!(leftTextareaElement instanceof HTMLTextAreaElement)) return
@@ -24,15 +25,13 @@ export function loadSettings() {
   textWidthElement[textWidthButtonIndex].click()
 
   // Remaining settings
-  const darkThemeValue = localStorage.getItem('awe.darkTheme')
-  const isDarkTheme = darkThemeValue !== 'false'
-
   changeFontsize(localStorage.getItem('awe.fontsize'))
   changeLineheight(localStorage.getItem('awe.lineheight'))
   moveSplitter(Number.parseInt(localStorage.getItem('awe.splitter')))
   const themeId = localStorage.getItem('awe.themeid')?.replace(/_/g, '-') ?? null
-  changeThemeById(themeId, isDarkTheme)
+  changeThemeById(themeId)
   setSpellcheck(localStorage.getItem('awe.spellcheck'))
   leftTextareaElement.value = localStorage.getItem('awe.text.left')
   rightTextareaElement.value = localStorage.getItem('awe.text.right')
+  onTextareaInput()
 }
