@@ -16,8 +16,10 @@ import {
   fontSizeElement,
   isHTMLElement,
   lineHeightElement,
+  settingsMenuElement,
   textareaBoxElements,
   textareaElements,
+  toolbarTitleElement,
 } from '../elements.js'
 import { onTextareaBoxElementsClick } from '../textarea/onTextareaBoxElementsClick.js'
 import { onTextareaClick } from '../textarea/onTextareaClick.js'
@@ -45,6 +47,9 @@ export function initDomEvents() {
   addEvent(textareaElements, 'focus', onTextareaFocus)
 
   // Toolbar
+  addEvent(toolbarTitleElement, 'click', () => {
+    settingsMenuElement.open = !settingsMenuElement.open
+  })
   addEvent(expandToolbarButtonElements, 'click', (event) => {
     const target = event.currentTarget
     if (!isHTMLElement(target)) return

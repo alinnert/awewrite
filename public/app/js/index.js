@@ -5,12 +5,12 @@ import { initDomEvents } from './ui/initDomEvents.js'
 import { initElements } from './ui/initElements.js'
 import './components/theme-item.js'
 import './components/word-counter.js'
+import './components/settings-menu.js'
+import './components/numeric-setting.js'
 
-export function initApplication() {
-  refreshClock()
-  initElements()
-  initDomEvents()
-  initializeLocalStorage()
-  loadSettings()
-  setInterval(refreshClock, 5000)
-}
+refreshClock()
+initElements()
+initDomEvents()
+initializeLocalStorage()
+loadSettings()
+setInterval(refreshClock, 5000)

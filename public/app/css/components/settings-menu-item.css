@@ -1,0 +1,16 @@
+.settings-menu-item {
+  display: block;
+  
+  &.settings-menu-item\/type\:numeric {
+    display: flex;
+    align-items: center;
+
+    & > :first-child {
+      margin-right: auto;
+    }
+
+    & > :not(:first-child) {
+      padding: 0 10px;
+    }
+  }
+}

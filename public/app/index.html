@@ -14,15 +14,18 @@
     <link rel="shortcut icon" href="./appicon-512.png" sizes="512x512" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-    <link rel="stylesheet" type="text/css" href="./css/properties.css" />
-    <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="./css/general.css" />
-    <link rel="stylesheet" type="text/css" href="./css/editors.css" />
-    <link rel="stylesheet" type="text/css" href="./css/toolbar.css" />
-    <link rel="stylesheet" type="text/css" href="./css/toolbar-elements.css" />
-    <link rel="stylesheet" type="text/css" href="./css/sidebar.css" />
-    <link rel="stylesheet" type="text/css" href="./css/components/theme-item.css" />
-    <link rel="stylesheet" type="text/css" href="./css/components/word-counter.css" />
+    <link rel="stylesheet" href="./css/properties.css" />
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/general.css" />
+    <link rel="stylesheet" href="./css/editors.css" />
+    <link rel="stylesheet" href="./css/toolbar.css" />
+    <link rel="stylesheet" href="./css/toolbar-elements.css" />
+    <link rel="stylesheet" href="./css/sidebar.css" />
+    <link rel="stylesheet" href="./css/components/theme-item.css" />
+    <link rel="stylesheet" href="./css/components/word-counter.css" />
+    <link rel="stylesheet" href="./css/components/settings-menu.css" />
+    <link rel="stylesheet" href="./css/components/settings-menu-item.css" />
   </head>
 
   <body>
@@ -40,12 +43,14 @@
         </div>
       </div>
     </div>
+
     <div id="toolbar">
       <div class="toolbar-line">
         <div class="toolbar-line-1">
           <div class="toolbar-line-left">
             <span class="toolbar-app-logo">
-              <!-- start:svg-logo --><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 724 439">
+              <!-- start:svg-logo -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 724 439">
                 <g id="Logo">
                   <path
                     d="M155.329,438.607C141.038,438.607 127.833,430.983 120.688,418.607C113.543,406.231 113.543,390.983 120.688,378.607C173.705,286.778 274.389,112.39 327.406,20.561C334.551,8.185 347.756,0.561 362.047,0.561C376.338,0.561 389.543,8.185 396.688,20.561C449.705,112.39 550.389,286.778 603.406,378.607C610.551,390.983 610.551,406.231 603.406,418.607C596.261,430.983 583.056,438.607 568.765,438.607C536.423,438.607 500.086,438.607 477.141,438.607C462.85,438.607 449.645,430.983 442.5,418.607C431.027,398.736 412.859,367.267 396.688,339.258C389.543,326.882 376.338,319.258 362.047,319.258C347.756,319.258 334.551,326.882 327.406,339.258C311.235,367.267 293.067,398.736 281.594,418.607C274.449,430.983 261.244,438.607 246.953,438.607L155.329,438.607Z"
@@ -58,8 +63,9 @@
                     d="M557.406,219.258C564.551,231.634 577.756,239.258 592.047,239.258C606.338,239.258 619.543,231.634 626.688,219.258C653.792,172.314 691.302,107.343 718.406,60.398C725.551,48.022 725.551,32.774 718.406,20.398C711.261,8.022 698.056,0.398 683.765,0.398C651.423,0.398 615.086,0.398 592.141,0.398C577.85,0.398 564.645,8.022 557.5,20.398C544.75,42.482 524.344,77.826 511.594,99.91C504.449,112.286 504.449,127.534 511.594,139.91C523.067,159.781 541.235,191.25 557.406,219.258Z"
                     style="fill-opacity: 0.6"
                   />
-                </g></svg
-              ><!-- end:svg-logo -->
+                </g>
+              </svg>
+              <!-- end:svg-logo -->
             </span>
             <span id="toolbar-title">AWE.write</span>
             <div class="expand-toolbar-button" data-toolbar="data">Data</div>
@@ -248,6 +254,7 @@
         </div>
       </div>
     </div>
+
     <div id="sidebar">
       <div class="sidebar-content" id="sidebar-themes-dark-colors">
         <h1>Dark Colors</h1>
@@ -965,6 +972,26 @@
         </div>
       </div>
     </div>
-    <script src="./index.js" type="module"></script>
+
+    <settings-menu>
+      <div>AWE.write 1.16</div>
+      <button>Switch texts</button>
+      <button>Clear texts</button>
+      <div>
+        <label for="spell">enable spellchecking</label>
+        <input type="checkbox" id="spell" switch />
+      </div>
+      <div>font</div>
+      <numeric-setting label="Font size" value="16"></numeric-setting>
+      <numeric-setting label="Line height" value="1.2"></numeric-setting>
+      <div>textbox layout</div>
+      <div>textbox width</div>
+      <div>theme</div>
+      <hr />
+      <div>Website and changelog</div>
+      <div>Source code</div>
+    </settings-menu>
+
+    <script src="./js/index.js" type="module"></script>
   </body>
 </html>

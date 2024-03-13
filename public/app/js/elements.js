@@ -1,4 +1,7 @@
 // #region selector functions
+
+import { SettingsMenu } from './components/settings-menu.js'
+
 /**
  * @param { string } className
  * @returns { HTMLCollectionOf<Element> }
@@ -22,9 +25,12 @@ export const $name = (name) => document.getElementsByName(name)
 export const textareaElements = document.getElementsByTagName('textarea')
 
 export const sidebarContentElements = $class('sidebar-content')
+export const toolbarTitleElement = $id('toolbar-title')
 export const expandToolbarButtonElements = $class('expand-toolbar-button')
 export const toolbarLineAllElements = $class('toolbar-line-all')
 export const textareaBoxElements = $class('textarea-box')
+
+export const settingsMenuElement = /** @type {SettingsMenu} */ ($class('settings-menu').item(0))
 
 export const fontFaceElement = $name('fontface')
 export const textWidthElement = $name('textwidth')

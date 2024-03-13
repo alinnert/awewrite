@@ -43,7 +43,7 @@ target_index_html = os.path.join(app_dir, 'index.html')
 
 replace_string_start = '<!-- start:svg-logo -->'
 replace_string_end = '<!-- end:svg-logo -->'
-svg_string_with_markers = replace_string_start + svg_string + replace_string_end
+svg_string_with_markers = replace_string_start + '\n' + svg_string + '\n' + replace_string_end
 
 with open(target_index_html, 'r+') as file:
     content = file.read()

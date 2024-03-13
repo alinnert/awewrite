@@ -1,3 +1,5 @@
+import { changeTheme, themeEvents } from '../actions/changeTheme.js'
+
 /**
  * @typedef {{
  *   displayName: string,
@@ -10,7 +12,6 @@
  *   creditsUrl?: string,
  * }} ThemeData
  */
-import { changeTheme, themeEvents } from '../actions/changeTheme.js'
 
 customElements.define(
   'theme-item',
@@ -40,27 +41,25 @@ customElements.define(
 
       this.classList.add('theme-item')
 
+      const creditsHtml = this.#hasCredits
+        ? `
+          <div class='theme-item__credits'>
+            by <a href='${this.#themeData.creditsUrl}'>${this.#themeData.creditsName}</a>
+          </div>
+        `
+        : ''
+
       this.innerHTML = `
-      <div class='theme-item__preview'>
-        <div class='theme-item__name'>${this.#themeData.displayName}</div>
-      </div>
-      ${
-        this.#hasCredits
-          ? `
-            <div class='theme-item__credits'>
-              by <a href='${this.#themeData.creditsUrl}'>${this.#themeData.creditsName}</a>
-            </div>
-          `
-          : ''
-      }
-    `
+        <div class='theme-item__preview'>
+          <div class='theme-item__name'>${this.#themeData.displayName}</div>
+        </div>
+        ${creditsHtml}
+      `
 
       const nameElement = /** @type {HTMLElement} */ (this.querySelector('.theme-item__name'))
-
       nameElement.style.color = this.#themeData.textColor
 
       const previewElement = /** @type {HTMLElement} */ (this.querySelector('.theme-item__preview'))
-
       previewElement.style.backgroundColor = this.#themeData.backgroundColor
 
       if (this.#themeData.backgroundImage !== null) {
@@ -73,11 +72,14 @@ customElements.define(
 
       previewElement.addEventListener('click', this.#handlePreviewClick.bind(this))
 
-      themeEvents.addEventListener('changetheme', (event) => {
-        const isCurrentTheme = this.#themeData.id === event.detail.id
-
-        this.classList.toggle('theme-item--is-current', isCurrentTheme)
-      })
+      themeEvents.addEventListener(
+        'changetheme',
+        /** @param {CustomEvent} event */
+        (event) => {
+          const isCurrentTheme = this.#themeData.id === event.detail.id
+          this.classList.toggle('theme-item--is-current', isCurrentTheme)
+        },
+      )
     }
 
     #handlePreviewClick() {

@@ -12,12 +12,6 @@
 }
 
 html {
-  --move-easing: cubic-bezier(0, 0.5, 0.2, 1);
-  --move-duration: 200ms;
-
-  --fade-easing: var(--move-easing);
-  --fade-duration: 500ms;
-
   height: 100%;
 }
 

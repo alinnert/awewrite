@@ -1,0 +1,27 @@
+:root {
+  /* colors */
+  --theme-color-h: 0deg;
+  --theme-color-s: 0%;
+  --theme-color-l: 0%;
+
+  /* easing */
+  --move-easing: cubic-bezier(0, 0.5, 0.2, 1);
+  --move-duration: 200ms;
+
+  --fade-easing: var(--move-easing);
+  --fade-duration: 500ms;
+
+  /* shadow */
+  --shadow-color: var(--theme-color-h) var(--theme-color-s) 0%;
+  --shadow-elevation-low:
+    0px 0.4px 0.4px hsl(var(--shadow-color) / 0.28),
+    0px 1.1px 1.2px -2.8px hsl(var(--shadow-color) / 0.25);
+  --shadow-elevation-medium:
+    0px 0.4px 0.4px hsl(var(--shadow-color) / 0.4),
+    0px 5.6px 6px -2.8px hsl(var(--shadow-color) / 0.35);
+  --shadow-elevation-high:
+    0px 0.4px 0.4px hsl(var(--shadow-color) / 0.37),
+    0px 2.4px 2.6px -0.9px hsl(var(--shadow-color) / 0.35),
+    0px 7.1px 7.6px -1.9px hsl(var(--shadow-color) / 0.33),
+    0px 18.7px 20.1px -2.8px hsl(var(--shadow-color) / 0.3);
+}
