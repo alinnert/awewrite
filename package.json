@@ -1,25 +1,16 @@
 {
-  "name": "awewrite",
-  "version": "1.0.0",
+  "name": "awewrite-vite",
   "private": true,
-  "description": "A simple two-pane web based text editor in your browser.",
-  "main": "index.js",
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "http-server public"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alinnert/awewrite.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alinnert/awewrite/issues"
-  },
-  "homepage": "https://github.com/alinnert/awewrite#readme",
   "devDependencies": {
-    "http-server": "^14.1.1",
-    "prettier": "^3.1.0"
+    "@types/node": "^20.12.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
   }
 }
