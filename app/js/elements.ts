@@ -39,7 +39,7 @@ export const toolbarElement = $id('toolbar')
 // settings
 export const expandToolbarButtonElements = $class('expand-toolbar-button')
 export const openSidebarElements = $class('open-sidebar-button')
-export const toolbarLineAllElements = $class('toolbar-line-all')
+export const toolbarLineAllElements = $class('toolbar-bottom-content')
 export const sidebarContentElements = $class('sidebar-content')
 export const spellcheckElement = $id('spellcheck') as HTMLInputElement
 export const fontfaceElements = $class('change-fontface-button')
@@ -56,7 +56,7 @@ export const settingsMenuElement = $id('settings-menu') as SettingsMenu
 // editors
 export const textareaElements = document.getElementsByTagName('textarea')
 export const textareaBoxElements = $class('textarea-box')
-export const boxAreaElement = $id('box-area')
+export const boxAreaElement = $id('editors')
 export const wordCounterElements = $class('word-counter') as WordCounter[]
 
 export const leftBoxElement = $id('left-box')
@@ -88,11 +88,11 @@ export function elementIsHidden(element: HTMLElement): boolean {
 }
 
 export function addEvent<T extends keyof HTMLElementEventMap>(
-  elements: HTMLElement | Node | Node[] | HTMLCollectionOf<Element> | null,
+  elements: HTMLElement | Node | Node[] | HTMLCollectionOf<Element> | null | undefined,
   eventName: T,
   handler: (event: HTMLElementEventMap[T]) => void
 ) {
-  if (elements === null) return
+  if (elements === null || elements === undefined) return
 
   const elementList = elements instanceof Node ? [elements] : elements
 

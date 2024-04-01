@@ -6,8 +6,7 @@
   height: 40px;
   overflow: hidden;
   color: white;
-  transition:
-    height var(--move-duration) var(--move-easing),
+  transition: height var(--move-duration) var(--move-easing),
     color var(--fade-duration) var(--fade-easing),
     background var(--fade-duration) var(--fade-easing);
   -webkit-user-select: none;
@@ -19,29 +18,30 @@
   }
 }
 
-#toolbar .toolbar-line {
-  width: 100%;
-}
-
-#toolbar .toolbar-line-left {
-  position: absolute;
-  left: 20px;
-  top: 0;
-  -webkit-app-region: no-drag;
-  app-region: no-drag;
-
-  @media (display-mode: window-controls-overlay) {
-    left: calc(env(titlebar-area-x, 0) + 20px);
-  }
-}
-
-#toolbar .toolbar-line-1 {
-  width: 100%;
+#toolbar .toolbar-top-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  box-sizing: border-box;
+  margin-left: env(titlebar-area-x, 0);
+  margin-right: calc(100% - env(titlebar-area-x, 0) - env(titlebar-area-width, 0));
+  padding-left: 20px;
+  padding-right: 20px;
   height: 40px;
   white-space: nowrap;
   overflow: hidden;
   -webkit-app-region: drag;
   app-region: drag;
+}
+
+#toolbar .toolbar-left {
+  grid-column-start: 1;
+  -webkit-app-region: no-drag;
+  app-region: no-drag;
+}
+
+#toolbar .toolbar-right {
+  grid-column-start: 3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 #toolbar .expand-toolbar-button {
@@ -56,8 +56,7 @@
   border-radius: 3px;
   -webkit-app-region: no-drag;
   app-region: no-drag;
-  transition:
-    color var(--fade-duration) var(--fade-easing),
+  transition: color var(--fade-duration) var(--fade-easing),
     background var(--fade-duration) var(--fade-easing);
 
   &:hover {
@@ -100,20 +99,16 @@
   }
 }
 
-#toolbar .toolbar-line-2 {
+#toolbar .toolbar-bottom-row {
   display: flex;
   align-items: center;
   padding: 0 20px;
   width: 100%;
   white-space: nowrap;
-  box-shadow:
-    inset 0 1px 0 hsla(0, 0%, 100%, 0.1),
-    inset 0 -1px 0 hsla(0, 0%, 100%, 0.1);
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.1), inset 0 -1px 0 hsla(0, 0%, 100%, 0.1);
 
   .light-theme & {
-    box-shadow:
-      inset 0 1px 0 hsla(0, 0%, 0%, 0.2),
-      inset 0 -1px 0 hsla(0, 0%, 0%, 0.2);
+    box-shadow: inset 0 1px 0 hsla(0, 0%, 0%, 0.2), inset 0 -1px 0 hsla(0, 0%, 0%, 0.2);
   }
 }
 

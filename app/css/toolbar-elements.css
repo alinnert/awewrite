@@ -1,4 +1,4 @@
-#toolbar .toolbar-line-2 button {
+#toolbar .toolbar-bottom-row button {
   padding: 4px 10px;
   border: none;
   border-radius: 2px;
@@ -109,12 +109,12 @@
   border-bottom-right-radius: 6px;
 }
 
-#toolbar .toolbar-line-2 button.change-textbox-layout-button {
+#toolbar .toolbar-bottom-row button.change-textbox-layout-button {
   font-size: 20px;
   font-weight: bold;
 }
 
-.toolbar-line-1 button {
+.toolbar-top-row button {
   display: inline-block;
   height: 40px;
   color: hsla(0, 0%, 100%, 0.7);
@@ -128,7 +128,7 @@
     color var(--fade-duration) var(--fade-easing);
 }
 
-#toolbar .toolbar-line-2 .open-sidebar-button.is-current,
+#toolbar .toolbar-bottom-row .open-sidebar-button.is-current,
 #toolbar .toolbar-buttonset button.is-current,
 #toolbar .toolbar-buttonset input[type='radio'].is-current + label {
   box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.6) inset;
@@ -138,7 +138,7 @@
   }
 }
 
-.toolbar-line-2 h3 {
+.toolbar-bottom-row h3 {
   font-weight: bold;
   font-size: 14px;
   padding-left: 30px;
@@ -149,7 +149,7 @@
   }
 }
 
-.toolbar-line-2 .infotext {
+.toolbar-bottom-row .infotext {
   padding-left: 15px;
 
   &:first-child {
@@ -157,19 +157,19 @@
   }
 }
 
-.toolbar-line-2 .ui-button {
+.toolbar-bottom-row .ui-button {
   cursor: default !important;
 }
-.toolbar-line-2 .ui-button,
-.toolbar-line-2 .ui-state-focus {
+.toolbar-bottom-row .ui-button,
+.toolbar-bottom-row .ui-state-focus {
   background-color: hsl(0, 0%, 15%);
   color: hsl(0, 0%, 90%);
 }
-.toolbar-line-2 .ui-state-active {
+.toolbar-bottom-row .ui-state-active {
   background-color: hsl(0, 0%, 25%);
   color: hsl(0, 0%, 90%);
 }
-.toolbar-line-2 .ui-state-hover {
+.toolbar-bottom-row .ui-state-hover {
   background-color: hsl(0, 0%, 50%);
   color: hsl(0, 0%, 90%);
 }
@@ -180,34 +180,7 @@
   display: none;
 }
 
-#toolbar .right {
-  color: rgba(255, 255, 255, 0.3);
-  position: absolute;
-  top: 0;
-  right: 20px;
-  line-height: 40px;
-
-  @media (display-mode: window-controls-overlay) {
-    right: calc(100% - env(titlebar-area-x) - env(titlebar-area-width) + 20px);
-  }
-}
-
-#toolbar .right #word-counter {
-  display: inline-block;
-  vertical-align: top;
-  font-size: 14px;
-  line-height: 40px;
-  font-feature-settings: 'tnum';
-  color: hsla(0, 0%, 100%, 0.6);
-  padding-right: 30px;
-  transition: color var(--fade-duration) var(--fade-easing);
-
-  .light-theme & {
-    color: hsla(0, 0%, 0%, 0.8);
-  }
-}
-
-#toolbar .right #clock {
+#clock {
   display: inline-block;
   vertical-align: top;
   font-size: 14px;

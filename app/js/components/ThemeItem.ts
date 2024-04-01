@@ -1,7 +1,9 @@
 import { changeTheme, currentTheme$ } from '../actions/changeTheme.ts'
 import { addEvent } from '../elements.ts'
 import { createTargets } from '../lib/components/targets.ts'
+import { parseTemplate } from '../lib/template/templateParser.ts'
 import { getThumbnailFilename } from '../lib/themes/getThumbnailFilename.ts'
+import template from './ThemeItem.html?raw'
 
 export type ThemeData = {
   displayName: string
@@ -24,7 +26,7 @@ export class ThemeItem extends HTMLElement {
   }
 
   get #hasCredits() {
-    return this.#themeData.creditsName !== null && this.#themeData.creditsUrl !== null
+    return this.#themeData.creditsName !== undefined && this.#themeData.creditsUrl !== undefined
   }
 
   connectedCallback() {
@@ -59,33 +61,34 @@ export class ThemeItem extends HTMLElement {
 
     this.classList.add('theme-item')
 
-    const creditsHtml = this.#hasCredits
-      ? `
-        <div class='theme-item__credits'>
-          by <a href='${this.#themeData.creditsUrl}'>${this.#themeData.creditsName}</a>
-        </div>
-      `
-      : ''
+    this.innerHTML = parseTemplate(template, {
+      displayName: this.#themeData.displayName,
+      creditsName: this.#themeData.creditsName,
+      creditsUrl: this.#themeData.creditsUrl,
+      hasCredits: this.#hasCredits,
+    })
 
-    this.innerHTML = `
-      <div class='theme-item__preview'>
-        <div class='theme-item__name'>${this.#themeData.displayName}</div>
-      </div>
-      ${creditsHtml}
-    `
-
-    const nameElement = this.#targets.first('name')
     const previewElement = this.#targets.first('preview')
+    const nameElement = this.#targets.first('name')
 
-    nameElement.style.color = this.#themeData.textColor
+    addEvent(previewElement, 'click', () => this.#handlePreviewClick())
+
+    if (previewElement === undefined) {
+      throw new Error('Preview element not found.')
+    }
+
+    if (nameElement === undefined) {
+      throw new Error('Name element not found.')
+    }
+
     previewElement.style.backgroundColor = this.#themeData.backgroundColor
+    nameElement.style.color = this.#themeData.textColor
 
     if (this.#themeData.backgroundImage !== undefined) {
       const thumbnailImageFilename = getThumbnailFilename(this.#themeData.backgroundImage)
       previewElement.style.backgroundImage = `url(themes/${thumbnailImageFilename})`
     }
 
-    addEvent(previewElement, 'click', this.#handlePreviewClick.bind(this))
 
     currentTheme$.onChange((themeData) => {
       if (themeData === null) return

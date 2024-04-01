@@ -1,6 +1,6 @@
 export type Targets = {
   all: (targetName: string) => HTMLElement[]
-  first: (targetName: string) => HTMLElement
+  first: (targetName: string) => HTMLElement | undefined
   getFullName: (targetName: string) => string
 }
 
@@ -14,7 +14,7 @@ export function createTargets(element: HTMLElement, componentName: string): Targ
     return result
   }
 
-  function first(targetName: string): HTMLElement {
+  function first(targetName: string): HTMLElement | undefined {
     return all(targetName)[0]
   }
 

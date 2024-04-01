@@ -13,7 +13,7 @@ import { closeSidebar, getSidebarNameFromThemeId, openSidebar, openSidebar$ } fr
 export type ToolbarName = 'data' | 'font' | 'layout' | 'background' | 'about'
 
 export function openToolbar(toolbarSection: ToolbarName) {
-  const sectionId = `toolbar-line-${toolbarSection}`
+  const sectionId = `toolbar-${toolbarSection}`
   const section = $id(sectionId)
 
   for (const element of toolbarLineAllElements) {

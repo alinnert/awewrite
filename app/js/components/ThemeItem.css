@@ -10,7 +10,7 @@
 .theme-item__preview {
   grid-area: preview;
   display: grid;
-  border-radius: 10px;
+  border-radius: 6px;
   overflow: hidden;
   box-shadow:
     0 0 0 1px hsl(0 0% 0% / 0.4) inset,
