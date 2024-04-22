@@ -1,4 +1,3 @@
-import { SettingsMenu } from './components/SettingsMenu'
 import { WordCounter } from './components/WordCounter'
 
 // #region selector functions

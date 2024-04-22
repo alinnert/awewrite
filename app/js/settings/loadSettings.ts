@@ -1,4 +1,4 @@
-import { FontFamily, changeFontface } from '../actions/changeFontface.ts'
+import { changeFontface } from '../actions/changeFontface.ts'
 import { changeFontsize } from '../actions/changeFontsize.ts'
 import { changeLineheight } from '../actions/changeLineheight.ts'
 import { TextWidth, changeTextWidth } from '../actions/changeTextWidth.ts'
@@ -30,7 +30,7 @@ export function loadSettings() {
   if (!(rightTextareaElement instanceof HTMLTextAreaElement)) return
 
   // Font family
-  changeFontface(getSetting('awe.fontface') as FontFamily)
+  changeFontface(getSetting('awe.fontface'))
 
   // Text width
   changeTextWidth(getSetting('awe.textwidth') as TextWidth)

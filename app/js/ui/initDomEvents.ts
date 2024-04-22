@@ -1,4 +1,3 @@
-import { FontFamily, changeFontface } from '../actions/changeFontface.ts'
 import { changeFontsize } from '../actions/changeFontsize.ts'
 import { changeLineheight } from '../actions/changeLineheight.ts'
 import { TextWidth, changeTextWidth } from '../actions/changeTextWidth.ts'
@@ -57,13 +56,6 @@ export function initDomEvents() {
   addEvent($class('switch-texts-button'), 'click', switchTexts)
   addEvent($class('clear-texts-button'), 'click', clearTexts)
   addEvent($id('spellcheck'), 'change', updateSpellcheck)
-
-  // Font face
-  addEvent($class('change-fontface-button'), 'click', (event) => {
-    const target = event.currentTarget
-    if (target === null || !isHTMLElement(target)) return
-    changeFontface(target.dataset.fontface as FontFamily)
-  })
 
   // Font size
   addEvent($id('toolbar-fontsize-dec'), 'click', () => {

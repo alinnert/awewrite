@@ -3,6 +3,7 @@ export function parseTemplate(template: string, data: Record<string, unknown>): 
 
   type DataEntry = [key: string, value: unknown]
 
+  // @ts-expect-error
   const sortedEntries: DataEntry[] = Object.entries(data).toSorted((item1, item2) => {
     if (typeof item1[1] === 'boolean' && typeof item2[1] !== 'boolean') {
       return -1
