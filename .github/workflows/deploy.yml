@@ -13,15 +13,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
+      - name: Use Bun
+        uses: bun-sh/setup-bun@v1
 
       - name: Build
         run: |
-          npm ci
-          npm run build
+          bun install
+          bun run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
