@@ -1,4 +1,4 @@
-import { changeFontface, currentFont$, isFontFamily } from '../actions/changeFontface'
+import { changeFontface, currentFont$ } from '../actions/changeFontface'
 import { stringAttr } from '../lib/components/attributeConverters'
 import { createAttr } from '../lib/components/createAttr'
 import { createTargets } from '../lib/components/targets'
@@ -30,12 +30,8 @@ export class FontItem extends HTMLElement {
     })
   }
 
-  #handleClick(event: MouseEvent) {
-    const fontItem = event.currentTarget as FontItem
-    const font = fontItem.getAttribute('font')
-    if (font === null) return
-    if (!isFontFamily(font)) return
-    changeFontface(font)
+  #handleClick() {
+    changeFontface(this.#font.get())
   }
 }
 

@@ -27,6 +27,13 @@
 }
 
 @font-face {
+  font-family: 'JetBrains Mono';
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/jetbrainsmono-regular.woff2') format('woff2');
+}
+
+@font-face {
   font-family: 'Kalam';
   font-weight: 400;
   font-display: swap;
