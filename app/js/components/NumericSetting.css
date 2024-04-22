@@ -1,0 +1,12 @@
+.numeric-setting {
+  display: flex;
+  align-items: center;
+
+  & > :first-child {
+    margin-right: auto;
+  }
+
+  & > :not(:first-child) {
+    padding: 0 10px;
+  }
+}

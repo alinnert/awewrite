@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#22314f" />
+
+    <title>AWE.write</title>
+
+    <link rel="icon" href="favicon.ico" sizes="16x16 32x32" />
+    <link rel="shortcut icon" href="appicon-192.png" sizes="192x192" />
+    <link rel="shortcut icon" href="appicon-512.png" sizes="512x512" />
+
+    <link href="./assets/fonts.css" rel="stylesheet" />
+    <link href="./assets/styles.css" rel="stylesheet" />
+  </head>
+
+  <body class="page">
+    <div class="page__wrapper">
+      <header class="page__header">
+        <img class="page__title-logo" src="/appicon-512.png" alt="AWE.write-Logo" />
+        <h1 class="page__title">AWE.write</h1>
+        <p class="page__intro">A customizable two-pane text editor in your browser.</p>
+      </header>
+
+      <div class="page-content">
+        <div class="page-content__line page-content__line--center page-content__line--collapse">
+          <div class="z-stack">
+            <img
+              src=""
+              alt="Screenshot"
+              class="page-content__image page-content__image--full"
+              id="app-screenshot"
+            />
+
+            <script>
+              const element = document.getElementById('app-screenshot')
+              const randomNumber = Math.ceil(Math.random() * 8)
+              const clampedNumber = randomNumber === 0 ? 1 : randomNumber
+              const filename = `assets/screenshots/screenshot-${clampedNumber}.png`
+              element.setAttribute('src', filename)
+            </script>
+
+            <a href="/app/" class="button button--launch">Launch AWE.write</a>
+          </div>
+        </div>
+        <div class="page-content__line page-content__line--center">
+          <div class="line-box">
+            <a href="https://github.com/alinnert/awewrite">
+              <span class="line-box__link-icon">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                  />
+                </svg>
+              </span>
+              <span class="line-box__link-text">Source Code on GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="page-content__highlight">
+          <article class="page-content__line page-content__wrapper">
+            <h2>What is AWE.write?</h2>
+            <div>
+              <p>
+                AWE.write (Ambient Web Write) is a web based text editor. That means it runs in the
+                browser. It has two text panes that allow side-by-side editing.
+              </p>
+
+              <p>
+                In addition, your text is saved automatically inside your browser (using Local
+                Storage). So be carefull: If you delete your browser data, you delete your text,
+                too.
+              </p>
+
+              <p>
+                There's not much more to it. Just you, your text and some customization settings to
+                make it your own.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <article class="page-content__line page-content__wrapper">
+          <h2>News and release notes</h2>
+          <div class="news-list">
+            <section class="news-list__item news news--is-release" id="#1_17">
+              <div class="news__date">2024-04-23</div>
+              <div class="news__title">1.17 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Add new font: JetBrains Mono</li>
+                  <li>Show fonts as vertical list in a sidebar.</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_16">
+              <div class="news__date">2024-03-11</div>
+              <div class="news__title">1.16 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Add gradient between single color header and background image.</li>
+                  <li>Move word counter below the text boxes.</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_15">
+              <div class="news__date">2023-11-25</div>
+              <div class="news__title">1.15 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Added the new logo in the app header.</li>
+                  <li>Currently selected settings are now highlighted.</li>
+                  <li>Add app icon for Apple devices.</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_14">
+              <div class="news__date">2023-11-25</div>
+              <div class="news__title">1.14 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>AWE.write has a real logo now. Added it as a favicon and on the website.</li>
+                  <li>
+                    Updated a lot of themes and added some new ones. After starting the new version
+                    you'll once have to select your theme again, sorry.
+                  </li>
+                  <li>
+                    The textbox layout now uses absolute buttons. One button per layout setting
+                    instead of increment and decrement buttons. Also the number of possible layouts
+                    has been reduced to five.
+                  </li>
+                  <li>Big UI polish, especially the theme sidebar.</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_13_4">
+              <div class="news__date">2023-11-16</div>
+              <div class="news__title">1.13.4 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Font "Inter" is now being used as UI font.</li>
+                  <li>Small UI updates.</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_13_3">
+              <div class="news__date">2023-03-22</div>
+              <div class="news__title">1.13.3 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>
+                    With custom title bar enabled the window now can be dragged with the mouse
+                    cursor on the word counter and clock as well.
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_13_2">
+              <div class="news__date">2023-03-22</div>
+              <div class="news__title">1.13.2 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>
+                    Fix bug that the text width would shrink 1 step for every reload of the app.
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_13_1">
+              <div class="news__date">2023-03-22</div>
+              <div class="news__title">1.13.1 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Add new themes: Dark Wood, Rainbow Glitter, Stones, Beach, Blossoms.</li>
+                  <li>Make theme names easier to read.</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_13">
+              <div class="news__date">2023-03-21</div>
+              <div class="news__title">1.13 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Add new text width "medium".</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_12_2">
+              <div class="news__date">2023-03-04</div>
+              <div class="news__title">1.12.2 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Small UI changes.</li>
+                  <li>Add link to GitHub repository.</li>
+                  <li>Add leading zero to clock hours.</li>
+                  <li>Code clean-up and refactoring.</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_12_1">
+              <div class="news__date">2023-03-04</div>
+              <div class="news__title">1.12.1 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Don't use blurry input fields when background is a simple color.</li>
+                  <li>
+                    Fix: Opening sidebar didn't work when toolbar gets opened for the first time.
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_12_0">
+              <div class="news__date">2023-03-03</div>
+              <div class="news__title">1.12 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>
+                    Some layout and functionality improvements for the toolbar.
+                    <ul>
+                      <li>Font toolbar now uses two lines.</li>
+                      <li>Name of current open toolbar gets highlighted.</li>
+                      <li>
+                        Sidebar with backgrounds opens automatically when background toolbar gets
+                        opened.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Fix: Clicking the textarea didn't close the toolbar anymore.</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_11_0">
+              <div class="news__date">2023-03-01</div>
+              <div class="news__title">1.11 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>
+                    Closing the toolbar now re-focuses the text field that was focused before
+                    opening the toolbar.
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_10_1">
+              <div class="news__date">2023-02-20</div>
+              <div class="news__title">1.10.1 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Fixed tab support.</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_10_0">
+              <div class="news__date">2023-02-20</div>
+              <div class="news__title">1.10.0 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Add new fonts: "iA Writer Duo", "iA Writer Quattro", and "OpenDyslexic".</li>
+                  <li>New theme: Photos > Textures > Wood</li>
+                  <li>Decrease file size of all fonts.</li>
+                  <li>Add option to customize line height.</li>
+                  <li>Increase max font size from 24 to 30.</li>
+                  <li>
+                    Clicking on the background but outside the text fields now also closes the
+                    toolbar.
+                  </li>
+                  <li>
+                    Fixed a bug where the font size would reset after a reload when you tried to
+                    change the font size beyond its limits.
+                  </li>
+                  <li>Small UI update.</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_9_0">
+              <div class="news__date">2023-02-17</div>
+              <div class="news__title">1.9.0 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Support custom titlebar when installed as PWA.</li>
+                  <li>Remove transparency from toolbar.</li>
+                  <li>Blur background behind text fields in order to increase readability.</li>
+                  <li>Update UI colors to make it look more clean.</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_8_3">
+              <div class="news__date">2023-02-15</div>
+              <div class="news__title">1.8.3 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Fixed broken spellcheck setting.</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_8_2">
+              <div class="news__date">2023-02-15</div>
+              <div class="news__title">1.8.2 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>
+                    When installed as an app the title bar now uses a color that matches the
+                    background image.
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_8_1">
+              <div class="news__date">2023-02-14</div>
+              <div class="news__title">1.8.1 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Add color themes: Seaside Light/Dark and Lakeside Light/Dark.</li>
+                  <li>Update color themes to make them easier on the eyes.</li>
+                  <li>Reordered and rearranged color themes.</li>
+                  <li>Small UI updates.</li>
+                  <li>
+                    When installed as an app the title bar now gets light gray when using a light
+                    background image.
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_8_0">
+              <div class="news__date">2022-04-25</div>
+              <div class="news__title">1.8.0 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>
+                    Removed jQuery and jQuery UI and modernize the code base. This requires a lot
+                    less code to download when using AWE.write.
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_7_2">
+              <div class="news__date">2022-04-25</div>
+              <div class="news__title">1.7.2 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>
+                    Add info dialog for the http version that it will be taken down by June 1st.
+                    Please use the
+                    <a href="https://awewrite.de">https version</a> from now on. Thank you!
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_7_1">
+              <div class="news__date">2022-04-21</div>
+              <div class="news__title">1.7.1 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Code uses JS modules now. There should be no functional changes.</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_7_0">
+              <div class="news__date">2021-06-02</div>
+              <div class="news__title">1.7.0 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>
+                    Color of window title bar is also changed based on selected theme. Only "color"
+                    themes are currently supported.
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_6_1">
+              <div class="news__date">2021-04-26</div>
+              <div class="news__title">1.6.1 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Fix bug that set font is not restored after page reload</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_6_0">
+              <div class="news__date">2020-01-05</div>
+              <div class="news__title">1.6.0 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Add option to disable spellchecking</li>
+                  <li>Replaced fonts with new ones: IBM Plex and Kalam</li>
+                  <li>UI update, enhanced light themes</li>
+                  <li>Updated background colors and added new ones</li>
+                  <li>Background images scale correctly now</li>
+                  <li>
+                    Move website to
+                    <a href="https://pages.github.com/">GitHub Pages</a>
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_5_0">
+              <div class="news__date">2015-08-22</div>
+              <div class="news__title">1.5.0 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Added word counter on the top right</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_4_1">
+              <div class="news__date">2014-08-26</div>
+              <div class="news__title">1.4.1 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Added offline support</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_4_0">
+              <div class="news__date">2014-06-24</div>
+              <div class="news__title">1.4.0 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Added "DATA" › "switch texts" and "LAYOUT" › "text width"</li>
+                  <li>Added background image set "aqua"</li>
+                  <li>Subtle UI&nbsp;changes</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_3_0">
+              <div class="news__date">2014-05-28</div>
+              <div class="news__title">1.3.0 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Added font "Ubuntu Mono"</li>
+                  <li>Enhanced cross-browser support</li>
+                  <li>Subtle UI&nbsp;changes</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_2_0">
+              <div class="news__date">2014-04-17</div>
+              <div class="news__title">1.2.0 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Allow tab character</li>
+                  <li>Added new background colors</li>
+                  <li>Added fallback fonts</li>
+                  <li>Switched from "save every six seconds" to "save on every keystroke"</li>
+                  <li>Subtle UI&nbsp;changes and bug fixes</li>
+                </ul>
+              </div>
+            </section>
+            <section class="news-list__item news news--is-release" id="#1_1_0">
+              <div class="news__date">2013-02-12</div>
+              <div class="news__title">1.1.0 released</div>
+              <div class="changelog">
+                <ul>
+                  <li>Added Windows 8 Tile support</li>
+                  <li>New icons</li>
+                  <li>Subtle UI changes</li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </article>
+
+        <div class="page-content__negative">
+          <article class="page-content__line page-content__wrapper">
+            <h2>Developed by</h2>
+            <div>
+              <p>
+                Andreas Linnert<br />
+                Von-Kleist-Str. 9<br />
+                94315 Straubing
+              </p>
+              <p>
+                E-mail:
+                <a href="mailto:andreas@linnertmedia.de"> andreas@linnertmedia.de </a>
+                <br />
+                Website: <a href="https://linnertmedia.de/">linnertmedia.de</a>
+                <br />
+                GitHub:
+                <a href="https://github.com/alinnert">alinnert</a>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
