@@ -49,10 +49,6 @@ export const textBoxLayoutElements = $class('change-textbox-layout-button')
 export const textWidthElements = $class('change-text-width-button')
 export const sidebarElement = $id('sidebar')
 
-// settings v2
-export const toolbarTitleElement = $id('toolbar-title')
-export const settingsMenuElement = $id('settings-menu') as SettingsMenu
-
 // editors
 export const textareaElements = document.getElementsByTagName('textarea')
 export const textareaBoxElements = $class('textarea-box')

@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="./css/toolbar.css" />
     <link rel="stylesheet" href="./css/toolbar-elements.css" />
     <link rel="stylesheet" href="./css/sidebar.css" />
+    <link rel="stylesheet" href="./js/components/FontItem.css" />
     <link rel="stylesheet" href="./js/components/ThemeItem.css" />
     <link rel="stylesheet" href="./js/components/WordCounter.css" />
     <link rel="stylesheet" href="./js/components/SettingsMenu.css" />
@@ -93,67 +94,6 @@
           </div>
         </div>
         <div class="toolbar-bottom-content" id="toolbar-font">
-          <div class="toolbar-subline">
-            <h3>Font face</h3>
-            <span class="toolbar-buttonset">
-              <input
-                type="radio"
-                id="toolbar-fontface-ibm-plex-sans"
-                class="change-fontface-button"
-                data-fontface="IBM Plex Sans"
-                name="fontface"
-              />
-              <label for="toolbar-fontface-ibm-plex-sans">IBM Plex Sans</label>
-              <input
-                type="radio"
-                id="toolbar-fontface-ibm-plex-serif"
-                name="fontface"
-                class="change-fontface-button"
-                data-fontface="IBM Plex Serif"
-              />
-              <label for="toolbar-fontface-ibm-plex-serif"> IBM Plex Serif </label>
-              <input
-                type="radio"
-                id="toolbar-fontface-ibm-plex-mono"
-                name="fontface"
-                class="change-fontface-button"
-                data-fontface="IBM Plex Mono"
-              />
-              <label for="toolbar-fontface-ibm-plex-mono">IBM Plex Mono</label>
-              <input
-                type="radio"
-                id="toolbar-fontface-duo"
-                name="fontface"
-                class="change-fontface-button"
-                data-fontface="Duo"
-              />
-              <label for="toolbar-fontface-duo">iA Writer Duo</label>
-              <input
-                type="radio"
-                id="toolbar-fontface-quattro"
-                name="fontface"
-                class="change-fontface-button"
-                data-fontface="Quattro"
-              />
-              <label for="toolbar-fontface-quattro">iA Writer Quattro</label>
-              <input
-                type="radio"
-                id="toolbar-fontface-kalam"
-                name="fontface"
-                class="change-fontface-button"
-                data-fontface="Kalam"
-              />
-              <label for="toolbar-fontface-kalam">Kalam</label>
-              <input
-                type="radio"
-                id="toolbar-fontface-opendyslexic"
-                name="fontface"
-                class="change-fontface-button"
-                data-fontface="OpenDyslexic"
-              />
-              <label for="toolbar-fontface-opendyslexic">OpenDyslexic</label>
-            </span>
-          </div>
           <div class="toolbar-subline">
             <h3>Font size</h3>
             <span id="toolbar-fontsize" class="toolbar-num-value">12</span>
@@ -254,6 +194,19 @@
     </div>
 
     <div id="sidebar">
+      <div class="sidebar-content" id="sidebar-fonts">
+        <h1>Fonts</h1>
+        <div class="font-list">
+          <font-item font="IBM Plex Sans" label="IBM Plex Sans"></font-item>
+          <font-item font="IBM Plex Serif" label="IBM Plex Serif"></font-item>
+          <font-item font="IBM Plex Mono" label="IBM Plex Mono"></font-item>
+          <font-item font="Duo" label="iA Writer Duo"></font-item>
+          <font-item font="Quattro" label="iA Writer Quattro"></font-item>
+          <font-item font="Kalam" label="Kalam"></font-item>
+          <font-item font="OpenDyslexic" label="Open Dyslexic"></font-item>
+        </div>
+      </div>
+
       <div class="sidebar-content" id="sidebar-themes-dark-colors">
         <h1>Dark Colors</h1>
         <div class="theme-list">
@@ -986,32 +939,6 @@
         </div>
       </div>
     </div>
-
-    <settings-menu id="settings-menu">
-      <div>AWE.write 1.16</div>
-      <button type="button">Switch texts</button>
-      <button type="button">Clear texts</button>
-      <div>
-        <label for="spell">enable spellchecking</label>
-        <input type="checkbox" id="spell" switch />
-      </div>
-      <div>font</div>
-      <numeric-setting label="Font size" value="16" min="8" max="40"></numeric-setting>
-      <numeric-setting
-        label="Line height"
-        value="1.4"
-        step="0.1"
-        min="1"
-        max="4"
-        decimal-points="1"
-      ></numeric-setting>
-      <div>textbox layout</div>
-      <div>textbox width</div>
-      <div>theme</div>
-      <hr />
-      <div>Website and changelog</div>
-      <div>Source code</div>
-    </settings-menu>
 
     <script src="./js/index.ts" type="module"></script>
   </body>

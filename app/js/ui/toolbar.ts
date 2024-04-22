@@ -33,8 +33,10 @@ export function openToolbar(toolbarSection: ToolbarName) {
   if (section.hasAttribute('data-open')) {
     closeToolbar()
   } else {
-    $id('toolbar').style.height = toolbarSection === 'font' ? '120px' : '80px'
-    $id('sidebar').style.top = '80px'
+    const toolbarHeight = '80px'
+
+    $id('toolbar').style.height = toolbarHeight
+    $id('sidebar').style.top = toolbarHeight
 
     for (const line of toolbarLineAllElements) {
       if (!(line instanceof HTMLElement)) continue
@@ -46,6 +48,8 @@ export function openToolbar(toolbarSection: ToolbarName) {
     if (toolbarSection === 'background') {
       const themeId = localStorage.getItem('awe.themeid')
       openSidebar(getSidebarNameFromThemeId(themeId))
+    } else if (toolbarSection === 'font') {
+      openSidebar('fonts')
     } else {
       closeSidebar()
     }

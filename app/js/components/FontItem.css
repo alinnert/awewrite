@@ -1,0 +1,46 @@
+.font-item {
+  display: block;
+  background: hsla(0 0 100 / 0.1);
+  border: 2px solid transparent;
+  color: white;
+  border-radius: 6px;
+  padding: 9px;
+  font-size: 14px;
+
+  &:hover {
+    background: hsla(0 0 100 / 0.15);
+  }
+
+  .light-theme & {
+    background: hsla(0 0 0 / 0.1);
+    color: black;
+
+    &:hover {
+      background: hsla(0 0 0 / 0.15);
+    }
+  }
+}
+
+.font-item--is-current {
+  border: 2px solid white;
+
+  .light-theme & {
+    border: 2px solid black;
+  }
+}
+
+.font-item__label {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.font-item__preview {
+  font-size: 14px;
+  line-height: 1.4;
+  color: hsla(0 0 100 / 0.7);
+
+  .light-theme & {
+    color: hsla(0 0 0 / 0.6);
+  }
+}
