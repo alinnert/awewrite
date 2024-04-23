@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 import os
 import subprocess
+import argparse
+
+parser = argparse.ArgumentParser(description="Resize theme images located in the \"public/app/themes/originals\" folder.")
+parser.add_argument("--group", help="Resize only a group of images and skip the rest.")
+args = parser.parse_args()
 
 input_folder = './public/app/themes/originals'
 output_folder = './public/app/themes'
 
-files = os.listdir(input_folder)
+files = [file for file in os.listdir(input_folder) if args.group == None or file.startswith(args.group)]
 
 for entry in files:
     filename, fileext = os.path.splitext(entry)
@@ -19,10 +24,8 @@ for entry in files:
     useHighQuality = filename.startswith('ray') or filename.startswith('shine') or filename.startswith('aqua')
     quality = '85' if useHighQuality else '40'
 
-    thumbnails_magick_command = ['magick', 'convert', input_filepath, '-resize', '200', '-quality', quality,
-                                 thumbnail_output_filepath]
+    thumbnails_magick_command = ['magick', 'convert', input_filepath, '-resize', '200', '-quality', quality, thumbnail_output_filepath]
     subprocess.run(thumbnails_magick_command)
 
-    fullsize_magick_command = ['magick', 'convert', input_filepath, '-resize', '2000', '-quality', quality,
-                               fullsize_output_filepath]
+    fullsize_magick_command = ['magick', 'convert', input_filepath, '-resize', '2000', '-quality', quality, fullsize_output_filepath]
     subprocess.run(fullsize_magick_command)

@@ -6,6 +6,13 @@
 }
 
 @font-face {
+  font-family: 'Noto Sans';
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/noto-sans-regular.woff2') format('woff2');
+}
+
+@font-face {
   font-family: 'IBM Plex Sans';
   font-weight: 700;
   font-display: swap;
@@ -17,6 +24,20 @@
   font-weight: 400;
   font-display: swap;
   src: url('../fonts/ibm-plex-serif.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Serif';
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/noto-serif-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/merriweather-regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -34,10 +55,24 @@
 }
 
 @font-face {
+  font-family: 'Monaspace Radon';
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/monaspace-radon-regular.woff') format('woff2');
+}
+
+@font-face {
   font-family: 'Kalam';
   font-weight: 400;
   font-display: swap;
   src: url('../fonts/kalam.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Caveat';
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/caveat-regular.woff2') format('woff2');
 }
 
 @font-face {

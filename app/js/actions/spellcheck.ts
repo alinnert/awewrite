@@ -7,7 +7,7 @@ export function setSpellcheck(value: boolean) {
 
 export function applySpellcheck(value: boolean) {
   for (const textarea of textareaElements) {
-    textarea.toggleAttribute('spellcheck', value)
+    textarea.setAttribute('spellcheck', String(value))
   }
 }
 

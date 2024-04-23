@@ -1,18 +1,17 @@
 word-counter {
   display: block;
   color: white;
-  background: #00000066;
-  padding: 3px 8px;
-  border-radius: 10px;
+  background: hsl(0 0 0 / 0.4);
+  padding: 3px 12px;
+  border-radius: 6px;
   font-weight: bold;
   -webkit-backdrop-filter: blur(var(--blur));
   backdrop-filter: blur(var(--blur));
-  box-shadow: 0 1px 2px hsl(0 0 0 / 0.4);
-  border: 1px solid black;
-  
+  transition: color var(--fade-duration) var(--fade-easing),
+    background var(--fade-duration) var(--fade-easing);
+
   .light-theme & {
-    background: #ffffffbb;
-    border: 1px solid white;
+    background: hsl(0 0 100 / 0.4);
     color: black;
   }
 }
