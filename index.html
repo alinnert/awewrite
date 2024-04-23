@@ -33,8 +33,11 @@
             />
 
             <script>
+              const screenshotCount = 7
+              
               const element = document.getElementById('app-screenshot')
-              const randomNumber = Math.ceil(Math.random() * 8)
+
+              const randomNumber = Math.ceil(Math.random() * screenshotCount)
               const clampedNumber = randomNumber === 0 ? 1 : randomNumber
               const filename = `assets/screenshots/screenshot-${clampedNumber}.png`
               element.setAttribute('src', filename)
