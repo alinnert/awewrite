@@ -16,8 +16,7 @@ export function openSidebar(sidebarName: string | null) {
   const sidebarByIdElement = $id(`sidebar-${sidebarName}`)
 
   if (elementIsHidden(sidebarByIdElement)) {
-    sidebarElement.style.width = '400px'
-    sidebarElement.style.borderRightWidth = '1px'
+    sidebarElement.classList.add('is-open')
 
     for (const element of sidebarContentElements) {
       hideElement(element)
@@ -30,8 +29,7 @@ export function openSidebar(sidebarName: string | null) {
 }
 
 export function closeSidebar() {
-  sidebarElement.style.width = '0'
-  sidebarElement.style.borderRightWidth = '0px'
+  sidebarElement.classList.remove('is-open')
 
   for (const item of sidebarContentElements) {
     if (!(item instanceof HTMLElement)) continue

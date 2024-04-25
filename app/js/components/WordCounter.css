@@ -1,7 +1,7 @@
 word-counter {
   display: block;
   color: white;
-  background: hsl(0 0 0 / 0.4);
+  background: hsl(0 0% 0% / 0.4);
   padding: 3px 12px;
   border-radius: 6px;
   font-weight: bold;
@@ -9,9 +9,11 @@ word-counter {
   backdrop-filter: blur(var(--blur));
   transition: color var(--fade-duration) var(--fade-easing),
     background var(--fade-duration) var(--fade-easing);
+  box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.4);
 
   .light-theme & {
-    background: hsl(0 0 100 / 0.4);
+    background: hsl(0 0% 100% / 0.4);
     color: black;
+    box-shadow: 0 0 0 1px hsl(0 0% 0% / 0.4);
   }
 }
