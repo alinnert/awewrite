@@ -1,7 +1,7 @@
 {
-  "name": "awewrite-vite",
+  "name": "awewrite",
+  "version": "1.21",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
