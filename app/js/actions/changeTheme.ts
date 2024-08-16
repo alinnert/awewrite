@@ -1,14 +1,6 @@
 import { mutableValue } from '@alinnert/reactive'
 import { ThemeData, ThemeItem } from '../components/ThemeItem.ts'
-import {
-  $id,
-  boxAreaElement,
-  isHTMLElement,
-  metaThemeColorElement,
-  sidebarElement,
-  textareaElements,
-  toolbarElement,
-} from '../elements.js'
+import { $id, boxAreaElement, metaThemeColorElement } from '../elements.js'
 import { getThemeCssUrl } from '../lib/themes/getThemeCssUrl.ts'
 
 export const currentTheme$ = mutableValue<ThemeData | null>(null)
@@ -39,8 +31,6 @@ export function changeTheme(themeData: ThemeData) {
 
   boxAreaElement.style.backgroundImage = `linear-gradient(to bottom, ${themeData.backgroundColor}, transparent 100px)`
 
-  // updateTextareas(themeData.textColor)
-  // updateTitleAndToolbar(themeData.backgroundColor)
   metaThemeColorElement.setAttribute('content', themeData.backgroundColor)
 
   document.body.style.setProperty(
@@ -62,17 +52,4 @@ export function changeTheme(themeData: ThemeData) {
   localStorage.setItem('awe.darkTheme', themeData.isDarkTheme ? 'true' : 'false')
 
   currentTheme$.set(themeData)
-}
-
-function updateTitleAndToolbar(backgroundColor: string) {
-  metaThemeColorElement.setAttribute('content', backgroundColor)
-  toolbarElement.style.backgroundColor = backgroundColor
-  sidebarElement.style.backgroundColor = backgroundColor
-}
-
-function updateTextareas(color: string) {
-  for (const textarea of textareaElements) {
-    if (!isHTMLElement(textarea)) continue
-    textarea.style.color = color
-  }
 }

@@ -3,7 +3,6 @@ import {
   $id,
   openSidebarElements,
   showElement,
-  sidebarElement,
   toolbarElement,
   toolbarLineAllElements,
 } from '../elements.js'
