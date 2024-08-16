@@ -1,7 +1,6 @@
 import { mutableValue } from '@alinnert/reactive'
 import {
   $id,
-  elementIsHidden,
   hideElement,
   showElement,
   sidebarContentElements,
@@ -15,17 +14,15 @@ export function openSidebar(sidebarName: string | null) {
 
   const sidebarByIdElement = $id(`sidebar-${sidebarName}`)
 
-  if (elementIsHidden(sidebarByIdElement)) {
-    sidebarElement.classList.add('is-open')
+  sidebarElement.classList.add('is-open')
 
-    for (const element of sidebarContentElements) {
-      hideElement(element)
-    }
-
-    showElement(sidebarByIdElement)
-
-    openSidebar$.set(sidebarName)
+  for (const element of sidebarContentElements) {
+    hideElement(element)
   }
+
+  showElement(sidebarByIdElement)
+
+  openSidebar$.set(sidebarName)
 }
 
 export function closeSidebar() {
@@ -33,7 +30,7 @@ export function closeSidebar() {
 
   for (const item of sidebarContentElements) {
     if (!(item instanceof HTMLElement)) continue
-    item.style.display = 'none'
+    // item.style.display = 'none'
   }
 
   openSidebar$.set(null)

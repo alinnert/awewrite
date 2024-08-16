@@ -69,6 +69,7 @@ export class ThemeItem extends HTMLElement {
     })
 
     const previewElement = this.#targets.first('preview')
+    const detailsElement = this.#targets.first('details')
     const nameElement = this.#targets.first('name')
 
     addEvent(previewElement, 'click', () => this.#handlePreviewClick())
@@ -77,18 +78,24 @@ export class ThemeItem extends HTMLElement {
       throw new Error('Preview element not found.')
     }
 
+    if (detailsElement === undefined) {
+      throw new Error('Details element not found.')
+    }
+
     if (nameElement === undefined) {
       throw new Error('Name element not found.')
     }
 
+    this.style.setProperty('--background', this.#themeData.backgroundColor)
+
     previewElement.style.backgroundColor = this.#themeData.backgroundColor
-    nameElement.style.color = this.#themeData.textColor
+    // detailsElement.style.backgroundColor = this.#themeData.backgroundColor
+    detailsElement.style.color = this.#themeData.textColor
 
     if (this.#themeData.backgroundImage !== undefined) {
       const thumbnailImageFilename = getThumbnailFilename(this.#themeData.backgroundImage)
       previewElement.style.backgroundImage = `url(themes/${thumbnailImageFilename})`
     }
-
 
     currentTheme$.onChange((themeData) => {
       if (themeData === null) return

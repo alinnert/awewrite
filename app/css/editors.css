@@ -41,9 +41,13 @@
     left: 50%;
     padding-left: calc(var(--padding) * 0.5);
   }
+  
+  &:has(> .textarea-box--is-minimized) :is(#left-box, #right-box) {
+    padding-inline: var(--padding);
+  }
 
   & textarea {
-    color: black;
+    color: var(--theme-text-color, black);
     font-family: var(--editor-font-family);
     font-size: var(--editor-font-size);
     line-height: var(--editor-line-height);

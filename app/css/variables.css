@@ -5,7 +5,7 @@
   --theme-color-l: 0%;
 
   /* easing */
-  --move-easing: cubic-bezier(0, 0.5, 0.5, 1);
+  --move-easing: cubic-bezier(0, 0.6, 0.5, 1);
   --move-duration: 250ms;
 
   --fade-easing: var(--move-easing);

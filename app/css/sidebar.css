@@ -1,30 +1,31 @@
 #sidebar {
   --sidebar-width: 600px;
+  --sidebar-margin: 10px;
 
   position: fixed;
-  top: 40px;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  background: hsla(0, 0%, 0%, 1);
-  box-shadow: inset -1px 0 0 hsla(0, 0%, 100%, 0.1);
+  top: calc(80px + var(--sidebar-margin));
+  left: var(--sidebar-margin);
+  bottom: var(--sidebar-margin);
+  width: var(--sidebar-width);
+  transform: translateX(calc(-100% - var(--sidebar-margin)));
+  background: var(--theme-background-secondary);
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
   overflow: hidden;
-  transition: width var(--move-duration) var(--move-easing),
+  border-radius: 8px;
+  transition: transform var(--move-duration) var(--move-easing),
     background-color var(--fade-duration) var(--fade-easing);
 
   .light-theme & {
-    background: hsla(0, 0%, 0%, 1);
-    box-shadow: inset -1px 0 0 hsla(0, 0%, 0%, 0.2);
+    border: 1px solid hsla(0, 0%, 0%, 0.2);
   }
 
   &.is-open {
-    width: var(--sidebar-width);
-    border-right-width: 1px;
+    transform: translateX(0);
   }
 
   & h1 {
     font-size: 22px;
-    font-weight: bold;
+    font-weight: normal;
     padding: 20px 20px 14px;
     margin: 0 0 10px;
     color: rgba(255, 255, 255, 0.7);
@@ -79,17 +80,20 @@
     cursor: pointer;
   }
 
+  & :is(.theme-list, .font-list) {
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+  
   & .theme-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    padding: 6px 20px;
   }
 
   & .font-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    padding: 6px 20px;
   }
 }

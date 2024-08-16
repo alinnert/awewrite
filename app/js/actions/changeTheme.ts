@@ -39,8 +39,24 @@ export function changeTheme(themeData: ThemeData) {
 
   boxAreaElement.style.backgroundImage = `linear-gradient(to bottom, ${themeData.backgroundColor}, transparent 100px)`
 
-  updateTextareas(themeData.textColor)
-  updateTitleAndToolbar(themeData.backgroundColor)
+  // updateTextareas(themeData.textColor)
+  // updateTitleAndToolbar(themeData.backgroundColor)
+  metaThemeColorElement.setAttribute('content', themeData.backgroundColor)
+
+  document.body.style.setProperty(
+    '--theme-secondary-l-modifier',
+    themeData.isDarkTheme
+      ? 'var(--theme-secondary-l-modifier-darker)'
+      : 'var(--theme-secondary-l-modifier-lighter)'
+  )
+  document.body.style.setProperty(
+    '--theme-secondary-c-modifier',
+    themeData.isDarkTheme
+      ? 'var(--theme-secondary-c-modifier-darker)'
+      : 'var(--theme-secondary-c-modifier-lighter)'
+  )
+  document.body.style.setProperty('--theme-text-color', themeData.textColor)
+  document.body.style.setProperty('--theme-background', themeData.backgroundColor)
 
   localStorage.setItem('awe.themeid', themeData.id)
   localStorage.setItem('awe.darkTheme', themeData.isDarkTheme ? 'true' : 'false')

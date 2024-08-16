@@ -3,7 +3,6 @@
   padding: 0;
   border: none;
   background: none;
-  resize: none;
   outline: none;
   font-family: 'Inter', sans-serif;
   font-size: 12px;
@@ -16,6 +15,23 @@ html {
 }
 
 body {
+  --theme-background: black;
+  --theme-text-color: white;
+
+  --theme-secondary-l-modifier-darker: 0.85;
+  --theme-secondary-c-modifier-darker: 0.9;
+
+  --theme-secondary-l-modifier-lighter: 1.15;
+  --theme-secondary-c-modifier-lighter: 1.1;
+
+  --theme-secondary-l-modifier: var(--theme-secondary-l-modifier-lighter);
+  --theme-secondary-c-modifier: var(--theme-secondary-c-modifier-lighter);
+
+  --theme-background-secondary: oklch(
+    from var(--theme-background) calc(l * var(--theme-secondary-l-modifier))
+      calc(c * var(--theme-secondary-c-modifier)) h
+  );
+
   position: absolute;
   top: 0;
   left: 0;
@@ -32,4 +48,8 @@ body {
 a {
   color: inherit;
   cursor: pointer;
+}
+
+textarea {
+  resize: none;
 }

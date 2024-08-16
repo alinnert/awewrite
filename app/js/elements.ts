@@ -70,7 +70,7 @@ export function isHTMLElement(element: EventTarget): element is HTMLElement {
 
 export function showElement(element: Element) {
   if (!isHTMLElement(element)) return
-  element.style.display = ''
+  element.style.display = 'block'
 }
 
 export function hideElement(element: Element) {

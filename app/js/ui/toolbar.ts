@@ -33,10 +33,7 @@ export function openToolbar(toolbarSection: ToolbarName) {
   if (section.hasAttribute('data-open')) {
     closeToolbar()
   } else {
-    const toolbarHeight = '80px'
-
-    $id('toolbar').style.height = toolbarHeight
-    $id('sidebar').style.top = toolbarHeight
+    $id('toolbar').style.height = '80px'
 
     for (const line of toolbarLineAllElements) {
       if (!(line instanceof HTMLElement)) continue
@@ -70,7 +67,6 @@ export function closeToolbar() {
   }
 
   toolbarElement.style.height = '40px'
-  sidebarElement.style.top = '40px'
 
   for (const line of toolbarLineAllElements) {
     if (!(line instanceof HTMLElement)) continue
