@@ -4,6 +4,7 @@
   "lang": "en-US",
   "display_override": ["window-controls-overlay"],
   "display": "standalone",
+  "start_url": ".",
   "icons": [
     {
       "src": "appicon-192.png",
