@@ -1,5 +1,5 @@
-import { changeFontsize } from '../actions/changeFontsize.ts'
-import { changeLineheight } from '../actions/changeLineheight.ts'
+import { updateFontsize } from '../actions/changeFontsize.ts'
+import { changeLineheight, updateLineheight } from '../actions/changeLineheight.ts'
 import { TextWidth, changeTextWidth } from '../actions/changeTextWidth.ts'
 import { changeThemeById } from '../actions/changeTheme.ts'
 import { clearTexts } from '../actions/clearTexts.ts'
@@ -12,7 +12,6 @@ import {
   $id,
   addEvent,
   expandToolbarButtonElements,
-  fontSizeElement,
   isHTMLElement,
   lineHeightElement,
   textareaBoxElements,
@@ -22,13 +21,13 @@ import { onTextareaBoxElementsClick } from '../textarea/onTextareaBoxElementsCli
 import { onTextareaClick } from '../textarea/onTextareaClick.ts'
 import { onTextareaFocus } from '../textarea/onTextareaFocus.ts'
 import { onTextareaInput } from '../textarea/onTextareaInput.ts'
-import { supportTab } from '../textarea/supportTab.ts'
-import { globalKeys } from './globalKeys.ts'
+import { onTextareaKeydown } from '../textarea/onTextareaKeydown.ts'
+import { onKeydown } from './onKeydown.ts'
 import { openSidebar } from './sidebar.ts'
 import { ToolbarName, openToolbar } from './toolbar.ts'
 
 export function initDomEvents() {
-  addEvent(document.getRootNode(), 'keydown', globalKeys)
+  addEvent(document.body, 'keydown', onKeydown)
 
   // Textareas
   addEvent(textareaBoxElements, 'click', onTextareaBoxElementsClick)
@@ -40,7 +39,7 @@ export function initDomEvents() {
     if (area !== 'left' && area !== 'right') return
     onTextareaInput(area)
   })
-  addEvent(textareaElements, 'keydown', supportTab)
+  addEvent(textareaElements, 'keydown', onTextareaKeydown)
   addEvent(textareaElements, 'focus', onTextareaFocus)
 
   // Toolbar
@@ -59,30 +58,18 @@ export function initDomEvents() {
 
   // Font size
   addEvent($id('toolbar-fontsize-dec'), 'click', () => {
-    const rawValue = fontSizeElement.textContent
-    if (rawValue === null) return
-    const currentFontsize = Number.parseInt(rawValue)
-    changeFontsize(currentFontsize - 1)
+    updateFontsize(-1)
   })
   addEvent($id('toolbar-fontsize-inc'), 'click', () => {
-    const rawValue = fontSizeElement.textContent
-    if (rawValue === null) return
-    const currentFontsize = Number.parseInt(rawValue)
-    changeFontsize(currentFontsize + 1)
+    updateFontsize(1)
   })
 
   // Line height
   addEvent($id('toolbar-lineheight-dec'), 'click', () => {
-    const rawValue = lineHeightElement.textContent
-    if (rawValue === null) return
-    const currentLineheight = parseLineheight(rawValue)
-    changeLineheight(currentLineheight - 1)
+    updateLineheight(-1)
   })
   addEvent($id('toolbar-lineheight-inc'), 'click', () => {
-    const rawValue = lineHeightElement.textContent
-    if (rawValue === null) return
-    const currentLineheight = parseLineheight(rawValue)
-    changeLineheight(currentLineheight + 1)
+    updateLineheight(1)
   })
 
   // Textbox layout

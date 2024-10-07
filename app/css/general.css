@@ -21,7 +21,7 @@ body {
   --theme-secondary-l-modifier-darker: 0.85;
   --theme-secondary-c-modifier-darker: 0.9;
 
-  --theme-secondary-l-modifier-lighter: 1.15;
+  --theme-secondary-l-modifier-lighter: 1.05;
   --theme-secondary-c-modifier-lighter: 1.1;
 
   --theme-secondary-l-modifier: var(--theme-secondary-l-modifier-lighter);

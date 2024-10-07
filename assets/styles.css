@@ -31,6 +31,14 @@ a:hover {
   text-decoration: underline;
 }
 
+kbd {
+  background: hsl(0, 0%, 90%);
+  padding-inline: 6px;
+  padding-block: 2px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
 .page {
   background-image: url(./header-background.svg);
   background-size: 100% 600px;
