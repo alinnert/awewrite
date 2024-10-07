@@ -1,9 +1,8 @@
 import { updateFontsize } from '../actions/changeFontsize.ts'
-import { changeLineheight, updateLineheight } from '../actions/changeLineheight.ts'
+import { updateLineheight } from '../actions/changeLineheight.ts'
 import { TextWidth, changeTextWidth } from '../actions/changeTextWidth.ts'
 import { changeThemeById } from '../actions/changeTheme.ts'
 import { clearTexts } from '../actions/clearTexts.ts'
-import { parseLineheight } from '../actions/font.ts'
 import { moveSplitter } from '../actions/moveSplitter.ts'
 import { updateSpellcheck } from '../actions/spellcheck.ts'
 import { switchTexts } from '../actions/switchTexts.ts'
@@ -13,7 +12,6 @@ import {
   addEvent,
   expandToolbarButtonElements,
   isHTMLElement,
-  lineHeightElement,
   textareaBoxElements,
   textareaElements,
 } from '../elements.js'
