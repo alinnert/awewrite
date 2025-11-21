@@ -1,14 +1,18 @@
-import path from 'node:path'
-import { defineConfig } from 'vite'
+import { fileURLToPath, URL } from 'node:url'
 
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import vueDevTools from 'vite-plugin-vue-devtools'
+
+// https://vite.dev/config/
 export default defineConfig({
-  build: {
-    target: ['es2022'],
-    rollupOptions: {
-      input: {
-        website: path.resolve(__dirname, 'index.html'),
-        app: path.resolve(__dirname, 'app/index.html'),
-      },
+  plugins: [
+    vue(),
+    vueDevTools(),
+  ],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
 })

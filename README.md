@@ -1,19 +1,48 @@
-# AWE.write
+# awewrite-2
 
-A simple two-pane web based text editor in your browser.
+This template should help get you started developing with Vue 3 in Vite.
 
-[Website](https://awewrite.de) | [App](https://awewrite.de/app/)
+## Recommended IDE Setup
 
-## What is AWE.write?
+[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-AWE.write (Ambient Web Write) is a web based text editor. That means it runs in the browser. It has two text panes that allow side-by-side editing.
+## Recommended Browser Setup
 
-In addition, your text is saved automatically inside your browser (using Local Storage). So be carefull: If you delete your browser data, you delete your text, too.
+- Chromium-based browsers (Chrome, Edge, Brave, etc.):
+  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
+  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
+- Firefox:
+  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
 
-There's not much more to it. Just you, your text and some customization settings to make it your own.
+## Type Support for `.vue` Imports in TS
 
-## Status
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
 
-This is really, *really* old legacy code. It's basically my first JavaScript app I've ever written. But it still works.
+## Customize configuration
 
-I'm planning to re-write the app some day using more modern technologies and APIs. Maybe with native file system access. We'll see...
+See [Vite Configuration Reference](https://vite.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Type-Check, Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
