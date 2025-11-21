@@ -1,16 +1,23 @@
+import { mutableValue } from '@alinnert/reactive'
 import { fontSizeElement } from '../elements.ts'
+import { storageKey } from '../localStorage/initLocalStorage.ts'
+import { getOrSetLocalStorageItem } from '../localStorage/getOrSetLocalStorageItem.ts'
+import { clamp } from '../lib/math/clamp.ts'
 
-export function changeFontsize(size: number) {
-  if (size < 10 || size > 30) return
+export const currentFontSize$ = mutableValue<string>(
+  getOrSetLocalStorageItem(storageKey.fontSize, '16')
+)
 
-  fontSizeElement.textContent = size.toString()
-  document.body.style.setProperty('--editor-font-size', `${size}px`)
-  localStorage.setItem('awe.fontsize', size.toString())
-}
+currentFontSize$.onChange((fontSize) => {
+  const fontSizeNumber = Number.parseInt(fontSize)
+  const clampedFontSizeNumber = clamp(fontSizeNumber, 10, 30)
+  const clampedFontSize = clampedFontSizeNumber.toString()
+  fontSizeElement.textContent = clampedFontSize
+  document.body.style.setProperty('--editor-font-size', `${clampedFontSize}px`)
+  localStorage.setItem(storageKey.fontSize, clampedFontSize)
+})
 
 export function updateFontsize(delta: number) {
-  const rawValue = fontSizeElement.textContent
-  if (rawValue === null) return
-  const currentFontsize = Number.parseInt(rawValue)
-  changeFontsize(currentFontsize + delta)
+  const currentFontSize = Number.parseInt(currentFontSize$.value)
+  currentFontSize$.set((currentFontSize + delta).toString())
 }

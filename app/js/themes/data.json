@@ -1,0 +1,847 @@
+{
+  "light": {
+    "title": "Light Colors",
+    "sections": [
+      {
+        "heading": "Light Spectrum",
+        "themes": [
+          {
+            "themeName": "White",
+            "id": "light-color:white",
+            "textColor": "oklch(30% 0 none)",
+            "backgroundColor": "oklch(97% 0 none)"
+          },
+          {
+            "themeName": "Silver",
+            "id": "light-color:silver",
+            "textColor": "oklch(40% 0.01 200)",
+            "backgroundColor": "oklch(90% 0.01 200)"
+          },
+          {
+            "themeName": "Strawberry",
+            "id": "light-color:strawberry",
+            "textColor": "oklch(40% 0.1 20)",
+            "backgroundColor": "oklch(95% 0.05 20)"
+          },
+          {
+            "themeName": "Almond",
+            "id": "light-color:almond",
+            "textColor": "oklch(40% 0.1 70)",
+            "backgroundColor": "oklch(95% 0.05 70)"
+          },
+          {
+            "themeName": "Lemon",
+            "id": "light-color:lemon",
+            "textColor": "oklch(40% 0.1 100)",
+            "backgroundColor": "oklch(95% 0.05 100)"
+          },
+          {
+            "themeName": "Pear",
+            "id": "light-color:Pear",
+            "textColor": "oklch(40% 0.1 130)",
+            "backgroundColor": "oklch(95% 0.05 150)"
+          },
+          {
+            "themeName": "Mint",
+            "id": "light-color:mint",
+            "textColor": "oklch(40% 0.1 180)",
+            "backgroundColor": "oklch(95% 0.05 180)"
+          },
+          {
+            "themeName": "Blueberry",
+            "id": "light-color:blueberry",
+            "textColor": "oklch(40% 0.1 220)",
+            "backgroundColor": "oklch(95% 0.05 220)"
+          },
+          {
+            "themeName": "Lavender",
+            "id": "light-color:lavender",
+            "textColor": "oklch(40% 0.1 280)",
+            "backgroundColor": "oklch(95% 0.05 280)"
+          },
+          {
+            "themeName": "Cherry",
+            "id": "light-color:cherry",
+            "textColor": "oklch(40% 0.1 330)",
+            "backgroundColor": "oklch(95% 0.05 330)"
+          }
+        ]
+      },
+      {
+        "heading": "Solarized",
+        "infoText": "Website",
+        "infoUrl": "https://ethanschoonover.com/solarized/",
+        "themes": [
+          {
+            "themeName": "Solarized Light",
+            "id": "light-color:solarized-light",
+            "textColor": "hsl(196, 13%, 45%)",
+            "backgroundColor": "hsl(44, 87%, 94%)"
+          }
+        ]
+      },
+      {
+        "heading": "Atelier Schemes",
+        "infoText": "Website",
+        "infoUrl": "https://atelierbram.github.io/syntax-highlighting/atelier-schemes/",
+        "themes": [
+          {
+            "themeName": "Cave Light",
+            "id": "light-color:cave-light",
+            "textColor": "hsl(266, 7%, 40%)",
+            "backgroundColor": "hsl(262, 27%, 94%)"
+          },
+          {
+            "themeName": "Estuary Light",
+            "id": "light-color:estuary-light",
+            "textColor": "hsl(57, 9%, 39%)",
+            "backgroundColor": "hsl(52, 27%, 94%)"
+          },
+          {
+            "themeName": "seaside Light",
+            "id": "light-color:seaside-light",
+            "textColor": "hsl(120, 8%, 40%)",
+            "backgroundColor": "hsl(120, 50%, 97%)"
+          },
+          {
+            "themeName": "Lakeside Light",
+            "id": "light-color:lakeside-light",
+            "textColor": "hsl(200, 21%, 40%)",
+            "backgroundColor": "hsl(200, 100%, 96%)"
+          }
+        ]
+      }
+    ]
+  },
+  "dark": {
+    "title": "Dark Colors",
+    "sections": [
+      {
+        "heading": "Dark Spectrum",
+        "themes": [
+          {
+            "themeName": "Gray",
+            "id": "dark-color:gray",
+            "isDarkTheme": true,
+            "textColor": "hsl(0, 0%, 80%)",
+            "backgroundColor": "hsl(0, 0%, 30%)"
+          },
+          {
+            "themeName": "Dark Gray",
+            "id": "dark-color:dark-gray",
+            "isDarkTheme": true,
+            "textColor": "hsl(0, 0%, 80%)",
+            "backgroundColor": "hsl(0, 0%, 15%)"
+          },
+          {
+            "themeName": "Passion",
+            "id": "dark-color:red",
+            "isDarkTheme": true,
+            "textColor": "oklch(100% 0.1 0)",
+            "backgroundColor": "oklch(45% 0.1 0)"
+          },
+          {
+            "themeName": "Energy",
+            "id": "dark-color:orange",
+            "isDarkTheme": true,
+            "textColor": "oklch(100% 0.1 50)",
+            "backgroundColor": "oklch(45% 0.1 50)"
+          },
+          {
+            "themeName": "Hope",
+            "id": "dark-color:yellow",
+            "isDarkTheme": true,
+            "textColor": "oklch(100% 0.1 110)",
+            "backgroundColor": "oklch(45% 0.1 110)"
+          },
+          {
+            "themeName": "Calm",
+            "id": "dark-color:green",
+            "isDarkTheme": true,
+            "textColor": "oklch(100% 0.1 150)",
+            "backgroundColor": "oklch(45% 0.1 150)"
+          },
+          {
+            "themeName": "Trust",
+            "id": "dark-color:teal",
+            "isDarkTheme": true,
+            "textColor": "oklch(100% 0.1 180)",
+            "backgroundColor": "oklch(45% 0.1 180)"
+          },
+          {
+            "themeName": "Confidence",
+            "id": "dark-color:blue",
+            "isDarkTheme": true,
+            "textColor": "oklch(100% 0.1 230)",
+            "backgroundColor": "oklch(45% 0.1 230)"
+          },
+          {
+            "themeName": "Imagination",
+            "id": "dark-color:purple",
+            "isDarkTheme": true,
+            "textColor": "oklch(100% 0.1 290)",
+            "backgroundColor": "oklch(45% 0.1 290)"
+          },
+          {
+            "themeName": "Creativity",
+            "id": "dark-color:pink",
+            "isDarkTheme": true,
+            "textColor": "oklch(100% 0.1 330)",
+            "backgroundColor": "oklch(45% 0.1 330)"
+          },
+          {
+            "themeName": "Terminal",
+            "id": "dark-color:terminal",
+            "isDarkTheme": true,
+            "textColor": "hsl(120, 60%, 65%)",
+            "backgroundColor": "#111111"
+          }
+        ]
+      },
+      {
+        "heading": "Solarized",
+        "infoText": "Website",
+        "infoUrl": "https://ethanschoonover.com/solarized/",
+        "themes": [
+          {
+            "themeName": "Solarized Dark",
+            "id": "dark-color:solarized-dark",
+            "isDarkTheme": true,
+            "textColor": "hsl(180, 7%, 60%)",
+            "backgroundColor": "hsl(192, 81%, 14%)"
+          }
+        ]
+      },
+      {
+        "heading": "Atelier Schemes",
+        "infoText": "Website",
+        "infoUrl": "https://atelierbram.github.io/syntax-highlighting/atelier-schemes/",
+        "themes": [
+          {
+            "themeName": "Cave Dark",
+            "id": "dark-color:cave-dark",
+            "isDarkTheme": true,
+            "textColor": "hsl(265, 15%, 89%)",
+            "backgroundColor": "hsl(265, 9%, 15%)"
+          },
+          {
+            "themeName": "Estuary Dark",
+            "id": "dark-color:estuary-dark",
+            "isDarkTheme": true,
+            "textColor": "hsl(55, 15%, 89%)",
+            "backgroundColor": "hsl(55, 11%, 17%)"
+          },
+          {
+            "themeName": "Seaside Dark",
+            "id": "dark-color:seaside-dark",
+            "isDarkTheme": true,
+            "textColor": "hsl(120, 35%, 86%)",
+            "backgroundColor": "hsl(120, 6%, 15%)"
+          },
+          {
+            "themeName": "Lakeside Dark",
+            "id": "dark-color:lakeside-dark",
+            "isDarkTheme": true,
+            "textColor": "hsl(200, 75%, 86%)",
+            "backgroundColor": "hsl(200, 20%, 15%)"
+          }
+        ]
+      }
+    ]
+  },
+  "photos": {
+    "title": "Photos",
+    "sections": [
+      {
+        "heading": "Textures",
+        "themes": [
+          {
+            "themeName": "Rainbow Glitter",
+            "id": "photo:rainbow-glitter",
+            "isDarkTheme": true,
+            "textColor": "hsla(0, 0%, 100%, 0.9)",
+            "backgroundColor": "hsl(353, 82%, 35%)",
+            "backgroundImage": "pexels-alexander-grey-1191710.jpg",
+            "creditsName": "Alexander Grey",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/,pailletten-in-verschiedenen-farben-1191710/"
+          },
+          {
+            "themeName": "Rainbow",
+            "id": "photo:rainbow",
+            "textColor": "hsla(0, 0%, 0%, 0.9)",
+            "backgroundColor": "#EDF3EC",
+            "backgroundImage": "pexels-francesco-ungaro-673648.jpg",
+            "creditsName": "Francesco Ungaro",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/,blaue-grune-orange-und-rote-regenbogen-design-dekoration-673648/"
+          },
+          {
+            "themeName": "Wood",
+            "id": "photo:wood",
+            "isDarkTheme": true,
+            "textColor": "hsla(0, 0%, 100%, 0.9)",
+            "backgroundColor": "hsl(11, 27%, 36%)",
+            "backgroundImage": "pexels-fwstudio-172289.jpg",
+            "creditsName": "FWStudio",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/,braune-holzoberflache-172289/"
+          },
+          {
+            "themeName": "Planks",
+            "id": "photo:planks",
+            "isDarkTheme": true,
+            "textColor": "hsla(0, 0%, 100%, 0.9)",
+            "backgroundColor": "#402218",
+            "backgroundImage": "pexels-pixabay-326311.jpg",
+            "creditsName": "Pixabay",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/,holz-muster-textur-bauholz-326311/"
+          },
+          {
+            "themeName": "Brown Leaves",
+            "id": "photo:brown-leaves",
+            "isDarkTheme": true,
+            "textColor": "hsla(0, 0%, 100%, 0.9)",
+            "backgroundColor": "#412D29",
+            "backgroundImage": "pexels-daniel-frank-688830.jpg",
+            "creditsName": "Daniel Frank",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/,verwelkte-blatter-foto-688830/"
+          },
+          {
+            "themeName": "Dark Stone",
+            "id": "photo:dark-stone",
+            "isDarkTheme": true,
+            "textColor": "hsla(0, 0%, 100%, 0.9)",
+            "backgroundColor": "#1a1a1a",
+            "backgroundImage": "pexels-dexter-fernandes-2646237.jpg",
+            "creditsName": "Dexter Fernandes",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/,felsformation-nahaufnahme-fotografie-2646237/"
+          },
+          {
+            "themeName": "Green Leaves",
+            "id": "photo:green-leaves",
+            "isDarkTheme": true,
+            "textColor": "hsla(0, 0%, 100%, 0.9)",
+            "backgroundColor": "#0E2317",
+            "backgroundImage": "pexels-sohail-nachiti-807598.jpg",
+            "creditsName": "Sohail Nachiti",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/,nahaufnahme-fotografie-von-blattern-mit-tropfchen-807598/"
+          },
+          {
+            "themeName": "Green and Pink Leaves",
+            "id": "photo:green-pink-leaves",
+            "textColor": "hsla(0, 0%, 0%, 0.9)",
+            "backgroundColor": "#CCE0DF",
+            "backgroundImage": "pexels-madison-inouye-1382393.jpg",
+            "creditsName": "Madison Inouye",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/,foto-von-blattern-1382393/"
+          },
+          {
+            "themeName": "Water",
+            "id": "photo:water",
+            "isDarkTheme": true,
+            "textColor": "hsla(0, 0%, 100%, 0.9)",
+            "backgroundColor": "#477E89",
+            "backgroundImage": "pexels-lisa-fotios-734973.jpg",
+            "creditsName": "Lisa Fotios",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/,gewasser-fotografie-734973/"
+          },
+          {
+            "themeName": "Reflective Water",
+            "id": "photo:reflective-water",
+            "isDarkTheme": true,
+            "textColor": "hsla(0, 0%, 100%, 0.9)",
+            "backgroundColor": "#419DB7",
+            "backgroundImage": "pexels-pixabay-261403.jpg",
+            "creditsName": "Pixabay",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/gewasser-261403/"
+          },
+          {
+            "themeName": "Pink Blossoms",
+            "id": "photo:pink-blossoms",
+            "textColor": "hsla(0, 0%, 0%, 0.9)",
+            "backgroundColor": "#b683b7",
+            "backgroundImage": "pexels-janeski-4052701.jpg",
+            "creditsName": "Antonio Janeski",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/,blumen-lila-violett-blutenblatter-4052701/"
+          },
+          {
+            "themeName": "Blossoms",
+            "id": "photo:blossoms",
+            "textColor": "hsla(0, 0%, 0%, 0.9)",
+            "backgroundColor": "#EDF2F6",
+            "backgroundImage": "pexels-sl-wong-1023953.jpg",
+            "creditsName": "Sl Wong",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/,selektive-fokusfotografie-von-kirschbluten-1023953/"
+          },
+          {
+            "themeName": "Small Plant",
+            "id": "photo:small-plant",
+            "textColor": "hsla(0, 0%, 0%, 0.9)",
+            "backgroundColor": "#E9EAE4",
+            "backgroundImage": "pexels-scott-webb-305821.jpg",
+            "creditsName": "Scott Webb",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/,sukkulente-pflanze-auf-grauem-blumentopf-nahaufnahmefoto-305821/"
+          },
+          {
+            "themeName": "White Structure",
+            "id": "photo:white-structure",
+            "textColor": "hsla(0, 0%, 0%, 0.9)",
+            "backgroundColor": "#FDFDFD",
+            "backgroundImage": "pexels-gdtography-911738.jpg",
+            "creditsName": "gdtography",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/,weisses-textil-911738/"
+          }
+        ]
+      },
+      {
+        "heading": "Landscapes",
+        "themes": [
+          {
+            "themeName": "River",
+            "id": "photo:river",
+            "isDarkTheme": true,
+            "textColor": "hsla(0, 0%, 100%, 0.9)",
+            "backgroundColor": "#2E4323",
+            "backgroundImage": "pexels-ian-turnell-709552.jpg",
+            "creditsName": "Ian Turnell",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/,gewasser-zwischen-grunen-laubbaumen-709552/"
+          },
+          {
+            "themeName": "Stones",
+            "id": "photo:stones",
+            "isDarkTheme": true,
+            "textColor": "hsla(0, 0%, 100%, 0.9)",
+            "backgroundColor": "#75825F",
+            "backgroundImage": "pexels-nicollazzi-xiong-668353.jpg",
+            "creditsName": "Nicollazzi Xiong",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/,vier-felsformationen-668353/"
+          },
+          {
+            "themeName": "Trees",
+            "id": "photo:trees",
+            "isDarkTheme": true,
+            "textColor": "hsla(0, 0%, 100%, 0.9)",
+            "backgroundColor": "#573B29",
+            "backgroundImage": "pexels-oleksandr-p-345522.jpg",
+            "creditsName": "Oleksandr P",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/wald-345522/"
+          },
+          {
+            "themeName": "Beach",
+            "id": "photo:beach",
+            "textColor": "hsla(0, 0%, 0%, 0.9)",
+            "backgroundColor": "#CECFC9",
+            "backgroundImage": "pexels-lina-kivaka-1879301.jpg",
+            "creditsName": "Lina Kivaka",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/,nahaufnahmefoto-von-shore-1879301/"
+          }
+        ]
+      },
+      {
+        "heading": "Space",
+        "themes": [
+          {
+            "themeName": "Stars",
+            "id": "photo:stars",
+            "isDarkTheme": true,
+            "textColor": "hsla(0, 0%, 100%, 0.9)",
+            "backgroundColor": "#111A30",
+            "backgroundImage": "pexels-felix-mittermeier-1146134.jpg",
+            "creditsName": "Felix Mittermeier",
+            "creditsUrl": "https://www.pexels.com/de-de/foto/galaxis-1146134/"
+          }
+        ]
+      }
+    ]
+  },
+  "abstract": {
+    "title": "Abstract Backgrounds",
+    "sections": [
+      {
+        "heading": "Aqua 2",
+        "themes": [
+          {
+            "themeName": "Spectrum",
+            "id": "image:aqua-2-rainbow",
+            "textColor": "hsl(14.12, 17.89%, 30%)",
+            "backgroundColor": "#D8CBC7",
+            "backgroundImage": "aqua_2_rainbow.jpg"
+          },
+          {
+            "themeName": "Bright",
+            "id": "image:aqua-2-bright",
+            "textColor": "hsl(22.76, 40.85%, 30%)",
+            "backgroundColor": "#EAD8CD",
+            "backgroundImage": "aqua_2_bright.jpg"
+          },
+          {
+            "themeName": "Frozen",
+            "id": "image:aqua-2-frozen",
+            "textColor": "hsl(190, 31.58%, 30%)",
+            "backgroundColor": "#B4D2D8",
+            "backgroundImage": "aqua_2_frozen.jpg"
+          },
+          {
+            "themeName": "Dark",
+            "id": "image:aqua-2-dark",
+            "isDarkTheme": true,
+            "textColor": "hsl(240, 17.33%, 80%)",
+            "backgroundColor": "#3E3E58",
+            "backgroundImage": "aqua_2_dark.jpg"
+          },
+          {
+            "themeName": "Red",
+            "id": "image:aqua-2-red",
+            "isDarkTheme": true,
+            "textColor": "hsl(0deg 45.08% 90%)",
+            "backgroundColor": "#BC4E4E",
+            "backgroundImage": "aqua_2_red.jpg"
+          },
+          {
+            "themeName": "Orange",
+            "id": "image:aqua-2-orange",
+            "isDarkTheme": true,
+            "textColor": "hsl(27.46, 82.56%, 90%)",
+            "backgroundColor": "#9D500F",
+            "backgroundImage": "aqua_2_orange.jpg"
+          },
+          {
+            "themeName": "Lime",
+            "id": "image:aqua-2-lime",
+            "isDarkTheme": true,
+            "textColor": "hsl(78.69, 69.32%, 90%)",
+            "backgroundColor": "#6F951B",
+            "backgroundImage": "aqua_2_lime.jpg"
+          },
+          {
+            "themeName": "Teal",
+            "id": "image:aqua-2-teal",
+            "isDarkTheme": true,
+            "textColor": "hsl(168.85, 68.48%, 90%)",
+            "backgroundColor": "#1A8B76",
+            "backgroundImage": "aqua_2_teal.jpg"
+          },
+          {
+            "themeName": "Blue",
+            "id": "image:aqua-2-blue",
+            "isDarkTheme": true,
+            "textColor": "hsl(199.77, 50%, 80%)",
+            "backgroundColor": "#2C6784",
+            "backgroundImage": "aqua_2_blue.jpg"
+          },
+          {
+            "themeName": "Purple",
+            "id": "image:aqua-2-purple",
+            "isDarkTheme": true,
+            "textColor": "hsl(258.26deg, 31.22%, 85%)",
+            "backgroundColor": "#614C91",
+            "backgroundImage": "aqua_2_purple.jpg"
+          }
+        ]
+      },
+      {
+        "heading": "Aqua",
+        "themes": [
+          {
+            "themeName": "Black",
+            "id": "image:aqua-black",
+            "isDarkTheme": true,
+            "textColor": "hsl(0, 0%, 90%)",
+            "backgroundColor": "hsl(0, 0%, 14%)",
+            "backgroundImage": "aqua_black.jpg"
+          },
+          {
+            "themeName": "White",
+            "id": "image:aqua-white",
+            "textColor": "hsl(0, 0%, 10%)",
+            "backgroundColor": "hsl(0, 0%, 83%)",
+            "backgroundImage": "aqua_white.jpg"
+          },
+          {
+            "themeName": "Red",
+            "id": "image:aqua-red",
+            "isDarkTheme": true,
+            "textColor": "#f6e2e2",
+            "backgroundColor": "hsl(358, 65%, 23%)",
+            "backgroundImage": "aqua_red.jpg"
+          },
+          {
+            "themeName": "Lime",
+            "id": "image:aqua-lime",
+            "isDarkTheme": true,
+            "textColor": "#f8fdec",
+            "backgroundColor": "hsl(74, 58%, 31%)",
+            "backgroundImage": "aqua_lime.jpg"
+          },
+          {
+            "themeName": "Teal",
+            "id": "image:aqua-bluegreen",
+            "isDarkTheme": true,
+            "textColor": "#cef5ec",
+            "backgroundColor": "hsl(162, 69%, 39%)",
+            "backgroundImage": "aqua_blue_green.jpg"
+          },
+          {
+            "themeName": "Blue",
+            "id": "image:aqua-blue",
+            "isDarkTheme": true,
+            "textColor": "#cee8f5",
+            "backgroundColor": "hsl(201, 67%, 40%)",
+            "backgroundImage": "aqua_blue.jpg"
+          },
+          {
+            "themeName": "Purple",
+            "id": "image:aqua-purple",
+            "isDarkTheme": true,
+            "textColor": "#e7d7f8",
+            "backgroundColor": "hsl(244, 57%, 32%)",
+            "backgroundImage": "aqua_purple.jpg"
+          }
+        ]
+      },
+      {
+        "heading": "Shine",
+        "themes": [
+          {
+            "themeName": "Chrome",
+            "id": "image:shine-chrome",
+            "isDarkTheme": true,
+            "textColor": "white",
+            "backgroundColor": "hsl(127, 17%, 9%)",
+            "backgroundImage": "shine_chrome.jpg"
+          },
+          {
+            "themeName": "Orange",
+            "id": "image:shine-orange",
+            "isDarkTheme": true,
+            "textColor": "white",
+            "backgroundColor": "hsl(19, 88%, 13%)",
+            "backgroundImage": "shine_orange.jpg"
+          },
+          {
+            "themeName": "Green",
+            "id": "image:shine-green",
+            "isDarkTheme": true,
+            "textColor": "white",
+            "backgroundColor": "hsl(120, 96%, 11%)",
+            "backgroundImage": "shine_green.jpg"
+          },
+          {
+            "themeName": "Blue",
+            "id": "image:shine-blue",
+            "isDarkTheme": true,
+            "textColor": "white",
+            "backgroundColor": "hsl(210, 59%, 50%)",
+            "backgroundImage": "shine_blue.jpg"
+          },
+          {
+            "themeName": "Pink",
+            "id": "image:shine-pink",
+            "isDarkTheme": true,
+            "textColor": "white",
+            "backgroundColor": "hsl(336, 100%, 35%)",
+            "backgroundImage": "shine_pink.jpg"
+          }
+        ]
+      },
+      {
+        "heading": "Ray",
+        "themes": [
+          {
+            "themeName": "Orange",
+            "id": "image:ray-orange",
+            "isDarkTheme": true,
+            "textColor": "white",
+            "backgroundColor": "hsl(50, 96%, 33%)",
+            "backgroundImage": "ray_orange.jpg"
+          },
+          {
+            "themeName": "Green",
+            "id": "image:ray-green",
+            "isDarkTheme": true,
+            "textColor": "white",
+            "backgroundColor": "hsl(66, 96%, 30%)",
+            "backgroundImage": "ray_green.jpg"
+          },
+          {
+            "themeName": "Blue",
+            "id": "image:ray-blue",
+            "isDarkTheme": true,
+            "textColor": "white",
+            "backgroundColor": "hsl(234, 17%, 58%)",
+            "backgroundImage": "ray_blue.jpg"
+          },
+          {
+            "themeName": "Pink",
+            "id": "image:ray-pink",
+            "isDarkTheme": true,
+            "textColor": "white",
+            "backgroundColor": "hsl(348, 43%, 57%)",
+            "backgroundImage": "ray_pink.jpg"
+          }
+        ]
+      },
+      {
+        "heading": "Mosaic",
+        "themes": [
+          {
+            "themeName": "Black",
+            "id": "image:mosaic-black",
+            "isDarkTheme": true,
+            "textColor": "hsl(0, 0%, 90%)",
+            "backgroundColor": "hsl(0, 0%, 0%)",
+            "backgroundImage": "mosaic_black.jpg"
+          },
+          {
+            "themeName": "White",
+            "id": "image:mosaic-white",
+            "textColor": "hsl(0, 0%, 10%)",
+            "backgroundColor": "hsl(0, 0%, 95%)",
+            "backgroundImage": "mosaic_white.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  "approx.art": {
+    "title": "approx.art",
+    "sections": [
+      {
+        "heading": "Backgrounds",
+        "infoText": "All images © by approx.art",
+        "themes": [
+          {
+            "themeName": "Image Noise",
+            "id": "approx:image-noise",
+            "isDarkTheme": true,
+            "textColor": "hsl(0, 0%, 80%)",
+            "backgroundColor": "hsl(0, 0%, 12%)",
+            "backgroundImage": "approx_image_noise.jpg"
+          },
+          {
+            "themeName": "Leather",
+            "id": "approx:leather",
+            "isDarkTheme": true,
+            "textColor": "hsl(0, 0%, 80%)",
+            "backgroundColor": "hsl(0, 0%, 4%)",
+            "backgroundImage": "approx_leather.jpg"
+          },
+          {
+            "themeName": "Scrap Metal",
+            "id": "approx:scrap-metal",
+            "isDarkTheme": true,
+            "textColor": "hsl(0, 0%, 80%)",
+            "backgroundColor": "hsl(0, 0%, 8%)",
+            "backgroundImage": "approx_scrap_metal.jpg"
+          },
+          {
+            "themeName": "Fiery",
+            "id": "approx:fiery",
+            "textColor": "hsl(36, 100%, 20%)",
+            "backgroundColor": "hsl(36, 100%, 47%)",
+            "backgroundImage": "approx_fiery.jpg"
+          },
+          {
+            "themeName": "Splatter",
+            "id": "approx:splatter",
+            "isDarkTheme": true,
+            "textColor": "hsl(10, 92%, 92%)",
+            "backgroundColor": "hsl(10, 92%, 12%)",
+            "backgroundImage": "approx_splatter.jpg"
+          },
+          {
+            "themeName": "Smouldering",
+            "id": "approx:smouldering",
+            "isDarkTheme": true,
+            "textColor": "hsl(31, 49%, 90%)",
+            "backgroundColor": "hsl(36, 76%, 46%)",
+            "backgroundImage": "approx_smouldering.jpg"
+          },
+          {
+            "themeName": "Rust",
+            "id": "approx:rust",
+            "isDarkTheme": true,
+            "textColor": "hsl(26, 85%, 90%)",
+            "backgroundColor": "hsl(26, 85%, 6%)",
+            "backgroundImage": "approx_rust.jpg"
+          },
+          {
+            "themeName": "Timber",
+            "id": "approx:timber",
+            "isDarkTheme": true,
+            "textColor": "hsl(29, 40%, 90%)",
+            "backgroundColor": "hsl(25, 25%, 8%)",
+            "backgroundImage": "approx_timber.jpg"
+          },
+          {
+            "themeName": "Vintage",
+            "id": "approx:vintage",
+            "isDarkTheme": true,
+            "textColor": "hsl(30, 38%, 90%)",
+            "backgroundColor": "hsl(30, 38%, 5%)",
+            "backgroundImage": "approx_vintage.jpg"
+          },
+          {
+            "themeName": "Diamonds",
+            "id": "approx:diamonds",
+            "isDarkTheme": true,
+            "textColor": "hsl(90, 44%, 80%)",
+            "backgroundColor": "hsl(90, 44%, 10%)",
+            "backgroundImage": "approx_diamonds.jpg"
+          },
+          {
+            "themeName": "Grass",
+            "id": "approx:grass",
+            "textColor": "hsl(82, 86%, 20%)",
+            "backgroundColor": "hsl(82, 86%, 35%)",
+            "backgroundImage": "approx_grass.jpg"
+          },
+          {
+            "themeName": "Rays",
+            "id": "approx:rays",
+            "isDarkTheme": true,
+            "textColor": "hsl(69, 85%, 90%)",
+            "backgroundColor": "hsl(69, 85%, 25%)",
+            "backgroundImage": "approx_rays.jpg"
+          },
+          {
+            "themeName": "Glacialis",
+            "id": "approx:glacialis",
+            "textColor": "hsl(185, 80%, 25%)",
+            "backgroundColor": "hsl(185, 80%, 86%)",
+            "backgroundImage": "approx_glacialis.jpg"
+          },
+          {
+            "themeName": "Aqua",
+            "id": "approx:aqua",
+            "textColor": "hsl(212, 67%, 10%)",
+            "backgroundColor": "hsl(212, 67%, 89%)",
+            "backgroundImage": "approx_aqua.jpg"
+          },
+          {
+            "themeName": "Surface",
+            "id": "approx:surface",
+            "isDarkTheme": true,
+            "textColor": "hsl(216, 85%, 85%)",
+            "backgroundColor": "hsl(216, 84%, 15%)",
+            "backgroundImage": "approx_surface.jpg"
+          },
+          {
+            "themeName": "Deep Sea",
+            "id": "approx:deep-sea",
+            "isDarkTheme": true,
+            "textColor": "hsl(201, 85%, 80%)",
+            "backgroundColor": "hsl(201, 85%, 8%)",
+            "backgroundImage": "approx_deep_sea.jpg"
+          },
+          {
+            "themeName": "Linearis",
+            "id": "approx:linearis",
+            "isDarkTheme": true,
+            "textColor": "hsl(266, 47%, 90%)",
+            "backgroundColor": "hsl(266, 47%, 25%)",
+            "backgroundImage": "approx_linearis.jpg"
+          }
+        ]
+      }
+    ]
+  }
+}

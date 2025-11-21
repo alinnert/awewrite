@@ -1,11 +1,13 @@
 import { mutableValue } from '@alinnert/reactive'
+import { getOrSetLocalStorageItem } from '../localStorage/getOrSetLocalStorageItem'
+import { storageKey } from '../localStorage/initLocalStorage'
 
-export const currentFont$ = mutableValue<string | null>(null)
+export const currentFont$ = mutableValue<string>(
+  getOrSetLocalStorageItem(storageKey.fontFace, '"IBM Plex Sans", sans-serif')
+)
 
-export function changeFontface(font: string) {
+currentFont$.onChange((font) => {
+  if (font === null) return
   document.body.style.setProperty('--editor-font-family', `"${font}"`)
-
-  localStorage.setItem('awe.fontface', font)
-
-  currentFont$.set(font)
-}
+  localStorage.setItem(storageKey.fontFace, font)
+})

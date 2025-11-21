@@ -1,10 +1,8 @@
-import { leftTextareaElement, rightTextareaElement } from '../elements.ts'
-import { onTextareaInput } from '../textarea/onTextareaInput.ts'
+import { texts } from './textEditors'
 
 export function switchTexts() {
-  const leftText = leftTextareaElement.value
-  leftTextareaElement.value = rightTextareaElement.value
-  rightTextareaElement.value = leftText
-
-  onTextareaInput()
+  const leftText = texts.leftText$.value
+  const rightText = texts.rightText$.value
+  texts.leftText$.set(rightText)
+  texts.rightText$.set(leftText)
 }

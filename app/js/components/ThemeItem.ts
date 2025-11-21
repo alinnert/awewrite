@@ -1,12 +1,15 @@
-import { changeTheme, currentTheme$ } from '../actions/changeTheme.ts'
+import { currentDarkThemeId$, currentLightThemeId$, currentTheme$ } from '../actions/changeTheme.ts'
 import { addEvent } from '../elements.ts'
+import { stringAttr } from '../lib/components/attributeConverters.ts'
+import { createAttr } from '../lib/components/createAttr.ts'
+import { createBoolAttr } from '../lib/components/createBoolAttr.ts'
 import { createTargets } from '../lib/components/targets.ts'
 import { parseTemplate } from '../lib/template/templateParser.ts'
 import { getThumbnailFilename } from '../lib/themes/getThumbnailFilename.ts'
 import template from './ThemeItem.html?raw'
 
 export type ThemeData = {
-  displayName: string
+  themeName: string
   id: string
   textColor: string
   backgroundColor: string
@@ -17,79 +20,62 @@ export type ThemeData = {
 }
 
 export class ThemeItem extends HTMLElement {
+  #themeName = createAttr(this, 'theme-name', { type: stringAttr() })
+  #id = createAttr(this, 'id', { type: stringAttr() })
+  #textColor = createAttr(this, 'text-color', { type: stringAttr() })
+  #backgroundColor = createAttr(this, 'background-color', { type: stringAttr() })
+  #backgroundImage = createAttr(this, 'background-image', {
+    type: stringAttr(),
+    defaultValue: '',
+  })
+  #darkTheme = createBoolAttr(this, 'dark-theme')
+  #creditsName = createAttr(this, 'credits-name', { type: stringAttr(), defaultValue: '' })
+  #creditsUrl = createAttr(this, 'credits-url', { type: stringAttr(), defaultValue: '' })
+
   #targets = createTargets(this, 'theme-item')
 
   #themeData!: ThemeData
 
-  get themeData() {
+  get themeData(): ThemeData {
     return this.#themeData
   }
 
-  get #hasCredits() {
-    return this.#themeData.creditsName !== undefined && this.#themeData.creditsUrl !== undefined
+  get #hasCredits(): boolean {
+    return this.#themeData.creditsName !== '' && this.#themeData.creditsUrl !== ''
   }
 
   connectedCallback() {
-    //#region check attributes
-    if (!this.hasAttribute('theme-name')) {
-      throw new Error('Theme item has no attribute "theme-name".')
-    }
-
-    if (!this.hasAttribute('id')) {
-      throw new Error('Theme item has no attribute "id".')
-    }
-
-    if (!this.hasAttribute('text-color')) {
-      throw new Error('Theme item has no attribute "text-color".')
-    }
-
-    if (!this.hasAttribute('background-color')) {
-      throw new Error('Theme item has no attribute "background-color".')
-    }
-    //#endregion check attributes
-
     this.#themeData = {
-      displayName: this.getAttribute('theme-name')!,
-      id: this.getAttribute('id')!,
-      textColor: this.getAttribute('text-color')!,
-      backgroundColor: this.getAttribute('background-color')!,
-      backgroundImage: this.getAttribute('background-image') ?? undefined,
-      isDarkTheme: this.hasAttribute('dark-theme'),
-      creditsName: this.getAttribute('credits-name') ?? undefined,
-      creditsUrl: this.getAttribute('credits-url') ?? undefined,
+      themeName: this.#themeName.get(),
+      id: this.#id.get(),
+      textColor: this.#textColor.get(),
+      backgroundColor: this.#backgroundColor.get(),
+      backgroundImage: this.#backgroundImage.get(),
+      isDarkTheme: this.#darkTheme.get(),
+      creditsName: this.#creditsName.get(),
+      creditsUrl: this.#creditsUrl.get(),
     }
 
     this.classList.add('theme-item')
 
     this.innerHTML = parseTemplate(template, {
-      displayName: this.#themeData.displayName,
+      displayName: this.#themeData.themeName,
       creditsName: this.#themeData.creditsName,
       creditsUrl: this.#themeData.creditsUrl,
       hasCredits: this.#hasCredits,
     })
 
-    const previewElement = this.#targets.first('preview')
-    const detailsElement = this.#targets.first('details')
-    const nameElement = this.#targets.first('name')
+    const previewElement = this.#targets.firstOrThrow('preview')
+    const detailsElement = this.#targets.firstOrThrow('details')
+    const setLightThemeElement = this.#targets.firstOrThrow('toggle-button--light')
+    const setDarkThemeElement = this.#targets.firstOrThrow('toggle-button--dark')
 
-    addEvent(previewElement, 'click', () => this.#handlePreviewClick())
-
-    if (previewElement === undefined) {
-      throw new Error('Preview element not found.')
-    }
-
-    if (detailsElement === undefined) {
-      throw new Error('Details element not found.')
-    }
-
-    if (nameElement === undefined) {
-      throw new Error('Name element not found.')
-    }
+    addEvent(setLightThemeElement, 'click', () => this.#handleSetLightThemeClick())
+    addEvent(setDarkThemeElement, 'click', () => this.#handleSetDarkThemeClick())
 
     this.style.setProperty('--background', this.#themeData.backgroundColor)
 
     previewElement.style.backgroundColor = this.#themeData.backgroundColor
-    // detailsElement.style.backgroundColor = this.#themeData.backgroundColor
     detailsElement.style.color = this.#themeData.textColor
 
     if (this.#themeData.backgroundImage !== undefined) {
@@ -104,8 +90,12 @@ export class ThemeItem extends HTMLElement {
     })
   }
 
-  #handlePreviewClick() {
-    changeTheme(this.#themeData)
+  #handleSetLightThemeClick() {
+    currentLightThemeId$.set(this.#themeData.id)
+  }
+
+  #handleSetDarkThemeClick() {
+    currentDarkThemeId$.set(this.#themeData.id)
   }
 }
 

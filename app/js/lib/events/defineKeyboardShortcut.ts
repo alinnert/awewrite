@@ -12,7 +12,7 @@ export function defineKeyboardShortcut(
   event: KeyboardEvent,
   definition: ShortcutDefinition,
   callback: ShortcutCallback
-): void {
+) {
   if (event.key !== definition.key) return
   if (event.shiftKey !== (definition.shift ?? false)) return
   if (event.ctrlKey !== (definition.control ?? false)) return

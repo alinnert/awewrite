@@ -35,21 +35,3 @@ export function closeSidebar() {
 
   openSidebar$.set(null)
 }
-
-export function getSidebarNameFromThemeId(themeId: string | null): string | null {
-  if (themeId === null) {
-    return null
-  }
-
-  const sidebarContentElement = $id(themeId).closest('.sidebar-content')
-  if (sidebarContentElement === null) {
-    return null
-  }
-
-  const sidebarContentId = sidebarContentElement.getAttribute('id')
-  if (sidebarContentId === null) {
-    return null
-  }
-
-  return sidebarContentId.replace(/^sidebar-/, '')
-}

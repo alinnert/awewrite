@@ -40,8 +40,9 @@ export const expandToolbarButtonElements = $class('expand-toolbar-button')
 export const openSidebarElements = $class('open-sidebar-button')
 export const toolbarLineAllElements = $class('toolbar-bottom-content')
 export const sidebarContentElements = $class('sidebar-content')
+export const sidebarThemeGroupElements = $class('sidebar-theme-group')
 export const spellcheckElement = $id('spellcheck') as HTMLInputElement
-export const fontfaceElements = $class('change-fontface-button')
+export const fontFaceElements = $class('change-fontface-button')
 export const fontSizeElement = $id('toolbar-fontsize')
 export const lineHeightElement = $id('toolbar-lineheight')
 export const textBoxLayoutElements = $class('change-textbox-layout-button')
@@ -54,13 +55,13 @@ export const textareaBoxElements = $class('textarea-box')
 export const boxAreaElement = $id('editors')
 export const wordCounterElements = $class('word-counter') as WordCounter[]
 
-export const leftBoxElement = $id('left-box')
-export const leftTextareaElement = $id('left-textarea') as HTMLTextAreaElement
-export const leftWordCounterElement = $id('left-word-counter') as WordCounter
+// export const leftBoxElement = $id('left-box')
+// export const leftTextareaElement = $id('left-textarea') as HTMLTextAreaElement
+// export const leftWordCounterElement = $id('left-word-counter') as WordCounter
 
-export const rightBoxElement = $id('right-box')
-export const rightTextareaElement = $id('right-textarea') as HTMLTextAreaElement
-export const rightWordCounterElement = $id('right-word-counter') as WordCounter
+// export const rightBoxElement = $id('right-box')
+// export const rightTextareaElement = $id('right-textarea') as HTMLTextAreaElement
+// export const rightWordCounterElement = $id('right-word-counter') as WordCounter
 // #endregion selected elements
 
 // #region helper functions

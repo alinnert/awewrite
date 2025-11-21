@@ -1,3 +1,4 @@
+import { currentTheme$ } from '../actions/changeTheme.ts'
 import {
   $class,
   $id,
@@ -7,7 +8,8 @@ import {
   toolbarLineAllElements,
 } from '../elements.js'
 import { restoreTextareaFocus } from '../textarea/onTextareaFocus.ts'
-import { closeSidebar, getSidebarNameFromThemeId, openSidebar, openSidebar$ } from './sidebar.ts'
+import { flatThemeList } from '../themes/initThemeElements.ts'
+import { closeSidebar, openSidebar, openSidebar$ } from './sidebar.ts'
 
 export type ToolbarName = 'data' | 'font' | 'layout' | 'background' | 'about'
 
@@ -42,8 +44,8 @@ export function openToolbar(toolbarSection: ToolbarName) {
     showElement(section)
 
     if (toolbarSection === 'background') {
-      const themeId = localStorage.getItem('awe.themeid')
-      openSidebar(getSidebarNameFromThemeId(themeId))
+      const themeId = currentTheme$.value?.id ?? null
+      openSidebar(`themes-${flatThemeList[themeId].groupName}`)
     } else if (toolbarSection === 'font') {
       openSidebar('fonts')
     } else {

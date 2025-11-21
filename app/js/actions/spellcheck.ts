@@ -1,21 +1,18 @@
+import { mutableValue } from '@alinnert/reactive'
 import { spellcheckElement, textareaElements } from '../elements.ts'
+import { getOrSetLocalStorageItem } from '../localStorage/getOrSetLocalStorageItem.ts'
+import { storageKey } from '../localStorage/initLocalStorage.ts'
 
-export function setSpellcheck(value: boolean) {
-  spellcheckElement.checked = value
-  applySpellcheck(value)
-}
+export const currentSpellcheckState$ = mutableValue<string>(
+  getOrSetLocalStorageItem(storageKey.spellcheck, 'true')
+)
 
-export function applySpellcheck(value: boolean) {
-  for (const textarea of textareaElements) {
-    textarea.setAttribute('spellcheck', String(value))
+currentSpellcheckState$.onChange((state) => {
+  spellcheckElement.checked = state === 'true'
+
+  for (const element of textareaElements) {
+    element.setAttribute('spellcheck', state)
   }
-}
 
-export function updateSpellcheck(event: Event) {
-  if (!(event.currentTarget instanceof HTMLInputElement)) return
-
-  const value = event.currentTarget.checked
-
-  applySpellcheck(value)
-  localStorage.setItem('awe.spellcheck', value.toString())
-}
+  localStorage.setItem(storageKey.spellcheck, state)
+})

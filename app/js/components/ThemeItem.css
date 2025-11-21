@@ -17,21 +17,27 @@
 .theme-item__preview {
   grid-area: preview;
   position: relative;
+}
 
-  .theme-item--is-current &::before {
-    --size: 24px;
-    content: '✔︎ ';
-    position: absolute;
-    top: 10px;
-    left: 10px;
+.theme-item__toggle-control {
+  display: flex;
+  gap: 4px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 2px;
+  background: hsl(from white h s l / .75);
+  border: 1px solid hsl(from black h s l / .25);
+  border-radius: 100px;
+}
+
+.theme-item__toggle-button {
+  line-height: 0;
+  border-radius: 100px;
+  padding: 4px;
+  
+  &:hover {
     background: white;
-    color: black;
-    width: var(--size);
-    height: var(--size);
-    line-height: var(--size);
-    text-align: center;
-    border-radius: 100%;
-    box-shadow: 0 1px 2px hsla(0 0 0 / 0.4), 0 3px 6px hsla(0 0 0 / 0.2);
   }
 }
 

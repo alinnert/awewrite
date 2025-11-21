@@ -1,4 +1,4 @@
-import { changeFontface, currentFont$ } from '../actions/changeFontface'
+import { currentFont$ } from '../actions/changeFontFace'
 import { stringAttr } from '../lib/components/attributeConverters'
 import { createAttr } from '../lib/components/createAttr'
 import { createTargets } from '../lib/components/targets'
@@ -31,7 +31,7 @@ export class FontItem extends HTMLElement {
   }
 
   #handleClick() {
-    changeFontface(this.#font.get())
+    currentFont$.set(this.#font.get())
   }
 }
 

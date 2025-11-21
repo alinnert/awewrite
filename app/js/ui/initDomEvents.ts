@@ -1,11 +1,12 @@
-import { updateFontsize } from '../actions/changeFontsize.ts'
-import { updateLineheight } from '../actions/changeLineheight.ts'
-import { TextWidth, changeTextWidth } from '../actions/changeTextWidth.ts'
-import { changeThemeById } from '../actions/changeTheme.ts'
+import { updateFontsize } from '../actions/changeFontSize.ts'
+import { updateLineHeight } from '../actions/changeLineHeight.ts'
+import { currentTextWidth$ } from '../actions/changeTextWidth.ts'
+import { applyThemeById } from '../actions/changeTheme.ts'
 import { clearTexts } from '../actions/clearTexts.ts'
-import { moveSplitter } from '../actions/moveSplitter.ts'
-import { updateSpellcheck } from '../actions/spellcheck.ts'
+import { currentEditorLayout$ } from '../actions/editorLayout.ts'
+import { currentSpellcheckState$ } from '../actions/spellcheck.ts'
 import { switchTexts } from '../actions/switchTexts.ts'
+import { texts } from '../actions/textEditors.ts'
 import {
   $class,
   $id,
@@ -18,11 +19,10 @@ import {
 import { onTextareaBoxElementsClick } from '../textarea/onTextareaBoxElementsClick.ts'
 import { onTextareaClick } from '../textarea/onTextareaClick.ts'
 import { onTextareaFocus } from '../textarea/onTextareaFocus.ts'
-import { onTextareaInput } from '../textarea/onTextareaInput.ts'
 import { onTextareaKeydown } from '../textarea/onTextareaKeydown.ts'
 import { onKeydown } from './onKeydown.ts'
 import { openSidebar } from './sidebar.ts'
-import { ToolbarName, openToolbar } from './toolbar.ts'
+import { openToolbar, ToolbarName } from './toolbar.ts'
 
 export function initDomEvents() {
   addEvent(document.body, 'keydown', onKeydown)
@@ -34,8 +34,12 @@ export function initDomEvents() {
     const target = event.target
     if (!(target instanceof HTMLTextAreaElement)) return
     const area = target.dataset.area
-    if (area !== 'left' && area !== 'right') return
-    onTextareaInput(area)
+
+    if (area === 'left') {
+      texts.leftText$.set(target.value)
+    } else if (area === 'right') {
+      texts.rightText$.set(target.value)
+    }
   })
   addEvent(textareaElements, 'keydown', onTextareaKeydown)
   addEvent(textareaElements, 'focus', onTextareaFocus)
@@ -52,7 +56,10 @@ export function initDomEvents() {
   // Data
   addEvent($class('switch-texts-button'), 'click', switchTexts)
   addEvent($class('clear-texts-button'), 'click', clearTexts)
-  addEvent($id('spellcheck'), 'change', updateSpellcheck)
+  addEvent($id('spellcheck'), 'change', (event) => {
+    if (!(event.currentTarget instanceof HTMLInputElement)) return
+    currentSpellcheckState$.set(event.currentTarget.checked ? 'true' : 'false')
+  })
 
   // Font size
   addEvent($id('toolbar-fontsize-dec'), 'click', () => {
@@ -64,10 +71,10 @@ export function initDomEvents() {
 
   // Line height
   addEvent($id('toolbar-lineheight-dec'), 'click', () => {
-    updateLineheight(-1)
+    updateLineHeight(-0.1)
   })
   addEvent($id('toolbar-lineheight-inc'), 'click', () => {
-    updateLineheight(1)
+    updateLineHeight(0.1)
   })
 
   // Textbox layout
@@ -76,7 +83,7 @@ export function initDomEvents() {
     if (target === null || !isHTMLElement(target)) return
     const rawValue = target.dataset.value
     if (rawValue === undefined) return
-    moveSplitter(Number.parseInt(rawValue))
+    currentEditorLayout$.set(rawValue)
   })
 
   // Text width
@@ -85,7 +92,7 @@ export function initDomEvents() {
     if (target === null || !isHTMLElement(target)) return
     const rawValue = target.dataset.textWidth
     if (rawValue === undefined) return
-    changeTextWidth(rawValue as TextWidth)
+    currentTextWidth$.set(rawValue)
   })
 
   // Sidebar
@@ -101,6 +108,6 @@ export function initDomEvents() {
     if (target === null || !isHTMLElement(target)) return
     const rawValue = target.getAttribute('id')
     if (rawValue === null) return
-    changeThemeById(rawValue)
+    applyThemeById(rawValue)
   })
 }

@@ -10,7 +10,7 @@
     --padding: 10px;
 
     display: grid;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: auto 1fr;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -44,44 +44,6 @@
   
   &:has(> .textarea-box--is-minimized) :is(#left-box, #right-box) {
     padding-inline: var(--padding);
-  }
-
-  & textarea {
-    color: var(--theme-text-color, black);
-    font-family: var(--editor-font-family);
-    font-size: var(--editor-font-size);
-    line-height: var(--editor-line-height);
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    padding: 18px 22px;
-    margin: 0 auto;
-    cursor: text;
-
-    background: hsl(0 0% 0% / 0.4);
-    border-radius: 8px;
-    transition: background var(--fade-duration) var(--fade-easing),
-      color var(--fade-duration) var(--fade-easing),
-      box-shadow var(--move-duration) var(--move-easing);
-    box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.4);
-    
-    &:focus {
-      box-shadow: 0 0 0 4px hsl(0 0% 100% / 0.4);
-    }
-    
-    .light-theme & {
-      background: hsl(0 0% 100% / 0.5);
-      box-shadow: 0 0 0 1px hsl(0 0% 0% / 0.4);
-    }
-    
-    .light-theme &:focus {
-      box-shadow: 0 0 0 4px hsl(0 0% 0% / 0.4);
-    }
-
-    .has-background-image & {
-      -webkit-backdrop-filter: blur(var(--blur));
-      backdrop-filter: blur(var(--blur));
-    }
   }
 
   & .textarea-toolbar {

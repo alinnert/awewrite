@@ -1,6 +1,7 @@
 export type Targets = {
   all: (targetName: string) => HTMLElement[]
   first: (targetName: string) => HTMLElement | undefined
+  firstOrThrow: (targetName: string) => HTMLElement
   getFullName: (targetName: string) => string
 }
 
@@ -18,9 +19,19 @@ export function createTargets(element: HTMLElement, componentName: string): Targ
     return all(targetName)[0]
   }
 
+  function firstOrThrow(targetName: string): HTMLElement {
+    const target = first(targetName)
+    if (target === undefined) {
+      throw new Error(
+        `Target "${targetName}" is required for component "${componentName}" but was not found.`
+      )
+    }
+    return target
+  }
+
   function getFullName(targetName: string): string {
     return `${componentName}__${targetName}`
   }
 
-  return { all, first, getFullName }
+  return { all, first, firstOrThrow, getFullName }
 }

@@ -110,8 +110,8 @@
 }
 
 #toolbar .toolbar-bottom-row button.change-textbox-layout-button {
-  font-size: 20px;
-  font-weight: bold;
+  line-height: 0;
+  padding: 2px 12px;
 }
 
 .toolbar-top-row button {

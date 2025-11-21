@@ -1,31 +1,18 @@
-import { isHTMLElement, textWidthElements, textareaElements } from '../elements.ts'
+import { mutableValue } from '@alinnert/reactive'
+import { textWidthElements } from '../elements.ts'
+import { getOrSetLocalStorageItem } from '../localStorage/getOrSetLocalStorageItem.ts'
+import { storageKey } from '../localStorage/initLocalStorage.ts'
 
 export type TextWidth = 'narrow' | 'medium' | 'wide' | 'full'
 
-export function changeTextWidth(width: TextWidth) {
-  for (const textarea of textareaElements) {
-    if (!isHTMLElement(textarea)) continue
+export const currentTextWidth$ = mutableValue<string>(
+  getOrSetLocalStorageItem(storageKey.textWidth, 'narrow')
+)
 
-    switch (width) {
-      case 'narrow':
-        textarea.style.maxWidth = '35em'
-        break
-      case 'medium':
-        textarea.style.maxWidth = '45em'
-        break
-      case 'wide':
-        textarea.style.maxWidth = '55em'
-        break
-      case 'full':
-        textarea.style.maxWidth = 'initial'
-        break
-    }
-  }
-
-  localStorage.setItem('awe.textwidth', width)
-
+currentTextWidth$.onChange((textWidth) => {
   for (const button of textWidthElements) {
-    const buttonValue = button.dataset.textWidth
-    button.classList.toggle('is-current', buttonValue === width)
+    button.classList.toggle('is-current', button.dataset.textWidth === textWidth)
   }
-}
+
+  localStorage.setItem(storageKey.textWidth, textWidth)
+})
