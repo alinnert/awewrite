@@ -5,8 +5,8 @@ import { getStorageEngine, type StorageEngineType } from './storageEngines'
 export const textEditors = reactive<Record<string, StorageEngineInstance>>({})
 
 export type AddEditorOptions = {
-  editorIdentifier: string
   engineIdentifier: StorageEngineType
+  editorIdentifier: string
   targetIdentifier: string
 }
 
@@ -24,11 +24,4 @@ export function swapEditors(identifierA: string, identifierB: string): void {
   if (editorA === undefined || editorB === undefined) return
   textEditors[identifierA] = editorB
   textEditors[identifierB] = editorA
-
-  console.log(
-    'left:',
-    textEditors.left!.targetIdentifier,
-    'right:',
-    textEditors.right!.targetIdentifier,
-  )
 }

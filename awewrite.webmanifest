@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest",
+  "name": "AWE.write",
+  "short_name": "AWE.write",
+  "description": "AWE.write is a simple, distraction-free text editor.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#444444",
+  "theme_color": "#444444",
+  "icons": [
+    {
+      "src": "/icons/appicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/appicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

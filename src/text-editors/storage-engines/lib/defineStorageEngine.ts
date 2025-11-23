@@ -23,10 +23,14 @@ export type StorageEngine = {
   createInstance: (targetIdentifier: string) => StorageEngineInstance
 }
 
-type CreateInstanceObject = (options: {
+type CreateInstanceObjectOptions = {
   content: Ref<string>
   targetIdentifier: string
-}) => StorageEngineInstance
+}
+
+type CreateInstanceObject = (
+  options: CreateInstanceObjectOptions,
+) => StorageEngineInstance
 
 export type StorageEngineFactoryOptions = {
   createInstanceObject: CreateInstanceObject
