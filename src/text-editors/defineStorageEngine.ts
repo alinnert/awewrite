@@ -14,7 +14,7 @@ export type StorageEngineInstance = {
 /**
  * An entire storage engine that can create individual instances.
  */
-export type StorageEngine = {
+export type StorageEngineDefinition = {
   /**
    * Creates a storage engine instance.
    * @param targetIdentifier The `identifier` identifies an individual target, e.g. a filename, localStorage key, etc.
@@ -23,27 +23,25 @@ export type StorageEngine = {
   createInstance: (targetIdentifier: string) => StorageEngineInstance
 }
 
-type CreateInstanceObjectOptions = {
+export type CreateInstanceObjectOptions = {
   content: Ref<string>
   targetIdentifier: string
 }
-
-type CreateInstanceObject = (
+export type CreateInstanceObject = (
   options: CreateInstanceObjectOptions,
 ) => StorageEngineInstance
 
-export type StorageEngineFactoryOptions = {
+export type StorageEngineInitializerOptions = {
   createInstanceObject: CreateInstanceObject
 }
-
-export type StorageEngineFactory = (
-  options: StorageEngineFactoryOptions,
-) => StorageEngine
+export type StorageEngineInitializer = (
+  options: StorageEngineInitializerOptions,
+) => StorageEngineDefinition
 
 export function defineStorageEngine(
-  factory: StorageEngineFactory,
-): StorageEngine {
-  return factory({
+  initStorageEngine: StorageEngineInitializer,
+): StorageEngineDefinition {
+  return initStorageEngine({
     createInstanceObject({ content, targetIdentifier }): StorageEngineInstance {
       return {
         get targetIdentifier() {

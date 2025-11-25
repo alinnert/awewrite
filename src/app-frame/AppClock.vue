@@ -26,5 +26,6 @@ onBeforeUnmount(() => {
 <style scoped>
 .clock {
   font-weight: bold;
+  padding-inline: 8px;
 }
 </style>

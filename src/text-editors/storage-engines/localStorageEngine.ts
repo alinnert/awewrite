@@ -1,5 +1,5 @@
 import { ref, watchEffect } from 'vue'
-import { defineStorageEngine } from './lib/defineStorageEngine'
+import { defineStorageEngine } from '../defineStorageEngine'
 
 export const localStorageEngine = defineStorageEngine(
   ({ createInstanceObject }) => ({

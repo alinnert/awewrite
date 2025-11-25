@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="frame">
@@ -12,8 +11,8 @@
   position: fixed;
   inset: 0;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: var(--header-height) 1fr;
   font-family: sans-serif;
-  background: oklch(0.45 0.1 0);
+  background: var(--theme-app-background);
 }
 </style>
