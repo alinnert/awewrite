@@ -17,7 +17,7 @@ export type ThemeData = {
 }
 
 export class ThemeItem extends HTMLElement {
-  #targets = createTargets(this, 'theme-item')
+  readonly #targets = createTargets(this, 'theme-item')
 
   #themeData!: ThemeData
 
